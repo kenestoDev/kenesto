@@ -1,0 +1,56 @@
+PODS:
+  - QBImagePickerController (3.4.0)
+  - React (0.40.0):
+    - React/Core (= 0.40.0)
+  - react-native-fetch-blob (0.10.1):
+    - React/Core
+  - react-native-orientation (1.17.0):
+    - React
+  - React/ART (0.40.0):
+    - React/Core
+  - React/Core (0.40.0):
+    - React/cxxreact
+    - React/yoga
+  - React/cxxreact (0.40.0):
+    - React/jschelpers
+  - React/jschelpers (0.40.0)
+  - React/yoga (0.40.0)
+  - RNDeviceInfo (0.9.3):
+    - React
+  - RNVectorIcons (2.1.0):
+    - React
+  - RSKImageCropper (1.5.2)
+
+DEPENDENCIES:
+  - QBImagePickerController
+  - react-native-fetch-blob (from `../node_modules/react-native-fetch-blob`)
+  - react-native-orientation (from `../node_modules/react-native-orientation`)
+  - React/ART (from `../node_modules/react-native`)
+  - RNDeviceInfo (from `../node_modules/react-native-device-info`)
+  - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
+  - RSKImageCropper
+
+EXTERNAL SOURCES:
+  React:
+    :path: ../node_modules/react-native
+  react-native-fetch-blob:
+    :path: ../node_modules/react-native-fetch-blob
+  react-native-orientation:
+    :path: ../node_modules/react-native-orientation
+  RNDeviceInfo:
+    :path: ../node_modules/react-native-device-info
+  RNVectorIcons:
+    :path: ../node_modules/react-native-vector-icons
+
+SPEC CHECKSUMS:
+  QBImagePickerController: d54cf93db6decf26baf6ed3472f336ef35cae022
+  React: 6dfb2f72edb1d74a800127ae157af038646673ce
+  react-native-fetch-blob: 280c2069529249b35d1d92df065f573dce29d4ff
+  react-native-orientation: d955450566adb8a1dc471a4d9c83cdca0aff832a
+  RNDeviceInfo: dc3cbee96cd2392cf03d6ff6191dc15f1606a166
+  RNVectorIcons: 8e9308e458f5ccb843d1f11d4aa4ae6368c70214
+  RSKImageCropper: 27d0e7efa800b509720163c3561fe08a04853780
+
+PODFILE CHECKSUM: b9a765276ee5522a63f79ac4b63c7fc022f3b662
+
+COCOAPODS: 1.1.1
