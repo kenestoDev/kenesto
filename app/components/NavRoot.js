@@ -96,29 +96,6 @@ class NavRoot extends Component {
   }
 
   _handleBackAction() {
-  //  //   alert(JSON.stringify(this.props.uiReducer));
-  //  // alert(this.props.openedDialogModalref())
-  //   //console.log(this.props.openedDialogModalref()); 
-
-  //  // return true;
-  //   if (this._isSearch()){
-  //    //  alert(this._isSearch());
-  //         this.props.hideSearchBox();
-  //       return true;
-  //   }
-  //   if (this._isItemMenuModalOpen()) {
-  //     this._closeItemMenuModal();
-  //     return true;
-  //   }
-  //   if (this._isMenuModalOpen()) {
-  //     this._closeMenuModal();
-  //     return true;
-  //   }
-  //   // else if (this._isDrawerOpen()) {
-  //   //   this._closeDrawer();
-  //   //   return true;
-  //   // }
-
    if (this.props.uiReducer.showDropDown){
         this.props.dispatch(uiActions.forceCloseDropdownOptions()); 
         return true;

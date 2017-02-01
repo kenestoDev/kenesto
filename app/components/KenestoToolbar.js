@@ -242,28 +242,6 @@ class KenestoToolbar extends Component {
     // })
   }
 
-  // closingSearchBoxAnimation(showGoBack){
-  //   return new Promise((resolve, reject) => {
-  //     var counter = 0;
-  //     var updateCounter = function () {
-  //       counter++;
-  //       if (counter >= 2) {
-  //         console.log('resolve')
-  //         resolve(counter);
-  //       }
-  //     }
-
-  //     if (!showGoBack) {
-  //       this.refs.fakeHamburgerMenu.transition({ opacity: 0, rotate: '180deg' }, { opacity: 1, rotate: '0deg' }, 400);
-  //       this.refs.searchArrowBack.transition({ opacity: 1, rotate: '0deg' }, { opacity: 0, rotate: '-180deg' }, 400);
-  //     }
-  //     // this.refs.fakeFolderTitle.fadeIn(600).then(() => updateCounter()).catch(() => updateCounter());
-  //     this.refs.textInput.fadeOut(400).then(() => updateCounter()).catch(()=>updateCounter());
-  //     this.refs.searchBoxSearchIcon.transition({translateX: 0}, {translateX: -63}, 400);
-  //     this.refs.fakeSorting.fadeInRight(400).then(() => updateCounter()).catch(() => updateCounter());
-  //   })
-  // }
-
   _submitSearch(text) {
    
     const {navReducer} = this.props
@@ -338,7 +316,6 @@ class KenestoToolbar extends Component {
     const sortDirection = documentlist.sortDirection != undefined ? documentlist.sortDirection : "";
     var title = navReducer.routes[navReducer.index].data != null ? navReducer.routes[navReducer.index].data.name : navReducer.routes[navReducer.index].title;
     var showGoBack = navReducer.routes[navReducer.index].data.fId != "" ? true : false;
-    console.log('showGoBack = '  + showGoBack + ' title = ' + title )
     return (
       <View style= {styles.toolbar}>
 
@@ -474,7 +451,6 @@ class KenestoToolbar extends Component {
     var isSearchToolbar = this.state.isSearchBoxOpen || (typeof navReducer.routes[navReducer.index].data != 'undefined'
       && typeof navReducer.routes[navReducer.index].data.isSearch != 'undefined'
       && navReducer.routes[navReducer.index].data.isSearch);
-    console.log('isDocumentsTollbar = ' + isDocumentsTollbar)
 
     if (isSearchToolbar)
       return (<View>

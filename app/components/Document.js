@@ -1,7 +1,8 @@
 'use strict';
-import React from 'react';
+var React = require('react');
+var ReactNative = require('react-native');
 import {connect} from 'react-redux'
-import {
+var {
   StyleSheet,
   Text,
   TextInput,
@@ -10,7 +11,7 @@ import {
   View,
   WebView,
   Dimensions,
-} from 'react-native';
+} = ReactNative;
 import Button from './Button'
 import {getEnvIp} from '../utils/accessUtils'
 var HEADER = '#3b5998';
@@ -20,7 +21,6 @@ const window = Dimensions.get('window');
 var TEXT_INPUT_REF = 'urlInput';
 var WEBVIEW_REF = 'webview';
 import ProggressBar from "../components/ProgressBar";
-//import WebViewBridge from 'react-native-webview-bridge';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {createResponder} from 'react-native-gesture-responder';
 import { writeToLog } from '../utils/ObjectUtils'
@@ -31,7 +31,7 @@ class Document extends React.Component{
   constructor(props){
   
     super(props);
-   
+ 
     this.documentProps = this.props.data// _.filter(routes, function(o) { return o.key == 'document'; })[0];
    
     this.state = {  
@@ -43,6 +43,8 @@ class Document extends React.Component{
       toolbarVisible: true
     };
   }
+
+   webview = null;
 
 componentWillUnmount(){
       if (!this.state.toolbarVisible)
@@ -170,16 +172,18 @@ componentWillMount(){
        <View></View>
    )
  }
- ///////////////////////////////// message directly from webView ////////////////////////////////////////
 
- postMessage(){
-   if (this.webView)
-      this.webview.postMessage('hellow from react native')
+ sendToBridge(message){
+       if (this.webview) {
+            this.webview.postMessage(message);
+    }
  }
+ 
+onMessage(event){
+  alert('fdfd')
+  console.log('this is the message from bridge: '); 
 
- //////////////////////////////////////////////////////////////////////////
-
-onBridgeMessage(message){
+  var message = event.nativeEvent.data
   if (message == 'ViewerDocumentLoaded')
     setTimeout(this.hideLoading.bind(this), 300)
     }
@@ -188,61 +192,62 @@ hideLoading(){
   this.setState({isLoading: false});
 }
   zoomIn(){
-      const { webviewbridge } = this.refs;
-     //webviewbridge.sendToBridge("zoomIn");
+     // const { webviewbridge } = this.refs;
+     this.sendToBridge("zoomIn");
   }
    zoomOut(){
-       const { webviewbridge } = this.refs;
-     // webviewbridge.sendToBridge("zoomOut");
+     //  const { webviewbridge } = this.refs;
+      this.sendToBridge("zoomOut");
 
   }
   setZoom(value){
-      const { webviewbridge } = this.refs;
-    //  webviewbridge.sendToBridge("setZoom_" + value.toString());
+    //  const { webviewbridge } = this.refs;
+      this.sendToBridge("setZoom_" + value.toString());
   }
   orientationChanged(orientation){
-     const { webviewbridge } = this.refs;
-   //  webviewbridge.sendToBridge("onDeviceOrientationChanged_" + orientation);
+     //const { webviewbridge } = this.refs;
+     this.sendToBridge("onDeviceOrientationChanged_" + orientation);
   }
 
   componentDidMount(){
     this.setState({isLoading: false});
   }
 
+
   render(){
-    console.log('this.props.data.viewerUrl = ' +  JSON.stringify(this.props.data));
+    console.log('zabubu')
     writeToLog("", constans.DEBUG, `Document Component - url: ${this.props.data.viewerUrl}`)
     const injectScript = `
       (function () {
-              if (WebViewBridge)
-                   WebViewBridge.onMessage = function (message) {
-                        if (message.indexOf("setZoom") >  -1)
-                        {
-                             var zoomLevel = parseInt(message.split("_")[1]);
-                             activateSetZoom(zoomLevel);
-                        } 
-                        else if (message.indexOf("onDeviceOrientationChanged") >  -1)
-                        {
-                             var orientation = message.split("_")[1];
-                             onDeviceOrientationChanged(orientation);
-                        } 
-                        else
-                          switch (message) {
-                                    case "zoomIn":
-                                        activateZoomIn();
-                                    break;
-                                    case "zoomOut":
-                                            activateZoomOut();
-                                    break;
-                                    case "setZoom":
-                                            activateSetZoom(100);
-                                    break;
+            window.addEventListener('message', function (event) {
+                var message = event.data;
+                if (message.indexOf("setZoom") >  -1)
+                {
+                      var zoomLevel = parseInt(message.split("_")[1]);
+                      activateSetZoom(zoomLevel);
+                } 
+                else if (message.indexOf("onDeviceOrientationChanged") >  -1)
+                {
+                      var orientation = message.split("_")[1];
+                      onDeviceOrientationChanged(orientation);
+                } 
+                else
+                  switch (message) {
+                            case "zoomIn":
+                                activateZoomIn();
+                            break;
+                            case "zoomOut":
+                                    activateZoomOut();
+                            break;
+                            case "setZoom":
+                                    activateSetZoom(100);
+                            break;
 
-                                   
-                                }
-                        
+                            
+                        }
+                
 
-                   }
+            })
                  
        }());
     
@@ -251,23 +256,22 @@ hideLoading(){
 
       <View style={{ flex: 1 }}>
         
-            {this.renderLoading()}
-      
+          
             <WebView
-              ref="webview"
+              ref={webview => { this.webview = webview; }}
               style={styles.webview_body}
               source={{ uri: this.props.data.viewerUrl }}
-              
+          
               onLoadEnd={this.onLoadEnd.bind(this) }
               javaScriptEnabled={true}
               domStorageEnabled={true}
               startInLoadingState={true}
               scalesPageToFit={true}
-              onMessage={this.onBridgeMessage.bind(this)}
-           
+              onMessage={this.onMessage}
+              injectedJavaScript={injectScript}
                    {...this.gestureResponder}
               />
-            {this.postMessage}
+
       </View>
 
         

@@ -196,48 +196,35 @@ export function logOut() {
 export function login(userId : string, password: string, env: string = 'dev')  {
   
     return (dispatch, getState) => {
-        // if (!getState().accessReducer.isConnected)
-        //  return dispatch(emitToast("info", textResource.NO_INTERNET)); 
-
-         console.log('inside login 1')
-     writeToLog(userId, constans.DEBUG, `function login - userId: ${userId}, password:${"*****"}`)
-     console.log('inside login 2')
-    dispatch(updateIsFetching(true)); 
- console.log('inside login 3')
-        if (env == null)
-        {
-             const {stateEnv} = getState(); 
-             env = stateEnv;
-        }
-
-      console.log('inside login 3')
+        if (!getState().accessReducer.isConnected)
+            return dispatch(emitToast("info", textResource.NO_INTERNET)); 
+        writeToLog(userId, constans.DEBUG, `function login - userId: ${userId}, password:${"*****"}`)
+        dispatch(updateIsFetching(true)); 
+            if (env == null)
+            {
+                const {stateEnv} = getState(); 
+                env = stateEnv;
+            }
    
         var authUrl = getAuthUrl(env,userId, password, constans.ACCESS_KEY);
-
-        console.log('inside login 4')
-
         return fetch(authUrl)
             .then((response) => response.json())
             .catch((error) => {
-                console.log('error login : ' + JSON.stringify(erro));
                  dispatch(emitError('Failed to login : The authentication servers are currently down for maintenance')); 
                  writeToLog(userId, constans.ERROR, `function login - Failed to Login - userId: ${userId}, password:${"*****"}`, error)
             })
             .then( (responseData) => {
-                console.log('inside login 5')
                 if (typeof responseData == 'undefined')
                     return; 
 
                 if (responseData.ResponseStatus == "FAILED")
                 {
-                    console.log('failed to authenticate')
                     clearCredentials();
                      dispatch(emitError('Failed to authenticate')); 
                      writeToLog(userId, constans.ERROR, `function login - Failed to Login - userId: ${userId}, password:${"*****"}`)
                 }
                 else if(responseData.AuthenticateJsonResult.ErrorMessage != "" && responseData.AuthenticateJsonResult.ErrorMessage != null &&  responseData.AuthenticateJsonResult.ErrorMessage != 'null')
                 {
-                    console.log('failed to authenticate 2')
                      var errorMessage = responseData.AuthenticateJsonResult.ErrorMessage.indexOf('ACCESS_DENIED') > -1?
                                  'Failed to login: The e-mail address or password you entered is incorrect' : 
                                 responseData.AuthenticateJsonResult.ErrorMessage.indexOf('Could not connect')? 'Failed to login : The authentication servers are currently down for maintenance' 
@@ -248,23 +235,19 @@ export function login(userId : string, password: string, env: string = 'dev')  {
                 }
                 else
                 {
-                    console.log('nside login 6')
                         var organizationId = responseData.AuthenticateJsonResult.Organizations[0].OrganizationIdentifier; 
                         var token = responseData.AuthenticateJsonResult.Token;
                         const loginUrl = getLoginUrl(env, organizationId, token);
                        fetch(loginUrl).then((response) => response.json())
                         .catch((error) => {
                              dispatch(emitError('Failed to Login'));
-                             console.log('falafael')
                              writeToLog(userId, constans.ERROR, `function login - Failed to Login, loginUrl:${loginUrl}`, error) 
                         })
                         .then( (responseData) => {
                             if (responseData == null)
                                 return  dispatch(emitError('Failed to Login'));
-                            console.log('before setting credentials')
                             setCredentials(userId, password, env);
                             var sessionToken =  typeof (responseData.LoginJsonResult) != 'undefined'? responseData.LoginJsonResult.Token : "";
-                            console.log('logged in: ' + responseData.LoginJsonResult.User.FirstName + ' ' + responseData.LoginJsonResult.User.EmailAddress)
                             dispatch(updateLoginInfo(true, 
                                                     stricturiEncode(sessionToken), 
                                                     env, responseData.LoginJsonResult.User.EmailAddress,

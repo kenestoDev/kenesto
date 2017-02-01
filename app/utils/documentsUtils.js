@@ -40,7 +40,7 @@ export function constructRetrieveDocumentsUrl(env, sessionToken, fId, sortBy, so
           switch (key) {
             case constans.MY_DOCUMENTS:
               functionName = 'RetrieveDocuments';
-              asOwner = folder == '00000000-0000-0000-0000-000000000000';
+              asOwner = folderId == '00000000-0000-0000-0000-000000000000';
               break;
             case constans.ALL_DOCUMENTS:
               functionName = 'RetrieveDocuments';

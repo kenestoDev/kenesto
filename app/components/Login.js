@@ -178,13 +178,10 @@ const styles = StyleSheet.create({
    }
 
    _makeLogin(){
-      console.log('making login')
        var value = this.refs.form.getValue();
-       
         if (value == null) { // if validation fails, value will be null
             return false; // value here is an instance of Person
         }
-        debugger;
      //   this.updateIsLoading(true); 
        Keyboard.dismiss();
        this.props.dispatch(accessActions.login(this.state.value.username,this.state.value.password, this.state.selectedEnv));
@@ -374,7 +371,6 @@ const styles = StyleSheet.create({
     render(){
 
         if (this.props.isFetching ){
-            console.log('rendering loader')
             return (
                 <View style = {styles.container}>
                       {this.renderLoading()}

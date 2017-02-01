@@ -83,18 +83,9 @@ export function RequestShareObjectInfo(objectId : string, familyCode: string, ob
             const UsersAndGroups = json.ResponseData.UsersAndGroups;
             dispatch(RetrieveShareObjectInfo(ObjectInfo, UsersAndGroups))
 
-            //  var data = {
-            //         key: "addPeople",
-            //         name: objectName,
-            //         documentId: objectId,
-            //     }
-
-            // dispatch(push(routes.addPeopleRoute(data).route));
-
         }
       })
       .catch((error) => {
-        //console.log("error:" + JSON.stringify(error))
         dispatch(emitError("Failed to retrieve sharing info" ,""))
         writeToLog(email, constans.ERROR, `function RequestShareObjectInfo - Failed to retrieve sharing info - url: ${url}`,error)
       })
