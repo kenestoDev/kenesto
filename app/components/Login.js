@@ -127,10 +127,10 @@ const styles = StyleSheet.create({
 
  export default class Login  extends React.Component { 
      constructor(props) {
-
+         var initialEnv = __DEV__ ? 'dev' : 'production'
          super(props)
          this.state = {
-             selectedEnv: 'dev',
+             selectedEnv: initialEnv,
              value: {
                  username: "",
                  password: "",
@@ -218,6 +218,9 @@ const styles = StyleSheet.create({
 
 
     renderEnvPicker(){
+        if (!__DEV__)
+            return null; 
+            
             return(
                  <Picker
                     style={styles.picker}
