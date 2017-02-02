@@ -13,10 +13,10 @@ target 'kenesto' do
      pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
   # Pods for kenesto
 
-  target 'kenestoTests' do
-    inherit! :search_paths
+ # target 'kenestoTests' do
+ #   inherit! :search_paths
     
     # Pods for testing
-  end
+ # end
 
 end
