@@ -179,13 +179,9 @@ componentWillMount(){
     }
  }
  
-onMessage(event){
-  alert('fdfd')
-  console.log('this is the message from bridge: '); 
 
-  var message = event.nativeEvent.data
-  if (message == 'ViewerDocumentLoaded')
-    setTimeout(this.hideLoading.bind(this), 300)
+    onMessage( event ) {
+        console.log( "On Message", event.nativeEvent.data );
     }
 
 hideLoading(){
@@ -252,24 +248,34 @@ hideLoading(){
        }());
     
     `; 
+
+            //  ref={webview => { this.webview = webview; }}
+            //   style={styles.webview_body}
+            //   source={{ uri: this.props.data.viewerUrl }}
+      // onLoadEnd={this.onLoadEnd.bind(this) }
+      //         javaScriptEnabled={true}
+      //         domStorageEnabled={true}
+      //         startInLoadingState={true}
+      //         scalesPageToFit={true}
+      //         onMessage={this.onMessage}
+      //              {...this.gestureResponder}
     return(
 
       <View style={{ flex: 1 }}>
         
           
             <WebView
-              ref={webview => { this.webview = webview; }}
-              style={styles.webview_body}
-              source={{ uri: this.props.data.viewerUrl }}
-          
-              onLoadEnd={this.onLoadEnd.bind(this) }
-              javaScriptEnabled={true}
+
+             style={styles.webview_body}
+                    source={{uri: this.props.data.viewerUrl}}
+                    ref={( webView ) => this.webView = webView}
+                    onMessage={this.onMessage}
+
+                              javaScriptEnabled={true}
               domStorageEnabled={true}
-              startInLoadingState={true}
-              scalesPageToFit={true}
-              onMessage={this.onMessage}
-              injectedJavaScript={injectScript}
-                   {...this.gestureResponder}
+  {...this.gestureResponder}
+          
+            
               />
 
       </View>
