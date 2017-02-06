@@ -45,7 +45,7 @@ class Document extends React.Component{
     };
   }
 
-   webview = null;
+   webView = null;
 
   componentWillMount(){
 
@@ -182,15 +182,17 @@ class Document extends React.Component{
  }
 
  sendToBridge(message){
-       if (this.webview) {
-            this.webview.postMessage(message);
-    }
+       if (this.webView) {
+            this.webView.postMessage(message);
+        }
  }
  
 
-    onMessage( event ) {
-        console.log( "On Message", event.nativeEvent.data );
-    }
+  onMessage( event ) {
+      var message = event.nativeEvent.data 
+      if (message == 'ViewerDocumentLoaded')
+          setTimeout( () => {this.hideLoading()} , 300);
+  }
 
 hideLoading(){
   this.setState({isLoading: false});
@@ -215,6 +217,7 @@ hideLoading(){
 
 
   componentDidMount(){
+   setTimeout(() => {this.sendToBridge('zbabura')}, 10000);
      var clearId = setTimeout(() =>{  if (this.state.isLoading) this.setState({isLoading: false});}, 9000); 
       this.setState({clearId : clearId})
     
@@ -226,12 +229,12 @@ hideLoading(){
 
 
   render(){
-    console.log('zabubu')
     writeToLog("", constans.DEBUG, `Document Component - url: ${this.props.data.viewerUrl}`)
     const injectScript = `
       (function () {
-            window.addEventListener('message', function (event) {
+            document.addEventListener('message', function (event) {
                 var message = event.data;
+                $('#inp').val(message);
                 if (message.indexOf("setZoom") >  -1)
                 {
                       var zoomLevel = parseInt(message.split("_")[1]);
@@ -264,31 +267,23 @@ hideLoading(){
     
     `; 
 
-            //  ref={webview => { this.webview = webview; }}
-            //   style={styles.webview_body}
-            //   source={{ uri: this.props.data.viewerUrl }}
-      // onLoadEnd={this.onLoadEnd.bind(this) }
-      //         javaScriptEnabled={true}
-      //         domStorageEnabled={true}
-      //         startInLoadingState={true}
-      //         scalesPageToFit={true}
-      //         onMessage={this.onMessage}
-      //              {...this.gestureResponder}
     return(
+      
 
       <View style={{ flex: 1 }}>
-        
-          
+
+           {this.renderLoading()}
+      
             <WebView
 
              style={styles.webview_body}
                     source={{uri: this.props.data.viewerUrl}}
                     ref={( webView ) => this.webView = webView}
-                    onMessage={this.onMessage}
-
-                              javaScriptEnabled={true}
-              domStorageEnabled={true}
-  {...this.gestureResponder}
+                    onMessage={this.onMessage.bind(this)}
+                    injectedJavaScript={injectScript}
+                    javaScriptEnabled={true}
+                     domStorageEnabled={true}
+                    {...this.gestureResponder}
           
             
               />
