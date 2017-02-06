@@ -374,8 +374,16 @@ class KenestoToolbar extends Component {
 
     const {navReducer} = this.props
     var documentlist = getDocumentsContext(navReducer);
-    var title = navReducer.routes[navReducer.index].data != null ? navReducer.routes[navReducer.index].data.name : navReducer.routes[navReducer.index].title;
+    //var title = navReducer.routes[navReducer.index].data != null ? navReducer.routes[navReducer.index].data.name : navReducer.routes[navReducer.index].title;
     var currDoc = navReducer.routes[navReducer.index].data;
+    var title = "";
+    if (currDoc != null)
+    {
+       title = currDoc.fileExtension == '' || currDoc.fileExtension == null ? currDoc.name : currDoc.name + currDoc.fileExtension;
+    }
+    else
+       title = navReducer.routes[navReducer.index].title
+       
     return (
       <View style= {styles.toolbar} >
         <View>

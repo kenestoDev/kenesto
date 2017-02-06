@@ -40,114 +40,122 @@ class Document extends React.Component{
       prevPinch: null, 
       pinchDirection : null, 
       thumbnailUrl: this.props.data.ThumbnailUrl, 
-      toolbarVisible: true
+      toolbarVisible: true,
+      clearId : null
     };
   }
 
    webview = null;
 
-componentWillUnmount(){
-      if (!this.state.toolbarVisible)
-        this.showToolBar();
+  componentWillMount(){
+
+    this.gestureResponder = createResponder({
+      onStartShouldSetResponder: (evt, gestureState) => true,
+      onStartShouldSetResponderCapture: (evt, gestureState) => true,
+      onMoveShouldSetResponder: (evt, gestureState) => true,
+      onMoveShouldSetResponderCapture: (evt, gestureState) => true,
+      onResponderGrant: (evt, gestureState) => { },
+      onResponderMove: (evt, gestureState) => {
+
+        if (typeof (gestureState.pinch) != 'undefined' && typeof (gestureState.previousPinch) != 'undefined') {
+          var diff = gestureState.pinch - gestureState.previousPinch;
+          if (this.state.zoomCorrection == null) {
+            this.setState({ zoomCorrection: 1 })
+          }
+          if (this.state.startPinch == null) {
+            this.setState({
+              startPinch: gestureState.pinch,
+            })
+          }
+
+          const absDistance = Math.round(gestureState.pinch - this.state.startPinch);
+          const mod = absDistance % 5;
+          if (mod == 0) {
+            
+            const zoom = Math.round(gestureState.pinch / this.state.startPinch * 100) == Infinity? 100 : Math.round(gestureState.pinch / this.state.startPinch * 100);
+            if(zoom * this.state.zoomCorrection < 25){
+              this.setZoom(25);
+            }
+            else if (zoom * this.state.zoomCorrection > 400){
+              this.setZoom(400);
+            }
+            else {
+              this.setZoom(zoom * this.state.zoomCorrection);
+            }         
+            this.setState({
+              tempPinch: gestureState.pinch,
+              absDistance: absDistance
+            })
+          }
+        }
+      },
+
+      onResponderTerminationRequest: (evt, gestureState) => false,
+      onResponderRelease: (evt, gestureState) => {
+        var zoomCorrection;
+        if (!gestureState.singleTapUp && !gestureState.doubleTapUp && this.state.absDistance != null) {
+          zoomCorrection = Math.round(this.state.tempPinch / this.state.startPinch * 100 * this.state.zoomCorrection) / 100;
+          if (zoomCorrection < 0.25) {
+            zoomCorrection = 0.25;
+          }
+          else if (zoomCorrection > 4) {
+            zoomCorrection = 4;
+          }
+          this.setState({
+            startPinch: null,
+            zoomCorrection: zoomCorrection,
+            absDistance: null
+          })
+        }
+        
+        else if (gestureState.doubleTapUp) {
+          this.setZoom(100);
+          zoomCorrection = 1;
+          
+          this.setState({
+            startPinch: null,
+            zoomCorrection: zoomCorrection,
+            absDistance: null
+          })
+        }
+        
+      },
+
+      onResponderTerminate: (evt, gestureState) => {
+      },
+
+      onResponderSingleTapConfirmed: (evt, gestureState) => {
+    
+        if (this.state.toolbarVisible) {
+          this.hideToolBar();
+          //  this.props.dispatch(navActions.hideToolbar(true));
+        }
+
+        else {
+          this.showToolBar();
+          // this.props.dispatch(navActions.showToolbar(true));
+        }
+
+        this.setState({ toolbarVisible: !this.state.toolbarVisible });
+
+      },
+      moveThreshold: 2,
+      debug: false
+    });
+      
   }
 
-componentWillMount(){
-
-  this.gestureResponder = createResponder({
-    onStartShouldSetResponder: (evt, gestureState) => true,
-    onStartShouldSetResponderCapture: (evt, gestureState) => true,
-    onMoveShouldSetResponder: (evt, gestureState) => true,
-    onMoveShouldSetResponderCapture: (evt, gestureState) => true,
-    onResponderGrant: (evt, gestureState) => { },
-    onResponderMove: (evt, gestureState) => {
-
-      if (typeof (gestureState.pinch) != 'undefined' && typeof (gestureState.previousPinch) != 'undefined') {
-        var diff = gestureState.pinch - gestureState.previousPinch;
-        if (this.state.zoomCorrection == null) {
-          this.setState({ zoomCorrection: 1 })
-        }
-        if (this.state.startPinch == null) {
-          this.setState({
-            startPinch: gestureState.pinch,
-          })
-        }
-
-        const absDistance = Math.round(gestureState.pinch - this.state.startPinch);
-        const mod = absDistance % 5;
-        if (mod == 0) {
-          
-          const zoom = Math.round(gestureState.pinch / this.state.startPinch * 100) == Infinity? 100 : Math.round(gestureState.pinch / this.state.startPinch * 100);
-          if(zoom * this.state.zoomCorrection < 25){
-            this.setZoom(25);
-          }
-          else if (zoom * this.state.zoomCorrection > 400){
-            this.setZoom(400);
-          }
-          else {
-            this.setZoom(zoom * this.state.zoomCorrection);
-          }         
-          this.setState({
-            tempPinch: gestureState.pinch,
-            absDistance: absDistance
-          })
-        }
-      }
-    },
-
-    onResponderTerminationRequest: (evt, gestureState) => false,
-    onResponderRelease: (evt, gestureState) => {
-      var zoomCorrection;
-      if (!gestureState.singleTapUp && !gestureState.doubleTapUp && this.state.absDistance != null) {
-        zoomCorrection = Math.round(this.state.tempPinch / this.state.startPinch * 100 * this.state.zoomCorrection) / 100;
-        if (zoomCorrection < 0.25) {
-          zoomCorrection = 0.25;
-        }
-        else if (zoomCorrection > 4) {
-          zoomCorrection = 4;
-        }
-        this.setState({
-          startPinch: null,
-          zoomCorrection: zoomCorrection,
-          absDistance: null
-        })
-      }
-      
-      else if (gestureState.doubleTapUp) {
-        this.setZoom(100);
-        zoomCorrection = 1;
-        
-        this.setState({
-          startPinch: null,
-          zoomCorrection: zoomCorrection,
-          absDistance: null
-        })
-      }
-      
-    },
-
-    onResponderTerminate: (evt, gestureState) => {
-    },
-
-    onResponderSingleTapConfirmed: (evt, gestureState) => {
-  
-      if (this.state.toolbarVisible) {
-        this.hideToolBar();
-        //  this.props.dispatch(navActions.hideToolbar(true));
-      }
-
-      else {
-        this.showToolBar();
-        // this.props.dispatch(navActions.showToolbar(true));
-      }
-
-      this.setState({ toolbarVisible: !this.state.toolbarVisible });
-
-    },
-    moveThreshold: 2,
-    debug: false
-  });
+  componentDidMount(){
+     var clearId = setTimeout(() =>{  if (this.state.isLoading) this.setState({isLoading: false});}, 9000); 
+      this.setState({clearId : clearId})
     
-}
+  }
+  componentWillUnmount(){
+    if (!this.state.toolbarVisible)
+        this.showToolBar();
+     if (this.state.clearId != null)
+        clearTimeout(this.state.clearId);
+  }
 
    showToolBar(){
     this.context.toolBar.fadeInDown();
@@ -205,8 +213,15 @@ hideLoading(){
      this.sendToBridge("onDeviceOrientationChanged_" + orientation);
   }
 
+
   componentDidMount(){
-    this.setState({isLoading: false});
+     var clearId = setTimeout(() =>{  if (this.state.isLoading) this.setState({isLoading: false});}, 9000); 
+      this.setState({clearId : clearId})
+    
+  }
+  componentWillUnmount(){
+     if (this.state.clearId != null)
+        clearTimeout(this.state.clearId);
   }
 
 

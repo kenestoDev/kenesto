@@ -177,6 +177,7 @@ class Documents extends Component {
         isExternalLink: document.IsExternalLink,
         isVault: document.IsVault,
         ThumbnailUrl: document.ThumbnailUrl,
+        fileExtension: document.FileExtension,
         env: this.props.env,
         dispatch: this.props.dispatch
       }
