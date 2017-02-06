@@ -270,10 +270,8 @@ hideLoading(){
     return(
       
 
-      <View style={{ flex: 1 }}>
-
+      <View style={{ flex: 1 }}  {...this.gestureResponder}>
            {this.renderLoading()}
-      
             <WebView
 
              style={styles.webview_body}
@@ -283,11 +281,8 @@ hideLoading(){
                     injectedJavaScript={injectScript}
                     javaScriptEnabled={true}
                      domStorageEnabled={true}
-                    {...this.gestureResponder}
-          
-            
               />
-
+                  
       </View>
 
         
