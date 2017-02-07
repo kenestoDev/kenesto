@@ -25,7 +25,6 @@ let styles = StyleSheet.create({
   toolbar: {
     backgroundColor: '#fff',
     height: 50,
-    flex: 1,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",

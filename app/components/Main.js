@@ -56,10 +56,6 @@ let styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
   },
-  toolbar: {
-    backgroundColor: '#3a3f41',
-    height: 50,
-  },
   modal: {
     justifyContent: 'center',
     alignItems: 'center'
@@ -107,16 +103,9 @@ let styles = StyleSheet.create({
     bottom: 0,
   },
   toolbarContainer:{
-      flex: 1,
-      position: 'absolute',
-      left: 0,
-      top: 0,
-      right: 0,
+      backgroundColor: "#fff",
       height: 50,
-      zIndex: 100,
-      borderWidth: 3,
-      borderColor: "#999",
-      opacity: 1,
+      opacity: 1
   },
   popupMenu: {
     flex: 1,
