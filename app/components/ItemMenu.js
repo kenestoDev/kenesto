@@ -68,6 +68,9 @@ let styles = StyleSheet.create({
     documentYear: {
         color: '#999999',
     },
+    chckedoutby: {
+            color: '#FF811B',
+    },
     row: {
         alignItems: 'center',
         backgroundColor: 'white',
@@ -233,6 +236,15 @@ class ItemMenu extends React.Component {
         this.setState({ document: document });
     }
 
+    _renderCheckedOutBy(){
+            if (this.state.document.ChceckedOutBy != '')
+                return ( <Text style={styles.chckedoutby} numberOfLines={1}>
+                                    {"Checked out by " +  this.state.document.ChceckedOutBy}
+                        </Text>)
+                else 
+                    return null;
+        }
+        
     _renderShareAction(document) {
         if (this.props.documentsReducer.selectedObject.permissions.AllowShare) {
             return (<TouchableHighlight onPress={this.shareDocument.bind(this)} underlayColor="#E9EAEC">
@@ -438,6 +450,7 @@ class ItemMenu extends React.Component {
                             <Text style={styles.documentTitle} numberOfLines={2}>
                                 {this.state.document.Name}
                             </Text>
+                            {this._renderCheckedOutBy()}
                             <Text style={styles.documentYear} numberOfLines={1}>
                                 {"Modified " + moment(this.state.document.ModificationDate).format('MMM DD, YYYY') }
 

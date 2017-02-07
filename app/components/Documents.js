@@ -178,6 +178,7 @@ class Documents extends Component {
         isVault: document.IsVault,
         ThumbnailUrl: document.ThumbnailUrl,
         fileExtension: document.FileExtension,
+        chekcedOutBy: document.ChceckedOutBy,
         env: this.props.env,
         dispatch: this.props.dispatch
       }
