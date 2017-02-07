@@ -114,6 +114,8 @@ let styles = StyleSheet.create({
       right: 0,
       height: 50,
       zIndex: 100,
+      borderWidth: 3,
+      borderColor: "#999",
       opacity: 1,
   },
   popupMenu: {
