@@ -463,7 +463,7 @@ var styles = StyleSheet.create({
   },
   separator: {
     height: 1,
-    // backgroundColor: '#eeeeee',
+    backgroundColor: '#fff',
   },
   rowSeparator: {
     backgroundColor: "#eee",
