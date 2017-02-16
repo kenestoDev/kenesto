@@ -206,7 +206,6 @@ export function login(userId : string, password: string, env: string = 'dev')  {
                 env = stateEnv;
             }
    
-        var authUrl = getAuthUrl(env,userId, password, constans.ACCESS_KEY);
         return fetch(authUrl)
             .then((response) => response.json())
             .catch((error) => {

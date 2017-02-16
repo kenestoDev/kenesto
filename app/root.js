@@ -6,7 +6,7 @@ import App from './containers/app'
 
 const store = configureStore()
 
-class Root extends React.Component {
+class kenesto extends React.Component {
 constructor(props){
         super(props);
     }
@@ -21,4 +21,4 @@ constructor(props){
   }
 }
 
-export default Root
+export default kenesto
