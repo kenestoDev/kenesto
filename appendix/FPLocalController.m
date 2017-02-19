@@ -399,7 +399,7 @@ typedef void (^FPLocalUploadAssetProgressBlock)(float progress);
     }
     else
     {
-	
+
         FPLocalUploadAssetSuccessBlock successBlock = ^(FPMediaInfo *info) {
             dispatch_async(dispatch_get_main_queue(), ^{
 

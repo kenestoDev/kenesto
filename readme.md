@@ -26,3 +26,5 @@ packages with special handling:
                     { this.renderMessage() }
                 </View>
             </View>
+
+* AssetsPicker ios - replace 'FPLocalController.m' from appendix to ios\pods\fppicker\fppicker\platforms\ios
