@@ -13,10 +13,11 @@ import { createIconSetFromFontello } from  'react-native-vector-icons'
 import * as navActions from '../actions/navActions'
 import {getFileUploadUrl, getDocumentsContext} from '../utils/documentsUtils'
 import {uploadToKenesto} from '../actions/documentsActions'
-var ImagePicker = NativeModules.ImageCropPicker;
-//import ImagePicker from 'react-native-image-crop-picker'
+var DocumentPicker = NativeModules.RNDocumentPicker;
+import ImagePicker from 'react-native-image-crop-picker'
 const KenestoIcon = createIconSetFromFontello(fontelloConfig);
 import * as constans from '../constants/GlobalConstans'
+
 
 let styles = StyleSheet.create({
     container: {
@@ -109,28 +110,22 @@ class PlusMenu extends React.Component{
   
     selectFromLib(cropping : boolean){
 
-        // alert(ImagePicker.openPicker); 
-
-        // return false;
-
             ImagePicker.openPicker({
             width: 400,
             height: 400,
             cropping : false,
             includeBase64: false
             }).then(file => {
-             
-             alert('zaa')
 
-            //  const fileName = file.path.substring(file.path.lastIndexOf("/") + 1);
+             const fileName = file.path.substring(file.path.lastIndexOf("/") + 1);
 
-            //  const fileExtension =  file.path.substring(file.path.lastIndexOf("."));
+             const fileExtension =  file.path.substring(file.path.lastIndexOf("."));
 
-            // this.setState({
-            //     file: { name: fileName, path: file.path, type: file.mime, size: this.bytesToSize(file.size), extension: fileExtension},
-            // });
+            this.setState({
+                file: { name: fileName, path: file.path, type: file.mime, size: this.bytesToSize(file.size), extension: fileExtension},
+            });
 
-            //  this.upload();
+             this.upload();
 
             }).catch(e => {
                 if (e != 'Error: User cancelled image selection')
@@ -141,6 +136,7 @@ class PlusMenu extends React.Component{
             }
         
             );
+
   }
 
 

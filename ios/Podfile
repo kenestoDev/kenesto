@@ -11,6 +11,7 @@ target 'kenesto' do
      pod 'react-native-orientation', :path => '../node_modules/react-native-orientation'
      pod 'React', path: '../node_modules/react-native', subspecs: ['ART',]
      pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+     pod 'FPPicker', '~> 5.1.6'
   # Pods for kenesto
 
  # target 'kenestoTests' do

@@ -369,7 +369,6 @@ const styles = StyleSheet.create({
 
 
     render(){
-
         if (this.props.isFetching ){
             return (
                 <View style = {styles.container}>

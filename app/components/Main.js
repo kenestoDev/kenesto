@@ -38,6 +38,7 @@ import { writeToLog } from '../utils/ObjectUtils'
 import * as Animatable from 'react-native-animatable';
 import {config} from '../utils/app.config'
 import NetInfoManager from './NetInfoManager'
+   // var AssetsPicker = NativeModules.AssetsPicker; 
 //import PubNub from 'pubnub'
 //import PushController from './PushController';
 //import PushNotification from 'react-native-push-notification';
@@ -419,7 +420,25 @@ this.callToast2(nextprops.navReducer.GlobalToastMessage, nextprops.navReducer.Gl
     // OneSignal.configure({});
    // AppState.addEventListener('change', this.handleAppStateChange);
     // MessageBarManager.registerMessageBar(this.refs.alert);
-  }
+
+  //    AssetsPicker.PickAsset(null).then(mediaInfo =>{
+
+  //             alert(JSON.stringify(mediaInfo));
+  //               // const fileName = fPath.substring(fPath.lastIndexOf("/") + 1);
+
+  //               // const fileExtension =  fPath.substring(fPath.lastIndexOf("."));
+
+  //               // this.setState({
+  //               //     file: { name: fileName, path: fPath, type: file.mime, size: this.bytesToSize(file.size), extension: fileExtension},
+  //               // });
+
+  //               // this.upload();
+  //               // }
+            
+  //         })
+
+
+   }
 
   componentWillUnmount(){
       DeviceEventEmitter.removeListener('orientationDidChange');
