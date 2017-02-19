@@ -6,11 +6,9 @@ import App from './containers/app'
 
 const store = configureStore()
 
-<<<<<<< HEAD
-class Kenesto extends React.Component {
-=======
+
 class kenesto extends React.Component {
->>>>>>> origin/master
+
 constructor(props){
         super(props);
     }
@@ -25,8 +23,5 @@ constructor(props){
   }
 }
 
-<<<<<<< HEAD
-export default Kenesto
-=======
 export default kenesto
->>>>>>> origin/master
+
