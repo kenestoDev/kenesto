@@ -81,8 +81,12 @@ RCT_EXPORT_METHOD(PickAsset:(NSDictionary *)options
                                    FPSourceFilesystem,
                                    FPSourceCameraRoll,
                                    FPSourceImagesearch,
+                                   FPSourceCloudDrive,
                                    FPSourceDropbox,
                                    FPSourceGoogleDrive,
+                                   FPSourceGmail,
+                                   FPSourceBox,
+                                   FPSourceInstagram
                                    ];
  
  // You can set some of the in built Camera properties as you would with UIImagePicker

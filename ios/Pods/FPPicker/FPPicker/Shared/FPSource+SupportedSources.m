@@ -88,8 +88,10 @@
         source.name = @"Albums";
         source.icon = @"glyphicons_008_film";
         source.rootPath = @"/Albums";
-        source.openMimetypes = @[@"image/jpeg", @"image/png", @"video/quicktime"];
-        source.saveMimetypes = @[@"image/jpeg", @"image/png"];
+        //source.openMimetypes = @[@"image/jpeg", @"image/png", @"video/quicktime"];
+        //source.saveMimetypes = @[@"image/jpeg", @"image/png"];
+        source.openMimetypes = @[@"*/*"];
+        source.saveMimetypes = @[@"*/*"];
         source.overwritePossible = NO;
         source.externalDomains = @[];
 

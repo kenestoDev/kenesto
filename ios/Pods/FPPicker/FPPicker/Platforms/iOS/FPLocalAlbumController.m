@@ -80,6 +80,7 @@
                                   resultVideos:&showVideos];
 
     CGRect bounds = self.view.bounds;
+    // dudu
 
     // Just make one instance empty label
 
@@ -107,6 +108,8 @@
         [predicateComponents addObject:@"(mediaType == %d)"];
         [arguments addObject:@(PHAssetMediaTypeVideo)];
     }
+    
+    
 
     NSString *predicateFormat = [predicateComponents componentsJoinedByString:@" || "];
 
