@@ -225,6 +225,8 @@ const styles = StyleSheet.create({
                     onValueChange={this.onEnvChange.bind(this)}
                     mode="dropdown"
                     >
+
+                     <Item label="Kosta dev" value="devKonstya" />
                     <Item label="Dev" value="dev" />
                     <Item label="QA" value="qa" />
                     <Item label="Staging" value="staging" />
