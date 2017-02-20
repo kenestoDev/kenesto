@@ -273,7 +273,7 @@ class KenestoToolbar extends Component {
     const sortDirection = documentlist.sortDirection != undefined ? documentlist.sortDirection : "";
 
     return (
-      <View style={styles.searchBoxContainer}>
+      <View style={[styles.searchBoxContainer, {marginTop: (Platform.OS === 'ios')? 15 : 0}]}>
 
         <View>
           <Animatable.View ref="fakeHamburgerMenu" style={{ opacity: 0 }}><Icon name="menu" style={[styles.iconStyle, { color: "orange" }]} /></Animatable.View>
@@ -315,8 +315,9 @@ class KenestoToolbar extends Component {
     const sortDirection = documentlist.sortDirection != undefined ? documentlist.sortDirection : "";
     var title = navReducer.routes[navReducer.index].data != null ? navReducer.routes[navReducer.index].data.name : navReducer.routes[navReducer.index].title;
     var showGoBack = navReducer.routes[navReducer.index].data.fId != "" ? true : false;
+    var animatedHamburger = <View style={{ flexDirection: 'row' }}><Animatable.View ref="arrowBack" style={{ opacity: 0, position: 'absolute' }}><Icon name="arrow-back" style={styles.iconStyle} /></Animatable.View><Animatable.View ref="hamburgerMenu"><Icon name="menu" style={[styles.iconStyle,{color: "orange" }]} onPress={this.props.onIconClicked} /></Animatable.View></View>
     return (
-      <View style= {styles.toolbar}>
+      <View style= {[styles.toolbar,{marginTop: (Platform.OS === 'ios')? 15 : 0}]}>
 
         <Animatable.View style={styles.fakeTextInput} ref="fakeTextInput">
           <View><Icon name="arrow-back" style={[styles.iconStyle, { opacity: 0 }]} /></View>
@@ -325,14 +326,11 @@ class KenestoToolbar extends Component {
           <Icon name="search" style={[styles.iconStyle, { opacity: 0 }]} />
         </Animatable.View>
 
-        {showGoBack ?
+        {showGoBack && 
           <Icon name="arrow-back" style={[styles.iconStyle]} onPress={this.onGoBack.bind(this) } />
-          :
-          <View style={{ flexDirection: 'row' }}>
-            <Animatable.View ref="arrowBack" style={{ opacity: 0, position: 'absolute' }}><Icon name="arrow-back" style={styles.iconStyle} /></Animatable.View>
-            <Animatable.View ref="hamburgerMenu"><Icon name="menu" style={[styles.iconStyle, { color: "orange" }]} onPress={this.props.onIconClicked} /></Animatable.View>
-          </View>
         }
+
+        {!showGoBack && animatedHamburger}
 
         <Animatable.View ref="folderTitle" style={[styles.folderName]}>
           <Text style={{ fontSize: 20 }} numberOfLines={1}>{title}</Text>
@@ -384,7 +382,7 @@ class KenestoToolbar extends Component {
        title = navReducer.routes[navReducer.index].title
        
     return (
-      <View style= {styles.toolbar} >
+      <View style= {[styles.toolbar, {marginTop: (Platform.OS === 'ios')? 15 : 0}]} >
         <View>
           <Icon name="arrow-back" style={[styles.iconStyle]} onPress={this.onGoBack.bind(this) } />
         </View>
@@ -406,7 +404,7 @@ class KenestoToolbar extends Component {
     var title = navReducer.routes[navReducer.index].data != null ? navReducer.routes[navReducer.index].data.name : navReducer.routes[navReducer.index].title;
 
     return (
-      <View style= {styles.toolbar} >
+      <View style= {[styles.toolbar, {marginTop: (Platform.OS === 'ios')? 15 : 0}]} >
         <View>
           <Icon name="arrow-back" style={[styles.iconStyle]} onPress={this.onGoBack.bind(this) } />
         </View>

@@ -9,7 +9,8 @@ import {
   AppState,
   Animated,
   DeviceEventEmitter,
-  NativeModules
+  NativeModules,
+  Platform
 } from 'react-native'
 
 import NavigationRootContainer from '../containers/navRootContainer'
@@ -498,7 +499,7 @@ this.callToast2(nextprops.navReducer.GlobalToastMessage, nextprops.navReducer.Gl
   setToastType(toastMessage, type) {
     let color;
     if (type == 'error') color = '#f00';
-    if (type == 'info') color = '#333';
+    if (type == 'info' || type == 'Info') color = '#333';
     if (type == 'warning') color = '#ec971f';
     if (type == 'success') color = '#3290F1';
     this.setState({ toastColor: color, toastMessage: toastMessage });
@@ -512,11 +513,12 @@ this.callToast2(nextprops.navReducer.GlobalToastMessage, nextprops.navReducer.Gl
     var showPopupMenu = this.state.isPopupMenuOpen;
   
     var documentlist = getDocumentsContext(navReducer);
-    var toolbarStyle = navReducer.routes[navReducer.index].key === 'document' ? styles.toolbarContainer : null;
+    // var toolbarStyle = navReducer.routes[navReducer.index].key === 'document' ? styles.toolbarContainer : null;
     const sortBy = documentlist.sortBy;
+    var toolBarHeight = (Platform.OS === 'ios')? 65 : 50;
     return (
       <View style={styles.container}>
-          <Animatable.View ref={"toolBar"} easing="ease-in-out-cubic" style={styles.toolbarContainer} duration={600}> 
+          <Animatable.View ref={"toolBar"} easing="ease-in-out-cubic" style={[styles.toolbarContainer, { height: toolBarHeight }]} duration={600}> 
             <KenestoToolbar ref={"kToolbar"}
               onActionSelected={this.onActionSelected}
               onPressPopupMenu={this.onPressPopupMenu}
