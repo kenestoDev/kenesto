@@ -499,7 +499,7 @@ this.callToast2(nextprops.navReducer.GlobalToastMessage, nextprops.navReducer.Gl
   setToastType(toastMessage, type) {
     let color;
     if (type == 'error') color = '#f00';
-    if (type == 'info' || type == 'Info') color = '#333';
+    if (type == 'Info') color = '#333';
     if (type == 'warning') color = '#ec971f';
     if (type == 'success') color = '#3290F1';
     this.setState({ toastColor: color, toastMessage: toastMessage });
