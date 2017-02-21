@@ -145,6 +145,7 @@ export function getDocumentInfo(documentId: string, familyCode: string, actionTy
                         fId: documentlist.fId,
                         viewerUrl:viewerUrl,
                         isExternalLink: document.IsExternalLink,
+                        externalLinkType: document.ExternalLinkType,
                         isVault: document.IsVault,
                         ThumbnailUrl: document.ThumbnailUrl,
                         env: env,

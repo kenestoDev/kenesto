@@ -33,9 +33,11 @@ class Document extends React.Component{
     super(props);
  
     this.documentProps = this.props.data// _.filter(routes, function(o) { return o.key == 'document'; })[0];
-   
+    var isloading = !this.props.data.isExternalLink; 
+    if (this.props.data.externalLinkType == 'DROPBOX')
+        isloading = true;
     this.state = {  
-      isLoading: !this.props.data.isExternalLink,
+      isLoading: isloading,
       scalingEnabled: true,
       prevPinch: null, 
       pinchDirection : null, 
@@ -217,7 +219,6 @@ hideLoading(){
 
 
   componentDidMount(){
-   setTimeout(() => {this.sendToBridge('zbabura')}, 10000);
      var clearId = setTimeout(() =>{  if (this.state.isLoading) this.setState({isLoading: false});}, 9000); 
       this.setState({clearId : clearId})
     
@@ -227,7 +228,11 @@ hideLoading(){
         clearTimeout(this.state.clearId);
   }
 
-
+ 
+//  $("#viewport").attr("content", "width=240");
+  //  var x = document.getElementsByTagName('meta');
+  //   x[0].setAttribute('content, 'width=50')
+  // document.getElementsByTagName('head')[0].appendChild(metaTag);
   render(){
     writeToLog("", constans.DEBUG, `Document Component - url: ${this.props.data.viewerUrl}`)
     const injectScript = `

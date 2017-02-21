@@ -175,6 +175,7 @@ class Documents extends Component {
         fId: documentlist.fId,
         viewerUrl: getViewerUrl(this.props.env, document, this.props.navReducer.orientation),
         isExternalLink: document.IsExternalLink,
+        externalLinkType: document.ExternalLinkType,
         isVault: document.IsVault,
         ThumbnailUrl: document.ThumbnailUrl,
         fileExtension: document.FileExtension,

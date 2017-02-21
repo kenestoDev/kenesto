@@ -237,7 +237,7 @@ class ItemMenu extends React.Component {
     }
 
     _renderCheckedOutBy(){
-            if (this.state.document.ChceckedOutBy != '')
+             if ( typeof(this.state.document.ChceckedOutBy) != 'undefined' && this.state.document.ChceckedOutBy != '')
                 return ( <Text style={styles.chckedoutby} numberOfLines={1}>
                                     {"Checked out by " +  this.state.document.ChceckedOutBy}
                         </Text>)
