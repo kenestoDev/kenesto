@@ -76,7 +76,7 @@ var DocumentCell = React.createClass({
             fileExtension = 'link';
     }
 
-    var documentName = this.props.document.IsExternalLink || fileExtension == '' || fileExtension == null ? this.props.document.Name : this.props.document.Name + fileExtension;
+    var documentName = (this.props.document.IsExternalLink && this.props.document.ExternalLinkType != 'DROPBOX') || this.props.document.FileExtension == '' || this.props.document.FileExtension == null ? this.props.document.Name : this.props.document.Name + this.props.document.FileExtension;
 
     if (Platform.OS === 'android') {
       TouchableElement = TouchableNativeFeedback;

@@ -298,7 +298,7 @@ class ItemMenu extends React.Component {
     }
 
     _renderUpdateVersionsAction(document) {
-       if (this.props.documentsReducer.selectedObject.permissions.AllowUpdateVersions) {
+       if (this.props.documentsReducer.selectedObject.permissions.AllowUpdateVersions && document.ExternalLinkType != 'DROPBOX') {
             return (<TouchableHighlight onPress={this.updateVersions.bind(this)} underlayColor="#E9EAEC">
                 <View style={styles.actionHolder}>
                     <Icon name="update" style={styles.icon} />
