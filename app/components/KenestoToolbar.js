@@ -315,7 +315,6 @@ class KenestoToolbar extends Component {
     const sortDirection = documentlist.sortDirection != undefined ? documentlist.sortDirection : "";
     var title = navReducer.routes[navReducer.index].data != null ? navReducer.routes[navReducer.index].data.name : navReducer.routes[navReducer.index].title;
     var showGoBack = navReducer.routes[navReducer.index].data.fId != "" ? true : false;
-    var animatedHamburger = <View style={{ flexDirection: 'row' }}><Animatable.View ref="arrowBack" style={{ opacity: 0, position: 'absolute' }}><Icon name="arrow-back" style={styles.iconStyle} /></Animatable.View><Animatable.View ref="hamburgerMenu"><Icon name="menu" style={[styles.iconStyle,{color: "orange" }]} onPress={this.props.onIconClicked} /></Animatable.View></View>
     return (
       <View style= {[styles.toolbar,{marginTop: (Platform.OS === 'ios')? 15 : 0}]}>
 
