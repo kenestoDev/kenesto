@@ -6,7 +6,7 @@ const {
   AppRegistry
 } = React
 
-AppRegistry.registerComponent('kenesto', () => Root)
+AppRegistry.registerComponent('KenestoToGo', () => Root)
 
 
 
