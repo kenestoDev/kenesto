@@ -1,4 +1,4 @@
-package com.kenesto;
+package com.kenestotogo;
 
 import android.app.Application;
 import android.util.Log;
