@@ -50,7 +50,6 @@ class Document extends React.Component{
    webView = null;
 
   componentWillMount(){
-
     this.gestureResponder = createResponder({
       onStartShouldSetResponder: (evt, gestureState) => true,
       onStartShouldSetResponderCapture: (evt, gestureState) => true,
@@ -147,17 +146,6 @@ class Document extends React.Component{
       
   }
 
-  componentDidMount(){
-     var clearId = setTimeout(() =>{  if (this.state.isLoading) this.setState({isLoading: false});}, 9000); 
-      this.setState({clearId : clearId})
-    
-  }
-  componentWillUnmount(){
-    if (!this.state.toolbarVisible)
-        this.showToolBar();
-     if (this.state.clearId != null)
-        clearTimeout(this.state.clearId);
-  }
 
    showToolBar(){
     this.context.toolBar.fadeInDown();
@@ -218,16 +206,18 @@ hideLoading(){
   }
 
 
+ 
   componentDidMount(){
      var clearId = setTimeout(() =>{  if (this.state.isLoading) this.setState({isLoading: false});}, 9000); 
       this.setState({clearId : clearId})
     
   }
   componentWillUnmount(){
+    if (!this.state.toolbarVisible)
+        this.showToolBar();
      if (this.state.clearId != null)
         clearTimeout(this.state.clearId);
   }
-
  
 //  $("#viewport").attr("content", "width=240");
   //  var x = document.getElementsByTagName('meta');
