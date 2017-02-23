@@ -127,6 +127,7 @@ const styles = StyleSheet.create({
 
  export default class Login  extends React.Component { 
      constructor(props) {
+         //var initialEnv = 'dev'; 
          var initialEnv = __DEV__ ? 'dev' : 'production'
          super(props)
          this.state = {
@@ -215,7 +216,7 @@ const styles = StyleSheet.create({
 
 
     renderEnvPicker(){
-        if (!__DEV__)
+        if (this.state.selectedEnv != 'dev')
             return null; 
             
             return(
