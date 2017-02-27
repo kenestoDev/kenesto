@@ -9,6 +9,64 @@ import {getSelectedDocument} from '../utils/documentsUtils'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import * as constans from '../constants/GlobalConstans'
+import Tcomb from "tcomb-form-native";
+import _ from 'lodash';
+
+var Form = Tcomb.form.Form;
+
+var checkLength = Tcomb.refinement(Tcomb.String, function (s) {
+        return s.length > 200 ? false : true;
+});
+
+checkLength.getValidationErrorMessage = function (value, path, context) {
+    return 'Name field is limited to 200 chars';
+};
+
+
+let formStylesheet = _.cloneDeep(Form.stylesheet);
+formStylesheet.textbox.normal = {
+      color: "#000000",
+      fontSize: 17,
+      height: 40,
+      padding: 7,
+      marginBottom: 5,
+      borderWidth: 0     
+}
+formStylesheet.textbox.error = {
+      color: "#000000",
+      fontSize: 17,
+      height: 40,
+      padding: 7,
+      marginBottom: 5,
+      borderWidth: 0     
+}
+formStylesheet.formGroup= {
+    normal: {
+      marginTop: -15
+    },
+    error: {
+      marginTop: -15, 
+    }
+}
+
+var inputDocument = Tcomb.struct({      
+  documentName: checkLength
+});
+
+var options = {
+    stylesheet: formStylesheet,
+    fields: {
+        documentName: {
+            label: ' ',
+            autoFocus: true,
+            underlineColorAndroid: "#ccc",
+            selectionColor: "orange",
+        }
+    }
+};
+
+
+
 var styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -77,6 +135,9 @@ var styles = StyleSheet.create({
         fontSize: 16,
         marginRight: 40
     },
+    form: {
+        alignSelf: 'stretch'
+    }
     // modal: {
     //     justifyContent: 'center',
     //     alignItems: 'center'
@@ -91,26 +152,43 @@ class EditDocument extends React.Component {
     constructor(props){
         super (props);
         var document = getSelectedDocument(this.props.documentsReducer, this.props.navReducer); 
+      
         this.state = {
-            documentName: document.Name,
+            value:{
+                 documentName: document.Name
+            },
             documentId:document.Id
         };
+    }
+
+
+     onChange(value) {
+            this.setState({value});
     }
 
  
 
     _edit() {
-        if (this.state.documentName != false) {
+        var value = this.refs.form.getValue();
+        if (value == null) { // if validation fails, value will be null
+            return false; // value here is an instance of Person
+        }
+
+        var {documentName} = this.state.value;
+        if (documentName != false) {
            
-            this.props.dispatch(documentsActions.EditDocument(this.state.documentId ,this.state.documentName));
+            this.props.dispatch(documentsActions.EditDocument(this.state.documentId ,documentName));
             this.props.closeModal();
         }
     }
 
    componentWillReceiveProps(nextprops){
         var document = getSelectedDocument(nextprops.documentsReducer, nextprops.navReducer); 
+
          this.state = {
-            documentName: document.Name,
+            value:{
+                 documentName: document.Name
+            },
             documentId:document.Id
         };
   }
@@ -124,18 +202,17 @@ class EditDocument extends React.Component {
                 <View style={styles.titleContainer}>
                     <Text style={styles.title}>Edit Document</Text>
                 </View>
-                <View style={styles.nameContainer}>
-                    <TextInput
-                        ref="documentName"
-                        value={this.state.documentName}
-                        onChangeText={documentName => this.setState({ documentName }) }
-                        style={styles.textEdit}
-                        placeholder="Document Name"
-                        placeholderTextColor={"#ccc"}
-                        selectionColor={"orange"}
-                        underlineColorAndroid={"#ccc"}
-                        />
+              
+                  <View style={styles.form}>
+                    <Form
+                        ref="form"
+                        type={inputDocument}
+                        value={this.state.value}
+                        onChange={this.onChange.bind(this)}
+                        options={options}
+                    />
                 </View>
+
                 <View style={styles.buttonsContainer}>
                     <Button onPress={this._edit.bind(this) } containerStyle={styles.singleBtnContainer} style={styles.button}>Edit</Button>
                    <Button onPress={this.props.closeModal.bind(this) } containerStyle={styles.singleBtnContainer} style={styles.button}>Cancel</Button>
