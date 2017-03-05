@@ -1,5 +1,5 @@
 import * as types from '../constants/ActionTypes';
-import {getAuthUrl, getLoginUrl, getForgotPasswordUrl, clearCredentials, setCredentials, getRetrieveStatisticsUrl} from '../utils/accessUtils';
+import {getAuthUrl, getLoginUrl, getForgotPasswordUrl, clearCredentials, setCredentials, getRetrieveStatisticsUrl,UpdateFcmTokenUrl} from '../utils/accessUtils';
 import { push, pop, emitInfo, emitError, emitToast, navigateReset} from './navActions'
 import * as textResource from '../constants/TextResource'
 import * as routes from '../constants/routes'
@@ -15,6 +15,25 @@ export function updateIsFetching(isFetching: boolean){
         isFetching
     }
 }
+
+export function updateFCMTokenInApp(token: string){
+    return {
+        type: types.UPDATE_FCM_TOKEN, 
+        token
+    }
+}
+
+export function updateFCMToken(env: string, token: string){
+    return (dispatch, getState) => {
+        var url = UpdateFcmTokenUrl(env,token); 
+        fetch(url);
+        return  updateFCMTokenInApp(token)    
+    }
+
+
+}
+
+
 
 export function setEnv(env: string){
     return {

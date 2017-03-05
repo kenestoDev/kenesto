@@ -216,8 +216,8 @@ const styles = StyleSheet.create({
 
 
     renderEnvPicker(){
-        if (this.state.selectedEnv != 'dev')
-            return null; 
+     //   if (this.state.selectedEnv != 'dev')
+     //       return null; 
             
             return(
                  <Picker

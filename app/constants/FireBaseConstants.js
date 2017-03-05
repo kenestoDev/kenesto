@@ -1,0 +1,3 @@
+export const WEB_KEY = 'AIzaSyDbWDF3AIywzuXZwJJ_6z9OtVdZj-Bmrgw' 
+export const LEGACY_SERVER_KEY = 'AIzaSyC4zCACBrRZPwcDNjpkyfGEpReaGstkRvg'
+export const SERVER_KEY = 'AAAAe94uSkU:APA91bFyU3AgtFI75JMyZsPISWZ-OlVBVnyuI7bZGA0aZSdNqhaKLPzKwBgYu2s_q8HUAnd2blhPKemPnc-pY0Pk_z1m_PLGix3NEpxdu9m6X1GNsmuvoM3pfBfAQvKa0tycpv9Wz8T5'

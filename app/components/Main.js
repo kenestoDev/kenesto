@@ -6,6 +6,7 @@ import {
   StyleSheet,
   ToolbarAndroid,
   TouchableWithoutFeedback,
+  TouchableOpacity,
   AppState,
   Animated,
   DeviceEventEmitter,
@@ -27,6 +28,8 @@ import {connect} from 'react-redux'
 import KenestoToolbar from './KenestoToolbar'
 import * as documentsActions from '../actions/documentsActions'
 import * as uiActions from '../actions/uiActions'
+import * as accessActions from '../actions/Access'
+
 import {pop, updateRouteData, clearToast,updatedOrientation} from '../actions/navActions'
 import * as constans from '../constants/GlobalConstans'
 import {getDocumentsContext} from '../utils/documentsUtils'
@@ -39,6 +42,8 @@ import { writeToLog } from '../utils/ObjectUtils'
 import * as Animatable from 'react-native-animatable';
 import {config} from '../utils/app.config'
 import NetInfoManager from './NetInfoManager'
+import PushController from './PushController';
+import  stricturiEncode  from 'strict-uri-encode';
    // var AssetsPicker = NativeModules.AssetsPicker; 
 //import PubNub from 'pubnub'
 //import PushController from './PushController';
@@ -187,7 +192,8 @@ class Main extends React.Component {
           
           modalShown: false,
           toastColor: '#333',
-          toastMessage: ''          
+          toastMessage: '', 
+          token: '',         
         };
          this.onActionSelected = this.onActionSelected.bind(this);
          this.onPressPopupMenu = this.onPressPopupMenu.bind(this);
@@ -621,6 +627,10 @@ this.callToast2(nextprops.navReducer.GlobalToastMessage, nextprops.navReducer.Gl
       <MessageBarAlert ref="alert" />
       <DropDownOptions ref={"dropDownOptionsContainer"} />
       <NetInfoManager dispatch={this.props.dispatch} />
+
+       <PushController
+          onChangeToken={token =>  this.props.dispatch(accessActions.updateFCMToken(this.props.env,token || ""))}
+        />
       </View>
     )
   }

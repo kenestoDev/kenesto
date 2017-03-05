@@ -65,6 +65,18 @@ export function getRetrieveStatisticsUrl(env: string, sessionToken: string, tena
   return `${apiBaseUrl}/KDocuments.svc/RetrieveStatistics?t=${sessionToken}&tid=${tenantId}`
 }
 
+
+export function UpdateFcmTokenUrl(env: string, token : string){
+    var urls = _.find(config.urls, {'env' : env});
+     var apiBaseUrl = urls.ApiBaseUrl;
+    if (urls == null)
+        return null;
+
+   return `${apiBaseUrl}/Access.svc/UpdateFcmToken?t=${token}`
+
+}
+
+
 export async function clearCredentials() : bool
 {
      await AsyncStorage.multiRemove(["kenestoU","kenestoP", "env"]); 

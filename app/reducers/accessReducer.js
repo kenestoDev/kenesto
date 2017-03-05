@@ -4,6 +4,7 @@ function accessReducer(state =
   {
     isLoggedIn: false,
     token: "",
+    fcmToken:"",
     env: 'dev',
     tenantId:"",
     isFetching: false,
@@ -29,6 +30,11 @@ function accessReducer(state =
           ...state,
         isFetching: action.isFetching
       }
+    case types.UPDATE_FCM_TOKEN:
+          return {
+              ...state,
+            fcmToken: action.token
+          }
     case types.SUBMIT_ERROR:
       return {
           ...state,
