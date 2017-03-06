@@ -71,7 +71,7 @@ class PlusMenu extends React.Component{
     const fileName = this.state.file.path.substring(this.state.file.path.lastIndexOf('/') + 1); 
     //const name = fileName.substring(0,  fileName.lastIndexOf('.'));
     this.props.dispatch(uploadToKenesto({name: this.state.file.name, uri : this.state.file.path, type: this.state.file.type, size: this.state.file.size, fileExtension: this.state.file.extension}, url, false));
-     this.props.closeMenuModal("modalPlusMenu");
+    this.props.closeMenuModal("modalPlusMenu");
     
   }
 
@@ -87,10 +87,6 @@ class PlusMenu extends React.Component{
         const fileExtension =  image.path.substring(image.path.lastIndexOf("."));
 
         const fileName = "scanned_" + date.getTime() + '.' + fileExtension;
-
-       
-        
-
           this.setState({
                 file: { name: fileName, path: image.path, type: image.mime, size: this.bytesToSize(image.size), extension: fileExtension},
             });
@@ -101,25 +97,49 @@ class PlusMenu extends React.Component{
 
     
   }
-
   
+//     selectFromLib(cropping : boolean){
 
-  
-    selectFromLib(cropping : boolean){
+//           AssetsPicker.PickAsset(null).then(mediaInfo =>{
+//                 const fileExtension =  mediaInfo.mediaName.substring(mediaInfo.mediaName.lastIndexOf("."));
+//                 var mediaPath = mediaInfo.mediaPath;
+//                 this.setState({
+//                     file: { name: mediaInfo.mediaName, path: mediaPath, type: mediaInfo.mediaMimeType, size: this.bytesToSize(mediaInfo.mediaSize), extension: fileExtension},
+//                 });
 
-          AssetsPicker.PickAsset(null).then(mediaInfo =>{
-                const fileExtension =  mediaInfo.mediaName.substring(mediaInfo.mediaName.lastIndexOf("."));
-                var mediaPath = mediaInfo.mediaPath;
-                this.setState({
-                    file: { name: mediaInfo.mediaName, path: mediaPath, type: mediaInfo.mediaMimeType, size: this.bytesToSize(mediaInfo.mediaSize), extension: fileExtension},
-                });
-
-                this.upload();
-          });
+//                 this.upload();
+//           });
               
+//   }
+
+selectFromLib(cropping : boolean){
+
+            ImagePicker.openPicker({
+            width: 400,
+            height: 400,
+            cropping : false,
+            includeBase64: false
+            }).then(file => {
+
+             const fileName = file.path.substring(file.path.lastIndexOf("/") + 1);
+
+             const fileExtension =  file.path.substring(file.path.lastIndexOf("."));
+
+            this.setState({
+                file: { name: fileName, path: file.path, type: file.mime, size: this.bytesToSize(file.size), extension: fileExtension},
+            });
+
+             this.upload();
+
+            }).catch(e => {
+                if (e != 'Error: User cancelled image selection')
+                {
+                    this.props.dispatch(navActions.emitToast(constans.ERROR, "File selection failed"))
+                }
+                            
+            }
         
-
-
+            );
 
   }
 
