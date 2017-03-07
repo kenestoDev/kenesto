@@ -12,6 +12,8 @@ target 'kenesto' do
      pod 'React', path: '../node_modules/react-native', subspecs: ['ART',]
      pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
      pod 'FPPicker', '~> 5.1.6'
+     pod 'Firebase/Core'
+     pod 'Firebase/Messaging'
   # Pods for kenesto
 
  # target 'kenestoTests' do
