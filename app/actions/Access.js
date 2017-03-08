@@ -267,7 +267,6 @@ export function login(userId : string, password: string, env: string = 'dev')  {
                                 return  dispatch(emitError('Failed to Login'));
                             setCredentials(userId, password, env);
                             var sessionToken =  typeof (responseData.LoginJsonResult) != 'undefined'? responseData.LoginJsonResult.Token : "";
-                            alert(JSON.stringify(responseData.LoginJsonResult))
                             dispatch(updateLoginInfo(true, 
                                                     encodeURIComponent(sessionToken), 
                                                     env, responseData.LoginJsonResult.User.EmailAddress,
