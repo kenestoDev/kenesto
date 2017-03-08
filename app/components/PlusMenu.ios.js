@@ -14,12 +14,11 @@ import * as navActions from '../actions/navActions'
 import {getFileUploadUrl, getDocumentsContext} from '../utils/documentsUtils'
 import {uploadToKenesto} from '../actions/documentsActions'
 //var ImagePicker = NativeModules.ImageCropPicker;
-var DocumentPicker = NativeModules.RNDocumentPicker;
+var DocumentPicker = NativeModules.RNKenestoAssetPicker;
 import ImagePicker from 'react-native-image-crop-picker'
 const KenestoIcon = createIconSetFromFontello(fontelloConfig);
 import * as constans from '../constants/GlobalConstans'
-var AssetsPicker = NativeModules.AssetsPicker; 
-
+//var AssetsPicker = NativeModules.AssetsPicker; 
 
 let styles = StyleSheet.create({
     container: {
@@ -65,13 +64,13 @@ class PlusMenu extends React.Component{
         };
 
     
-  upload(){
-      
-     const url = getFileUploadUrl(this.props.env, this.props.sessionToken, this.state.file.name, "", "",  this.state.documentsContext.fId);
-    const fileName = this.state.file.path.substring(this.state.file.path.lastIndexOf('/') + 1); 
+  upload(file: object){
+     // this.props.closeMenuModal("modalPlusMenu");
+     const url = getFileUploadUrl(this.props.env, this.props.sessionToken, file.name, "", "",  this.state.documentsContext.fId);
+    const fileName = file.path.substring(file.path.lastIndexOf('/') + 1); 
     //const name = fileName.substring(0,  fileName.lastIndexOf('.'));
-    this.props.dispatch(uploadToKenesto({name: this.state.file.name, uri : this.state.file.path, type: this.state.file.type, size: this.state.file.size, fileExtension: this.state.file.extension}, url, false));
-    this.props.closeMenuModal("modalPlusMenu");
+    this.props.dispatch(uploadToKenesto({name: file.name, uri : file.path, type: file.type, size: file.size, fileExtension: file.extension}, url, false));
+    
     
   }
 
@@ -98,11 +97,12 @@ class PlusMenu extends React.Component{
     
   }
   
-//     selectFromLib(cropping : boolean){
+//     selectFromLib3(cropping : boolean){
 
 //           AssetsPicker.PickAsset(null).then(mediaInfo =>{
 //                 const fileExtension =  mediaInfo.mediaName.substring(mediaInfo.mediaName.lastIndexOf("."));
 //                 var mediaPath = mediaInfo.mediaPath;
+                
 //                 this.setState({
 //                     file: { name: mediaInfo.mediaName, path: mediaPath, type: mediaInfo.mediaMimeType, size: this.bytesToSize(mediaInfo.mediaSize), extension: fileExtension},
 //                 });
@@ -113,6 +113,21 @@ class PlusMenu extends React.Component{
 //   }
 
 selectFromLib(cropping : boolean){
+     this.props.closeMenuModal("modalPlusMenu");
+   DocumentPicker.show({
+      filetype: ['public.content'],
+    },(error,mediaInfo) => {
+      const fileExtension =  mediaInfo.mediaName.substring(mediaInfo.mediaName.lastIndexOf("."));
+                var mediaPath = mediaInfo.mediaPath;
+                // this.setState({
+                //     file: { name: mediaInfo.mediaName, path: mediaPath, type: mediaInfo.mediaMimeType, size: this.bytesToSize(mediaInfo.mediaSize), extension: fileExtension},
+                // });
+
+                this.upload({ name: mediaInfo.mediaName, path: mediaPath, type: mediaInfo.mediaMimeType, size: this.bytesToSize(mediaInfo.mediaSize), extension: fileExtension});
+    });
+}
+
+selectFromLib2(cropping : boolean){
 
             ImagePicker.openPicker({
             width: 400,

@@ -269,7 +269,7 @@ export function login(userId : string, password: string, env: string = 'dev')  {
                             var sessionToken =  typeof (responseData.LoginJsonResult) != 'undefined'? responseData.LoginJsonResult.Token : "";
                             alert(JSON.stringify(responseData.LoginJsonResult))
                             dispatch(updateLoginInfo(true, 
-                                                    stricturiEncode(sessionToken), 
+                                                    encodeURIComponent(sessionToken), 
                                                     env, responseData.LoginJsonResult.User.EmailAddress,
                                                     responseData.LoginJsonResult.User.FirstName,
                                                     responseData.LoginJsonResult.User.LastName,

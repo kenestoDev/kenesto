@@ -860,9 +860,9 @@ function uploadDocumentObject(fileObject: object, uploadId: string) {
                                 .then(json => {
                                     // alert(JSON.stringify(json.UserData));
                                     var userData = parseUploadUserData(json.UserData);
-                                    var finalUploadId = userData.uploadId;
+                                    var finalUploadId = decodeURIComponent(userData.uploadId);
                                     var finalCatId = userData.catId;
-                                    //alert(finalUploadId)
+                                    
                                     dispatch(removeUploadDocument(finalUploadId, finalCatId, documentId));
                                     if (json.ResponseStatus == 'OK') {
 

@@ -16,7 +16,8 @@ export default class PushController extends Component {
 
     FCM.getFCMToken().then(token => {
       console.log("TOKEN (getFCMToken)", token);
-      this.props.onChangeToken(token);
+      if (token != '')
+        this.props.onChangeToken(token);
     });
 
     FCM.getInitialNotification().then(notif => {

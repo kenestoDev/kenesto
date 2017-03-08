@@ -10,7 +10,7 @@
 #import "FPPicker.h"
 @implementation AssetsPicker
 
-
+// [FPConfig sharedInstance].APIKey = @"AorGVhgMQSelRYTO0eFcAz";
 - (void)fpPickerControllerDidCancel:(FPPickerController *)pickerController
 {
   NSLog(@"FP Cancelled Open");

@@ -31,7 +31,8 @@
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		7C74553D7D5A47EF9BDED52C /* libRNDeviceInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3AE257F1D384B9CB15FE38A /* libRNDeviceInfo.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		868396AC1E535CFA003906DD /* AssetsPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 868396AB1E535CFA003906DD /* AssetsPicker.m */; };
+		864483F01E705C7700717E81 /* RNKenestoAssetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 864483EF1E705C7700717E81 /* RNKenestoAssetPicker.m */; };
+		8699F68C1E6E892B0014119B /* libRNDocumentPicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 868396A91E535CE8003906DD /* libRNDocumentPicker.a */; };
 		86A3F6F11E6DA8A700D46444 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86A3F6F01E6DA8A700D46444 /* GoogleService-Info.plist */; };
 		86C69B941E3E3CAF00DED795 /* customiconsfontello.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86C69B931E3E3CAF00DED795 /* customiconsfontello.ttf */; };
 		86C69BB01E3F97E000DED795 /* fontello.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86C69BAF1E3F97E000DED795 /* fontello.ttf */; };
@@ -235,13 +236,6 @@
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RCTOrientation;
 		};
-		863E0A711E4316A10045FFF0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 863E0A5B1E4316A10045FFF0 /* React-Native-Webview-Bridge.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4114DC4C1C187C3A003CD988;
-			remoteInfo = "React-Native-Webview-Bridge";
-		};
 		864224A51E4A0E6F000F6DEE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 045576F03D664868B1EED6A6 /* ImageCropPicker.xcodeproj */;
@@ -328,10 +322,9 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		8464CD16EE344B308BD0A133 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		861C5F291E3E1DB200725FDB /* RCTOrientation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTOrientation.xcodeproj; path = "../node_modules/react-native-orientation/iOS/RCTOrientation.xcodeproj"; sourceTree = "<group>"; };
-		863E0A5B1E4316A10045FFF0 /* React-Native-Webview-Bridge.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "React-Native-Webview-Bridge.xcodeproj"; path = "../node_modules/react-native-webview-bridge/ios/React-Native-Webview-Bridge.xcodeproj"; sourceTree = "<group>"; };
+		864483EE1E705C7700717E81 /* RNKenestoAssetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNKenestoAssetPicker.h; path = kenesto/RNKenestoAssetPicker.h; sourceTree = "<group>"; };
+		864483EF1E705C7700717E81 /* RNKenestoAssetPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNKenestoAssetPicker.m; path = kenesto/RNKenestoAssetPicker.m; sourceTree = "<group>"; };
 		8683965B1E534C83003906DD /* kenesto.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = kenesto.entitlements; path = kenesto/kenesto.entitlements; sourceTree = "<group>"; };
-		868396AA1E535CFA003906DD /* AssetsPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssetsPicker.h; path = kenesto/AssetsPicker.h; sourceTree = "<group>"; };
-		868396AB1E535CFA003906DD /* AssetsPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssetsPicker.m; path = kenesto/AssetsPicker.m; sourceTree = "<group>"; };
 		86A3F6F01E6DA8A700D46444 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "kenesto/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		86C69B931E3E3CAF00DED795 /* customiconsfontello.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = customiconsfontello.ttf; path = fonts/customiconsfontello.ttf; sourceTree = "<group>"; };
 		86C69BAF1E3F97E000DED795 /* fontello.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = fontello.ttf; path = fonts/fontello.ttf; sourceTree = "<group>"; };
@@ -367,6 +360,7 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+				8699F68C1E6E892B0014119B /* libRNDocumentPicker.a in Frameworks */,
 				4D489B434E4B439E6510C96F /* libPods-kenesto.a in Frameworks */,
 				9DA993CFC26F4AF8BDE19763 /* libimageCropPicker.a in Frameworks */,
 				7C74553D7D5A47EF9BDED52C /* libRNDeviceInfo.a in Frameworks */,
@@ -458,9 +452,9 @@
 		13B07FAE1A68108700A75B9A /* kenesto */ = {
 			isa = PBXGroup;
 			children = (
+				864483EE1E705C7700717E81 /* RNKenestoAssetPicker.h */,
+				864483EF1E705C7700717E81 /* RNKenestoAssetPicker.m */,
 				86A3F6F01E6DA8A700D46444 /* GoogleService-Info.plist */,
-				868396AA1E535CFA003906DD /* AssetsPicker.h */,
-				868396AB1E535CFA003906DD /* AssetsPicker.m */,
 				8683965B1E534C83003906DD /* kenesto.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -535,7 +529,6 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				863E0A5B1E4316A10045FFF0 /* React-Native-Webview-Bridge.xcodeproj */,
 				861C5F291E3E1DB200725FDB /* RCTOrientation.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
@@ -597,14 +590,6 @@
 			isa = PBXGroup;
 			children = (
 				861C5F381E3E1DB300725FDB /* libRCTOrientation.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		863E0A5C1E4316A10045FFF0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				863E0A721E4316A10045FFF0 /* libReact-Native-Webview-Bridge.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -800,10 +785,6 @@
 				{
 					ProductGroup = 139FDEE71B06529A00C62182 /* Products */;
 					ProjectRef = 139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */;
-				},
-				{
-					ProductGroup = 863E0A5C1E4316A10045FFF0 /* Products */;
-					ProjectRef = 863E0A5B1E4316A10045FFF0 /* React-Native-Webview-Bridge.xcodeproj */;
 				},
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
@@ -1021,13 +1002,6 @@
 			remoteRef = 861C5F371E3E1DB300725FDB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		863E0A721E4316A10045FFF0 /* libReact-Native-Webview-Bridge.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libReact-Native-Webview-Bridge.a";
-			remoteRef = 863E0A711E4316A10045FFF0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		864224A61E4A0E6F000F6DEE /* libimageCropPicker.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1180,8 +1154,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				864483F01E705C7700717E81 /* RNKenestoAssetPicker.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				868396AC1E535CFA003906DD /* AssetsPicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

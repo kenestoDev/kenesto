@@ -11,7 +11,6 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-#import "FPPicker.h"
 #import "Firebase.h"
 #import "RNFIRMessaging.h"
 
@@ -34,7 +33,6 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
-  [FPConfig sharedInstance].APIKey = @"AorGVhgMQSelRYTO0eFcAz";
   [FIRApp configure];
   [[UNUserNotificationCenter currentNotificationCenter] setDelegate:self];
   return YES;
