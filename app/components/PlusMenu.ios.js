@@ -75,7 +75,7 @@ class PlusMenu extends React.Component{
   }
 
     takePhoto(cropping : boolean){
-
+        this.props.closeMenuModal("modalPlusMenu");
         ImagePicker.openCamera({
         cropping: cropping,
         width: 400,
@@ -86,11 +86,11 @@ class PlusMenu extends React.Component{
         const fileExtension =  image.path.substring(image.path.lastIndexOf("."));
 
         const fileName = "scanned_" + date.getTime() + '.' + fileExtension;
-          this.setState({
-                file: { name: fileName, path: image.path, type: image.mime, size: this.bytesToSize(image.size), extension: fileExtension},
-            });
+        //   this.setState({
+        //         file: { name: fileName, path: image.path, type: image.mime, size: this.bytesToSize(image.size), extension: fileExtension},
+        //     });
 
-       this.upload();
+       this.upload({ name: fileName, path: image.path, type: image.mime, size: this.bytesToSize(image.size), extension: fileExtension});
    
         }).catch(e => console.log(JSON.stringify(e)));
 
@@ -112,8 +112,8 @@ class PlusMenu extends React.Component{
               
 //   }
 
-selectFromLib(cropping : boolean){
-     this.props.closeMenuModal("modalPlusMenu");
+selectDocument(cropping : boolean){
+   this.props.closeMenuModal("modalPlusMenu");
    DocumentPicker.show({
       filetype: ['public.content'],
     },(error,mediaInfo) => {
@@ -127,8 +127,8 @@ selectFromLib(cropping : boolean){
     });
 }
 
-selectFromLib2(cropping : boolean){
-
+selectFromLib(cropping : boolean){
+            this.props.closeMenuModal("modalPlusMenu");
             ImagePicker.openPicker({
             width: 400,
             height: 400,
@@ -140,11 +140,11 @@ selectFromLib2(cropping : boolean){
 
              const fileExtension =  file.path.substring(file.path.lastIndexOf("."));
 
-            this.setState({
-                file: { name: fileName, path: file.path, type: file.mime, size: this.bytesToSize(file.size), extension: fileExtension},
-            });
+            // this.setState({
+            //     file: { name: fileName, path: file.path, type: file.mime, size: this.bytesToSize(file.size), extension: fileExtension},
+            // });
 
-             this.upload();
+             this.upload({ name: fileName, path: file.path, type: file.mime, size: this.bytesToSize(file.size), extension: fileExtension});
 
             }).catch(e => {
                 if (e != 'Error: User cancelled image selection')
@@ -177,10 +177,13 @@ selectFromLib2(cropping : boolean){
                 </View>
                 
                 <View style={styles.actionHolder}>
-                    <Icon name="file-upload" style={styles.actionButtonIcon} onPress={()=> {this.selectFromLib.bind(this)(false)}}/>
+                    <Icon name="file-upload" style={styles.actionButtonIcon} onPress={()=> {this.selectDocument.bind(this)(false)}}/>
                     <Text style={styles.actionName}>Add Document</Text>
                 </View>
-                
+                 <View style={styles.actionHolder}>
+                    <Icon name="add-a-photo" style={styles.actionButtonIcon} onPress={()=> {this.selectFromLib.bind(this)(false)}}/>
+                    <Text style={styles.actionName}>Add Photo</Text>
+                </View>
                 <View style={styles.actionHolder}>
                     <Icon name="photo-camera" style={styles.actionButtonIcon} onPress={()=> {this.takePhoto.bind(this)(true)}} />
                     <Text style={styles.actionName}>Scan</Text>
