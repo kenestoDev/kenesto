@@ -8,7 +8,7 @@ import {clearAllDocumentlists} from '../actions/documentsActions'
 import {getDocumentsTitle} from '../utils/documentsUtils'
 import {writeToLog} from '../utils/ObjectUtils'
 import  stricturiEncode  from 'strict-uri-encode';
-
+import _ from 'lodash'
 export function updateIsFetching(isFetching: boolean){
     return {
         type: types.UPDATE_IS_FETCHING_ACCESS, 
@@ -254,7 +254,12 @@ export function login(userId : string, password: string, env: string = 'dev')  {
                 }
                 else
                 {
-                        var organizationId = responseData.AuthenticateJsonResult.Organizations[0].OrganizationIdentifier; 
+
+
+                        var defaultOrg = _.find(responseData.AuthenticateJsonResult.Organizations, {'IsDefault' : true});
+                    
+                        var organizationId = defaultOrg.OrganizationIdentifier; 
+                      
                         var token = responseData.AuthenticateJsonResult.Token;
                         const loginUrl = getLoginUrl(env, organizationId, token);
                        fetch(loginUrl).then((response) => response.json())
