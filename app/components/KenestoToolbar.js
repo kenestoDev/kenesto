@@ -271,13 +271,22 @@ class KenestoToolbar extends Component {
     const {navReducer} = this.props
     var documentlist = getDocumentsContext(navReducer);
     const sortDirection = documentlist.sortDirection != undefined ? documentlist.sortDirection : "";
-
+     var TouchableElement = TouchableHighlight;
+    if (Platform.OS === 'android') {
+      TouchableElement = TouchableNativeFeedback;
+    }
     return (
       <View style={[styles.searchBoxContainer, {marginTop: (Platform.OS === 'ios')? 15 : 0}]}>
 
         <View>
           <Animatable.View ref="fakeHamburgerMenu" style={{ opacity: 0 }}><Icon name="menu" style={[styles.iconStyle, { color: "orange" }]} /></Animatable.View>
-          <Animatable.View ref="searchArrowBack" style={[{ position: 'absolute', top: 0, left: 0, opacity: 1 }]}><Icon name="arrow-back" onPress={this.hideSearchBox.bind(this) } style={styles.iconStyle} /></Animatable.View>
+          <Animatable.View ref="searchArrowBack" style={[{ position: 'absolute', top: 0, left: 0, opacity: 1 }]}>
+           <TouchableElement onPress={this.hideSearchBox.bind(this) } >
+            <View>
+              <Icon name="arrow-back" style={[styles.iconStyle]} />
+            </View>
+          </TouchableElement>
+          </Animatable.View>
         </View>
 
         <Animatable.View style={styles.textInputContainer} ref="textInput"><TextInput autoFocus={true} style={styles.textInput} onChangeText={(text) => this._submitSearch(text) } value={this.state.searchText}/></Animatable.View>
@@ -311,11 +320,19 @@ class KenestoToolbar extends Component {
   renderDocumentsToolbar() {
     const {navReducer} = this.props
     var documentlist = getDocumentsContext(navReducer);
+     var TouchableElement = TouchableHighlight;
+    if (Platform.OS === 'android') {
+      TouchableElement = TouchableNativeFeedback;
+    }
     // const sortBy = documentlist.sortBy;
     const sortDirection = documentlist.sortDirection != undefined ? documentlist.sortDirection : "";
     var title = navReducer.routes[navReducer.index].data != null ? navReducer.routes[navReducer.index].data.name : navReducer.routes[navReducer.index].title;
     var showGoBack = navReducer.routes[navReducer.index].data.fId != "" ? true : false;
-    var animatedHamburger = showGoBack? <Icon name="arrow-back" style={[styles.iconStyle]} onPress={this.onGoBack.bind(this) } /> 
+    var animatedHamburger = showGoBack?   <TouchableElement onPress={this.onGoBack.bind(this) } >
+            <View>
+              <Icon name="arrow-back" style={[styles.iconStyle]} />
+            </View>
+          </TouchableElement>
                                         : 
                                         <View style={{ flexDirection: 'row' }}>
                                             <Animatable.View ref="arrowBack" style={{ opacity: 0, position: 'absolute' }}>
@@ -389,9 +406,11 @@ class KenestoToolbar extends Component {
        
     return (
       <View style= {[styles.toolbar, {marginTop: (Platform.OS === 'ios')? 15 : 0}]} >
-        <View>
-          <Icon name="arrow-back" style={[styles.iconStyle]} onPress={this.onGoBack.bind(this) } />
-        </View>
+         <TouchableElement onPress={this.onGoBack.bind(this) } >
+            <View>
+              <Icon name="arrow-back" style={[styles.iconStyle]} />
+            </View>
+          </TouchableElement>
         <View style={styles.folderName}>
           <Text style={{ fontSize: 20 }} numberOfLines={1}>{title}</Text>
         </View>
@@ -408,12 +427,17 @@ class KenestoToolbar extends Component {
     const {navReducer} = this.props
     var documentlist = getDocumentsContext(navReducer);
     var title = navReducer.routes[navReducer.index].data != null ? navReducer.routes[navReducer.index].data.name : navReducer.routes[navReducer.index].title;
-
+    var TouchableElement = TouchableHighlight;
+        if (Platform.OS === 'android') {
+          TouchableElement = TouchableNativeFeedback;
+        }
     return (
       <View style= {[styles.toolbar, {marginTop: (Platform.OS === 'ios')? 15 : 0}]} >
-        <View>
-          <Icon name="arrow-back" style={[styles.iconStyle]} onPress={this.onGoBack.bind(this) } />
-        </View>
+         <TouchableElement onPress={this.onGoBack.bind(this) } >
+            <View>
+              <Icon name="arrow-back" style={[styles.iconStyle]} />
+            </View>
+          </TouchableElement>
         <View style={styles.folderName}>
           <Text style={{ fontSize: 20 }} numberOfLines={1}>{title}</Text>
         </View>
