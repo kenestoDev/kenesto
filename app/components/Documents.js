@@ -40,7 +40,7 @@ import ViewContainer from '../components/ViewContainer';
 import KenestoHelper from '../utils/KenestoHelper';
 import ActionButton from 'react-native-action-button';
 import * as routes from '../constants/routes'
-import firebaseClient from  "./FirebaseClient";
+//import firebaseClient from  "./FirebaseClient";
 
 import { getDocumentsContext, getDocumentsTitle } from '../utils/documentsUtils'
 
@@ -384,17 +384,7 @@ class Documents extends Component {
       return (
 
         <ViewContainer ref="masterView" style={[styles.container, additionalStyle]}>
-                <TouchableOpacity onPress={() => firebaseClient.sendNotification(this.props.fcmToken)} style={styles.buttonFCM}>
-          <Text style={styles.buttonTextFCM}>Send Notification</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => firebaseClient.sendData(this.props.fcmToken)} style={styles.buttonFCM}>
-          <Text style={styles.buttonTextFCM}>Send Data</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => firebaseClient.sendNotificationWithData(this.props.fcmToken)} style={styles.buttonFCM}>
-          <Text style={styles.buttonTextFCM}>Send Notification With Data</Text>
-        </TouchableOpacity>
+                
           <View style={styles.separator} elevation={5} />
     
           {this._renderTableContent(isFetching || isFetchingFolder)}

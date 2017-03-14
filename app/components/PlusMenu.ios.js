@@ -32,7 +32,7 @@ let styles = StyleSheet.create({
         fontSize: 45,
     },
     actionHolder: {        
-        width: 90,
+        width: 80,
         height: 90,
         margin: 5,
         alignItems: "center",
@@ -175,7 +175,6 @@ selectFromLib(cropping : boolean){
                     <Icon name="create-new-folder" style={styles.actionButtonIcon} onPress={this.addFolder.bind(this)} />
                     <Text style={styles.actionName}>Add Folder</Text>
                 </View>
-                
                 <View style={styles.actionHolder}>
                     <Icon name="file-upload" style={styles.actionButtonIcon} onPress={()=> {this.selectDocument.bind(this)(false)}}/>
                     <Text style={styles.actionName}>Add Document</Text>
