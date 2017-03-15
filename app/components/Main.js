@@ -627,14 +627,15 @@ this.callToast2(nextprops.navReducer.GlobalToastMessage, nextprops.navReducer.Gl
       <MessageBarAlert ref="alert" />
       <DropDownOptions ref={"dropDownOptionsContainer"} />
       <NetInfoManager dispatch={this.props.dispatch} />
-
+        <PushController
+          onChangeToken={token =>  this.props.dispatch(accessActions.updateFCMToken(this.props.env,token || ""))}
+        />
   
       </View>
     )
   }
 }
 
-//  <PushController dispatch={this.props.dispatch} navReducer={this.props.navReducer} env={this.props.env} height={height} width={width}/>
 
 Main.childContextTypes = {
   plusMenuContext: React.PropTypes.object,

@@ -38,6 +38,7 @@ export default class PushController extends Component {
       }
 
       if (Platform.OS === 'ios') {
+        console.log(notif);
         //optional
         //iOS requires developers to call completionHandler to end notification process. If you do not call it your background remote notifications could be throttled, to read more about it see the above documentation link.
         //This library handles it for you automatically with default behavior (for remote notification, finish with NoData; for WillPresent, finish depend on "show_in_foreground"). However if you want to return different result, follow the following code to override
@@ -65,7 +66,6 @@ export default class PushController extends Component {
 
   showLocalNotification(notif) {
     
-    alert(notif.data)
   //  alert(notif.click_action)
     FCM.presentLocalNotification({
       title: 'kuku', // notif.title,
