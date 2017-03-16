@@ -436,8 +436,8 @@ function fetchDocumentsTable(url: string, documentlist: Object, actionType: stri
                 }
             })
             .catch((error) => {
-              //  dispatch(navActions.emitError("Failed to retrieve documents", ""))
-              //  writeToLog(email, constans.ERROR, `function fetchDocumentsTable - Failed to retrieve documents - url: ${url}`, error)
+                dispatch(navActions.emitError("Failed to retrieve documents", ""))
+                writeToLog(email, constans.ERROR, `function fetchDocumentsTable - Failed to retrieve documents - url: ${url}`, error)
             })
     }
 }
