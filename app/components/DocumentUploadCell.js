@@ -89,7 +89,7 @@ var DocumentUploadCell = React.createClass({
             TouchableElement = TouchableNativeFeedback;
           }
           else{
-            progressBar = <View style={styles.progressBarContainer}><Progress.Bar progress={his.props.document.uploadProgress} width={75} height={4} borderRadius={0} borderWidth={0} unfilledColor={"#ccc"} /></View>
+          //  progressBar = <View style={styles.progressBarContainer}><Progress.Bar progress={this.props.document.uploadProgress} width={75} height={4} borderRadius={0} borderWidth={0} unfilledColor={"#ccc"} /></View>
           }
           
          

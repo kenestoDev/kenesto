@@ -742,7 +742,7 @@ function uploadFile(data, file) {
             console.log('upload progress = ' + e.loaded + "/" + e.total);
             if (e.total > 0){
                   var progress = Math.round( e.loaded/e.total)
-                  this.updateUploadProgress(file.uploadId, progress);
+                  //this.updateUploadProgress(file.uploadId, progress);
             }
           
             writeToLog("", constans.DEBUG, `function uploadFile - upload progress = : ${e.loaded} /${e.total}`)
