@@ -77,17 +77,19 @@ var DocumentUploadCell = React.createClass({
           var uploadingInProgress = true;//                                  *
           var documentSize = Math.floor(Math.random()*100)//                 *
           var progress = Math.random();//                                    *
+        
           var uploaded = Math.floor(documentSize * progress);//              *
           // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-          //var realProgressBar = <View style={styles.progressBarContainer}><Progress.Bar progress={progress} width={75} height={4} borderRadius={0} borderWidth={0} unfilledColor={"#ccc"} /></View>
-          var dummyProgressBar = <View style={styles.progressBarContainer}><Progress.Bar indeterminate={true}  width={75} height={4} borderRadius={0} borderWidth={0} unfilledColor={"#e8e8e8"} color={"#3490EF"} /></View>
-          // var dummyProgressBar = <View style={styles.progressBarContainer}><Progress.Circle size={20} indeterminate={true} /></View> // circle; crashes the app
-          // var dummyProgressBar = <View style={styles.progressBarContainer}><Progress.CircleSnail size={20} colors={['red', 'green', 'blue']}  /></View> // circleSnail; crashes the app
           
+          
+          var progressBar = <View style={styles.progressBarContainer}><Progress.Bar indeterminate={true}  width={75} height={4} borderRadius={0} borderWidth={0} unfilledColor={"#e8e8e8"} color={"#3490EF"} /></View>
 
           var TouchableElement = TouchableHighlight;
           if (Platform.OS === 'android') {
             TouchableElement = TouchableNativeFeedback;
+          }
+          else{
+            progressBar = <View style={styles.progressBarContainer}><Progress.Bar progress={his.props.document.uploadProgress} width={75} height={4} borderRadius={0} borderWidth={0} unfilledColor={"#ccc"} /></View>
           }
           
          
@@ -126,7 +128,7 @@ var DocumentUploadCell = React.createClass({
                     Upload paused
                   </Text>
                 }
-                 {this.props.document.uploadStatus == -1 ? dummyProgressBar: null}
+                 {this.props.document.uploadStatus == -1 ? progressBar: null}
               </View>
             </View>
             {this.renderActions(TouchableElement, this.props.document.uploadStatus == -1)}            

@@ -740,6 +740,11 @@ function uploadFile(data, file) {
 
         data.xhr.upload.addEventListener('progress', function(e) {
             console.log('upload progress = ' + e.loaded + "/" + e.total);
+            if (e.total > 0){
+                  var progress = Math.round( e.loaded/e.total)
+                  this.updateUploadProgress(file.uploadId, progress);
+            }
+          
             writeToLog("", constans.DEBUG, `function uploadFile - upload progress = : ${e.loaded} /${e.total}`)
         }, false);
 
@@ -934,6 +939,26 @@ export function resumeUploadToKenesto(uploadId: string) {
     }
 }
 
+
+export function updateUploadProgress(uploadId: string, uploadProgress : number){
+   
+      return (dispatch, getState) => {
+        try {
+            const {email} = getState().accessReducer;
+            var documentlist = getDocumentsContext(getState().navReducer);
+            let existingObj = _.find(getState().documentsReducer[documentlist.catId].uploadItems, { 'Id': uploadId });
+            existingObj.uploadProgress = uploadProgress;
+            dispatch(updateUploadItems(existingObj.Id, existingObj.catId, -1));
+            dispatch(uploadDocumentObject(existingObj.fileObject, existingObj.Id));
+        }
+        catch (err) {
+            writeToLog(email, constans.ERROR, `function resumeUploadToKenesto - Failed! existingObj ${JSON.stringify(existingObj)}`, err)
+        }
+    }
+}
+
+
+
 export function uploadToKenesto(fileObject: object, url: string) {
     return (dispatch, getState) => {
         try {
@@ -946,7 +971,7 @@ export function uploadToKenesto(fileObject: object, url: string) {
             const totalFolders = getState().documentsReducer[documentlist.catId].totalFolders;
             var xhr = new XMLHttpRequest();
             xhr.status = -1;
-            var newUploadItems = [...getState().documentsReducer[documentlist.catId].uploadItems, { Id: uploadId, catId: documentlist.catId, FamilyCode: 'UPLOAD_PROGRESS', Name: fileObject.name, Size: fileObject.size, fileExtension: fileObject.fileExtension, uploadStatus: -1, xhr: xhr, fileObject: fileObject, url: url }];
+            var newUploadItems = [...getState().documentsReducer[documentlist.catId].uploadItems, { Id: uploadId, uploadProgress: 0, catId: documentlist.catId, FamilyCode: 'UPLOAD_PROGRESS', Name: fileObject.name, Size: fileObject.size, fileExtension: fileObject.fileExtension, uploadStatus: -1, xhr: xhr, fileObject: fileObject, url: url }];
             var datasource = AssembleTableDatasource(items, newUploadItems, totalFiles, totalFolders, documentlist.isSearch).ret;
             dispatch(updateUploadDocument(datasource, newUploadItems, documentlist.catId, ""));
             dispatch(uploadDocumentObject(fileObject, uploadId));

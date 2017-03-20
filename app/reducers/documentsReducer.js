@@ -153,7 +153,12 @@ export default function documentsReducer(state = initDocumentsReducer(), action)
         [action.catId]: documentlist(state[action.catId], action)
 
       }
+    case types.UPDATE_UPLOAD_PROGRESS:
+          return {
+              ...state,
+            [action.catId]: documentlist(state[action.catId], action)
 
+          }
     case types.UPDATE_UPLOAD_ITEM:
     //alert(documentlist(state[action.catId].uploadItems))
       return {

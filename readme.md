@@ -9,22 +9,7 @@ packages with special handling:
     problem: No support for all file types in the picker module. 
     solution: replace \node_modules\react-native-image-crop-picker\android\src\main\java\com\reactnative\ivpusic\imagepicker\PickerModule.js 
     with the one in \appendix
-* react-native-material-kit ??
-    problem: npm not synced with latest version 
-    solution: replace \node_modules\react-native-material-kit\lib\internal\MKTouchable.js 
-    with the one in \appendix
 * react-native-fetch-blob
     problem: SupportsRtl definitions colides with general definition.
     soution: change the value of parameter "android:supportsRtl" from "true" to "false", 
              in \kenestotogo\node_modules\react-native-fetch-blob\android\src\main\AndroidManifest.xml  
-* react-native-message-bar ??
-    problem: plugin doesn't allow customizing toast layout (aligning icon with centered text).
-    solution: in render() function inside MessageBar.js replace the TouchableOpacity content with:
-            <View style={{ flex: 1, flexDirection: 'row', alignItems: 'flex-end', padding: 10 }} >
-                <View style={{ flex: 1, flexDirection: 'row', alignSelf: 'stretch', justifyContent: 'center', marginLeft: 0 }} >
-                    { this.renderImage() }
-                    { this.renderMessage() }
-                </View>
-            </View>
-
-* AssetsPicker ios - replace 'FPLocalController.m' from appendix to ios\pods\fppicker\fppicker\platforms\ios
