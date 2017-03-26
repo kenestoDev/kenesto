@@ -46,14 +46,35 @@ let styles = StyleSheet.create({
     paddingBottom: 0,
     paddingLeft: 5,
     paddingRight: 5,
-    marginBottom: -10,
-    fontSize: 20,
+    ...Platform.select({
+      ios:{
+        marginBottom: -7,
+        marginTop: 1,
+        fontSize: 18,
+      },
+      android:{
+        marginBottom: -10,
+        fontSize: 20,
+      }
+    }),
+    // borderColor: "blue",
+    // borderWidth: 1
   },
   arrowDown: {
     paddingTop: 0,
     paddingBottom: 0,
-    fontSize: 20,
-    marginBottom: -2,
+    ...Platform.select({
+      ios:{
+        fontSize: 18,
+        marginBottom: -8,
+      },
+      android:{
+        fontSize: 20,
+        marginBottom: -2,
+      }
+    }),
+    // borderColor: "red",
+    // borderWidth: 1,
   },
   shareIconContainer: {
     marginRight: 5,
@@ -300,7 +321,7 @@ class KenestoToolbar extends Component {
 
           <View style={this.props.isPopupMenuOpen ? styles.sortingInactive : {}}>
             {sortDirection == constans.ASCENDING ?
-              <View>
+              <View style={{borderColor: "blue"}}>
                 <Icon name="keyboard-arrow-up" style={[styles.iconStyle, styles.arrowUp]} />
                 <Icon name="keyboard-arrow-down" style={[styles.iconStyle, styles.arrowDown, styles.iconDisabled]} />
               </View>

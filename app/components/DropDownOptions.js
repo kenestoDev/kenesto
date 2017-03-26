@@ -118,7 +118,7 @@ class DropDownOptions extends Component {
             <View>
                 <ListView
                     style={styles.optionsList}
-                    keyboardShouldPersistTaps={true}
+                    keyboardShouldPersistTaps="always"
                     dataSource={this.state.dataSource}
                     enableEmptySections={true}
                     renderRow={this.renderRow.bind(this) }

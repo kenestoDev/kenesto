@@ -15,6 +15,7 @@ import  {
   View,
   Text,
   StyleSheet,
+  Platform,
   ScrollView,
   TouchableWithoutFeedback,
   Image,
@@ -482,8 +483,17 @@ var styles = StyleSheet.create({
   },
   closeIcon: {
     fontSize: 15,
-    marginTop: 2,
-    marginRight: -7,
+    ...Platform.select({
+      ios:{
+        marginTop: 0,
+        marginRight: 0,
+      },
+      android:{
+        marginTop: 2,
+        marginRight: -7,
+      }
+    }),
+
     padding: 6,
   },
   avatar: {
