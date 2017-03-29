@@ -66,6 +66,7 @@ class PlusMenu extends React.Component{
     
   upload(file: object){
      // this.props.closeMenuModal("modalPlusMenu");
+     //alert(file.name)
      const url = getFileUploadUrl(this.props.env, this.props.sessionToken, file.name, "", "",  this.state.documentsContext.fId);
     const fileName = file.path.substring(file.path.lastIndexOf('/') + 1); 
     //const name = fileName.substring(0,  fileName.lastIndexOf('.'));
@@ -122,6 +123,8 @@ selectDocument(cropping : boolean){
                 // this.setState({
                 //     file: { name: mediaInfo.mediaName, path: mediaPath, type: mediaInfo.mediaMimeType, size: this.bytesToSize(mediaInfo.mediaSize), extension: fileExtension},
                 // });
+
+               // alert(JSON.stringify(mediaInfo))
 
                 this.upload({ name: mediaInfo.mediaName, path: mediaPath, type: mediaInfo.mediaMimeType, size: this.bytesToSize(mediaInfo.mediaSize), extension: fileExtension});
     });

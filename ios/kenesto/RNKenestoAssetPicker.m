@@ -68,8 +68,8 @@ RCT_EXPORT_METHOD(show:(NSDictionary *)options
         [coordinator coordinateReadingItemAtURL:url options:NSFileCoordinatorReadingResolvesSymbolicLink error:&error byAccessor:^(NSURL *newURL) {
             NSNumber *fileSizeValue = nil;
             NSError *fileSizeError = nil;
-            NSString *fileTypeValue = @"";
             NSString * fileNameValue = @"";
+
             [newURL getResourceValue:&fileSizeValue
                                forKey:NSURLFileSizeKey
                                 error:&fileSizeError];
@@ -83,12 +83,12 @@ RCT_EXPORT_METHOD(show:(NSDictionary *)options
             NSURLResponse* response = nil;
             NSData* fileData = [NSURLConnection sendSynchronousRequest:fileUrlRequest returningResponse:&response error:&error];
             NSString* mimeType = [response MIMEType];
-            
+            NSString* suggestedName = [response suggestedFilename];
             NSDictionary *result = @{
                                      @"mediaPath":newURL.absoluteString,
                                      @"mediaMimeType":mimeType,
                                      @"mediaSize":fileSizeValue,
-                                     @"mediaName":fileNameValue
+                                     @"mediaName":suggestedName
                                      };
             
             callback(@[[NSNull null], result]);
