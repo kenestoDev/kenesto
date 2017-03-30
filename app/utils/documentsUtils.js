@@ -217,7 +217,7 @@ export function getFileUploadUrl(env: string, sessionToken: string, path: string
   const apiBaseUrl = urls.ApiBaseUrl;
   folderId = (typeof (folderId) == 'undefined' || folderId == null || folderId == '') ? '00000000-0000-0000-0000-000000000000' : folderId;
   baseFileId = (typeof (baseFileId) == 'undefined' || baseFileId == null || baseFileId == '') ? '00000000-0000-0000-0000-000000000000' : baseFileId;
-  return `${apiBaseUrl}/KDocuments.svc/UploadFile?t=${sessionToken}&p=${path}&fd=${fileDescription}&fk=${fileKeyword}&fid=${folderId}&bid=${baseFileId}`;
+  return `${apiBaseUrl}/KDocuments.svc/UploadFile?t=${sessionToken}&p=${encodeURIComponent(path)}&fd=${fileDescription}&fk=${fileKeyword}&fid=${folderId}&bid=${baseFileId}`;
 }
 
 export function getUploadFileCompletedUrl(env: string, sessionToken: string, url: string, userData: string = '') {
