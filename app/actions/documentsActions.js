@@ -842,8 +842,12 @@ function uploadDocumentObject(fileObject: object, uploadId: string) {
             .then(response => response.json())
             .then(json => {
                 if (json.ResponseStatus == "FAILED") {
-                    dispatch(emitToast(constans.ERROR, "failed to upload file"))
-                    writeToLog(email, constans.ERROR, `function uploadDocumentObject(0) - failed to upload file`)
+                    
+                    var userData = parseUploadUserData(json.UserData);
+                    dispatch(removeUploadDocument(userData.uploadId, userData.catId));
+                    dispatch(navActions.emitToast(constans.ERROR, "Error. failed to upload file"))
+                    writeToLog(email, constans.ERROR, `function uploadToKenesto(1) - Failed to upload file  3- uploadId:${userData.uploadId}`)
+
                 }
                 else {
                     var AccessUrl = json.ResponseData.AccessUrl;
@@ -863,6 +867,7 @@ function uploadDocumentObject(fileObject: object, uploadId: string) {
                             fetch(thisCompletedUrl)
                                 .then(response => response.json())
                                 .then(json => {
+                                   
                                     // alert(JSON.stringify(json.UserData));
                                     var userData = parseUploadUserData(json.UserData);
                                     var finalUploadId = decodeURIComponent(userData.uploadId);
@@ -882,30 +887,26 @@ function uploadDocumentObject(fileObject: object, uploadId: string) {
                                     }
                                     else {
 
-                                        // if(!isUpdateVersion)
-                                        //     message = `Error. failed to upload file ${fileObject.name}`
-                                        //   else
-                                        //  message = "Error. failed to update version"
+                                        var userData = parseUploadUserData(json.UserData);
+                                        dispatch(removeUploadDocument(userData.uploadId, userData.catId));
                                         message = "Error uploading file"
                                         dispatch(navActions.emitToast(constans.ERROR, message));
                                         writeToLog(email, constans.ERROR, `function uploadToKenesto(1) - Error. failed to upload file 0, ${JSON.stringify(json)}`)
-
                                     }
 
 
 
                                 })
                                 .catch((error) => {
-                                    var userData = parseUploadUserData(json.UserData);
-                                    dispatch(removeUploadDocument(userData.uploadId, userData.catId));
+                                      
+                                    dispatch(removeUploadDocument(uploadId, documentlist.catId));
                                     dispatch(navActions.emitToast(constans.ERROR, "Error. failed to upload file"))
                                     writeToLog(email, constans.ERROR, `function uploadToKenesto(2) - Error. failed to upload file 1 - uploadId: ${userData.uploadId}`, error)
                                 })
 
                         })
                         .catch(err => {
-                            var userData = parseUploadUserData(json.UserData);
-                            dispatch(removeUploadDocument(userData.uploadId, userData.catId));
+                            dispatch(removeUploadDocument(uploadId, documentlist.catId));
                             dispatch(navActions.emitToast(constans.ERROR, "Error. failed to upload file"))
                             writeToLog(email, constans.ERROR, `function uploadToKenesto(3) - Failed to upload file  2- url: ${uploadObj.url}`, err)
 
@@ -915,8 +916,8 @@ function uploadDocumentObject(fileObject: object, uploadId: string) {
                 }
             })
             .catch((error) => {
-                var userData = parseUploadUserData(json.UserData);
-                dispatch(removeUploadDocument(userData.uploadId, userData.catId));
+                
+                dispatch(removeUploadDocument(uploadId, documentlist.catId));
                 dispatch(navActions.emitToast(constans.ERROR, "Error. failed to upload file"))
                 writeToLog(email, constans.ERROR, `function uploadToKenesto(4) - Failed to upload file  3- uploadId:${userData.uploadId}`, error)
             })
@@ -1052,8 +1053,9 @@ function uploadNewVersion(fileObject: object, baseFileId: string) {
             .then(json => {
                 if (json.ResponseStatus == "FAILED") {
 
+                    dispatch(updateDocumentVersion(userData.catId, fileObject, "", userData.uploadId, false));
                     dispatch(emitToast(constans.ERROR, "failed to upload file"))
-                    writeToLog(email, constans.ERROR, `function uploadDocumentVersion(0) -failed to upload file, UploadUrl: ${uploadObj.UploadUrl}`, error)
+                    writeToLog(email, constans.ERROR, `function uploadDocumentVersion(0) -failed to upload file, UploadUrl: ${uploadObj.UploadUrl}`)
                 }
                 else {
                     var AccessUrl = json.ResponseData.AccessUrl;
