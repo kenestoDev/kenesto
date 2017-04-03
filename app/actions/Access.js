@@ -1,5 +1,5 @@
 import * as types from '../constants/ActionTypes';
-import {getAuthUrl, getLoginUrl, getForgotPasswordUrl, clearCredentials, setCredentials, getRetrieveStatisticsUrl,UpdateFcmTokenUrl} from '../utils/accessUtils';
+import {getAuthUrl, getLoginUrl, getForgotPasswordUrl,getSignUpUrl, clearCredentials, setCredentials, getRetrieveStatisticsUrl,UpdateFcmTokenUrl} from '../utils/accessUtils';
 import { push, pop, emitInfo, emitError, emitToast, navigateReset} from './navActions'
 import * as textResource from '../constants/TextResource'
 import * as routes from '../constants/routes'

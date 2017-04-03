@@ -628,9 +628,6 @@ this.callToast2(nextprops.navReducer.GlobalToastMessage, nextprops.navReducer.Gl
       <DropDownOptions ref={"dropDownOptionsContainer"} />
       <NetInfoManager dispatch={this.props.dispatch} />
         
-       <PushController
-          onChangeToken={token =>  this.props.dispatch(accessActions.updateFCMToken(this.props.env,token || ""))}
-        />
       </View>
     )
   }

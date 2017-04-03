@@ -170,6 +170,20 @@ const styles = StyleSheet.create({
                 }
         this.props._handleNavigate(forgotPasswordRoute)
    }
+   
+   NavigateToSignUp(){
+
+      const  signUpRoute = {
+                type: 'push',
+                route: {
+                    key: 'signUp',
+                    title: 'signUp',
+                    userName: this.state.value.username,
+                    env: this.state.selectedEnv
+                }
+        }
+        this.props._handleNavigate(signUpRoute)
+   }
 
     directLogin(uName: string, pWord: string , env : string){
       // this.updateIsLoading(true); 
@@ -216,7 +230,7 @@ const styles = StyleSheet.create({
 
 
     renderEnvPicker(){
-        if (this.state.selectedEnv != 'dev')
+       if (this.state.selectedEnv != 'dev')
             return null; 
             
             return(
@@ -337,6 +351,7 @@ const styles = StyleSheet.create({
                 <KeyboardAwareScrollView style={{flex:1}} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="always">
                     <View style={{height: 460}}>
                         <View style={styles.logoContainer}><Image source={logoImage} style={styles.logo}></Image></View>
+                         {this.renderEnvPicker()}
                         <View style={styles.form}><Form
                                     ref="form"
                                     type={User}
@@ -345,9 +360,14 @@ const styles = StyleSheet.create({
                                    
                                     options={options}
                                 />
-                            {this.renderEnvPicker()}
+                           
                             
                             <Button containerStyle={styles.loginBtnContainer} onPress={this._makeLogin.bind(this)} style={styles.loginBtn}>Login</Button>
+                            <TouchableWithoutFeedback onPress={ this.NavigateToSignUp.bind(this)} >
+                                <View>
+                                    <Text style={styles.forgotPwd}>Sigh Up for KENESTO</Text>
+                                </View>
+                            </TouchableWithoutFeedback>
 
                             <TouchableWithoutFeedback onPress={ this.NavigateToForgotPassword.bind(this)} >
                                 <View>

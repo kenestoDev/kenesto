@@ -29,6 +29,15 @@ export const forgotPasswordRoute = {
   }
 }
 
+export const signUpRoute = {
+  type: 'push',
+  route: {
+    key: 'signUp',
+    title: 'signUp',
+    userName: ''
+  }
+}
+
 
 
 export function documentRoute(data) {

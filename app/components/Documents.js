@@ -385,19 +385,6 @@ class Documents extends Component {
       return (
 
         <ViewContainer ref="masterView" style={[styles.container, additionalStyle]}>
-                 <TouchableOpacity onPress={() => firebaseClient.sendNotification(this.props.fcmToken)} style={styles.buttonFCM}>
-          <Text style={styles.buttonTextFCM}>Send Notification</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => firebaseClient.sendData(this.props.fcmToken)} style={styles.buttonFCM}>
-          <Text style={styles.buttonTextFCM}>Send Data</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => firebaseClient.sendNotificationWithData(this.props.fcmToken)} style={styles.buttonFCM}>
-          <Text style={styles.buttonTextFCM}>Send Notification With Data</Text>
-        </TouchableOpacity>
-          <View style={styles.separator} elevation={5} />
-    
           {this._renderTableContent(isFetching || isFetchingFolder)}
           
           {showCustomButton ? <ActionButton style={ {opacity : 0.1} }  buttonColor={buttonColor} onPress={() => this.openModal()} >

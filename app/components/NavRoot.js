@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Home from './Home'
 import About from './About'
 import ForgotPassword from './ForgotPassword'
+import SignUp from './SignUp'
 import AddPeopleContainer from '../containers/AddPeopleContainer'
 import Documents from './Documents'
 import Document from './Document'
@@ -52,6 +53,9 @@ class NavRoot extends Component {
 
     if (route.key === 'forgotPassword') {
       return <ForgotPassword userName={route.userName} _goBack={this._handleBackAction.bind(this)} env={route.env}  />
+    }
+     if (route.key === 'signUp') {
+      return <SignUp userName={route.userName} _goBack={this._handleBackAction.bind(this)} env={route.env}  />
     }
     if (route.key === 'scan') {
       return <Scan _handleNavigate={this._handleNavigate.bind(this) } isCameraScan={route.data.isCameraScan}  baseFileId={route.data.baseFileId} />
@@ -118,6 +122,11 @@ class NavRoot extends Component {
    }
     else {
       if (this.props.navigation.routes[this.props.navigation.routes.length - 1].key == 'forgotPassword') {
+        this.props.popRoute()
+        return true
+      }
+      
+      if (this.props.navigation.routes[this.props.navigation.routes.length - 1].key == 'signUp') {
         this.props.popRoute()
         return true
       }
