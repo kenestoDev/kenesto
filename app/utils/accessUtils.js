@@ -45,6 +45,16 @@ export function getForgotPasswordUrl(env: string,username: string){
 
 }
 
+export function getSignUpUrl(env: string){
+  var urls = _.find(config.urls, { 'env': env });
+    var apiBaseUrl = urls.ApiBaseUrl;
+    var url
+    if (urls == null)
+        return null;
+    
+    return `${apiBaseUrl}/KObject.svc/SignUp`; 
+}
+
 export function getLoginUrl(env: string, orgId: string, token : Object){
     var urls = _.find(config.urls, {'env' : env});
     if (urls == null)

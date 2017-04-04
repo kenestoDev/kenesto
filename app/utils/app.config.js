@@ -44,10 +44,10 @@ export const config = {
    {
         env : 'qa',
          Ip: '10.0.0.117',
-         ApiBaseUrl : 'http://play.kenesto.com/Kenesto.Web.API/', 
-         AuthUrlTemplate: 'http://play.kenesto.com/Kenesto.Web.API/Access.svc/Authenticate/json/{2}?u={0}&p={1}',
-         LoginUrlTemplate: 'http://play.kenesto.com/Kenesto.Web.API/Access.svc/Login/json/{0}?t={1}',
-         ForgotPasswordUrl: 'http://play.kenesto.com/Kenesto.Web.API/Access.svc/ForgotPassword/json?u={0}',
+         ApiBaseUrl : 'https://play.kenesto.com/Kenesto.Web.API/', 
+         AuthUrlTemplate: 'https://play.kenesto.com/Kenesto.Web.API/Access.svc/Authenticate/json/{2}?u={0}&p={1}',
+         LoginUrlTemplate: 'https://play.kenesto.com/Kenesto.Web.API/Access.svc/Login/json/{0}?t={1}',
+         ForgotPasswordUrl: 'https://play.kenesto.com/Kenesto.Web.API/Access.svc/ForgotPassword/json?u={0}',
         
     },
     {

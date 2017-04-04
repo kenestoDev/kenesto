@@ -186,6 +186,60 @@ export function ActivateForgotPassword(username : string, env : string = 'dev') 
     }
 }
 
+export function ActivateSignUp(firstName:string, lastName:string, company:string, email:string, password:string, env : string = 'dev') {
+     return (dispatch, getState) => {
+         if (!getState().accessReducer.isConnected)
+            return dispatch(emitToast("info", textResource.NO_INTERNET)); 
+        let token = getState().accessReducer.sessionToken;
+        if (env == null)
+        {
+             const {stateEnv} = getState().accessReducer; 
+             env = stateEnv;
+        }
+        dispatch(updateIsFetching(true)); 
+       
+        var signUpUrl = getSignUpUrl(env);
+               writeToLog(email, constans.DEBUG, `function ActivateSignUp - url: ${signUpUrl}, First Name: ${firstName}, Last Name: ${lastName}, company${company}, Email :${email}`)
+      
+        const jsonObject = {
+            user: {
+                FirstName: firstName,
+                LastName: lastName,
+                Company:company,
+                Email: email,
+                Password:password
+            }
+        }
+        var request = new Request(signUpUrl, {
+            method: 'post',
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            }),
+            body: JSON.stringify(jsonObject)
+        });
+
+        fetch(request)
+        .then((response) => response.json())
+        .catch((error) => {
+             dispatch(emitError('Failed to reset password'))
+              writeToLog("", constans.ERROR, `function ActivateSignUp- Failed to Sign Up - url: ${signUpUrl}, First Name: ${firstName}, Last Name: ${lastName}, Email :${email} `,error)
+        })
+        .then( (responseData) => {
+            if (responseData.ResponseStatus == "FAILED")
+            {
+                 dispatch(updateIsFetching(false)); 
+                 dispatch(emitError("Failed to create account.", "Please try again later"))
+                 writeToLog("", constans.ERROR, `function ActivateSignUp- Failed to Sign Up - url: ${signUpUrl}`)
+            }
+            else{
+                   dispatch(updateIsFetching(false)); 
+                   dispatch(emitInfo("Account successfully created", "Thank you for your registration! Your account is now ready to use. ",() => dispatch(pop())))
+            }
+         
+        }).done();
+    }
+}
+
 export function logOut() {
     return (dispatch, getState) => {
         let env =  getState().accessReducer.env;

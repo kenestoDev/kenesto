@@ -1053,7 +1053,6 @@ function uploadNewVersion(fileObject: object, baseFileId: string) {
             .then(json => {
                 if (json.ResponseStatus == "FAILED") {
 
-                    dispatch(updateDocumentVersion(userData.catId, fileObject, "", userData.uploadId, false));
                     dispatch(emitToast(constans.ERROR, "failed to upload file"))
                     writeToLog(email, constans.ERROR, `function uploadDocumentVersion(0) -failed to upload file, UploadUrl: ${uploadObj.UploadUrl}`)
                 }

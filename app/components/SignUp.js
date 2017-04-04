@@ -19,7 +19,10 @@ import logoImage from '../assets/kenesto_logo.png';
 import stricturiEncode from 'strict-uri-encode';
 import MartialExtendedConf from '../assets/icons/config.json';
 import { createIconSetFromFontello } from 'react-native-vector-icons';
+import customConfig from '../assets/icons/customConfig.json';
 const KenestoIcon = createIconSetFromFontello(MartialExtendedConf);
+const CustomIcon = createIconSetFromFontello(customConfig);
+
 var Form = Tcomb.form.Form;
 
 import _ from 'lodash';
@@ -37,9 +40,14 @@ var LastName = Tcomb.refinement(Tcomb.String, function (s) {
     return s.length >= 0;
 });
 
+
 LastName.getValidationErrorMessage = function (value, path, context) {
-   return 'Please enter your Last name.';
+   return 'Please enter your last name.';
 };
+
+var Company = Tcomb.refinement(Tcomb.String, function (s) {
+    return true;
+});
 
 var Email = Tcomb.refinement(Tcomb.String, function (s) {
     return /\S+@\S+\.\S+/.test(s);
@@ -56,26 +64,36 @@ var Password = Tcomb.refinement(Tcomb.String, function (s) {
 });
 
 Password.getValidationErrorMessage = function (value, path, context) {
-    return 'Your password must be at least 6 characters long.';
+    return 'Password must be at least 6 characters.';
 };
 
 var User = Tcomb.struct({
     firstName: FirstName,
     lastName: LastName,
+    company:Company,
     email: Email,  //required email
     password: Password,
 });
 
-var usernameIconStyle = {}
+var firstNameIconStyle = {}
+var lastNameIconStyle = {}
+var companyIconStyle = {}
+var emailIconStyle = {}
 var passwordIconStyle = {}
 
+// CUSTOM FIELDS TEMPLATE FOR DRAWING ICON. ref:  https://github.com/gcanti/tcomb-form-native/blob/master/lib/templates/bootstrap/textbox.js
+
+
 formStylesheet.textbox.normal = {
-    height: 50,
+    height: 50,            
     fontSize: 17,
+    paddingLeft: 40,
+    paddingBottom: 15,  
 }
 formStylesheet.textbox.error = {
-    height: 50,
+    height: 50,            
     fontSize: 17,
+    paddingLeft: 40  
 }
 
 const styles = StyleSheet.create({
@@ -96,8 +114,15 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     form: {
-        padding: 40,
+        padding: 15,
     },
+    formIcon: {
+        fontSize: 32,
+        height: 30,
+        color: '#ddd',
+        position: "absolute",
+        top: 5
+    }, 
     instructions: {
         textAlign: "center",
         fontSize: 17,
@@ -146,7 +171,10 @@ class SignUp extends React.Component {
         super(props)
         this.state = {
             value: {
-                username: props.userName,
+                firstName: "",
+                lastName: "",
+                company:"",
+                email: "",
                 password: "",
             },
             env: props.env,
@@ -155,16 +183,50 @@ class SignUp extends React.Component {
         }
     }
     onChange(value) {
+        if(value.firstName != false){
+            firstNameIconStyle = { color: "#000" }
+        }
+        else {
+            firstNameIconStyle = { color: "#ddd" }
+        }
+        
+        if(value.lastName != false){
+            lastNameIconStyle = { color: "#000" }
+        }
+        else {
+            lastNameIconStyle = { color: "#ddd" }
+        }
+
+        if(value.company != false){
+            companyIconStyle = { color: "#000" }
+        }
+        else {
+            companyIconStyle = { color: "#ddd" }
+        }
+
+        if(value.email != false){
+            emailIconStyle = { color: "#000" }
+        }
+        else {
+            emailIconStyle = { color: "#ddd" }
+        }
+
+        if(value.password != false){
+            passwordIconStyle = { color: "#000" }
+        }
+        else {
+            passwordIconStyle = { color: "#ddd" }
+        }
         this.setState({ value });
     }
     _makeSignUp() {
-        var { username } = this.state.value;
+        var { firstName, lastName, email, password, company} = this.state.value;
         var value = this.refs.form.getValue();
         if (value == null) { // if validation fails, value will be null
             return false; // value here is an instance of Person
         }
-
-        this.props.dispatch(accessActions.ActivateSignUp(username, this.props.env));
+       
+       this.props.dispatch(accessActions.ActivateSignUp(firstName, lastName, company, email, password, this.props.env));
 
     }
 
@@ -172,13 +234,16 @@ class SignUp extends React.Component {
         this.refs.form.getComponent('password').refs.inputPword.focus();
     }
     goToLastName() {
-        this.refs.form.getComponent('lastName').refs.inputUname.focus();
+        this.refs.form.getComponent('lastName').refs.inputLastName.focus();
     }
     goToEmail() {
         this.refs.form.getComponent('email').refs.inputEmail.focus();
     }
+    goToCompany() {
+        this.refs.form.getComponent('company').refs.inputCompany.focus();
+    }
     
-    usernameTemplate(locals) {
+    firstNameTemplate(locals) {
         var stylesheet = locals.stylesheet;
         var formGroupStyle = stylesheet.formGroup.normal;
         var textboxStyle = stylesheet.textbox.normal;
@@ -192,9 +257,9 @@ class SignUp extends React.Component {
         var error = locals.hasError && locals.error ? <Text accessibilityLiveRegion="polite" style={errorBlockStyle}>{locals.error}</Text> : null;
         return (
             <View style={formGroupStyle}>
-                <Icon name="person" style={[styles.formIcon, usernameIconStyle]} />
+                <Icon name="person" style={[styles.formIcon, firstNameIconStyle]} />
                 <TextInput
-                    ref="inputUname"
+                    ref="inputFirstname"
                     onEndEditing={() => { locals.onEndEditing(); }}
                     returnKeyType="next"
                     placeholderTextColor={locals.placeholderTextColor}
@@ -210,7 +275,69 @@ class SignUp extends React.Component {
             </View>
         )
     }
+   lastNameTemplate(locals) {
+        var stylesheet = locals.stylesheet;
+        var formGroupStyle = stylesheet.formGroup.normal;
+        var textboxStyle = stylesheet.textbox.normal;
+        var errorBlockStyle = stylesheet.errorBlock;
 
+
+        if (locals.hasError) {
+            formGroupStyle = stylesheet.formGroup.error;
+            textboxStyle = stylesheet.textbox.error;
+        }
+        var error = locals.hasError && locals.error ? <Text accessibilityLiveRegion="polite" style={errorBlockStyle}>{locals.error}</Text> : null;
+        return (
+            <View style={formGroupStyle}>
+                <Icon name="person" style={[styles.formIcon, lastNameIconStyle]} />
+                <TextInput
+                    ref="inputLastName"
+                    onEndEditing={() => { locals.onEndEditing(); }}
+                    returnKeyType="next"
+                    placeholderTextColor={locals.placeholderTextColor}
+                    selectionColor={locals.selectionColor}
+                    underlineColorAndroid={locals.underlineColorAndroid}
+                    onKeyPress={locals.onKeyPress}
+                    placeholder={locals.placeholder}
+                    style={textboxStyle}
+                    value={locals.value}
+                    onChangeText={(value) => { locals.onChange(value) }}
+                />
+                {error}
+            </View>
+        )
+    }
+    companyTemplate(locals) {
+        var stylesheet = locals.stylesheet;
+        var formGroupStyle = stylesheet.formGroup.normal;
+        var textboxStyle = stylesheet.textbox.normal;
+        var errorBlockStyle = stylesheet.errorBlock;
+
+        if (locals.hasError) {
+            formGroupStyle = stylesheet.formGroup.error;
+            textboxStyle = stylesheet.textbox.error;
+        }
+        var error = locals.hasError && locals.error ? <Text accessibilityLiveRegion="polite" style={errorBlockStyle}>{locals.error}</Text> : null;
+        return (
+            <View style={formGroupStyle}>
+                <CustomIcon name="building-filled" style={[styles.formIcon, companyIconStyle]} />
+                <TextInput
+                    ref="inputCompany"
+                    onEndEditing={() => { locals.onEndEditing(); }}
+                    returnKeyType="next"
+                    placeholderTextColor={locals.placeholderTextColor}
+                    selectionColor={locals.selectionColor}
+                    underlineColorAndroid={locals.underlineColorAndroid}
+                    onKeyPress={locals.onKeyPress}
+                    placeholder={locals.placeholder}
+                    style={textboxStyle}
+                    value={locals.value}
+                    onChangeText={(value) => { locals.onChange(value) }}
+                />
+                {error}
+            </View>
+        )
+    }
     emailTemplate(locals) {
         var stylesheet = locals.stylesheet;
         var formGroupStyle = stylesheet.formGroup.normal;
@@ -224,7 +351,7 @@ class SignUp extends React.Component {
         var error = locals.hasError && locals.error ? <Text accessibilityLiveRegion="polite" style={errorBlockStyle}>{locals.error}</Text> : null;
         return (
             <View style={formGroupStyle}>
-                <Icon name="email" style={[styles.formIcon, usernameIconStyle]} />
+                <Icon name="email" style={[styles.formIcon, emailIconStyle]} />
                 <TextInput
                     ref="inputEmail"
                     onEndEditing={() => { locals.onEndEditing(); }}
@@ -256,7 +383,7 @@ class SignUp extends React.Component {
         return (
             <View style={formGroupStyle}>
                
-                 <KenestoIcon name="key" style={[styles.formIcon, passwordIconStyle]} />
+                <CustomIcon name="key-inv" style={[styles.formIcon, passwordIconStyle]} />
                 <TextInput
                     ref="inputPword"
                     onSubmitEditing={() => { locals.onEndEditing(); }}
@@ -297,7 +424,7 @@ class SignUp extends React.Component {
             stylesheet: formStylesheet,
             fields: {
                 firstName: {
-                    template: this.usernameTemplate,
+                    template: this.firstNameTemplate,
                     onEndEditing: this.goToLastName.bind(this),
                     placeholder: 'First Name',
                     label: ' ',
@@ -307,9 +434,18 @@ class SignUp extends React.Component {
                     selectionColor: "orange",
                 },
                 lastName: {
-                    template: this.usernameTemplate,
-                    onEndEditing: this.goToEmail.bind(this),
+                    template: this.lastNameTemplate,
+                    onEndEditing: this.goToCompany.bind(this),
                     placeholder: 'Last Name',
+                    label: ' ',
+                    autoFocus: true,
+                    placeholderTextColor: '#ccc',
+                    underlineColorAndroid: "#ccc",
+                    selectionColor: "orange",
+                },
+                company:{ template: this.companyTemplate,
+                    onEndEditing: this.goToEmail.bind(this),
+                    placeholder: 'company',
                     label: ' ',
                     autoFocus: true,
                     placeholderTextColor: '#ccc',
