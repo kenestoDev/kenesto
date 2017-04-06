@@ -20,8 +20,12 @@ import stricturiEncode from 'strict-uri-encode';
 import MartialExtendedConf from '../assets/icons/config.json';
 import { createIconSetFromFontello } from 'react-native-vector-icons';
 import customConfig from '../assets/icons/customConfig.json';
+import TermsofServiceModal from './TermsofServiceModal'
+import Modal from 'react-native-modalbox';
+import * as uiActions from '../actions/uiActions'
 const KenestoIcon = createIconSetFromFontello(MartialExtendedConf);
 const CustomIcon = createIconSetFromFontello(customConfig);
+
 
 var Form = Tcomb.form.Form;
 
@@ -42,7 +46,7 @@ var LastName = Tcomb.refinement(Tcomb.String, function (s) {
 
 
 LastName.getValidationErrorMessage = function (value, path, context) {
-   return 'Please enter your last name.';
+    return 'Please enter your last name.';
 };
 
 var Company = Tcomb.refinement(Tcomb.String, function (s) {
@@ -59,7 +63,7 @@ Email.getValidationErrorMessage = function (value, path, context) {
 };
 
 var Password = Tcomb.refinement(Tcomb.String, function (s) {
-   var passRegex = new RegExp("((?=.*[a-zA-Z])(?=.*[^a-zA-Z]).{6,20})");
+    var passRegex = new RegExp("((?=.*[a-zA-Z])(?=.*[^a-zA-Z]).{6,20})");
     return passRegex.test(s);
 });
 
@@ -70,7 +74,7 @@ Password.getValidationErrorMessage = function (value, path, context) {
 var User = Tcomb.struct({
     firstName: FirstName,
     lastName: LastName,
-    company:Company,
+    company: Company,
     email: Email,  //required email
     password: Password,
 });
@@ -85,21 +89,29 @@ var passwordIconStyle = {}
 
 
 formStylesheet.textbox.normal = {
-    height: 50,            
+    height: 50,
     fontSize: 17,
     paddingLeft: 40,
-    paddingBottom: 15,  
+    paddingBottom: 15,
 }
 formStylesheet.textbox.error = {
-    height: 50,            
+    height: 50,
     fontSize: 17,
-    paddingLeft: 40  
+    paddingLeft: 40
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#fff",
+    },
+    modal: {
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    createTerms: {
+        height: 200,
+        width: 320
     },
     titleContainer: {
         backgroundColor: "#F5FCFF",
@@ -122,7 +134,7 @@ const styles = StyleSheet.create({
         color: '#ddd',
         position: "absolute",
         top: 5
-    }, 
+    },
     instructions: {
         textAlign: "center",
         fontSize: 17,
@@ -173,7 +185,7 @@ class SignUp extends React.Component {
             value: {
                 firstName: "",
                 lastName: "",
-                company:"",
+                company: "",
                 email: "",
                 password: "",
             },
@@ -183,35 +195,35 @@ class SignUp extends React.Component {
         }
     }
     onChange(value) {
-        if(value.firstName != false){
+        if (value.firstName != false) {
             firstNameIconStyle = { color: "#000" }
         }
         else {
             firstNameIconStyle = { color: "#ddd" }
         }
-        
-        if(value.lastName != false){
+
+        if (value.lastName != false) {
             lastNameIconStyle = { color: "#000" }
         }
         else {
             lastNameIconStyle = { color: "#ddd" }
         }
 
-        if(value.company != false){
+        if (value.company != false) {
             companyIconStyle = { color: "#000" }
         }
         else {
             companyIconStyle = { color: "#ddd" }
         }
 
-        if(value.email != false){
+        if (value.email != false) {
             emailIconStyle = { color: "#000" }
         }
         else {
             emailIconStyle = { color: "#ddd" }
         }
 
-        if(value.password != false){
+        if (value.password != false) {
             passwordIconStyle = { color: "#000" }
         }
         else {
@@ -219,15 +231,8 @@ class SignUp extends React.Component {
         }
         this.setState({ value });
     }
-    _makeSignUp() {
-        var { firstName, lastName, email, password, company} = this.state.value;
-        var value = this.refs.form.getValue();
-        if (value == null) { // if validation fails, value will be null
-            return false; // value here is an instance of Person
-        }
-       
-       this.props.dispatch(accessActions.ActivateSignUp(firstName, lastName, company, email, password, this.props.env));
-
+    _openTermsofService() {
+        this.openTermsofServiceModal();
     }
 
     goToPword() {
@@ -242,7 +247,7 @@ class SignUp extends React.Component {
     goToCompany() {
         this.refs.form.getComponent('company').refs.inputCompany.focus();
     }
-    
+
     firstNameTemplate(locals) {
         var stylesheet = locals.stylesheet;
         var formGroupStyle = stylesheet.formGroup.normal;
@@ -275,7 +280,7 @@ class SignUp extends React.Component {
             </View>
         )
     }
-   lastNameTemplate(locals) {
+    lastNameTemplate(locals) {
         var stylesheet = locals.stylesheet;
         var formGroupStyle = stylesheet.formGroup.normal;
         var textboxStyle = stylesheet.textbox.normal;
@@ -382,7 +387,7 @@ class SignUp extends React.Component {
         var error = locals.hasError && locals.error ? <Text accessibilityLiveRegion="polite" style={locals.stylesheet.errorBlock}>{locals.error}</Text> : null;
         return (
             <View style={formGroupStyle}>
-               
+
                 <CustomIcon name="key-inv" style={[styles.formIcon, passwordIconStyle]} />
                 <TextInput
                     ref="inputPword"
@@ -404,6 +409,24 @@ class SignUp extends React.Component {
     }
 
 
+    openTermsofServiceModal() {
+        this.openModal("termsofServiceModal");
+    }
+    closeModal(ref: string) {
+        this.refs[ref].close();
+    }
+    setClosedModal() {
+        this.props.dispatch(uiActions.setOpenModalRef(''))
+    }
+
+    setOpenedModal(ref: string) {
+        this.props.dispatch(uiActions.setOpenModalRef(ref))
+    }
+
+    openModal(ref: string) {
+        this.refs[ref].open();
+    }
+
     _renderProgressBar() {
         if (this.props.isFetching) {
             return (
@@ -420,6 +443,7 @@ class SignUp extends React.Component {
     }
 
     _renderSignUp() {
+        var modalStyle = [styles.modal, styles.createTerms];
         var options = {
             stylesheet: formStylesheet,
             fields: {
@@ -443,7 +467,8 @@ class SignUp extends React.Component {
                     underlineColorAndroid: "#ccc",
                     selectionColor: "orange",
                 },
-                company:{ template: this.companyTemplate,
+                company: {
+                    template: this.companyTemplate,
                     onEndEditing: this.goToEmail.bind(this),
                     placeholder: 'company',
                     label: ' ',
@@ -464,7 +489,7 @@ class SignUp extends React.Component {
                 },
                 password: {
                     template: this.passwordTemplate,
-                    onEndEditing: this._makeSignUp.bind(this),
+                    onEndEditing: this._openTermsofService.bind(this),
                     placeholder: 'Password',
                     label: ' ',
                     secureTextEntry: true,
@@ -492,16 +517,20 @@ class SignUp extends React.Component {
                             />
                             <View style={styles.buttonsContainer}>
                                 <Button containerStyle={styles.singleBtnContainer} style={styles.button} onPress={() => this.props._goBack()}>Cancel</Button>
-                                <Button containerStyle={styles.singleBtnContainer} style={styles.button} onPress={this._makeSignUp.bind(this)}>Sign up</Button>
+                                <Button containerStyle={styles.singleBtnContainer} style={styles.button} onPress={this._openTermsofService.bind(this)}>Sign up</Button>
                             </View>
                         </View>
                     </View>
                 </View>
+                <Modal style={modalStyle} position={"center"} ref={"termsofServiceModal"} isDisabled={false} onClosed={() => { this.setClosedModal() }} onOpened={() => { this.setOpenedModal('termsofServiceModal') }}>
+                    <TermsofServiceModal value={this.state.value} closeModal={() => this.closeModal("termsofServiceModal")} openModal={() => this.openModal("termsofServiceModal")} />
+                </Modal>
             </KeyboardAwareScrollView>
         )
     }
 
     render() {
+
         return (
             <View style={[styles.container, this.props.style]}>
                 {this._renderSignUp()}

@@ -1,7 +1,9 @@
 import {config} from './app.config'
 import _ from 'lodash'
+import * as constans from '../constants/GlobalConstans'
+
 import stricturiEncode from 'strict-uri-encode'
-import {AsyncStorage} from 'react-native'
+import {AsyncStorage, Platform} from 'react-native'
 
 export function getApiBaseUrl(env: string){
     var urls = _.find(config.urls, {'env' : env});
@@ -35,6 +37,16 @@ export function getEnvIp(env: string){
 
 }
 
+export function getLeadSourceCode() {
+    var leadSourceCode;
+    if (Platform.OS === 'android')
+        leadSourceCode = constans.LEAD_SOURCE_CODE_ANDROID
+    else
+        leadSourceCode = constans.LEAD_SOURCE_CODE_IOS
+        
+    return leadSourceCode;
+}
+
 export function getForgotPasswordUrl(env: string,username: string){
     var urls = _.find(config.urls, {'env' : env});
 
@@ -52,7 +64,7 @@ export function getSignUpUrl(env: string){
     if (urls == null)
         return null;
     
-    return `${apiBaseUrl}/KObject.svc/SignUp`; 
+    return `${apiBaseUrl}/Access.svc/SignUp`; 
 }
 
 export function getLoginUrl(env: string, orgId: string, token : Object){

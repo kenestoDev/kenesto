@@ -1,5 +1,5 @@
 import * as types from '../constants/ActionTypes';
-import {getAuthUrl, getLoginUrl, getForgotPasswordUrl,getSignUpUrl, clearCredentials, setCredentials, getRetrieveStatisticsUrl,UpdateFcmTokenUrl} from '../utils/accessUtils';
+import {getAuthUrl, getLoginUrl, getForgotPasswordUrl,getSignUpUrl, clearCredentials, setCredentials, getRetrieveStatisticsUrl,UpdateFcmTokenUrl,getLeadSourceCode} from '../utils/accessUtils';
 import { push, pop, emitInfo, emitError, emitToast, navigateReset} from './navActions'
 import * as textResource from '../constants/TextResource'
 import * as routes from '../constants/routes'
@@ -186,7 +186,7 @@ export function ActivateForgotPassword(username : string, env : string = 'dev') 
     }
 }
 
-export function ActivateSignUp(firstName:string, lastName:string, company:string, email:string, password:string, env : string = 'dev') {
+export function ActivateSignUp(firstName:string, lastName:string, company:string, email:string, password: string, env : string = 'dev') {
      return (dispatch, getState) => {
          if (!getState().accessReducer.isConnected)
             return dispatch(emitToast("info", textResource.NO_INTERNET)); 
@@ -207,9 +207,11 @@ export function ActivateSignUp(firstName:string, lastName:string, company:string
                 LastName: lastName,
                 Company:company,
                 Email: email,
-                Password:password
+                Password:password,
+                LeadSourceCode:getLeadSourceCode()
             }
         }
+
         var request = new Request(signUpUrl, {
             method: 'post',
             headers: new Headers({
@@ -221,19 +223,21 @@ export function ActivateSignUp(firstName:string, lastName:string, company:string
         fetch(request)
         .then((response) => response.json())
         .catch((error) => {
-             dispatch(emitError('Failed to reset password'))
+             dispatch(emitError('Failed to Sign Up'))
               writeToLog("", constans.ERROR, `function ActivateSignUp- Failed to Sign Up - url: ${signUpUrl}, First Name: ${firstName}, Last Name: ${lastName}, Email :${email} `,error)
         })
         .then( (responseData) => {
             if (responseData.ResponseStatus == "FAILED")
             {
+                
                  dispatch(updateIsFetching(false)); 
                  dispatch(emitError("Failed to create account.", "Please try again later"))
                  writeToLog("", constans.ERROR, `function ActivateSignUp- Failed to Sign Up - url: ${signUpUrl}`)
             }
             else{
+                  
                    dispatch(updateIsFetching(false)); 
-                   dispatch(emitInfo("Account successfully created", "Thank you for your registration! Your account is now ready to use. ",() => dispatch(pop())))
+                   dispatch(emitInfo("Thank you for registering", "To activate your Kenesto account please look for your activation email, including spam or junk folders",() => dispatch(pop())))
             }
          
         }).done();

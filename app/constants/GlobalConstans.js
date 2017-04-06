@@ -15,6 +15,9 @@ export const DEBUG = 'Debug'
 export const GENERAL_FAMILY = 'General'
 export const SUCCESS = 'success'
 export const ACCESS_KEY = '743AA96A-0EDD-4A19-BC19-3D6778D08901'
+export const LEAD_SOURCE_CODE_ANDROID = "MobileApp-Android"
+export const LEAD_SOURCE_CODE_IOS = "MobileApp-IOS"
+
 
 
 
