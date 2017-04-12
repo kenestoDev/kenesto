@@ -3,6 +3,7 @@ import {View, Text,TextInput, StyleSheet, Animated, Dimensions} from "react-nati
 import Button from "react-native-button";
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ProgressBar from './ProgressBar'
+import TermsOfService from './TermsOfService'
 import config from '../utils/app.config';
 import * as accessActions from '../actions/Access'
 import {CheckIn} from '../actions/documentsActions'
@@ -78,13 +79,31 @@ class TermsofServiceModal extends React.Component {
     componentDidMount() {
          
     }
-
+   
+   _navigateToTermsOfService(){
+      var { firstName, lastName, email, password, company, env } = this.props.value;
+      const  termsOfServiceRoute = {
+                type: 'push',
+                route: {
+                    key: 'termsOfService',
+                    title: 'termsOfService',
+                    firstName: firstName,
+                    lastName: lastName, 
+                    email: email, 
+                    password: password,
+                    company: company,
+                    env: this.props.env
+                }
+        }
+        this.props._handleNavigate(termsOfServiceRoute)
+         this.props.closeModal();
+   }
     _makeSignUp() {
-        var { firstName, lastName, email, password, company,} = this.props.value; 
+       
         this.props.dispatch(accessActions.ActivateSignUp(firstName, lastName, company, email, password, this.props.env));
         this.props.closeModal();
     }
-
+   
     render(){
         return (
             <View style={styles.container}>
@@ -96,7 +115,7 @@ class TermsofServiceModal extends React.Component {
                 </View>
                 <View style={styles.buttonsContainer}>
                     <Button onPress={this._makeSignUp.bind(this) } containerStyle={styles.singleBtnContainer} style={styles.button}>I Agree</Button>
-                    <Button onPress={this.props.closeModal.bind(this) } containerStyle={styles.singleBtnContainer} style={styles.button}>View Terms</Button>
+                    <Button onPress={this._navigateToTermsOfService.bind(this)} containerStyle={styles.singleBtnContainer} style={styles.button}>View Terms</Button>
                 </View>
             </View>
         );

@@ -173,7 +173,24 @@ let styles = StyleSheet.create({
     justifyContent: "space-between",
     padding: 9,
     // opacity: 0
-  }
+  },
+  toolbarContainer: {        
+        backgroundColor: "#F5FCFF",
+        borderBottomWidth: 2,
+        borderBottomColor: "#e6e6e6",
+       
+   },
+  titleContainer: {
+    justifyContent: "center",
+     alignItems: "center",
+     flex: 1,
+  },
+   title: {
+       color: "#000",
+       fontSize: 20,
+       alignItems: "center",
+   },
+   
 })
 
 
@@ -226,8 +243,8 @@ class KenestoToolbar extends Component {
     })
   }
 
-  onGoBack() {
-    this.props.onActionSelected(1)
+  onGoBack(actionIndex) {
+    this.props.onActionSelected(actionIndex)
     this.props.dispatch(hideToast());
   }
 
@@ -349,7 +366,7 @@ class KenestoToolbar extends Component {
     const sortDirection = documentlist.sortDirection != undefined ? documentlist.sortDirection : "";
     var title = navReducer.routes[navReducer.index].data != null ? navReducer.routes[navReducer.index].data.name : navReducer.routes[navReducer.index].title;
     var showGoBack = navReducer.routes[navReducer.index].data.fId != "" ? true : false;
-    var animatedHamburger = showGoBack?   <TouchableElement onPress={this.onGoBack.bind(this) } >
+    var animatedHamburger = showGoBack?   <TouchableElement onPress={(value) => this.onGoBack(1)} >
             <View>
               <Icon name="arrow-back" style={[styles.iconStyle]} />
             </View>
@@ -427,7 +444,7 @@ class KenestoToolbar extends Component {
        
     return (
       <View style= {[styles.toolbar, {marginTop: (Platform.OS === 'ios')? 15 : 0}]} >
-         <TouchableElement onPress={this.onGoBack.bind(this) } >
+         <TouchableElement onPress={(value) => this.onGoBack(1) } >
             <View>
               <Icon name="arrow-back" style={[styles.iconStyle]} />
             </View>
@@ -454,7 +471,7 @@ class KenestoToolbar extends Component {
         }
     return (
       <View style= {[styles.toolbar, {marginTop: (Platform.OS === 'ios')? 15 : 0}]} >
-         <TouchableElement onPress={this.onGoBack.bind(this) } >
+         <TouchableElement onPress={(value) => this.onGoBack(1) } >
             <View>
               <Icon name="arrow-back" style={[styles.iconStyle]} />
             </View>
@@ -466,23 +483,68 @@ class KenestoToolbar extends Component {
       </View>
     )
   }
+renderForgotPasswordTollbar(){
+    var TouchableElement = TouchableHighlight;
+    if (Platform.OS === 'android') {
+      TouchableElement = TouchableNativeFeedback;
+    }
 
-  // renderItemMenu(){
+    var title = "Forgot Password";
+   
+    return (
+      <View style= {[styles.toolbar,styles.toolbarContainer, {marginTop: (Platform.OS === 'ios')? 15 : 0}]} >
+         <TouchableElement onPress={(value) => this.onGoBack(4) } >
+            <View>
+              <Icon name="arrow-back" style={[styles.iconStyle]} />
+            </View>
+          </TouchableElement>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title} numberOfLines={1}>{title}</Text>
+        </View>
+      </View>
+    )
+}
+renderTermsofServiceTollbar(){
+    var TouchableElement = TouchableHighlight;
+    if (Platform.OS === 'android') {
+      TouchableElement = TouchableNativeFeedback;
+    }
 
-  //    var currDoc = navReducer.routes[navReducer.index].data != null? navReducer.routes[navReducer.index].data.name: navReducer.routes[navReducer.index];
+    var title = "Terms of Service";
+   
+    return (
+      <View style= {[styles.toolbar,styles.toolbarContainer, {marginTop: (Platform.OS === 'ios')? 15 : 0}]} >
+         <TouchableElement onPress={(value) => this.onGoBack(4) } >
+            <View>
+              <Icon name="arrow-back" style={[styles.iconStyle]} />
+            </View>
+          </TouchableElement>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title} numberOfLines={1}>{title}</Text>
+        </View>
+      </View>
+    )
+}
 
-  //   return (
-
-
-  //       navReducer.routes[navReducer.index].key === 'document'?
-  //          <TouchableElement onPress={ (()=> { this.menuPressed(currDoc.Id, currDoc.FamilyCode)}).bind(this) }>
-  //               <View style={styles.iconContainer}>
-  //                 <Icon name="more-vert" style={styles.moreMenu} />
-  //               </View>
-  //          </TouchableElement> :  <View></View>
-  //   )
-
-  // }
+renderSignUpTollbar(){
+    var TouchableElement = TouchableHighlight;
+    if (Platform.OS === 'android') {
+      TouchableElement = TouchableNativeFeedback;
+    }
+    var title = "Sign Up for KENESTO";
+    return (
+      <View style= {[styles.toolbar, styles.toolbarContainer, {marginTop: (Platform.OS === 'ios')? 15 : 0}]} >
+         <TouchableElement onPress={(value) => this.onGoBack(4) } >
+            <View>
+              <Icon name="arrow-back" style={[styles.iconStyle]} />
+            </View>
+          </TouchableElement>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title} numberOfLines={1}>{title}</Text>
+        </View>
+      </View>
+    )
+}
 
   addPeople() {
     const {documentsReducer} = this.props
@@ -503,6 +565,9 @@ class KenestoToolbar extends Component {
     const sortDirection = documentlist.sortDirection != undefined ? documentlist.sortDirection : "";
     var isDocumentsTollbar = (navReducer.routes[navReducer.index].key.indexOf('documents') > -1) ? true : false;
     var isDocumentTollbar = navReducer.routes[navReducer.index].key == 'document';
+    var isForgotPasswordTollbar = navReducer.routes[navReducer.index].key == 'forgotPassword';
+     var isSignUpTollbar = navReducer.routes[navReducer.index].key == 'signUp';
+    var isTermsofServiceTollbar = navReducer.routes[navReducer.index].key == 'termsOfService';
     var isAddPeoplePage = (navReducer.routes[navReducer.index].key.indexOf('addPeople') > -1) ? true : false;
     var isSearchToolbar = this.state.isSearchBoxOpen || (typeof navReducer.routes[navReducer.index].data != 'undefined'
       && typeof navReducer.routes[navReducer.index].data.isSearch != 'undefined'
@@ -530,7 +595,24 @@ class KenestoToolbar extends Component {
           {this.renderAddPeopleToolbar() }
         </View>
       )
-
+     else if (isForgotPasswordTollbar)
+      return (
+        <View>
+          {this.renderForgotPasswordTollbar() }
+        </View>
+      )
+     else if (isTermsofServiceTollbar)
+      return (
+        <View>
+          {this.renderTermsofServiceTollbar() }
+        </View>
+      )
+      else if (isSignUpTollbar)
+      return (
+        <View>
+          {this.renderSignUpTollbar() }
+        </View>
+      )
       return null;
   }
 }

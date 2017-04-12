@@ -365,7 +365,7 @@ const styles = StyleSheet.create({
                             <Button containerStyle={styles.loginBtnContainer} onPress={this._makeLogin.bind(this)} style={styles.loginBtn}>Login</Button>
                             <TouchableWithoutFeedback onPress={ this.NavigateToSignUp.bind(this)} >
                                 <View>
-                                    <Text style={styles.forgotPwd}>Sigh Up for KENESTO</Text>
+                                    <Text style={styles.forgotPwd}>Sign Up for KENESTO</Text>
                                 </View>
                             </TouchableWithoutFeedback>
 

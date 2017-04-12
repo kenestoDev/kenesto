@@ -14,6 +14,7 @@ function accessReducer(state =
     thumbnailPath: "",
     hasProfilePicture: false,
     isConnected : false,
+    licenseAgreement:"",
     statistics: {
       totalMyDocuments: 0,
       totalAllDocuments: 0,
@@ -83,6 +84,13 @@ function accessReducer(state =
         thumbnailPath: action.thumbnailPath + "?t=" + Date.now()
       }
 
+    }
+    
+     case types.UPDATE_LICENSE_AGREEMENT: {
+      return {
+          ...state,
+          licenseAgreement:action.licenseAgreement
+      }
     }
     case types.UPDATE_STATISTICS: {
       return {

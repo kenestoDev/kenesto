@@ -43,7 +43,7 @@ export function getLeadSourceCode() {
         leadSourceCode = constans.LEAD_SOURCE_CODE_ANDROID
     else
         leadSourceCode = constans.LEAD_SOURCE_CODE_IOS
-        
+
     return leadSourceCode;
 }
 
@@ -65,6 +65,16 @@ export function getSignUpUrl(env: string){
         return null;
     
     return `${apiBaseUrl}/Access.svc/SignUp`; 
+}
+
+export function getLicneseAgreementUrl(env: string, userData: string = ''){
+  var urls = _.find(config.urls, { 'env': env });
+    var apiBaseUrl = urls.ApiBaseUrl;
+    var url
+    if (urls == null)
+        return null;
+    
+    return `${apiBaseUrl}/Access.svc/GetLicneseAgreement?ud=${userData}`; 
 }
 
 export function getLoginUrl(env: string, orgId: string, token : Object){

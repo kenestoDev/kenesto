@@ -21,6 +21,7 @@
     "react-native-fcm": "^6.1.0",
     "react-native-fetch-blob": "^0.10.2",
     "react-native-gesture-responder": "^0.1.1",
+    "react-native-htmlview": "^0.9.0",
     "react-native-image-crop-picker": "^0.10.2",
     "react-native-keyboard-aware-scroll-view": "0.2.5",
     "react-native-menu": "^0.20.1",

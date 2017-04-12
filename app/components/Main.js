@@ -233,6 +233,9 @@ class Main extends React.Component {
       case 3:
         this.onSortBy(value);
         break;
+      case 4:
+         dispatch(pop())
+        break;
       default:
         break;
     }

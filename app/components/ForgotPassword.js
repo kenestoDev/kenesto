@@ -159,9 +159,6 @@ const styles = StyleSheet.create({
          <ScrollView style={{flex:1, backgroundColor: "#fff"}} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="always">
           <View style={[styles.container, this.props.style]}>
             <View style={{flex: 1}}>
-                        <View style={styles.titleContainer}>
-                            <Text style={styles.title}>Forgot Password</Text>
-                        </View>
                         <View style={styles.form}>
                             {this._renderProgressBar()}
                             <Text style={styles.instructions}>Enter your email address to request a password reset</Text>

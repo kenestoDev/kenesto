@@ -232,6 +232,7 @@ class SignUp extends React.Component {
         this.setState({ value });
     }
     _openTermsofService() {
+        this.props.dispatch(accessActions.retrieveLicneseAgreement());
         this.openTermsofServiceModal();
     }
 
@@ -498,15 +499,13 @@ class SignUp extends React.Component {
                     selectionColor: "orange",
                 }
             }
+          
         };
         return (
 
             <KeyboardAwareScrollView style={{ flex: 1, backgroundColor: "#fff" }} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="always">
                 <View style={[styles.container, this.props.style]}>
                     <View style={{ flex: 1 }}>
-                        <View style={styles.titleContainer}>
-                            <Text style={styles.title}>Sign Up for KENESTO</Text>
-                        </View>
                         <View style={styles.form}>
                             <Form
                                 ref="form"
@@ -523,7 +522,7 @@ class SignUp extends React.Component {
                     </View>
                 </View>
                 <Modal style={modalStyle} position={"center"} ref={"termsofServiceModal"} isDisabled={false} onClosed={() => { this.setClosedModal() }} onOpened={() => { this.setOpenedModal('termsofServiceModal') }}>
-                    <TermsofServiceModal value={this.state.value} closeModal={() => this.closeModal("termsofServiceModal")} openModal={() => this.openModal("termsofServiceModal")} />
+                    <TermsofServiceModal _handleNavigate={this.props._handleNavigate } value={this.state.value} closeModal={() => this.closeModal("termsofServiceModal")} openModal={() => this.openModal("termsofServiceModal")} />
                 </Modal>
             </KeyboardAwareScrollView>
         )

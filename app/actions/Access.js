@@ -1,5 +1,5 @@
 import * as types from '../constants/ActionTypes';
-import {getAuthUrl, getLoginUrl, getForgotPasswordUrl,getSignUpUrl, clearCredentials, setCredentials, getRetrieveStatisticsUrl,UpdateFcmTokenUrl,getLeadSourceCode} from '../utils/accessUtils';
+import {getAuthUrl, getLoginUrl, getForgotPasswordUrl,getSignUpUrl, clearCredentials, setCredentials, getRetrieveStatisticsUrl,UpdateFcmTokenUrl,getLeadSourceCode, getLicneseAgreementUrl } from '../utils/accessUtils';
 import { push, pop, emitInfo, emitError, emitToast, navigateReset} from './navActions'
 import * as textResource from '../constants/TextResource'
 import * as routes from '../constants/routes'
@@ -68,6 +68,13 @@ function updateStatistics(totalMyDocuments: number, totalAllDocuments: number, t
     totalUsageSpace
   }
 }
+function updateLicneseAgreement(licenseAgreement: string) {
+  return {
+    type: types.UPDATE_LICENSE_AGREEMENT,
+    licenseAgreement,
+  }
+}
+
 function Authenticate(userId : string, password: string) {
     return {
         type: types.AUTHENTICATE,  
@@ -148,6 +155,32 @@ export function retrieveStatistics() {
   }
 }
 
+export function retrieveLicneseAgreement() {
+  return (dispatch, getState) => {
+    if (!getState().accessReducer.isConnected)
+        return dispatch(emitToast("info", textResource.NO_INTERNET)); 
+
+    const url = getLicneseAgreementUrl(getState().accessReducer.env)
+
+    writeToLog("", constans.DEBUG, `function getLicneseAgreement- fetch url:${url}`)
+    return fetch(url)
+      .then(response => response.json())
+      .then(json => {
+        if (json.ResponseStatus == "FAILED") {
+           dispatch(emitError("Failed to get licnese agreement",""))
+           writeToLog("", constans.ERROR, `function getLicneseAgreement- failed to get licnese agreement - url: ${url}`)
+        }
+        else {
+         var licenseAgreement = json.ResponseData.LicenseAgreement;
+         dispatch(updateLicneseAgreement(licenseAgreement))
+        }
+      })
+      .catch((error) => {
+        dispatch(emitError("Failed to get licnese agreement",""))
+        writeToLog("", constans.ERROR, `function getLicneseAgreement- Failed to get licnese agreement - url: ${url}`, error)
+      })
+  }
+}
 export function ActivateForgotPassword(username : string, env : string = 'dev') {
      return (dispatch, getState) => {
          if (!getState().accessReducer.isConnected)
@@ -243,6 +276,7 @@ export function ActivateSignUp(firstName:string, lastName:string, company:string
         }).done();
     }
 }
+
 
 export function logOut() {
     return (dispatch, getState) => {

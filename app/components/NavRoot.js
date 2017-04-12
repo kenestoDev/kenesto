@@ -6,6 +6,7 @@ import SignUp from './SignUp'
 import AddPeopleContainer from '../containers/AddPeopleContainer'
 import Documents from './Documents'
 import Document from './Document'
+import TermsOfService from "./TermsOfService"
 import LoginContainer from '../containers/LoginContainer'
 import DocumentsContainer from '../containers/DocumentsContainer'
 import LauncherContainer from '../containers/LauncherContainer'
@@ -50,12 +51,14 @@ class NavRoot extends Component {
     if (route.key === 'about') {
       return <About _goBack={this._handleBackAction.bind(this) } />
     }
-
+    if (route.key === 'termsOfService') {
+      return <TermsOfService firstName={route.firstName} lastName={route.lastName} email={route.email} password={route.password} company={route.company} _goBack={this._handleBackAction.bind(this)} env={route.env} _handleNavigate={this._handleNavigate.bind(this) } />
+    }
     if (route.key === 'forgotPassword') {
       return <ForgotPassword userName={route.userName} _goBack={this._handleBackAction.bind(this)} env={route.env}  />
     }
-     if (route.key === 'signUp') {
-      return <SignUp userName={route.userName} _goBack={this._handleBackAction.bind(this)} env={route.env}  />
+    if (route.key === 'signUp') {
+      return <SignUp userName={route.userName} _goBack={this._handleBackAction.bind(this)} env={route.env}  _handleNavigate={this._handleNavigate.bind(this) }/>
     }
     if (route.key === 'scan') {
       return <Scan _handleNavigate={this._handleNavigate.bind(this) } isCameraScan={route.data.isCameraScan}  baseFileId={route.data.baseFileId} />
