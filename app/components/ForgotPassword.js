@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
        fontSize: 20,
    },
    form: {
-        padding: 40,
+        padding: 13,
    },
    instructions: {
         textAlign: "center",

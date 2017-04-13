@@ -174,10 +174,10 @@ const styles = StyleSheet.create({
 
 class SignUp extends React.Component {
 
-    // componentDidMount() {
-    //     // give focus to the name textbox
-    //     this.refs.form.getComponent('username').refs.input.focus();
-    // }
+    componentDidMount() {
+        // give focus to the name textbox
+          this.goToFirstName()
+    }
     constructor(props) {
 
         super(props)
@@ -193,6 +193,12 @@ class SignUp extends React.Component {
             isLoading: false,
             responseStatus: ''
         }
+        
+        firstNameIconStyle = {}
+        lastNameIconStyle = {}
+        companyIconStyle = {}
+        emailIconStyle = {}
+        passwordIconStyle = {}
     }
     onChange(value) {
         if (value.firstName != false) {
@@ -232,12 +238,19 @@ class SignUp extends React.Component {
         this.setState({ value });
     }
     _openTermsofService() {
+        var value = this.refs.form.getValue();
+        if (value == null) { // if validation fails, value will be null
+            return false; // value here is an instance of Person
+        }
         this.props.dispatch(accessActions.retrieveLicneseAgreement());
         this.openTermsofServiceModal();
     }
 
     goToPword() {
         this.refs.form.getComponent('password').refs.inputPword.focus();
+    }
+    goToFirstName() {
+        this.refs.form.getComponent('firstName').refs.inputFirstName.focus();
     }
     goToLastName() {
         this.refs.form.getComponent('lastName').refs.inputLastName.focus();
@@ -265,7 +278,7 @@ class SignUp extends React.Component {
             <View style={formGroupStyle}>
                 <Icon name="person" style={[styles.formIcon, firstNameIconStyle]} />
                 <TextInput
-                    ref="inputFirstname"
+                    ref="inputFirstName"
                     onEndEditing={() => { locals.onEndEditing(); }}
                     returnKeyType="next"
                     placeholderTextColor={locals.placeholderTextColor}
