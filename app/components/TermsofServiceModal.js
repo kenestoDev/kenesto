@@ -99,7 +99,7 @@ class TermsofServiceModal extends React.Component {
          this.props.closeModal();
    }
     _makeSignUp() {
-       
+        const {firstName,lastName,company,email,password} = this.props
         this.props.dispatch(accessActions.ActivateSignUp(firstName, lastName, company, email, password, this.props.env));
         this.props.closeModal();
     }

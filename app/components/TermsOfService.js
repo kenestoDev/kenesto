@@ -19,7 +19,7 @@ import { writeToLog } from '../utils/ObjectUtils'
 import * as constans from '../constants/GlobalConstans'
 import getImageSource from './GetImageSource';
 import { getTime } from '../utils/KenestoHelper';
-import { hideToast, emitToast } from '../actions/navActions'
+import { hideToast, emitToast, pop } from '../actions/navActions'
 import imageSource from '../assets/thumbnail_img.png';
 import HTMLView from 'react-native-htmlview';
 class TermsOfService extends React.Component {
@@ -35,6 +35,7 @@ class TermsOfService extends React.Component {
 
   _openTermsofService() {
      const {firstName,lastName,company,email,password} = this.props
+      this.props.dispatch(pop())
      this.props.dispatch(accessActions.ActivateSignUp(firstName, lastName, company, email, password, this.props.env));
   }
   render() {
@@ -55,8 +56,7 @@ class TermsOfService extends React.Component {
 
         </View>
         <View style={styles.buttonsContainer}>
-                                <Button containerStyle={styles.singleBtnContainer} style={styles.button} onPress={() => this.props._goBack()}>Cancel</Button>
-                                <Button containerStyle={styles.singleBtnContainer} style={styles.button} onPress={this._openTermsofService.bind(this)}>I Agree</Button>
+          <Button containerStyle={styles.singleBtnContainer} style={styles.button} onPress={this._openTermsofService.bind(this)}>I Agree</Button>
         </View>
       </View>
 
