@@ -49,10 +49,6 @@ LastName.getValidationErrorMessage = function (value, path, context) {
     return 'Please enter your last name.';
 };
 
-var Company = Tcomb.refinement(Tcomb.String, function (s) {
-    return true;
-});
-
 var Email = Tcomb.refinement(Tcomb.String, function (s) {
     return /\S+@\S+\.\S+/.test(s);
 });
@@ -74,7 +70,7 @@ Password.getValidationErrorMessage = function (value, path, context) {
 var User = Tcomb.struct({
     firstName: FirstName,
     lastName: LastName,
-    company: Company,
+    company: Tcomb.maybe(Tcomb.String),
     email: Email,  //required email
     password: Password,
 });
@@ -256,7 +252,7 @@ class SignUp extends React.Component {
         this.refs.form.getComponent('lastName').refs.inputLastName.focus();
     }
     goToEmail() {
-        this.refs.form.getComponent('email').refs.inputEmail.focus();
+        //this.refs.form.getComponent('email').refs.inputEmail.focus();
     }
     goToCompany() {
         this.refs.form.getComponent('company').refs.inputCompany.focus();
@@ -486,7 +482,7 @@ class SignUp extends React.Component {
                     onEndEditing: this.goToEmail.bind(this),
                     placeholder: 'company',
                     label: ' ',
-                    autoFocus: true,
+                    autoFocus: false,
                     placeholderTextColor: '#ccc',
                     underlineColorAndroid: "#ccc",
                     selectionColor: "orange",
