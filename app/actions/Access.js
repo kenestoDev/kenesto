@@ -202,7 +202,7 @@ export function ActivateForgotPassword(username : string, env : string = 'dev') 
               writeToLog(username, constans.ERROR, `function ActivateForgotPassword- Failed to reset password - url: ${forgotPasswordUrl}`,error)
         })
         .then( (responseData) => {
-            if (responseData.ResponseStatus == "FAILED")
+            if (responseData.ForgotPasswordResult.ResponseStatus == "FAILED")
             {
                  dispatch(updateIsFetching(false)); 
                  dispatch(emitError("Reset password failed", ""))
@@ -260,7 +260,7 @@ export function ActivateSignUp(firstName:string, lastName:string, company:string
               writeToLog("", constans.ERROR, `function ActivateSignUp- Failed to Sign Up - url: ${signUpUrl}, First Name: ${firstName}, Last Name: ${lastName}, Email :${email} `,error)
         })
         .then( (responseData) => {
-            if (responseData.ResponseStatus == "FAILED")
+            if (responseData.SignUpResult.ResponseStatus == "FAILED")
             {
                 
                  dispatch(updateIsFetching(false)); 
