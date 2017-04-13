@@ -1,5 +1,5 @@
 import React from "react"; 
-import {View, Text,TextInput, StyleSheet, Animated, Dimensions} from "react-native";
+import {View, Text,TextInput, StyleSheet, Platform } from "react-native";
 import Button from "react-native-button";
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ProgressBar from './ProgressBar'
@@ -56,12 +56,19 @@ var styles = StyleSheet.create({
         alignSelf: "stretch",   
     },
     singleBtnContainer: {
-        width: 140,
+         ...Platform.select({
+            ios:{
+                width: 130,
+            },
+            android:{
+                width: 140,
+            }
+        }),
         justifyContent: "center",
         height: 50,
         backgroundColor: "#F5F6F8",
         borderWidth: 0.5,
-        borderColor: "#BEBDBD"
+        borderColor: "#BEBDBD",
    },
     button: {
         color: "#666666",

@@ -243,7 +243,7 @@ class SignUp extends React.Component {
     }
 
     goToPword() {
-        this.refs.form.getComponent('password').refs.inputPword.focus();
+        //this.refs.form.getComponent('password').refs.inputPword.focus();
     }
     goToFirstName() {
         this.refs.form.getComponent('firstName').refs.inputFirstName.focus();
