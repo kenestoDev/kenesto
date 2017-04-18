@@ -18,6 +18,7 @@ import {
   ToolbarAndroid,
   TouchableHighlight,
   TouchableNativeFeedback,
+  TouchableOpacity,
   Platform
 } from 'react-native'
 
@@ -309,10 +310,10 @@ class KenestoToolbar extends Component {
     const {navReducer} = this.props
     var documentlist = getDocumentsContext(navReducer);
     const sortDirection = documentlist.sortDirection != undefined ? documentlist.sortDirection : "";
-     var TouchableElement = TouchableHighlight;
-    if (Platform.OS === 'android') {
-      TouchableElement = TouchableNativeFeedback;
-    }
+     var TouchableElement = TouchableOpacity;
+    // if (Platform.OS === 'android') {
+    //   TouchableElement = TouchableNativeFeedback;
+    // }
     return (
       <View style={[styles.searchBoxContainer, {marginTop: (Platform.OS === 'ios')? 15 : 0}]}>
 
@@ -358,10 +359,10 @@ class KenestoToolbar extends Component {
   renderDocumentsToolbar() {
     const {navReducer} = this.props
     var documentlist = getDocumentsContext(navReducer);
-     var TouchableElement = TouchableHighlight;
-    if (Platform.OS === 'android') {
-      TouchableElement = TouchableNativeFeedback;
-    }
+     var TouchableElement = TouchableOpacity;
+    // if (Platform.OS === 'android') {
+    //   TouchableElement = TouchableNativeFeedback;
+    // }
     // const sortBy = documentlist.sortBy;
     const sortDirection = documentlist.sortDirection != undefined ? documentlist.sortDirection : "";
     var title = navReducer.routes[navReducer.index].data != null ? navReducer.routes[navReducer.index].data.name : navReducer.routes[navReducer.index].title;
@@ -425,10 +426,10 @@ class KenestoToolbar extends Component {
 
   renderDocumentToolbar() {
 
-    var TouchableElement = TouchableHighlight;
-    if (Platform.OS === 'android') {
-      TouchableElement = TouchableNativeFeedback;
-    }
+    var TouchableElement = TouchableOpacity;
+    // if (Platform.OS === 'android') {
+    //   TouchableElement = TouchableNativeFeedback;
+    // }
 
     const {navReducer} = this.props
     var documentlist = getDocumentsContext(navReducer);
@@ -465,10 +466,10 @@ class KenestoToolbar extends Component {
     const {navReducer} = this.props
     var documentlist = getDocumentsContext(navReducer);
     var title = navReducer.routes[navReducer.index].data != null ? navReducer.routes[navReducer.index].data.name : navReducer.routes[navReducer.index].title;
-    var TouchableElement = TouchableHighlight;
-        if (Platform.OS === 'android') {
-          TouchableElement = TouchableNativeFeedback;
-        }
+    var TouchableElement = TouchableOpacity;
+        // if (Platform.OS === 'android') {
+        //   TouchableElement = TouchableNativeFeedback;
+        // }
     return (
       <View style= {[styles.toolbar, {marginTop: (Platform.OS === 'ios')? 15 : 0}]} >
          <TouchableElement onPress={(value) => this.onGoBack(1) } >
@@ -505,10 +506,10 @@ renderForgotPasswordTollbar(){
     )
 }
 renderTermsofServiceTollbar(){
-    var TouchableElement = TouchableHighlight;
-    if (Platform.OS === 'android') {
-      TouchableElement = TouchableNativeFeedback;
-    }
+    var TouchableElement = TouchableOpacity;
+    // if (Platform.OS === 'android') {
+    //   TouchableElement = TouchableNativeFeedback;
+    // }
 
     var title = "Terms of Service";
    

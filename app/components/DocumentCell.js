@@ -22,6 +22,7 @@ import {
   StyleSheet,
   Text,
   TouchableHighlight,
+  TouchableOpacity,
   TouchableNativeFeedback,
   View
 } from 'react-native';
@@ -142,11 +143,11 @@ var DocumentCell = React.createClass({
             {uploadingInProgress ?
               <View></View>
               :
-              <TouchableElement onPress={(() => { this.menuPressed(this.props.document.Id, this.props.document.FamilyCode) }).bind(this)}>
+              <TouchableOpacity  onPress={(() => { this.menuPressed(this.props.document.Id, this.props.document.FamilyCode) }).bind(this)}>
                 <View style={styles.iconContainer}>
                   <Icon name="more-vert" style={styles.moreMenu} />
                 </View>
-              </TouchableElement>
+              </TouchableOpacity >
             }
           </View>
         </TouchableElement>
