@@ -14,6 +14,9 @@ import {clearCredentials, setCredentials, getCredentials} from '../utils/accessU
 const Item = Picker.Item;
 import logoImage from '../assets/kenesto_logo.png';
 import stricturiEncode from 'strict-uri-encode';
+import customConfig from '../assets/icons/customConfig.json';
+import { createIconSetFromFontello } from 'react-native-vector-icons';
+const CustomIcon = createIconSetFromFontello(customConfig);
 
 var Form = Tcomb.form.Form;
 
@@ -41,20 +44,20 @@ var User = Tcomb.struct({
 });
 
 var usernameIconStyle = {}
-var passwordIconStyle = {}
+var passwordIconStyle = { }
 // CUSTOM FIELDS TEMPLATE FOR DRAWING ICON. ref:  https://github.com/gcanti/tcomb-form-native/blob/master/lib/templates/bootstrap/textbox.js
 
-
+formStylesheet.textbox.error.borderBottomWidth = 2;
 formStylesheet.textbox.normal = {
     height: 50,            
     fontSize: 17,
-    paddingLeft: 40,
+    paddingLeft: 44,
     paddingBottom: 15,  
 }
 formStylesheet.textbox.error = {
     height: 50,            
     fontSize: 17,
-    paddingLeft: 40  
+    paddingLeft:44,
 }
 
 const styles = StyleSheet.create({
@@ -137,6 +140,7 @@ const styles = StyleSheet.create({
                  password: "",
              },
          }
+        passwordIconStyle = {left:4}
      }
     
     onChange(value) {
@@ -147,10 +151,10 @@ const styles = StyleSheet.create({
             usernameIconStyle = { color: "#ddd" }
         }
         if(value.password != false){
-            passwordIconStyle = { color: "#000" }
+            passwordIconStyle = { color: "#000",left:4 }
         }
         else {
-            passwordIconStyle = { color: "#ddd" }
+            passwordIconStyle = { color: "#ddd",left:4 }
         }
         // this.props.Update
         this.setState({value});
@@ -297,7 +301,7 @@ const styles = StyleSheet.create({
          var error = locals.hasError && locals.error ? <Text accessibilityLiveRegion="polite" style={locals.stylesheet.errorBlock}>{locals.error}</Text> : null;
          return (
              <View style={formGroupStyle}>
-                 <Icon name="https" style={[styles.formIcon, passwordIconStyle]} />
+                <CustomIcon name="key-1" style={[styles.formIcon, passwordIconStyle]} />
                  <TextInput
                      ref="inputPword"
                      onSubmitEditing ={() => {locals.onEndEditing();}}

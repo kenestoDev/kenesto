@@ -30,7 +30,7 @@ var options = {
     stylesheet: formStylesheet,
     fields: {
         username: {
-            placeholder: 'email address',
+            placeholder: 'Enter your email address',
             label: ' ',
             autoFocus: true,
             placeholderTextColor: '#ccc',
@@ -41,18 +41,25 @@ var options = {
 };
 
 formStylesheet.textbox.normal = {
-    height: 50,            
+    height: 50,
+    marginLeft:15,
+    marginRight:15,
+    marginBottom:21,                
     fontSize: 17,
 }
 formStylesheet.textbox.error = {
     height: 50,            
     fontSize: 17,
+    marginLeft:15,
+    marginRight:15,
+    marginBottom:21,     
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#fff",
+        marginLeft:20,marginRight:20,marginTop:40
     },
     titleContainer: {        
         backgroundColor: "#F5FCFF",
@@ -67,7 +74,7 @@ const styles = StyleSheet.create({
        fontSize: 20,
    },
    form: {
-        padding: 13,
+        padding:0,
    },
    instructions: {
         textAlign: "center",
@@ -75,10 +82,11 @@ const styles = StyleSheet.create({
         marginBottom: 32,
    },
     buttonsContainer: {
+        marginLeft:19,
+        marginRight:19,
         flex: 1,
         flexDirection: "row",
         justifyContent: 'space-between',
-        marginTop: 30,
    },
    singleBtnContainer: {
         width: 135,
@@ -86,7 +94,8 @@ const styles = StyleSheet.create({
         height: 50,
         backgroundColor: "#F5F6F8",
         borderWidth: 0.5,
-        borderColor: "#BEBDBD"
+        borderColor: "#BEBDBD",
+
    },
    button: {
         color: "#666666",
@@ -157,7 +166,7 @@ const styles = StyleSheet.create({
     render(){
         return (
          <ScrollView style={{flex:1, backgroundColor: "#fff"}} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="always">
-          <View style={[styles.container, this.props.style]}>
+          <View style={[styles.container]}>
             <View style={{flex: 1}}>
                         <View style={styles.form}>
                             {this._renderProgressBar()}

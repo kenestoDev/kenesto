@@ -1,6 +1,6 @@
 import * as types from '../constants/ActionTypes';
 import {getAuthUrl, getLoginUrl, getForgotPasswordUrl,getSignUpUrl, clearCredentials, setCredentials, getRetrieveStatisticsUrl,UpdateFcmTokenUrl,getLeadSourceCode, getLicneseAgreementUrl } from '../utils/accessUtils';
-import { push, pop, emitInfo, emitError, emitToast, navigateReset} from './navActions'
+import { push, pop, emitInfo, emitError, emitToast, navigateReset, updateIsProcessing} from './navActions'
 import * as textResource from '../constants/TextResource'
 import * as routes from '../constants/routes'
 import * as constans from '../constants/GlobalConstans'
@@ -229,7 +229,7 @@ export function ActivateSignUp(firstName:string, lastName:string, company:string
              const {stateEnv} = getState().accessReducer; 
              env = stateEnv;
         }
-        dispatch(updateIsFetching(true)); 
+       dispatch(updateIsProcessing(true));
        
         var signUpUrl = getSignUpUrl(env);
                writeToLog(email, constans.DEBUG, `function ActivateSignUp - url: ${signUpUrl}, First Name: ${firstName}, Last Name: ${lastName}, company${company}, Email :${email}`)
@@ -256,6 +256,7 @@ export function ActivateSignUp(firstName:string, lastName:string, company:string
         fetch(request)
         .then((response) => response.json())
         .catch((error) => {
+             dispatch(updateIsProcessing(false));
              dispatch(emitError('Failed to Sign Up'))
               writeToLog("", constans.ERROR, `function ActivateSignUp- Failed to Sign Up - url: ${signUpUrl}, First Name: ${firstName}, Last Name: ${lastName}, Email :${email} `,error)
         })
@@ -263,13 +264,13 @@ export function ActivateSignUp(firstName:string, lastName:string, company:string
             if (responseData.SignUpResult.ResponseStatus == "FAILED")
             {
                 
-                 dispatch(updateIsFetching(false)); 
+                 dispatch(updateIsProcessing(false));
                  dispatch(emitError("Failed to create account.", "Please try again later"))
                  writeToLog("", constans.ERROR, `function ActivateSignUp- Failed to Sign Up - url: ${signUpUrl}`)
             }
             else{
                   
-                   dispatch(updateIsFetching(false)); 
+                 dispatch(updateIsProcessing(false));
                    dispatch(emitInfo("Thank you for registering", "To activate your Kenesto account please look for your activation email, including spam or junk folders",() => dispatch(pop())))
             }
          
