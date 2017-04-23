@@ -64,7 +64,15 @@ var Password = Tcomb.refinement(Tcomb.String, function (s) {
 });
 
 Password.getValidationErrorMessage = function (value, path, context) {
-    return 'Password should be 6-20 characters and include at least one letter and one character that is not a letter.';
+    if( value == null ||value.length >20 || value.length <6)
+    {
+      return 'Password should be 6-20 characters.';
+    }
+    else
+    {
+      return 'Password should be include at least one letter and one number.';
+    } 
+    
 };
 
 var User = Tcomb.struct({
@@ -88,12 +96,13 @@ formStylesheet.textbox.normal = {
     height: 50,
     fontSize: 17,
     paddingLeft: 44,
-    paddingBottom: 15,
+    paddingBottom: 5,
 }
 formStylesheet.textbox.error = {
     height: 50,
     fontSize: 17,
-    paddingLeft: 44
+    paddingLeft: 44,
+    
 }
 
 const styles = StyleSheet.create({
@@ -129,7 +138,10 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     form: {
-        padding: 15,
+        paddingLeft: 15,
+        paddingRight:15,
+        paddingTop:15,
+        paddingBottom:5
     },
     formIcon: {
         fontSize: 32,
@@ -147,7 +159,9 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: "row",
         justifyContent: 'space-between',
-        marginTop: 30,
+        padding: 15,
+        marginTop:15
+        
 
     },
     singleBtnContainer: {
@@ -156,7 +170,8 @@ const styles = StyleSheet.create({
         height: 50,
         backgroundColor: "#F5F6F8",
         borderWidth: 0.5,
-        borderColor: "#BEBDBD"
+        borderColor: "#BEBDBD",
+         
     },
     button: {
         color: "#666666",
@@ -519,7 +534,7 @@ class SignUp extends React.Component {
         };
         return (
             <KeyboardAwareScrollView style={styles.signUpcontainer} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="always">
-                    <View style={{ flex: 1 }}>
+                    <View style={{ flex: 1,marginBottom:20,}}>
                         <View style={styles.form}>
                             <Form
                                 ref="form"
@@ -528,11 +543,12 @@ class SignUp extends React.Component {
                                 onChange={this.onChange.bind(this)}
                                 options={options}
                             />
-                            <View style={styles.buttonsContainer}>
+                            
+                        </View>
+                        <View style={styles.buttonsContainer}>
                                 <Button containerStyle={styles.singleBtnContainer} style={styles.button} onPress={() => this.props._goBack()}>Cancel</Button>
                                 <Button containerStyle={styles.singleBtnContainer} style={styles.button} onPress={this._openTermsofService.bind(this)}>Sign up</Button>
                             </View>
-                        </View>
                     </View>
             </KeyboardAwareScrollView>
              

@@ -15,7 +15,7 @@ var styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         backgroundColor:"white",
-        padding: 15,
+        padding: 10,
     },
     titleContainer: {
         flex: 1,
@@ -32,6 +32,7 @@ var styles = StyleSheet.create({
         flex: 1,
         flexDirection:'row',
         alignItems: "center",
+        marginBottom:20
     },
     icon: {
         color: '#000',
@@ -52,13 +53,17 @@ var styles = StyleSheet.create({
         flex: 1,
         flexDirection: "row",
         justifyContent: 'space-between',
-        marginTop: 20, 
-        alignSelf: "stretch",   
+       
+        paddingLeft:3,
+        paddingRight:3,
+        paddingTop:3,
+        marginBottom:3,
+        alignSelf: "stretch",  
     },
     singleBtnContainer: {
          ...Platform.select({
             ios:{
-                width: 130,
+                width: 127,
             },
             android:{
                 width: 140,
@@ -68,9 +73,10 @@ var styles = StyleSheet.create({
         height: 50,
         backgroundColor: "#F5F6F8",
         borderWidth: 0.5,
-        borderColor: "#BEBDBD",
+        borderColor: "#BEBDBD",      
    },
     button: {
+      
         color: "#666666",
         fontWeight: "normal",
         fontSize: 18, 

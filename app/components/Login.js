@@ -47,12 +47,11 @@ var usernameIconStyle = {}
 var passwordIconStyle = { }
 // CUSTOM FIELDS TEMPLATE FOR DRAWING ICON. ref:  https://github.com/gcanti/tcomb-form-native/blob/master/lib/templates/bootstrap/textbox.js
 
-formStylesheet.textbox.error.borderBottomWidth = 2;
 formStylesheet.textbox.normal = {
     height: 50,            
     fontSize: 17,
     paddingLeft: 44,
-    paddingBottom: 15,  
+    paddingBottom: 5,  
 }
 formStylesheet.textbox.error = {
     height: 50,            
