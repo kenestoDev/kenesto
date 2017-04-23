@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Text, TextInput, StyleSheet, ScrollView} from "react-native";
+import {View, Text, TextInput, StyleSheet, ScrollView,Platform} from "react-native";
 import Tcomb from "tcomb-form-native";
 import Button from "react-native-button";
 import config from '../utils/app.config';
@@ -42,10 +42,18 @@ var options = {
 
 formStylesheet.textbox.normal = {
     height: 50,
-    marginLeft:19,
-    marginRight:19,
     marginBottom:21,                
     fontSize: 17,
+    ...Platform.select({
+            ios:{
+                marginLeft:19,
+                marginRight:19,
+            },
+            android:{
+                marginLeft:15,
+                marginRight:15,
+            }
+    }),
 }
 formStylesheet.textbox.error = {
     height: 50,            
@@ -74,11 +82,18 @@ const styles = StyleSheet.create({
        fontSize: 20,
    },
    form: {
-        paddingLeft:5,
-        paddingRight:5,
-        paddingBottom:10,
-        borderColor:"#fff",
-        borderWidth:1
+    ...Platform.select({
+            ios:{
+                paddingLeft:5,
+                paddingRight:5,
+                paddingBottom:10,
+                borderColor:"#fff",
+                borderWidth:1
+            },
+            android:{
+               padding: 0
+            }
+    }),
    },
    instructions: {
         textAlign: "center",
