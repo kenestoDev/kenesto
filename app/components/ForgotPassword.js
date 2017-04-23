@@ -42,8 +42,8 @@ var options = {
 
 formStylesheet.textbox.normal = {
     height: 50,
-    marginLeft:15,
-    marginRight:15,
+    marginLeft:19,
+    marginRight:19,
     marginBottom:21,                
     fontSize: 17,
 }
@@ -74,7 +74,11 @@ const styles = StyleSheet.create({
        fontSize: 20,
    },
    form: {
-        padding:0,
+        paddingLeft:5,
+        paddingRight:5,
+        paddingBottom:10,
+        borderColor:"#fff",
+        borderWidth:1
    },
    instructions: {
         textAlign: "center",

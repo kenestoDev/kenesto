@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {View, Text, TextInput, StyleSheet, TouchableWithoutFeedback, AsyncStorage, Image, Keyboard,Picker} from "react-native";
+import {View, Text, TextInput, StyleSheet, TouchableWithoutFeedback, AsyncStorage, Image, Keyboard,Picker, Platform} from "react-native";
 import Button from "react-native-button";
 import Tcomb from "tcomb-form-native";
 import config from '../utils/app.config';
@@ -51,7 +51,14 @@ formStylesheet.textbox.normal = {
     height: 50,            
     fontSize: 17,
     paddingLeft: 44,
-    paddingBottom: 5,  
+    ...Platform.select({
+            ios:{
+                paddingBottom: 5,
+            },
+            android:{
+               paddingBottom: 10,
+            }
+    }),
 }
 formStylesheet.textbox.error = {
     height: 50,            
@@ -234,7 +241,7 @@ const styles = StyleSheet.create({
 
     renderEnvPicker(){
        if (this.state.selectedEnv != 'dev')
-            return null; 
+            //return null; 
             
             return(
                  <Picker
