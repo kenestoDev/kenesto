@@ -64,7 +64,7 @@ export function getSignUpUrl(env: string){
     if (urls == null)
         return null;
     
-    return `${apiBaseUrl}/Access.svc/SignUp`; 
+    return `${apiBaseUrl}Access.svc/SignUp`; 
 }
 
 export function getLicneseAgreementUrl(env: string, userData: string = ''){
@@ -74,7 +74,7 @@ export function getLicneseAgreementUrl(env: string, userData: string = ''){
     if (urls == null)
         return null;
     
-    return `${apiBaseUrl}/Access.svc/GetLicneseAgreement?ud=${userData}`; 
+    return `${apiBaseUrl}Access.svc/GetLicneseAgreement?ud=${userData}`; 
 }
 
 export function getLoginUrl(env: string, orgId: string, token : Object){

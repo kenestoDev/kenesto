@@ -137,9 +137,9 @@ class TermsofServiceModal extends React.Component {
 
 
 function mapStateToProps(state) {
-    const { documentsReducer} = state
+   // const { documentsReducer} = state
     return {
-        documentsReducer
+        //documentsReducer
     }
 }
 

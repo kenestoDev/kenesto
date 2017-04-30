@@ -155,19 +155,18 @@ export function retrieveStatistics() {
   }
 }
 
-export function retrieveLicneseAgreement() {
+export function retrieveLicneseAgreement(env : string = 'dev') {
   return (dispatch, getState) => {
     if (!getState().accessReducer.isConnected)
         return dispatch(emitToast("info", textResource.NO_INTERNET)); 
 
-    const url = getLicneseAgreementUrl(getState().accessReducer.env)
-
+    const url = getLicneseAgreementUrl(env)
     writeToLog("", constans.DEBUG, `function getLicneseAgreement- fetch url:${url}`)
     return fetch(url)
       .then(response => response.json())
       .then(json => {
         if (json.ResponseStatus == "FAILED") {
-           dispatch(emitError("Failed to get licnese agreement",""))
+           //dispatch(emitError("Failed to get licnese agreement",""))
            writeToLog("", constans.ERROR, `function getLicneseAgreement- failed to get licnese agreement - url: ${url}`)
         }
         else {
@@ -176,7 +175,7 @@ export function retrieveLicneseAgreement() {
         }
       })
       .catch((error) => {
-        dispatch(emitError("Failed to get licnese agreement",""))
+        //dispatch(emitError("Failed to get licnese agreement",""))
         writeToLog("", constans.ERROR, `function getLicneseAgreement- Failed to get licnese agreement - url: ${url}`, error)
       })
   }
