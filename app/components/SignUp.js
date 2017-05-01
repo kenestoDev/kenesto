@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, TextInput, StyleSheet, TouchableWithoutFeedback, AsyncStorage, Image, Keyboard, Picker } from "react-native";
+ import ReactNative,  { View, Text, TextInput, StyleSheet, TouchableWithoutFeedback, AsyncStorage, Image, Keyboard, Picker } from "react-native";
 import Button from "react-native-button";
 import Tcomb from "tcomb-form-native";
 import config from '../utils/app.config';
@@ -269,16 +269,16 @@ class SignUp extends React.Component {
         //this.refs.form.getComponent('password').refs.inputPword.focus();
     }
     goToFirstName() {
-        this.refs.form.getComponent('firstName').refs.inputFirstName.focus();
+        //this.refs.form.getComponent('firstName').refs.inputFirstName.focus();
     }
     goToLastName() {
-        this.refs.form.getComponent('lastName').refs.inputLastName.focus();
+        //this.refs.form.getComponent('lastName').refs.inputLastName.focus();
     }
     goToEmail() {
         //this.refs.form.getComponent('email').refs.inputEmail.focus();
     }
     goToCompany() {
-        this.refs.form.getComponent('company').refs.inputCompany.focus();
+        //this.refs.form.getComponent('company').refs.inputCompany.focus();
     }
 
     firstNameTemplate(locals) {
@@ -299,6 +299,7 @@ class SignUp extends React.Component {
                 <TextInput
                     ref="inputFirstName"
                     onEndEditing={() => { locals.onEndEditing(); }}
+                    onFocus={(event: Event) => { locals.onFocus(event); }}
                     returnKeyType="next"
                     placeholderTextColor={locals.placeholderTextColor}
                     selectionColor={locals.selectionColor}
@@ -331,6 +332,7 @@ class SignUp extends React.Component {
                 <TextInput
                     ref="inputLastName"
                     onEndEditing={() => { locals.onEndEditing(); }}
+                    onFocus={(event: Event) => { locals.onFocus(event); }}
                     returnKeyType="next"
                     placeholderTextColor={locals.placeholderTextColor}
                     selectionColor={locals.selectionColor}
@@ -362,6 +364,7 @@ class SignUp extends React.Component {
                 <TextInput
                     ref="inputCompany"
                     onEndEditing={() => { locals.onEndEditing(); }}
+                    onFocus={(event: Event) => { locals.onFocus(event); }}
                     returnKeyType="next"
                     placeholderTextColor={locals.placeholderTextColor}
                     selectionColor={locals.selectionColor}
@@ -393,6 +396,7 @@ class SignUp extends React.Component {
                 <TextInput
                     ref="inputEmail"
                     onEndEditing={() => { locals.onEndEditing(); }}
+                    onFocus={(event: Event) => { locals.onFocus(event); }}
                     returnKeyType="next"
                     placeholderTextColor={locals.placeholderTextColor}
                     selectionColor={locals.selectionColor}
@@ -425,6 +429,7 @@ class SignUp extends React.Component {
                 <TextInput
                     ref="inputPword"
                     onSubmitEditing={() => { locals.onEndEditing(); }}
+                    onFocus={(event: Event) => { locals.onFocus(event); }}
                     returnKeyType="done"
                     placeholderTextColor={locals.placeholderTextColor}
                     selectionColor={locals.selectionColor}
@@ -476,7 +481,10 @@ class SignUp extends React.Component {
         }
 
     }
-
+    _scrollToInput (reactNode: any) {
+    // Add a 'scroll' ref to your ScrollView
+    this.refs.scroll.scrollToFocusedInput(reactNode)
+    }
     _renderSignUp() {
         var options = {
             stylesheet: formStylesheet,
@@ -485,6 +493,9 @@ class SignUp extends React.Component {
                     template: this.firstNameTemplate,
                     onEndEditing: this.goToLastName.bind(this),
                     placeholder: 'First Name',
+                    onFocus:(event: Event) => {
+                        this._scrollToInput(ReactNative.findNodeHandle(event.target))
+                    },
                     label: ' ',
                     autoFocus: true,
                     placeholderTextColor: '#ccc',
@@ -495,8 +506,11 @@ class SignUp extends React.Component {
                     template: this.lastNameTemplate,
                     onEndEditing: this.goToCompany.bind(this),
                     placeholder: 'Last Name',
+                    onFocus:(event: Event) => {
+                        this._scrollToInput(ReactNative.findNodeHandle(event.target))
+                    },
                     label: ' ',
-                    autoFocus: true,
+                    autoFocus: false,
                     placeholderTextColor: '#ccc',
                     underlineColorAndroid: "#ccc",
                     selectionColor: "orange",
@@ -504,6 +518,9 @@ class SignUp extends React.Component {
                 company: {
                     template: this.companyTemplate,
                     onEndEditing: this.goToEmail.bind(this),
+                    onFocus:(event: Event) => {
+                        this._scrollToInput(ReactNative.findNodeHandle(event.target))
+                    },
                     placeholder: 'Company',
                     label: ' ',
                     autoFocus: false,
@@ -514,9 +531,12 @@ class SignUp extends React.Component {
                 email: {
                     template: this.emailTemplate,
                     onEndEditing: this.goToPword.bind(this),
+                    onFocus:(event: Event) => {
+                        this._scrollToInput(ReactNative.findNodeHandle(event.target))
+                    },
                     placeholder: 'Email',
                     label: ' ',
-                    autoFocus: true,
+                    autoFocus: false,
                     placeholderTextColor: '#ccc',
                     underlineColorAndroid: "#ccc",
                     selectionColor: "orange",
@@ -524,6 +544,9 @@ class SignUp extends React.Component {
                 password: {
                     template: this.passwordTemplate,
                     onEndEditing: this._openTermsofService.bind(this),
+                    onFocus:(event: Event) => {
+                        this._scrollToInput(ReactNative.findNodeHandle(event.target))
+                    },
                     placeholder: 'Password',
                     label: ' ',
                     secureTextEntry: true,
@@ -535,8 +558,8 @@ class SignUp extends React.Component {
           
         };
         return (
-            <KeyboardAwareScrollView style={styles.signUpcontainer} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="always">
-                    <View style={{ flex: 1,marginBottom:20,}}>
+            <KeyboardAwareScrollView  ref='scroll'>
+                    <View style={{ flex: 1}}>
                         <View style={styles.form}>
                             <Form
                                 ref="form"
