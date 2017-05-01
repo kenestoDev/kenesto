@@ -557,9 +557,14 @@ class SignUp extends React.Component {
             }
           
         };
+
+        var formWidth = (this.props.orientation == 'PORTRAIT') ? 320 : 450; 
+        var formHeight = (this.props.orientation == 'PORTRAIT') ?500 : 320;
+        
         return (
+            <View style={{ width:formWidth, height:formHeight, borderColor:"blue", borderWidth:1,}}>
             <KeyboardAwareScrollView  ref='scroll'>
-                    <View style={{ flex: 1}}>
+                    
                         <View style={styles.form}>
                             <Form
                                 ref="form"
@@ -574,9 +579,9 @@ class SignUp extends React.Component {
                                 <Button containerStyle={styles.singleBtnContainer} style={styles.button} onPress={() => this.props._goBack()}>Cancel</Button>
                                 <Button containerStyle={styles.singleBtnContainer} style={styles.button} onPress={this._openTermsofService.bind(this)}>Sign up</Button>
                             </View>
-                    </View>
             </KeyboardAwareScrollView>
-             
+            </View>
+          
         )
     }
 
@@ -584,7 +589,9 @@ class SignUp extends React.Component {
         var modalStyle = [styles.modal, styles.createTerms];
         return (
             <View style={[styles.container, this.props.style]}>
-                {this._renderSignUp()}
+                <View style={{flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+                    {this._renderSignUp()}
+                </View>
                  <Modal style={modalStyle} position={"center"} ref={"termsofServiceModal"} isDisabled={false} onClosed={() => { this.setClosedModal() }} onOpened={() => { this.setOpenedModal('termsofServiceModal') }}>
                     <TermsofServiceModal env={this.props.env} _handleNavigate={this.props._handleNavigate } value={this.state.value} closeModal={() => this.closeModal("termsofServiceModal")} openModal={() => this.openModal("termsofServiceModal")} />
                 </Modal>
@@ -595,13 +602,16 @@ class SignUp extends React.Component {
 
 function mapStateToProps(state) {
     const {isLoggedIn, hasError, errorMessage, isFetching, passwordSent} = state.accessReducer;
+   
     const accessReducer = state.accessReducer;
+    const navReducer = state.navReducer;
 
     return {
         isLoggedIn,
         isFetching,
         hasError,
         passwordSent,
+        orientation : navReducer.orientation
     }
 }
 
