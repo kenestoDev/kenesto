@@ -565,13 +565,9 @@ class SignUp extends React.Component {
           
         };
 
-        var formWidth = (this.props.orientation == 'PORTRAIT') ? 320 : 450; 
-        var formHeight = (this.props.orientation == 'PORTRAIT') ?500 : 320;
-        
         return (
-            <View style={{ width:formWidth, height:formHeight}}>
             <KeyboardAwareScrollView  ref='scroll'>
-                    
+                    <View style={{ flex: 1, marginLeft:22,marginRight:22}}>
                         <View style={styles.form}>
                             <Form
                                 ref="form"
@@ -583,12 +579,12 @@ class SignUp extends React.Component {
                             
                         </View>
                         <View style={styles.buttonsContainer}>
-                                <Button containerStyle={styles.singleBtnContainer} style={styles.button} onPress={() => this.props._goBack()}>Cancel</Button>
-                                <Button containerStyle={styles.singleBtnContainer} style={styles.button} onPress={this._openTermsofService.bind(this)}>Sign up</Button>
-                            </View>
+                            <Button containerStyle={styles.singleBtnContainer} style={styles.button} onPress={() => this.props._goBack()}>Cancel</Button>
+                            <Button containerStyle={styles.singleBtnContainer} style={styles.button} onPress={this._openTermsofService.bind(this)}>Sign up</Button>
+                        </View>
+                    </View>
             </KeyboardAwareScrollView>
-            </View>
-          
+             
         )
     }
 
@@ -596,15 +592,14 @@ class SignUp extends React.Component {
         var modalStyle = [styles.modal, styles.createTerms];
         return (
             <View style={[styles.container, this.props.style]}>
-                <View style={{flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
-                    {this._renderSignUp()}
-                </View>
+                {this._renderSignUp()}
                  <Modal style={modalStyle} position={"center"} ref={"termsofServiceModal"} isDisabled={false} onClosed={() => { this.setClosedModal() }} onOpened={() => { this.setOpenedModal('termsofServiceModal') }}>
                     <TermsofServiceModal env={this.props.env} _handleNavigate={this.props._handleNavigate } value={this.state.value} closeModal={() => this.closeModal("termsofServiceModal")} openModal={() => this.openModal("termsofServiceModal")} />
                 </Modal>
             </View>
         );
     }
+
 }
 
 function mapStateToProps(state) {
