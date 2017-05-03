@@ -177,8 +177,9 @@ class CreateFolder extends React.Component {
             // this.props.setCreateFolderStyle();
             this.props.closeCreateFolder();
              this.props.dispatch(navActions.updateIsProcessing(true));
+             var isVault = this.state.isVault || this.props.isParentVault;
             setTimeout(() => {
-                this.props.dispatch(createFolder(folderName, this.state.isVault || this.props.isParentVault));
+                this.props.dispatch(createFolder(folderName, isVault ));
             }, 100); 
  
  
@@ -250,7 +251,6 @@ class CreateFolder extends React.Component {
 function mapStateToProps(state) {    
 
  var documentlist = getDocumentsContext(state.navReducer);
-
   return {
     isParentVault : documentlist.isVault,
     creatingFolder : state.documentsReducer.creatingFolder
