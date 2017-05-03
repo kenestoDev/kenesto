@@ -1,5 +1,5 @@
 import React, { Component } from "react";
- import ReactNative,  { View, Text, TextInput, StyleSheet, TouchableWithoutFeedback, AsyncStorage, Image, Keyboard, Picker } from "react-native";
+ import ReactNative,  { View, Text, TextInput, StyleSheet, TouchableWithoutFeedback, AsyncStorage, Image, Keyboard, Picker,Platform } from "react-native";
 import Button from "react-native-button";
 import Tcomb from "tcomb-form-native";
 import config from '../utils/app.config';
@@ -96,7 +96,14 @@ formStylesheet.textbox.normal = {
     height: 50,
     fontSize: 17,
     paddingLeft: 44,
-    paddingBottom: 10,
+   ...Platform.select({
+            ios:{
+                paddingBottom: 5,
+            },
+            android:{
+               paddingBottom: 10,
+            }
+    }),
 }
 formStylesheet.textbox.error = {
     height: 50,
@@ -562,7 +569,7 @@ class SignUp extends React.Component {
         var formHeight = (this.props.orientation == 'PORTRAIT') ?500 : 320;
         
         return (
-            <View style={{ width:formWidth, height:formHeight, borderColor:"blue", borderWidth:1,}}>
+            <View style={{ width:formWidth, height:formHeight}}>
             <KeyboardAwareScrollView  ref='scroll'>
                     
                         <View style={styles.form}>
