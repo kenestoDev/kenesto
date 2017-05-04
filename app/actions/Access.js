@@ -256,7 +256,7 @@ export function ActivateSignUp(firstName:string, lastName:string, company:string
         .then((response) => response.json())
         .catch((error) => {
              dispatch(updateIsProcessing(false));
-             dispatch(emitError('Failed to Sign Up'))
+             dispatch(emitError("Failed to create account.", "Please try again later"))
               writeToLog("", constans.ERROR, `function ActivateSignUp- Failed to Sign Up - url: ${signUpUrl}, First Name: ${firstName}, Last Name: ${lastName}, Email :${email} `,error)
         })
         .then( (responseData) => {
@@ -264,7 +264,7 @@ export function ActivateSignUp(firstName:string, lastName:string, company:string
             {
                 
                  dispatch(updateIsProcessing(false));
-                 dispatch(emitError("Failed to create account.", "Please try again later"))
+                 dispatch(emitError(responseData.SignUpResult.ErrorMessage))
                  writeToLog("", constans.ERROR, `function ActivateSignUp- Failed to Sign Up - url: ${signUpUrl}`)
             }
             else{

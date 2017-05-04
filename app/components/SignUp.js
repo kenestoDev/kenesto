@@ -59,8 +59,7 @@ Email.getValidationErrorMessage = function (value, path, context) {
 };
 
 var Password = Tcomb.refinement(Tcomb.String, function (s) {
-    var passRegex = new RegExp("(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{6,20})$");
-    alert(passRegex.test(s))
+    var passRegex = new RegExp("((?=.*[a-zA-Z])(?=.*[^a-zA-Z]).{6,20})$");
     return passRegex.test(s);
 });
 
