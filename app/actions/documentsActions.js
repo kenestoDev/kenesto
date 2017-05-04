@@ -1435,9 +1435,8 @@ export function EditFolder(fId: string, folderName: string, isVault: boolean) {
                 else {
                       dispatch(navActions.emitToast(constans.SUCCESS, "folder successfully updated.", ""));
                       var documentlist = getDocumentsContext(navReducer);
+                      dispatch(clearDocuments(documentlist));
                       dispatch(refreshTable(documentlist, false));
-                  
-                   
                 }
                
             }).catch((error) => {
