@@ -72,7 +72,8 @@ var styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         backgroundColor:"white",
-        padding: 15,
+        padding: 5,
+        width:300
     },
     titleContainer: {
         flex: 1,
