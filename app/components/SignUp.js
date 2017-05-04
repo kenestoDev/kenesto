@@ -59,12 +59,13 @@ Email.getValidationErrorMessage = function (value, path, context) {
 };
 
 var Password = Tcomb.refinement(Tcomb.String, function (s) {
-    var passRegex = new RegExp("((?=.*[a-zA-Z])(?=.*[^a-zA-Z]).{6,20})");
+    var passRegex = new RegExp("(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{6,20})$");
+    alert(passRegex.test(s))
     return passRegex.test(s);
 });
 
 Password.getValidationErrorMessage = function (value, path, context) {
-    if( value == null ||value.length >20 || value.length <6)
+    if( value == null ||value.length >20 || value.length < 6)
     {
       return 'Password should be 6-20 characters.';
     }
@@ -263,7 +264,6 @@ class SignUp extends React.Component {
         this.setState({ value });
     }
     _openTermsofService() {
-        Keyboard.dismiss();
         var value = this.refs.form.getValue();
         if (value == null) { // if validation fails, value will be null
             return false; // value here is an instance of Person
@@ -455,7 +455,6 @@ class SignUp extends React.Component {
 
 
     openTermsofServiceModal() {
-        Keyboard.dismiss();
         this.openModal("termsofServiceModal");
     }
     closeModal(ref: string) {

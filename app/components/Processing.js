@@ -22,9 +22,9 @@ let styles = StyleSheet.create({
         backgroundColor:"white",
     },
     proggressBarHolder: {
-        width: 50,
+        width: 40,
         height: 90,
-        margin: 5,
+        margin: 0,
         alignItems: "center",
         justifyContent: "center",
     },
