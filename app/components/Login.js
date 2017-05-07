@@ -240,7 +240,7 @@ const styles = StyleSheet.create({
 
 
     renderEnvPicker(){
-    //    if (this.state.selectedEnv != 'dev')
+    //    if (this.state.selectedEnv != 'dev' )
     //         return null; 
             
             return(
@@ -360,7 +360,7 @@ const styles = StyleSheet.create({
 
                 <KeyboardAwareScrollView style={{flex:1}} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="always">
                  {this.renderEnvPicker()}
-                    <View style={{height: 460}}>
+                    <View style={{height: 482}}>
                         <View style={styles.logoContainer}><Image source={logoImage} style={styles.logo}></Image></View>
                         
                         <View style={styles.form}><Form
