@@ -11,7 +11,7 @@ import {
   Animated,
   DeviceEventEmitter,
   NativeModules,
-  Platform
+  Platform,
 } from 'react-native'
 
 import NavigationRootContainer from '../containers/navRootContainer'
@@ -65,7 +65,12 @@ let styles = StyleSheet.create({
   },
   modal: {
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+  },
+  topModal: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop:20
   },
   plusMenu: {
     height: 150
@@ -518,7 +523,7 @@ this.callToast2(nextprops.navReducer.GlobalToastMessage, nextprops.navReducer.Gl
     const {navReducer} = this.props
     var BContent = <Text style={styles.text}>error message</Text>
     //var modalStyle = this.state.ifCreatingFolder ? styles.ifProcessing : [styles.modal, styles.createFolder]
-   var modalStyle =  [styles.modal, styles.createFolder]; 
+   var modalStyle =  [styles.topModal, styles.createFolder]; 
     var showPopupMenu = this.state.isPopupMenuOpen;
   
     var documentlist = getDocumentsContext(navReducer);
@@ -557,19 +562,19 @@ this.callToast2(nextprops.navReducer.GlobalToastMessage, nextprops.navReducer.Gl
              createError={() => this.openModal("errorModal") }
             closeCreateFolder={this.closeCreateFolder.bind(this) } openUpdateVersionsModal={this.openUpdateVersionsModal.bind(this) } openCheckInModal={this.openCheckInModal.bind(this) } openEditDocumentModal={this.openEditDocumentModal.bind(this) } openEditFolderModal={this.openEditFolderModal.bind(this)}/>
         </Modal>
-        <Modal style= {modalStyle} position={"center"}  ref={"CreateFolder"} isDisabled={false} onClosed={()=> {this.setClosedModal()}} onOpened={()=> {this.setOpenedModal('CreateFolder')}}>
+        <Modal style= {modalStyle} position={"top"}  ref={"CreateFolder"} isDisabled={false} onClosed={()=> {this.setClosedModal()}} onOpened={()=> {this.setOpenedModal('CreateFolder')}}>
           <CreateFolder closeMenuModal = {this.closeMenuModal.bind(this) } openMenuModal = {this.closeCreateFolder.bind(this) }
             closeCreateFolder={this.closeCreateFolder.bind(this)} openProcessingModal={() => this.openModal("processingModal")} 
             closeProcessingModal={() => this.closeModal("processingModal") }
             />
         </Modal>
-        <Modal style= {modalStyle} position={"center"}  ref={"checkInModal"} isDisabled={false} onClosed={()=> {this.setClosedModal()}} onOpened={()=> {this.setOpenedModal('checkInModal')}}>
+        <Modal style= {modalStyle} position={"top"}  ref={"checkInModal"} isDisabled={false} onClosed={()=> {this.setClosedModal()}} onOpened={()=> {this.setOpenedModal('checkInModal')}}>
           <CheckInDocument closeModal = {() => this.closeModal("checkInModal") } openModal = {() => this.openModal("checkInModal") }/>
         </Modal>
-        <Modal style= {modalStyle} position={"center"}  ref={"editFolderModal"} isDisabled={false} onClosed={()=> {this.setClosedModal()}} onOpened={()=> {this.setOpenedModal('editFolderModal')}}>
+        <Modal style= {modalStyle} position={"top"}  ref={"editFolderModal"} isDisabled={false} onClosed={()=> {this.setClosedModal()}} onOpened={()=> {this.setOpenedModal('editFolderModal')}}>
           <EditFolder closeModal = {() => this.closeModal("editFolderModal") } openModal = {() => this.openModal("editFolderModal") }/>
         </Modal>
-        <Modal style= {modalStyle} position={"center"}  ref={"editDocumentModal"} isDisabled={false} onClosed={()=> {this.setClosedModal()}} onOpened={()=> {this.setOpenedModal('editDocumentModal')}}>
+        <Modal style= {modalStyle} position={"top"}  ref={"editDocumentModal"} isDisabled={false} onClosed={()=> {this.setClosedModal()}} onOpened={()=> {this.setOpenedModal('editDocumentModal')}}>
           <EditDocument closeModal = {() => this.closeModal("editDocumentModal") } openModal = {() => this.openModal("editDocumentModal") }/>
         </Modal>
         <Modal style= {styles.updateVersionsModal} position={"center"}  ref={"updateVersionsModal"} isDisabled={false} onClosed={()=> {this.setClosedModal()}} onOpened={()=> {this.setOpenedModal('updateVersionsModal')}}>
