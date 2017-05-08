@@ -265,7 +265,7 @@ export function ActivateSignUp(firstName:string, lastName:string, company:string
                 
                  dispatch(updateIsProcessing(false));
                  dispatch(emitError(responseData.SignUpResult.ErrorMessage))
-                 writeToLog("", constans.ERROR, `function ActivateSignUp- Failed to Sign Up - url: ${signUpUrl}`)
+                 writeToLog("", constans.ERROR, `function ActivateSignUp- Failed to Sign Up - url: ${signUpUrl}`,JSON.stringify(responseData))
             }
             else{
                   
