@@ -366,6 +366,7 @@ class KenestoToolbar extends Component {
     // const sortBy = documentlist.sortBy;
     const sortDirection = documentlist.sortDirection != undefined ? documentlist.sortDirection : "";
     var title = navReducer.routes[navReducer.index].data != null ? navReducer.routes[navReducer.index].data.name : navReducer.routes[navReducer.index].title;
+  
     var showGoBack = navReducer.routes[navReducer.index].data.fId != "" ? true : false;
     var animatedHamburger = showGoBack?   <TouchableElement onPress={(value) => this.onGoBack(1)} >
             <View>
@@ -480,15 +481,18 @@ class KenestoToolbar extends Component {
         <View style={styles.folderName}>
           <Text style={{ fontSize: 20 }} numberOfLines={1}>{title}</Text>
         </View>
-        <View style={styles.shareIconContainer}><Icon name="send" style={[styles.iconStyle, styles.shareIcon]} onPress={this.addPeople.bind(this) } /></View>
+        <TouchableElement style={styles.shareIconContainer} onPress={this.addPeople.bind(this) } >
+            <View ><Icon name="send" style={[styles.iconStyle, styles.shareIcon]}/></View>
+          </TouchableElement>
+        
       </View>
     )
   }
 renderForgotPasswordTollbar(){
-    var TouchableElement = TouchableHighlight;
-    if (Platform.OS === 'android') {
-      TouchableElement = TouchableNativeFeedback;
-    }
+    var TouchableElement = TouchableOpacity;
+        // if (Platform.OS === 'android') {
+        //   TouchableElement = TouchableNativeFeedback;
+        // }
 
     var title = "Forgot Password";
    
@@ -528,10 +532,10 @@ renderTermsofServiceTollbar(){
 }
 
 renderSignUpTollbar(){
-    var TouchableElement = TouchableHighlight;
-    if (Platform.OS === 'android') {
-      TouchableElement = TouchableNativeFeedback;
-    }
+    var TouchableElement = TouchableOpacity;
+    // if (Platform.OS === 'android') {
+    //   TouchableElement = TouchableNativeFeedback;
+    // }
     var title = "Sign Up for KENESTO";
     return (
       <View style= {[styles.toolbar, styles.toolbarContainer, {marginTop: (Platform.OS === 'ios')? 15 : 0}]} >
