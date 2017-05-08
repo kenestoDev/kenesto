@@ -11,6 +11,7 @@ var {
   View,
   WebView,
   Dimensions,
+  Platform
 } = ReactNative;
 import Button from './Button'
 import {getEnvIp} from '../utils/accessUtils'
@@ -126,18 +127,19 @@ class Document extends React.Component{
       },
 
       onResponderSingleTapConfirmed: (evt, gestureState) => {
-    
-        if (this.state.toolbarVisible) {
-          this.hideToolBar();
-          //  this.props.dispatch(navActions.hideToolbar(true));
-        }
+      if (Platform.OS === 'android') {
+          if (this.state.toolbarVisible) {
+            this.hideToolBar();
+            //  this.props.dispatch(navActions.hideToolbar(true));
+          }
 
-        else {
-          this.showToolBar();
-          // this.props.dispatch(navActions.showToolbar(true));
-        }
-
-        this.setState({ toolbarVisible: !this.state.toolbarVisible });
+          else {
+            this.showToolBar();
+            // this.props.dispatch(navActions.showToolbar(true));
+          }
+          this.setState({ toolbarVisible: !this.state.toolbarVisible });
+      }
+        
 
       },
       moveThreshold: 2,
