@@ -338,7 +338,7 @@ export function login(userId : string, password: string, env: string = 'dev')  {
                 {
                      var errorMessage = responseData.AuthenticateJsonResult.ErrorMessage.indexOf('ACCESS_DENIED') > -1?
                                  'Failed to login: The e-mail address or password you entered is incorrect' : 
-                                 responseData.AuthenticateJsonResult.ErrorMessage.indexOf('VAL10335')?'Company license has expired. Please contact your IT to support.':'Failed to login, Please contact your IT to support.' 
+                                 responseData.AuthenticateJsonResult.ErrorMessage.indexOf('VAL10335') > -1 ?'Company license has expired. Please contact your IT for support.':'Failed to login, Please contact your IT for support.' 
                        
                       dispatch(emitError(errorMessage)); 
                    //  dispatch(emitError('Failed to login : The authentication are currently down for maintenance')); 
