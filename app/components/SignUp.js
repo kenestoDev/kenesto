@@ -125,8 +125,10 @@ const styles = StyleSheet.create({
        marginRight:24
     },
     modal: {
-        justifyContent: 'center',
-        alignItems: 'center'
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop:40
+
     },
     createTerms: {
         height: 200,
@@ -456,6 +458,7 @@ class SignUp extends React.Component {
 
     openTermsofServiceModal() {
         this.openModal("termsofServiceModal");
+         Keyboard.dismiss();
     }
     closeModal(ref: string) {
         
@@ -592,7 +595,7 @@ class SignUp extends React.Component {
         return (
             <View style={[styles.container, this.props.style]}>
                 {this._renderSignUp()}
-                 <Modal style={modalStyle} position={"center"} ref={"termsofServiceModal"} isDisabled={false} onClosed={() => { this.setClosedModal() }} onOpened={() => { this.setOpenedModal('termsofServiceModal') }}>
+                 <Modal style={modalStyle} position={"top"} ref={"termsofServiceModal"} isDisabled={false} onClosed={() => { this.setClosedModal() }} onOpened={() => { this.setOpenedModal('termsofServiceModal') }}>
                     <TermsofServiceModal env={this.props.env} _handleNavigate={this.props._handleNavigate } value={this.state.value} closeModal={() => this.closeModal("termsofServiceModal")} openModal={() => this.openModal("termsofServiceModal")} />
                 </Modal>
             </View>
