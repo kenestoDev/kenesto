@@ -93,7 +93,7 @@ var passwordIconStyle = {}
 
 
 formStylesheet.textbox.normal = {
-    height: 47,
+    height: 48,
     fontSize: 17,
     paddingLeft: 44,
    ...Platform.select({
@@ -106,7 +106,7 @@ formStylesheet.textbox.normal = {
     }),
 }
 formStylesheet.textbox.error = {
-    height: 47,
+    height: 48,
     fontSize: 17,
     paddingLeft: 44,
 }
