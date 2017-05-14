@@ -93,7 +93,7 @@ var passwordIconStyle = {}
 
 
 formStylesheet.textbox.normal = {
-    height: 50,
+    height: 47,
     fontSize: 17,
     paddingLeft: 44,
    ...Platform.select({
@@ -106,7 +106,7 @@ formStylesheet.textbox.normal = {
     }),
 }
 formStylesheet.textbox.error = {
-    height: 50,
+    height: 47,
     fontSize: 17,
     paddingLeft: 44,
 }
@@ -565,7 +565,7 @@ class SignUp extends React.Component {
         };
 
         return (
-            <KeyboardAwareScrollView  ref='scroll'>
+            <KeyboardAwareScrollView  ref='scroll' style={{flex:1}} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="always">
                     <View style={{ flex: 1, marginLeft:22,marginRight:22}}>
                         <View style={styles.form}>
                             <Form

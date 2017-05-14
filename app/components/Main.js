@@ -277,7 +277,8 @@ class Main extends React.Component {
   }
 
   closeModal(ref: string) {
-    this.refs[ref].close();
+ if (typeof this.refs[ref] != 'undefined')
+      this.refs[ref].close();
   }
 
   openModal(ref: string) {
