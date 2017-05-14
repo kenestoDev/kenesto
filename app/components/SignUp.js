@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
     modal: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop:40
+    marginTop:70
 
     },
     createTerms: {
@@ -457,8 +457,8 @@ class SignUp extends React.Component {
 
 
     openTermsofServiceModal() {
+        Keyboard.dismiss();
         this.openModal("termsofServiceModal");
-         Keyboard.dismiss();
     }
     closeModal(ref: string) {
         
