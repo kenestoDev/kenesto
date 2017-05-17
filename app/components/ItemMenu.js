@@ -13,7 +13,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 import { connect } from 'react-redux'
 // import fontelloConfig from '../assets/icons/config.json';
 import { createIconSetFromFontello } from 'react-native-vector-icons'
-import { getSelectedDocument, getDocumentsContext } from '../utils/documentsUtils'
+import { getSelectedDocument, getDocumentsContext,getViewerUrl } from '../utils/documentsUtils'
 import * as documentsActions from '../actions/documentsActions'
 import MartialExtendedConf from '../assets/icons/config.json';
 import customConfig from '../assets/icons/customConfig.json';
@@ -144,24 +144,35 @@ class ItemMenu extends React.Component {
 
     viewDocument() {
         const documentsContext = getDocumentsContext(this.props.navReducer);
-
-        var data = {
-            key: "document",
-            name: this.state.document.Name,
-            documentId: this.state.document.Id,
-            catId: documentsContext.catId,
-            fId: documentsContext.fId,
-            viewerUrl: this.state.document.ViewerUrl,
-            isExternalLink: this.state.document.IsExternalLink,
-            isVault: this.state.document.IsVault,
-
-            env: this.props.env
+        if (this.state.document.FileExtension === ".zip" || this.state.document.FileExtension ===".rar" || this.state.document.FileExtension ===".7z" || this.state.document.FileExtension ===".gz")
+        {
+            this.startDownload();
         }
+        else
+        {
+            var data = {
+                key: "document",
+                name: this.state.document.Name,
+                documentId: this.state.document.Id,
+                familyCode: this.state.document.FamilyCode,
+                catId: documentsContext.catId,
+                fId: documentsContext.fId,
+                viewerUrl: getViewerUrl(this.props.env, this.state.document, this.props.navReducer.orientation),
+                isExternalLink: this.state.document.IsExternalLink,
+                externalLinkType: this.state.document.ExternalLinkType,
+                isVault: this.state.document.IsVault,
+                ThumbnailUrl: this.state.document.ThumbnailUrl,
+                fileExtension: this.state.document.FileExtension,
+                chekcedOutBy: this.state.document.ChceckedOutBy,
+                env: this.props.env,
+                dispatch: this.props.dispatch
+            }
 
 
-        this.props.dispatch(navActions.push(routes.documentRoute(data).route));
-
-        this.props.closeItemMenuModal();
+            
+            this.props.dispatch(navActions.push(routes.documentRoute(data).route));
+            this.props.closeItemMenuModal();
+        }
     }
 
     shareDocument() {

@@ -35,7 +35,7 @@ import DocumentUploadCell from '../components/DocumentUploadCell';
 const splitChars = '|';
 
 import _ from "lodash";
-import { fetchTableIfNeeded, refreshTable,getDocumentPermissions, getCurrentFolderPermissions,resetCurrentFolder } from '../actions/documentsActions'
+import { fetchTableIfNeeded, refreshTable,getDocumentPermissions, getCurrentFolderPermissions,resetCurrentFolder, downloadDocument } from '../actions/documentsActions'
 import ViewContainer from '../components/ViewContainer';
 import KenestoHelper from '../utils/KenestoHelper';
 import ActionButton from 'react-native-action-button';
@@ -87,6 +87,9 @@ class Documents extends Component {
     dispatch(fetchTableIfNeeded())
   }
 
+  startDownloadDocument(document: object) {
+        this.props.dispatch(downloadDocument(document.Id, document.FileName, document.MimeType));
+    }
   shouldComponentUpdate(nextProps, nextState){
       const {navReducer} = nextProps
       if (navReducer.routes[navReducer.index].key.indexOf('documents') == -1)
@@ -166,25 +169,32 @@ class Documents extends Component {
       this.props._handleNavigate(routes.documentsRoute(data));
     }
     else {
-
-      var data = {
-        key: "document",
-        name: document.Name,
-        documentId: document.Id,
-        familyCode: document.FamilyCode,
-        catId: documentlist.catId,
-        fId: documentlist.fId,
-        viewerUrl: getViewerUrl(this.props.env, document, this.props.navReducer.orientation),
-        isExternalLink: document.IsExternalLink,
-        externalLinkType: document.ExternalLinkType,
-        isVault: document.IsVault,
-        ThumbnailUrl: document.ThumbnailUrl,
-        fileExtension: document.FileExtension,
-        chekcedOutBy: document.ChceckedOutBy,
-        env: this.props.env,
-        dispatch: this.props.dispatch
+      if (document.FileExtension === ".zip" || document.FileExtension ===".rar" || document.FileExtension ===".7z" || document.FileExtension ===".gz")
+      {
+        this.startDownloadDocument(document);
       }
-      this.props._handleNavigate(routes.documentRoute(data));
+      else
+      {
+        var data = {
+          key: "document",
+          name: document.Name,
+          documentId: document.Id,
+          familyCode: document.FamilyCode,
+          catId: documentlist.catId,
+          fId: documentlist.fId,
+          viewerUrl: getViewerUrl(this.props.env, document, this.props.navReducer.orientation),
+          isExternalLink: document.IsExternalLink,
+          externalLinkType: document.ExternalLinkType,
+          isVault: document.IsVault,
+          ThumbnailUrl: document.ThumbnailUrl,
+          fileExtension: document.FileExtension,
+          chekcedOutBy: document.ChceckedOutBy,
+          env: this.props.env,
+          dispatch: this.props.dispatch
+        }
+        this.props._handleNavigate(routes.documentRoute(data));
+      }
+
     }
   }
 
