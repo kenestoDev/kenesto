@@ -660,15 +660,21 @@ export function createFolder(folderName: string, isVault: boolean) {
 }
 
 
-export function downloadDocument(id: string, fileName: string, mimeType: string) {
+export function downloadDocument( document:object) {
     return (dispatch, getState) => {
         if (!getState().accessReducer.isConnected)
             return dispatch(navActions.emitToast("info", textResource.NO_INTERNET)); 
-
         const {sessionToken, env, email} = getState().accessReducer;
+        var id = document.SharedObjectId === "" ? document.Id :document.SharedObjectId;
+        var token = document.ExternalToken === "" ? sessionToken :  encodeURIComponent(document.ExternalToken);
+        var isExternal = document.ExternalToken === ""?  false : true;
+        var fileName = document.FileName;
+        var mimeType = document.MimeType;
+        
         //dispatch(updateIsFetching(true)); 
         dispatch(navActions.emitToast(constans.INFO, 'Document will be downloaded shortly'));
-        const url = getDownloadFileUrl(env, sessionToken, id);
+        const url = getDownloadFileUrl(env ,token, id, isExternal);
+
         writeToLog(email, constans.DEBUG, `function downloadDocument - url: ${url}`)
         fetch(url)
             .then(response => response.json())

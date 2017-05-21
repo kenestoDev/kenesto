@@ -236,10 +236,10 @@ export function getDocumentIdFromUploadUrl(url) {
   return "";
 }
 
-export function getDownloadFileUrl(env: string, sessionToken: string, assetId: string, userData: string = '') {
+export function getDownloadFileUrl(env: string, sessionToken: string, assetId: string, isExternal:boolean, userData: string = '') {
   const urls = _.find(config.urls, { 'env': env });
   const apiBaseUrl = urls.ApiBaseUrl;
-  return `${apiBaseUrl}/KDocuments.svc/DownloadFile?t=${sessionToken}&fid=${assetId}&ud=${userData}`;
+  return `${apiBaseUrl}/KDocuments.svc/DownloadFile?t=${sessionToken}&fid=${assetId}&ie=${isExternal}&ud=${userData}`;
 }
 
 export function getDeleteAssetUrl(env: string, sessionToken: string, assetId: string, familyCode: string, userData: string = '') {

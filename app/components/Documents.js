@@ -88,7 +88,7 @@ class Documents extends Component {
   }
 
   startDownloadDocument(document: object) {
-        this.props.dispatch(downloadDocument(document.Id, document.FileName, document.MimeType));
+        this.props.dispatch(downloadDocument(document));
     }
   shouldComponentUpdate(nextProps, nextState){
       const {navReducer} = nextProps

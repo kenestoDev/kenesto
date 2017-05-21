@@ -138,8 +138,7 @@ class ItemMenu extends React.Component {
 
     startDownload() {
         this.props.closeItemMenuModal();
-
-        this.props.dispatch(docActions.downloadDocument(this.state.document.Id, this.state.document.FileName, this.state.document.MimeType));
+       this.props.dispatch(docActions.downloadDocument(this.state.document));
     }
 
     viewDocument() {
