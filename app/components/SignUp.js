@@ -70,7 +70,7 @@ Password.getValidationErrorMessage = function (value, path, context) {
     }
     else
     {
-      return 'Password must include at least one letter and one number"';
+      return 'Password must include at least one letter and one number';
     } 
     
 };
