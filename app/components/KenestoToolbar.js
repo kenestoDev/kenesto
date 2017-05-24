@@ -366,7 +366,6 @@ class KenestoToolbar extends Component {
     // const sortBy = documentlist.sortBy;
     const sortDirection = documentlist.sortDirection != undefined ? documentlist.sortDirection : "";
     var title = navReducer.routes[navReducer.index].data != null ? navReducer.routes[navReducer.index].data.name : navReducer.routes[navReducer.index].title;
-  
     var showGoBack = navReducer.routes[navReducer.index].data.fId != "" ? true : false;
     var animatedHamburger = showGoBack?   <TouchableElement onPress={(value) => this.onGoBack(1)} >
             <View>
@@ -384,14 +383,14 @@ class KenestoToolbar extends Component {
                                         </View>
     return (
       <View style= {[styles.toolbar,{marginTop: (Platform.OS === 'ios')? 15 : 0}]}>
-
+        <Text></Text>
         <Animatable.View style={styles.fakeTextInput} ref="fakeTextInput">
           <View><Icon name="arrow-back" style={[styles.iconStyle, { opacity: 0 }]} /></View>
           <TextInput style={styles.textInput} />
           <View style={styles.fakeTextInputCover} />
           <Icon name="search" style={[styles.iconStyle, { opacity: 0 }]} />
         </Animatable.View>
-
+       
        {animatedHamburger}
         
 
