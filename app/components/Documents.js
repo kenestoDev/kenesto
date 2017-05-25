@@ -179,6 +179,8 @@ class Documents extends Component {
           key: "document",
           name: document.Name,
           documentId: document.Id,
+          SharedObjectId:document.SharedObjectId,
+          ExternalToken: document.ExternalToken,
           familyCode: document.FamilyCode,
           catId: documentlist.catId,
           fId: documentlist.fId,

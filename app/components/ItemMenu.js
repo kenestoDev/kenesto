@@ -153,6 +153,8 @@ class ItemMenu extends React.Component {
                 key: "document",
                 name: this.state.document.Name,
                 documentId: this.state.document.Id,
+                SharedObjectId: this.state.document.SharedObjectId,
+                ExternalToken:  this.state.document.ExternalToken,
                 familyCode: this.state.document.FamilyCode,
                 catId: documentsContext.catId,
                 fId: documentsContext.fId,
@@ -242,7 +244,7 @@ class ItemMenu extends React.Component {
     componentWillMount() {
         
         var document = getSelectedDocument(this.props.documentsReducer, this.props.navReducer);
-          this.props.dispatch(documentsActions.getDocumentPermissions(document.Id, document.FamilyCode))
+        this.props.dispatch(documentsActions.getDocumentPermissions(document))
         this.setState({ document: document });
     }
 

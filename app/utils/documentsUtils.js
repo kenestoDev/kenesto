@@ -73,13 +73,13 @@ export function constructRetrieveDocumentsUrl(env, sessionToken, fId, sortBy, so
 }
 
 
-export function getObjectInfoUrl(env, sessionToken, documentId, familyCode) {
+export function getObjectInfoUrl(env, sessionToken, documentId, familyCode, isExternal:boolean= false) {
   var urls = _.find(config.urls, { 'env': env });
   var apiBaseUrl = urls.ApiBaseUrl;
   if (urls == null)
     return null;
 
-  return `${apiBaseUrl}/KDocuments.svc/RetrieveObjectInfo?t=${sessionToken}&oi=${documentId}&fc=${familyCode}`;
+  return `${apiBaseUrl}/KDocuments.svc/RetrieveObjectInfo?t=${sessionToken}&oi=${documentId}&fc=${familyCode}&ie=${isExternal}`;
 }
 
 export function getCreateFolderUrl(env, sessionToken, fId, folderName, isVault) {

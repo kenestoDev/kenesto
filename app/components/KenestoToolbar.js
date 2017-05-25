@@ -294,14 +294,14 @@ class KenestoToolbar extends Component {
 
   }
 
-  menuPressed(id, familyCode) {
+  menuPressed(document) {
     var {dispatch} = this.props;
       if (!this.props.isConnected){
         dispatch(emitToast("info", "No internet connection")); 
         return false;
       }
-    dispatch(documentsActions.updateSelectedObject(id, familyCode, ""));
-    dispatch(documentsActions.getDocumentPermissions(id, familyCode))
+    dispatch(documentsActions.updateSelectedObject(document.documentId, document.familyCode, ""));
+    //dispatch(documentsActions.getDocumentPermissions(document))
     this.context.itemMenuContext.open();
     dispatch(uiActions.setOpenModalRef('modalItemMenu'));
   }
@@ -454,7 +454,7 @@ class KenestoToolbar extends Component {
         <View style={styles.folderName}>
           <Text style={{ fontSize: 20 }} numberOfLines={1}>{title}</Text>
         </View>
-        <TouchableElement onPress={ (() => { this.menuPressed(currDoc.documentId, currDoc.familyCode) }).bind(this) }>
+        <TouchableElement onPress={ (() => { this.menuPressed(currDoc) }).bind(this) }>
           <View style={styles.iconContainer}>
             <Icon name="more-vert" style={styles.moreMenu} />
           </View>

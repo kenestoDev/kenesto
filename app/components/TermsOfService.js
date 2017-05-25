@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import MartialExtendedConf from '../assets/icons/config.json';
 import customConfig from '../assets/icons/customConfig.json';
 import { createIconSetFromFontello } from 'react-native-vector-icons'
-import { updateSelectedObject, getDocumentPermissions } from '../actions/documentsActions'
+import { getDocumentPermissions } from '../actions/documentsActions'
 import * as uiActions from '../actions/uiActions'
 import { connect } from 'react-redux'
 import { getIconNameFromExtension } from '../utils/documentsUtils'

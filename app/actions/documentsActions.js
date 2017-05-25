@@ -52,7 +52,7 @@ export function getCurrentFolderPermissions(folderId : string){
             return dispatch(navActions.emitToast("info", textResource.NO_INTERNET)); 
           dispatch(updateIsFetchingCurrentFolderPermissions(true))
          const {sessionToken, env, email} = getState().accessReducer;
-         var url = getObjectInfoUrl(env, sessionToken, folderId, "FOLDER");
+         var url = getObjectInfoUrl(env, sessionToken, folderId, "FOLDER",false);
 
           return fetch(url)
             .then(response => response.json())
@@ -78,15 +78,17 @@ export function getCurrentFolderPermissions(folderId : string){
     }
 }
 
-export function getDocumentPermissions(documentId: string, familyCode: string) {
+export function getDocumentPermissions(document) {
     return (dispatch, getState) => {
           if (!getState().accessReducer.isConnected)
             return dispatch(navActions.emitToast("info", textResource.NO_INTERNET)); 
         const {sessionToken, env, email} = getState().accessReducer;
         var documentlist = getDocumentsContext(getState().navReducer);
-
         dispatch(updateIsFetchingSelectedObject(true))
-        var url = getObjectInfoUrl(env, sessionToken, documentId, familyCode);
+        var id = document.SharedObjectId != "" ? document.SharedObjectId: document.Id != "" ? document.Id : document.documentId;
+        var token = document.ExternalToken === "" ? sessionToken :  encodeURIComponent(document.ExternalToken);
+        var familyCode = document.familyCode != "" ? document.familyCode : document.FamilyCode ;
+        var url = getObjectInfoUrl(env, token, id, familyCode, document.ExternalToken != "");
         writeToLog(email, constans.DEBUG, `function getDocumentPermissions - url: ${url}`)
         return fetch(url)
             .then(response => response.json())
@@ -99,6 +101,8 @@ export function getDocumentPermissions(documentId: string, familyCode: string) {
                 }
                 else {
                     var permissions = json.ResponseData.ObjectPermissions;
+                    var documentId = document.Id != "" ? document.Id : document.documentId;
+                 
                     dispatch(updateSelectedObject(documentId, familyCode, permissions))
                     dispatch(updateIsFetchingSelectedObject(false))
                 }
@@ -112,16 +116,18 @@ export function getDocumentPermissions(documentId: string, familyCode: string) {
 }
 
 
-export function getDocumentInfo(documentId: string, familyCode: string, actionType : string = types.UPDATE_ROUTE_DATA, updateViewer : boolean = true) {
+export function getDocumentInfo(documentId: string, familyCode: string, actionType : string = types.UPDATE_ROUTE_DATA, updateViewer : boolean = true){
     return (dispatch, getState) => {
         if (!getState().accessReducer.isConnected)
             return dispatch(navActions.emitToast("info", textResource.NO_INTERNET)); 
 
         const {sessionToken, env, email} = getState().accessReducer;
         var documentlist = getDocumentsContext(getState().navReducer);
-      
+        // var id = document.SharedObjectId === "" ? document.Id :document.SharedObjectId;
+        // var token = document.ExternalToken === "" ? sessionToken :  encodeURIComponent(document.ExternalToken);
+        // var familyCode = document.familyCode;
         dispatch(updateIsFetchingSelectedObject(true))
-        var url = getObjectInfoUrl(env, sessionToken, documentId, familyCode);
+        var url = getObjectInfoUrl(env, sessionToken, documentId, familyCode, false);
         writeToLog(email, constans.DEBUG, `function getDocumentInfo - url: ${url}`)
         return fetch(url)
             .then(response => response.json())
@@ -140,6 +146,8 @@ export function getDocumentInfo(documentId: string, familyCode: string, actionTy
                         key: "document",
                         name: document.Name,
                         documentId: document.Id,
+                        SharedObjectId: document.SharedObjectId,
+                        ExternalToken:  document.ExternalToken,
                         familyCode: json.ResponseData.FamilyCode,
                         catId: documentlist.catId,
                         fId: documentlist.fId,
@@ -584,7 +592,6 @@ function shouldFetchDocuments(documentsReducer: Object, documentlist: Object) {
 }
 
 export function updateSelectedObject(id: string, familyCode: string, permissions: object) {
-
     return {
         type: types.UPDATE_SELECTED_OBJECT,
         selectedObject: {
