@@ -550,7 +550,7 @@ this.callToast2(nextprops.navReducer.GlobalToastMessage, nextprops.navReducer.Gl
         <NavigationRootContainer closeItemMenuModal ={this.closeItemMenuModal.bind(this) }  dispatch={this.props.dispatch.bind(this)}  hideSearchBox ={this.hideSearchBox.bind(this)} hidePopupMenu ={this.hidePopupMenu.bind(this)} 
          closeDrawer ={this.closeDrawer.bind(this) } closeMenuModal={this.closeMenuModal.bind(this)} openedDialogModalref = {() => this.openedDialogModalref()} 
          closeModal={this.closeModal.bind(this) } openModal={this.openModal.bind(this) } />
-         <Modal style= {styles.processingModal} position={"center"}  ref={"processingModal"} isDisabled={false} animationDuration={0}>
+         <Modal style= {styles.processingModal} position={"center"}  ref={"processingModal"} isDisabled={false} animationDuration={0} backdropPressToClose={false}>
           <Processing  closeModal = {() => this.closeModal("processingModal") }  openModal = {() => this.openModal("processingModal")}  />
         </Modal>
         <Modal style={[styles.modal, styles.plusMenu]} position={"bottom"}  ref={"modalPlusMenu"} isDisabled={false} onClosed={()=> {this.setClosedModal()}} onOpened={()=> {this.setOpenedModal('modalPlusMenu')}}>
