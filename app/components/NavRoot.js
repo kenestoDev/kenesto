@@ -14,7 +14,8 @@ import AddPeople from './AddPeople'
 import Scan from './Scan';
 import * as uiActions from '../actions/uiActions'
 import * as textResource from '../constants/TextResource'
-import { emitToast} from '../actions/navActions'
+import { emitToastm,updateIsProcessing} from '../actions/navActions'
+
 import {
   BackAndroid,
   NavigationExperimental
@@ -103,6 +104,11 @@ class NavRoot extends Component {
   }
 
   _handleBackAction() {
+    if(this.props.navigation.isProcessing)
+    {
+        this.props.dispatch(updateIsProcessing(false));
+    }
+
    if (this.props.uiReducer.showDropDown){
         this.props.dispatch(uiActions.forceCloseDropdownOptions()); 
         return true;
