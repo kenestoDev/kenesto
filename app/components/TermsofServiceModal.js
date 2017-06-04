@@ -66,36 +66,22 @@ var styles = StyleSheet.create({
         backgroundColor: "#F5F6F8",
         ...Platform.select({
             ios:{
-                width: 127,
-            },
-            android:{
-                width: 140,
-            }
-        }),
-        borderRadius: 10,
-        //padding: 10,
-        shadowColor: '#000000',
-        shadowOffset: {
-            width: 0,
-            height: 3 },
-        shadowRadius: 10,
-        shadowOpacity: 0.25,
-        // ...Platform.select({
-        //     ios:{
-        //             borderRadius: 10,
-        //             //padding: 10,
-        //             shadowColor: '#000000',
-        //             shadowOffset: {
-        //             width: 0,
-        //             height: 3 },
-        //                 shadowRadius: 10,
-        //                 shadowOpacity: 0.25
-        //             },
-        //             android:{
-        //                 borderWidth: 0.5,
-        //                 borderColor: "#BEBDBD",
-        //             }
-        //     }),  
+                    width: 127,
+                    borderRadius: 10,
+                    //padding: 10,
+                    shadowColor: '#000000',
+                    shadowOffset: {
+                    width: 0,
+                    height: 3 },
+                        shadowRadius: 10,
+                        shadowOpacity: 0.25
+                    },
+                    android:{
+                        borderWidth: 0.5,
+                        borderColor: "#BEBDBD",
+                        width: 140,
+                    }
+            }),  
    },
     button: {
       
