@@ -53,7 +53,6 @@ export function getCurrentFolderPermissions(folderId : string){
           dispatch(updateIsFetchingCurrentFolderPermissions(true))
          const {sessionToken, env, email} = getState().accessReducer;
          var url = getObjectInfoUrl(env, sessionToken, folderId, "FOLDER",false);
-
           return fetch(url)
             .then(response => response.json())
             .then(json => {
@@ -85,10 +84,11 @@ export function getDocumentPermissions(document) {
         const {sessionToken, env, email} = getState().accessReducer;
         var documentlist = getDocumentsContext(getState().navReducer);
         dispatch(updateIsFetchingSelectedObject(true))
-        var id = document.SharedObjectId != "" ? document.SharedObjectId: document.Id != "" ? document.Id : document.documentId;
+        var id = (typeof document.SharedObjectId != 'undefined' && document.SharedObjectId && document.SharedObjectId != "") ? document.SharedObjectId: document.Id != "" ? document.Id : document.documentId;
         var token = document.ExternalToken === "" ? sessionToken :  encodeURIComponent(document.ExternalToken);
-        var familyCode = document.familyCode != "" ? document.familyCode : document.FamilyCode ;
+        var familyCode = (typeof document.familyCode != 'undefined' && document.familyCode)  ? document.familyCode : document.FamilyCode ;
         var url = getObjectInfoUrl(env, token, id, familyCode, document.ExternalToken != "");
+
         writeToLog(email, constans.DEBUG, `function getDocumentPermissions - url: ${url}`)
         return fetch(url)
             .then(response => response.json())

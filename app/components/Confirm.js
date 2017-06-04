@@ -1,5 +1,5 @@
 import React from "react"; 
-import {View, Text,TextInput, StyleSheet, Animated, Dimensions} from "react-native";
+import {View, Text,TextInput, StyleSheet, Animated, Dimensions, Platform} from "react-native";
 import Button from "react-native-button";
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ProgressBar from './ProgressBar'
@@ -51,8 +51,31 @@ var styles = StyleSheet.create({
         justifyContent: "space-around",
         height: 50,
         backgroundColor: "#F5F6F8",
-        borderWidth: 0.5,
-        borderColor: "#BEBDBD"
+        
+        borderRadius: 10,
+        //padding: 10,
+        shadowColor: '#000000',
+        shadowOffset: {
+            width: 0,
+            height: 3 },
+        shadowRadius: 10,
+        shadowOpacity: 0.25,
+        // ...Platform.select({
+        //     ios:{
+        //             borderRadius: 10,
+        //             //padding: 10,
+        //             shadowColor: '#000000',
+        //             shadowOffset: {
+        //             width: 0,
+        //             height: 3 },
+        //                 shadowRadius: 10,
+        //                 shadowOpacity: 0.25
+        //             },
+        //             android:{
+        //                 borderWidth: 0.5,
+        //                 borderColor: "#BEBDBD",
+        //             }
+        //     }),
    },
    button: {
         color: "#666666",

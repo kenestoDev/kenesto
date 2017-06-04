@@ -1,5 +1,5 @@
 import React, { Component } from "react";
- import ReactNative,  { View, Text, TextInput, StyleSheet, TouchableWithoutFeedback, AsyncStorage, Image, Keyboard, Picker,Platform } from "react-native";
+ import ReactNative,  { View, Text, TextInput, StyleSheet, TouchableWithoutFeedback, AsyncStorage, Image, Keyboard, Picker, Platform } from "react-native";
 import Button from "react-native-button";
 import Tcomb from "tcomb-form-native";
 import config from '../utils/app.config';
@@ -170,6 +170,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         padding: 15,
         marginTop:15
+
         
 
     },
@@ -178,9 +179,31 @@ const styles = StyleSheet.create({
         justifyContent: "space-around",
         height: 50,
         backgroundColor: "#F5F6F8",
-        borderWidth: 0.5,
-        borderColor: "#BEBDBD",
-         
+        
+        borderRadius: 10,
+        //padding: 10,
+        shadowColor: '#000000',
+        shadowOffset: {
+            width: 0,
+            height: 3 },
+        shadowRadius: 10,
+        shadowOpacity: 0.25,
+        // ...Platform.select({
+        //     ios:{
+        //             borderRadius: 10,
+        //             //padding: 10,
+        //             shadowColor: '#000000',
+        //             shadowOffset: {
+        //             width: 0,
+        //             height: 3 },
+        //                 shadowRadius: 10,
+        //                 shadowOpacity: 0.25
+        //             },
+        //             android:{
+        //                 borderWidth: 0.5,
+        //                 borderColor: "#BEBDBD",
+        //             }
+        //     }),
     },
     button: {
         color: "#666666",

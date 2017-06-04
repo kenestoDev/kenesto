@@ -61,7 +61,10 @@ var styles = StyleSheet.create({
         alignSelf: "stretch",  
     },
     singleBtnContainer: {
-         ...Platform.select({
+        justifyContent: "center",
+        height: 50,
+        backgroundColor: "#F5F6F8",
+        ...Platform.select({
             ios:{
                 width: 127,
             },
@@ -69,11 +72,30 @@ var styles = StyleSheet.create({
                 width: 140,
             }
         }),
-        justifyContent: "center",
-        height: 50,
-        backgroundColor: "#F5F6F8",
-        borderWidth: 0.5,
-        borderColor: "#BEBDBD",      
+        borderRadius: 10,
+        //padding: 10,
+        shadowColor: '#000000',
+        shadowOffset: {
+            width: 0,
+            height: 3 },
+        shadowRadius: 10,
+        shadowOpacity: 0.25,
+        // ...Platform.select({
+        //     ios:{
+        //             borderRadius: 10,
+        //             //padding: 10,
+        //             shadowColor: '#000000',
+        //             shadowOffset: {
+        //             width: 0,
+        //             height: 3 },
+        //                 shadowRadius: 10,
+        //                 shadowOpacity: 0.25
+        //             },
+        //             android:{
+        //                 borderWidth: 0.5,
+        //                 borderColor: "#BEBDBD",
+        //             }
+        //     }),  
    },
     button: {
       
