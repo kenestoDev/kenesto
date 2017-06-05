@@ -1066,7 +1066,7 @@ function uploadNewVersion(fileObject: object, baseFileId: string) {
             .then(json => {
                 if (json.ResponseStatus == "FAILED") {
 
-                    dispatch(emitToast(constans.ERROR, "failed to upload file"))
+                    dispatch(emitToast(constans.ERROR, "Error, failed to upload file"))
                     writeToLog(email, constans.ERROR, `function uploadDocumentVersion(0) -failed to upload file, UploadUrl: ${uploadObj.UploadUrl}`)
                 }
                 else {
@@ -1152,7 +1152,7 @@ export function deleteAsset(id: string, familyCode: string) {
             .then(json => {
                 dispatch(navActions.updateIsProcessing(false));
                 if (json.ResponseStatus == "FAILED") {
-                    dispatch(navActions.emitToast(constans.ERROR, "", "Error deleting document"))
+                    dispatch(navActions.emitToast(constans.ERROR, json.ErrorMessage ))
                     writeToLog(email, constans.ERROR, `function deleteAsset - Error deleting asset - url: ${url}`)
                 }
                 else {
@@ -1169,7 +1169,7 @@ export function deleteAsset(id: string, familyCode: string) {
             })
             .catch((error) => {
                  dispatch(navActions.updateIsProcessing(false));
-                dispatch(navActions.emitToast(constans.ERROR, "Failed to delete document"))
+                dispatch(navActions.emitToast(constans.ERROR, "Error while deleting file"))
                 writeToLog(email, constans.ERROR, `function deleteAsset - Failed to delete asset - url: ${url}`, error)
             })
     }
@@ -1185,7 +1185,7 @@ export function deleteFolder(id: string) {
             .then(response => response.json())
             .then(json => {
                 if (json.ResponseStatus == "FAILED") {
-                    dispatch(navActions.emitToast(constans.ERROR, "Error deleting folder"))
+                    dispatch(navActions.emitToast(constans.ERROR, "Error while deleting folder"))
                     writeToLog(email, constans.ERROR, `function deleteFolder - Failed to delete folder - url: ${url}`)
                 }
                 else {
@@ -1196,7 +1196,7 @@ export function deleteFolder(id: string) {
                 
             })
             .catch((error) => {
-                dispatch(navActions.emitToast(constans.ERROR, error, "Failed to delete folder"))
+                dispatch(navActions.emitToast(constans.ERROR, error, "Error while deleting folder"))
                 writeToLog(email, constans.ERROR, `function deleteFolder - Failed to delete folder - url: ${url}`, error)
             })
 
