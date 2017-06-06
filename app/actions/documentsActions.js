@@ -85,9 +85,10 @@ export function getDocumentPermissions(document) {
         var documentlist = getDocumentsContext(getState().navReducer);
         dispatch(updateIsFetchingSelectedObject(true))
         var id = (typeof document.SharedObjectId != 'undefined' && document.SharedObjectId && document.SharedObjectId != "") ? document.SharedObjectId: document.Id != "" ? document.Id : document.documentId;
-        var token = document.ExternalToken === "" ? sessionToken :  encodeURIComponent(document.ExternalToken);
+        var token =   (typeof document.ExternalToken != 'undefined' && document.ExternalToken && document.ExternalToken != "")   ? encodeURIComponent(document.ExternalToken): sessionToken;
         var familyCode = (typeof document.familyCode != 'undefined' && document.familyCode)  ? document.familyCode : document.FamilyCode ;
         var url = getObjectInfoUrl(env, token, id, familyCode, document.ExternalToken != "");
+        
         writeToLog(email, constans.DEBUG, `function getDocumentPermissions - url: ${url}`)
         return fetch(url)
             .then(response => response.json())
