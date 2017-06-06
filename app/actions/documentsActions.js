@@ -88,21 +88,18 @@ export function getDocumentPermissions(document) {
         var token = document.ExternalToken === "" ? sessionToken :  encodeURIComponent(document.ExternalToken);
         var familyCode = (typeof document.familyCode != 'undefined' && document.familyCode)  ? document.familyCode : document.FamilyCode ;
         var url = getObjectInfoUrl(env, token, id, familyCode, document.ExternalToken != "");
-
         writeToLog(email, constans.DEBUG, `function getDocumentPermissions - url: ${url}`)
         return fetch(url)
             .then(response => response.json())
             .then(json => {
                 if (json.ResponseStatus == "FAILED") {
-                    dispatch(navActions.emitError(json.ErrorMessage, 'error details'))
-                    dispatch(navActions.emitError(json.ErrorMessage, ""))
+                    dispatch(navActions.emitError('Permission error- Access is denied.'))
                     dispatch(updateIsFetchingSelectedObject(false))
                     writeToLog(email, constans.ERROR, `function getDocumentPermissions - error details- url: ${url}`)
                 }
                 else {
                     var permissions = json.ResponseData.ObjectPermissions;
                     var documentId = document.Id != "" ? document.Id : document.documentId;
-                 
                     dispatch(updateSelectedObject(documentId, familyCode, permissions))
                     dispatch(updateIsFetchingSelectedObject(false))
                 }
@@ -134,7 +131,6 @@ export function getDocumentInfo(documentId: string, familyCode: string, actionTy
             .then(json => {
                 if (json.ResponseStatus == "FAILED") {
                     dispatch(navActions.emitError(json.ErrorMessage, 'error details'))
-                    dispatch(navActions.emitError(json.ErrorMessage, ""))
                     dispatch(updateIsFetchingSelectedObject(false))
                     writeToLog(email, constans.ERROR, `function getDocumentInfo - error details- url: ${url}`)
                 }
