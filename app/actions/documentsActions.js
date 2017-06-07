@@ -50,7 +50,7 @@ export function getCurrentFolderPermissions(folderId : string){
     return (dispatch, getState) => {
           if (!getState().accessReducer.isConnected)
             return dispatch(navActions.emitToast("info", textResource.NO_INTERNET)); 
-          dispatch(updateIsFetchingCurrentFolderPermissions(true))
+         // dispatch(updateIsFetchingCurrentFolderPermissions(true))
          const {sessionToken, env, email} = getState().accessReducer;
          var url = getObjectInfoUrl(env, sessionToken, folderId, "FOLDER",false);
           return fetch(url)
@@ -59,18 +59,18 @@ export function getCurrentFolderPermissions(folderId : string){
                 if (json.ResponseStatus == "FAILED") {
                     dispatch(navActions.emitError(json.ErrorMessage, 'error details'))
                     dispatch(navActions.emitError(json.ErrorMessage, ""))
-                    dispatch(updateIsFetchingCurrentFolderPermissions(false))
+                    //dispatch(updateIsFetchingCurrentFolderPermissions(false))
                     writeToLog(email, constans.ERROR, `function getCurrentFolderPermissions - error details- url: ${url}`)
                 }
                 else {
                     var permissions = json.ResponseData.ObjectPermissions;
                     dispatch(updateCurrentFolder(folderId, permissions))
-                    dispatch(updateIsFetchingCurrentFolderPermissions(false))
+                    //dispatch(updateIsFetchingCurrentFolderPermissions(false))
                 }
             })
             .catch((error) => {
                 dispatch(navActions.emitError("Failed to get folder permissions", ""))
-                dispatch(updateIsFetchingCurrentFolderPermissions(false))
+                //dispatch(updateIsFetchingCurrentFolderPermissions(false))
                 writeToLog(email, constans.ERROR, `function getCurrentFolderPermissions - Failed to get document permissions , url: ${url}`, error)
             })
 
@@ -88,7 +88,7 @@ export function getDocumentPermissions(document) {
         var token =   (typeof document.ExternalToken != 'undefined' && document.ExternalToken && document.ExternalToken != "")   ? encodeURIComponent(document.ExternalToken): sessionToken;
         var familyCode = (typeof document.familyCode != 'undefined' && document.familyCode)  ? document.familyCode : document.FamilyCode ;
         var url = getObjectInfoUrl(env, token, id, familyCode, document.ExternalToken != "");
-        
+
         writeToLog(email, constans.DEBUG, `function getDocumentPermissions - url: ${url}`)
         return fetch(url)
             .then(response => response.json())

@@ -356,7 +356,7 @@ class KenestoToolbar extends Component {
     )
   }
 
-  renderDocumentsToolbar() {
+ renderDocumentsToolbar() {
     const {navReducer} = this.props
     var documentlist = getDocumentsContext(navReducer);
      var TouchableElement = TouchableOpacity;
@@ -381,48 +381,88 @@ class KenestoToolbar extends Component {
                                                 <Icon name="menu" style={[styles.iconStyle, {color: "orange" }]} onPress={this.props.onIconClicked} />
                                             </Animatable.View>
                                         </View>
+    
     return (
-      <View style= {[styles.toolbar,{marginTop: (Platform.OS === 'ios')? 15 : 0}]}>
-        <Text></Text>
-        <Animatable.View style={styles.fakeTextInput} ref="fakeTextInput">
-          <View><Icon name="arrow-back" style={[styles.iconStyle, { opacity: 0 }]} /></View>
-          <TextInput style={styles.textInput} />
-          <View style={styles.fakeTextInputCover} />
-          <Icon name="search" style={[styles.iconStyle, { opacity: 0 }]} />
-        </Animatable.View>
-       
-       {animatedHamburger}
+       Platform.OS === 'ios' ? 
+        <View style= {[styles.toolbar,{marginTop: 15}]}>
+          <Text></Text>
+          <Animatable.View style={styles.fakeTextInput} ref="fakeTextInput">
+            <View><Icon name="arrow-back" style={[styles.iconStyle, { opacity: 0 }]} /></View>
+            <TextInput style={styles.textInput} />
+            <View style={styles.fakeTextInputCover} />
+            <Icon name="search" style={[styles.iconStyle, { opacity: 0 }]} />
+          </Animatable.View>
         
+        {animatedHamburger}
+          <Text></Text>
+          <Animatable.View ref="folderTitle" style={[styles.folderName]}>
+            <Text style={{ fontSize: 20 }} numberOfLines={1}>{title}</Text>
+          </Animatable.View>
 
-        <Animatable.View ref="folderTitle" style={[styles.folderName]}>
-          <Text style={{ fontSize: 20 }} numberOfLines={1}>{title}</Text>
-        </Animatable.View>
+          <View><Animatable.View ref="searchIcon"><Icon name="search" style={[styles.iconStyle]}  onPress={this.onPressSearchBox.bind(this) }/>
+          </Animatable.View></View>
 
-        <View><Animatable.View ref="searchIcon"><Icon name="search" style={[styles.iconStyle]}  onPress={this.onPressSearchBox.bind(this) }/>
-        </Animatable.View></View>
+          <Animatable.View ref="sorting" style={[this.props.isPopupMenuOpen ? styles.buttonsActive : styles.buttonsInactive]}>
+            <View style={[styles.popupInactive, this.props.isPopupMenuOpen ? styles.popupActive : {}]}>
+              <Icon name="more-vert" style={[styles.iconStyle]} onPress={this.onPressPopupMenu.bind(this) } />
+            </View>
 
-        <Animatable.View ref="sorting" style={[this.props.isPopupMenuOpen ? styles.buttonsActive : styles.buttonsInactive]}>
-          <View style={[styles.popupInactive, this.props.isPopupMenuOpen ? styles.popupActive : {}]}>
-            <Icon name="more-vert" style={[styles.iconStyle]} onPress={this.onPressPopupMenu.bind(this) } />
-          </View>
+            <View style={this.props.isPopupMenuOpen ? styles.sortingInactive : {}}>
+              {sortDirection == constans.ASCENDING ?
+                <View>
+                  <Icon name="keyboard-arrow-up" style={[styles.iconStyle, styles.arrowUp]}  onPress={this.onSort.bind(this) }/>
+                  <Icon name="keyboard-arrow-down" style={[styles.iconStyle, styles.arrowDown, styles.iconDisabled]} onPress={this.onSort.bind(this) }/>
+                </View>
+                :
+                <View>
+                  <Icon name="keyboard-arrow-up" style={[styles.iconStyle, styles.arrowUp, styles.iconDisabled]}  onPress={this.onSort.bind(this) }/>
+                  <Icon name="keyboard-arrow-down" style={[styles.iconStyle, styles.arrowDown]} onPress={this.onSort.bind(this) }/>
+                </View>
+              }
+            </View>
+          </Animatable.View>
+        </View>
+      :
+        <View style= {[styles.toolbar,{marginTop: 0}]}>
+          
+          <Animatable.View style={styles.fakeTextInput} ref="fakeTextInput">
+            <View><Icon name="arrow-back" style={[styles.iconStyle, { opacity: 0 }]} /></View>
+            <TextInput style={styles.textInput} />
+            <View style={styles.fakeTextInputCover} />
+            <Icon name="search" style={[styles.iconStyle, { opacity: 0 }]} />
+          </Animatable.View>
+        
+        {animatedHamburger}
+        
+          <Animatable.View ref="folderTitle" style={[styles.folderName]}>
+            <Text style={{ fontSize: 20 }} numberOfLines={1}>{title}</Text>
+          </Animatable.View>
 
-          <View style={this.props.isPopupMenuOpen ? styles.sortingInactive : {}}>
-            {sortDirection == constans.ASCENDING ?
-              <View>
-                <Icon name="keyboard-arrow-up" style={[styles.iconStyle, styles.arrowUp]}  onPress={this.onSort.bind(this) }/>
-                <Icon name="keyboard-arrow-down" style={[styles.iconStyle, styles.arrowDown, styles.iconDisabled]} onPress={this.onSort.bind(this) }/>
-              </View>
-              :
-              <View>
-                <Icon name="keyboard-arrow-up" style={[styles.iconStyle, styles.arrowUp, styles.iconDisabled]}  onPress={this.onSort.bind(this) }/>
-                <Icon name="keyboard-arrow-down" style={[styles.iconStyle, styles.arrowDown]} onPress={this.onSort.bind(this) }/>
-              </View>
-            }
-          </View>
-        </Animatable.View>
-      </View>
+          <View><Animatable.View ref="searchIcon"><Icon name="search" style={[styles.iconStyle]}  onPress={this.onPressSearchBox.bind(this) }/>
+          </Animatable.View></View>
+
+          <Animatable.View ref="sorting" style={[this.props.isPopupMenuOpen ? styles.buttonsActive : styles.buttonsInactive]}>
+            <View style={[styles.popupInactive, this.props.isPopupMenuOpen ? styles.popupActive : {}]}>
+              <Icon name="more-vert" style={[styles.iconStyle]} onPress={this.onPressPopupMenu.bind(this) } />
+            </View>
+
+            <View style={this.props.isPopupMenuOpen ? styles.sortingInactive : {}}>
+              {sortDirection == constans.ASCENDING ?
+                <View>
+                  <Icon name="keyboard-arrow-up" style={[styles.iconStyle, styles.arrowUp]}  onPress={this.onSort.bind(this) }/>
+                  <Icon name="keyboard-arrow-down" style={[styles.iconStyle, styles.arrowDown, styles.iconDisabled]} onPress={this.onSort.bind(this) }/>
+                </View>
+                :
+                <View>
+                  <Icon name="keyboard-arrow-up" style={[styles.iconStyle, styles.arrowUp, styles.iconDisabled]}  onPress={this.onSort.bind(this) }/>
+                  <Icon name="keyboard-arrow-down" style={[styles.iconStyle, styles.arrowDown]} onPress={this.onSort.bind(this) }/>
+                </View>
+              }
+            </View>
+          </Animatable.View>
+        </View>
     )
-  }
+	}
 
   renderDocumentToolbar() {
 
