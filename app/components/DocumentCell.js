@@ -24,7 +24,8 @@ import {
   TouchableHighlight,
   TouchableOpacity,
   TouchableNativeFeedback,
-  View
+  View,
+  Keyboard
 } from 'react-native';
 import moment from 'moment';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -57,6 +58,7 @@ var DocumentCell = React.createClass({
     dispatch(updateSelectedObject(id, familyCode, ""));
     // dispatch(getDocumentPermissions(id, familyCode))
     this.context.itemMenuContext.open();
+    Keyboard.dismiss();
     // dispatch(uiActions.setOpenModalRef('modalItemMenu'))
   },
 

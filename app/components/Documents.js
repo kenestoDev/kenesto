@@ -13,7 +13,8 @@ import {
   ActivityIndicatorIOS,
   Platform,
   ActivityIndicator,
-  RefreshControl
+  RefreshControl,
+  Keyboard
 } from 'react-native'
 import { emitToast, clearToast,updateIsProcessing } from '../actions/navActions'
 import * as uiActions from '../actions/uiActions'
@@ -198,6 +199,7 @@ class Documents extends Component {
       }
 
     }
+    Keyboard.dismiss();
   }
 
   onSearchChange(event) {
