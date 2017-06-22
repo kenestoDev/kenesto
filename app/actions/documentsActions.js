@@ -474,12 +474,14 @@ export function refreshTable(documentlist: Object, updateRouteData: boolean = tr
 
             const url = constructRetrieveDocumentsUrl(getState().accessReducer.env, getState().accessReducer.sessionToken, documentlist.fId, documentlist.sortBy, documentlist.sortDirection, documentlist.catId, documentlist.keyboard, documentlist.isSearch, documentlist.isVault)
             const {sessionToken, env, email} = getState().accessReducer;
-            writeToLog(email, constans.DEBUG, `function refreshTable - url: ${url}`)
+            writeToLog(email, constans.DEBUG, `function refreshTable- documentlist: `,JSON.stringify(documentlist))
             if (updateRouteData) {
                 dispatch(navActions.updateRouteData(documentlist))
             }
-           // if (getStatistics)
+           
+           if (getStatistics)
             dispatch(Access.retrieveStatistics());
+
             return dispatch(fetchDocumentsTable(url, documentlist, types.REFRESH_DOCUMENTS_LIST))
 
 

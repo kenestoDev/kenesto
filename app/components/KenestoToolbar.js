@@ -201,8 +201,11 @@ class KenestoToolbar extends Component {
     this.state = {
       isSearchBoxOpen: false,
       animateToolBar: false,
-      searchText: ""
+      searchText: "",
+      typing : false,
+      typingTimeout : 0
     }
+    this._search = this._search.bind(this);
   }
 
   onPressSearchBox() {
@@ -287,13 +290,24 @@ class KenestoToolbar extends Component {
     documentlist.keyboard = text;
     documentlist.sortDirection = constans.ASCENDING;
     documentlist.sortBy = constans.ASSET_NAME;
-    this.props.dispatch(documentsActions.refreshTable(documentlist, true));
-    this.setState({
-      searchText: text
-    });
-
+    this.props.dispatch(documentsActions.refreshTable(documentlist, true, false));
   }
 
+_search(text) {
+    const self = this;
+
+    if (this.state.typingTimeout) {
+       clearTimeout(this.state.typingTimeout);
+    }
+
+    self.setState({
+       searchText: text,
+       typing: false,
+       typingTimeout: setTimeout(function () {
+           self._submitSearch(self.state.searchText);
+         }, 800)
+    });
+}
   menuPressed(document) {
     var {dispatch} = this.props;
       if (!this.props.isConnected){
@@ -328,7 +342,7 @@ class KenestoToolbar extends Component {
           </Animatable.View>
         </View>
 
-        <Animatable.View style={styles.textInputContainer} ref="textInput"><TextInput autoFocus={true} style={styles.textInput} onChangeText={(text) => this._submitSearch(text) } value={this.state.searchText}/></Animatable.View>
+        <Animatable.View style={styles.textInputContainer} ref="textInput"><TextInput autoFocus={true} style={styles.textInput} onChangeText={(text) => this._search(text) } value={this.state.searchText}/></Animatable.View>
 
         <View><Animatable.View ref="searchBoxSearchIcon"><Icon name="search" style={[styles.iconStyle]} /></Animatable.View></View>
 
