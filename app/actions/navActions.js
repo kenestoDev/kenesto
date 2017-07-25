@@ -1,6 +1,7 @@
 import * as actionTypes from '../constants/ActionTypes'
 import * as peopleActions from '../actions/peopleActions'
-
+import { writeToLog } from '../utils/ObjectUtils'
+import * as constans from '../constants/GlobalConstans'
 import * as uiActions from '../actions/uiActions'
 import {getSelectedDocument} from '../utils/documentsUtils'
 import {isRouteKeyExists} from '../utils/ObjectUtils'
@@ -51,6 +52,7 @@ export function navigateReset(key,routes, index) {
 }
 
 export function updateRouteData (routeData) {
+  writeToLog("", constans.DEBUG, `function updateRouteData - routeData: ${JSON.stringify(routeData)}`)
   return {
     type: actionTypes.UPDATE_ROUTE_DATA,
     routeData

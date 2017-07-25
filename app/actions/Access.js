@@ -1,12 +1,12 @@
 import * as types from '../constants/ActionTypes';
 import {getAuthUrl, getLoginUrl, getForgotPasswordUrl,getSignUpUrl, clearCredentials, setCredentials, getRetrieveStatisticsUrl,UpdateFcmTokenUrl,getLeadSourceCode, getLicneseAgreementUrl } from '../utils/accessUtils';
-import { push, pop, emitInfo, emitError, emitToast, navigateReset, updateIsProcessing} from './navActions'
+import { push, pop, emitInfo, emitError, emitToast, navigateReset, updateIsProcessing, updateRouteData} from './navActions'
 import * as textResource from '../constants/TextResource'
 import * as routes from '../constants/routes'
-import * as constans from '../constants/GlobalConstans'
 import {clearAllDocumentlists} from '../actions/documentsActions'
 import {getDocumentsTitle} from '../utils/documentsUtils'
 import {writeToLog} from '../utils/ObjectUtils'
+import * as constans from '../constants/GlobalConstans'
 import  stricturiEncode  from 'strict-uri-encode';
 import _ from 'lodash'
 export function updateIsFetching(isFetching: boolean){
@@ -113,6 +113,7 @@ function DoNothing(message : string) {
 }
 
 export function UpdateConnectionState(isConnected : boolean){
+     writeToLog("", constans.DEBUG, `function UpdateConnectionState - isConnected:${isConnected}`)
     return {
         type : types.UPDATE_CONNECTION_STATE, 
         isConnected : isConnected
@@ -287,7 +288,7 @@ export function logOut() {
 
        // var clear = clearCredentials();
         clearCredentials().then(() => {
-            dispatch(navigateReset('root', [{ key: 'login', title: 'login'}], 0));
+            dispatch(navigateReset('root', [{ key: 'login', title: 'login', data:{isLoading: false}}], 0));
            try {
                dispatch(clearAllDocumentlists());
            } catch (error) {
@@ -305,12 +306,18 @@ export function logOut() {
 }
 
 export function login(userId : string, password: string, env: string = 'dev')  {
-  
+   
+   writeToLog(userId, constans.DEBUG, `function login - start`)
     return (dispatch, getState) => {
         if (!getState().accessReducer.isConnected)
-            return dispatch(emitToast("info", textResource.NO_INTERNET)); 
-        writeToLog(userId, constans.DEBUG, `function login - userId: ${userId}, password:${"*****"}`)
-        dispatch(updateIsFetching(true)); 
+        {
+            writeToLog(userId, constans.DEBUG, `function login - getState().accessReducer.isConnected) ${getState().accessReducer.isConnected}`)
+            //dispatch(updateRouteData({isLoading: true}));
+           //return dispatch(emitToast("info", textResource.NO_INTERNET));    
+        }
+          
+         writeToLog(userId, constans.DEBUG, `function login - userId: ${userId}, password:${"*****"}`)
+         dispatch(updateRouteData({isLoading: true}));
             if (env == null)
             {
                 const {stateEnv} = getState(); 
@@ -321,16 +328,32 @@ export function login(userId : string, password: string, env: string = 'dev')  {
         return fetch(authUrl)
             .then((response) => response.json())
             .catch((error) => {
-                 dispatch(emitError('Failed to login : The authentication servers are currently down for maintenance')); 
+                dispatch(updateRouteData({isLoading: false}));
+                if (!getState().accessReducer.isConnected)
+                {
+                    dispatch(emitError('Failed to login : Please check your network connection')); 
+                }
+                else
+                {
+                    dispatch(emitError('Failed to login : The authentication servers are currently down for maintenance')); 
+                }
+                 
                  writeToLog(userId, constans.ERROR, `function login - Failed to Login - userId: ${userId}, password:${"*****"}`, error)
             })
             .then( (responseData) => {
                 if (typeof responseData == 'undefined')
+                {
+                    dispatch(updateRouteData({isLoading: false}));
                     return; 
+                }
+                    
 
                 if (responseData.ResponseStatus == "FAILED")
                 {
-                    clearCredentials();
+                  
+                    learCredentials().then(() => {
+                        dispatch(updateRouteData({isLoading: false}));
+                    });
                      dispatch(emitError('Failed to authenticate')); 
                      writeToLog(userId, constans.ERROR, `function login - Failed to Login - userId: ${userId}, password:${"*****"}`)
                 }
@@ -339,7 +362,7 @@ export function login(userId : string, password: string, env: string = 'dev')  {
                      var errorMessage = responseData.AuthenticateJsonResult.ErrorMessage.indexOf('ACCESS_DENIED') > -1?
                                  'Failed to login: The e-mail address or password you entered is incorrect' : 
                                  responseData.AuthenticateJsonResult.ErrorMessage.indexOf('VAL10335') > -1 ?'Company license has expired. Please contact your IT for support.':'Failed to login, Please contact your IT for support.' 
-                       
+                      dispatch(updateRouteData({isLoading: false}));
                       dispatch(emitError(errorMessage)); 
                    //  dispatch(emitError('Failed to login : The authentication are currently down for maintenance')); 
                      writeToLog(userId, constans.ERROR, `function login - Failed to Login - userId: ${userId}, password:${"*****"}`,responseData.AuthenticateJsonResult.ErrorMessage)
@@ -356,12 +379,17 @@ export function login(userId : string, password: string, env: string = 'dev')  {
                         const loginUrl = getLoginUrl(env, organizationId, token);
                        fetch(loginUrl).then((response) => response.json())
                         .catch((error) => {
+                             dispatch(updateRouteData({isLoading: false}));
                              dispatch(emitError('Failed to Login'));
                              writeToLog(userId, constans.ERROR, `function login - Failed to Login, loginUrl:${loginUrl}`, error) 
                         })
                         .then( (responseData) => {
                             if (responseData == null || typeof (responseData.LoginJsonResult) == 'undefined' || responseData.LoginJsonResult.ResponseStatus == 'FAILED')
+                            {
+                                dispatch(updateRouteData({isLoading: false}));
                                 return  dispatch(emitError('Failed to Login'));
+                            }
+                                
                             setCredentials(userId, password, env);
                             var sessionToken =  typeof (responseData.LoginJsonResult) != 'undefined'? responseData.LoginJsonResult.Token : "";
                             dispatch(updateLoginInfo(true, 

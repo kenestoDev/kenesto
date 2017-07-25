@@ -11,7 +11,6 @@ import Login from '../components/Login'
 class LoginContainer extends Component {
 
   render() {
-  
     return (
       <Login {...this.props} />
     )
@@ -24,8 +23,9 @@ class LoginContainer extends Component {
 
 function mapStateToProps(state) {
   const {isLoggedIn, env, hasError, errorMessage,isFetching  } = state.accessReducer; 
- 
+   const { navReducer } = state
   return {
+    navReducer,
     isLoggedIn, 
     env, 
     isFetching, 

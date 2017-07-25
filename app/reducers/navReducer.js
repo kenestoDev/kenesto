@@ -14,7 +14,10 @@ const initialState = {
   routes: [
     {
       key: 'login',
-      title: 'login'
+      title: 'login',
+      data:{
+        isLoading: true
+      }
     }
   ], 
 

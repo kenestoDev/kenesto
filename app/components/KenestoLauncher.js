@@ -3,7 +3,7 @@ import {View, Text, TextInput, StyleSheet, AsyncStorage, TouchableHighlight, Pix
 import Button from "react-native-button";
 import config from '../utils/app.config';
 import {clearCredentials, setCredentials, getCredentials} from '../utils/accessUtils';
-
+import { writeToLog } from '../utils/ObjectUtils'
 import ModalPicker from 'react-native-modal-picker'
 import ProggressBar from "../components/ProgressBar";
 import * as routes from '../constants/routes'
@@ -74,7 +74,7 @@ class KenestoLauncher extends React.Component {
         
     
          creadetiails.then(function(storedCredentials) {
-
+writeToLog("", constans.DEBUG, `function KenestoLauncher - storedCredentials.hasCredentials: ${storedCredentials.hasCredentials}`)
        //      storedCredentials.props.dispatch(storedCredentials.props.login("scott@kenestodemo.com", "!QAZ@WSX" , storedCredentials.env));
              
             if (storedCredentials.hasCredentials)

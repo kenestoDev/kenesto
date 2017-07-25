@@ -11,13 +11,14 @@ import * as constans from '../constants/GlobalConstans'
 import * as accessActions from '../actions/Access'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import {clearCredentials, setCredentials, getCredentials} from '../utils/accessUtils';
+import { updateRouteData} from '../actions/navActions'
 const Item = Picker.Item;
 import logoImage from '../assets/kenesto_logo.png';
 import stricturiEncode from 'strict-uri-encode';
 import customConfig from '../assets/icons/customConfig.json';
 import { createIconSetFromFontello } from 'react-native-vector-icons';
 const CustomIcon = createIconSetFromFontello(customConfig);
-
+import { writeToLog } from '../utils/ObjectUtils'
 var Form = Tcomb.form.Form;
 
 import _ from 'lodash';
@@ -196,9 +197,11 @@ const styles = StyleSheet.create({
    }
 
     directLogin(uName: string, pWord: string , env : string){
-      // this.updateIsLoading(true); 
-       Keyboard.dismiss();
-       this.props.dispatch(accessActions.login( uName, pWord, env))
+        writeToLog("", constans.DEBUG, `Component Login(function directLogin) - userName:${uName} pWord:***** env:${env}`)
+        Keyboard.dismiss();
+        
+        writeToLog("", constans.DEBUG, `Component Login(function directLogin) - go to accessActions.login`)
+        this.props.dispatch(accessActions.login( uName, pWord, env))
      
    }
 
@@ -217,9 +220,7 @@ const styles = StyleSheet.create({
        this.refs.form.getComponent('password').refs.inputPword.focus();
    }
 
-//    updateIsLoading(isLoading : boolean){
-//         this.setState({isLoading : isLoading})
-//    }
+   
 
    onEnvChange = (key: string) => {
         this.setState({selectedEnv : key});
@@ -390,20 +391,48 @@ const styles = StyleSheet.create({
                 </KeyboardAwareScrollView>
               )
     }
+
    componentWillMount(){
+       const {navReducer} = this.props
         getCredentials().then((storedCredentials) => {
+            writeToLog("", constans.DEBUG, `Component Login(function componentWillMount)- storedCredentials.hasCredentials: ${storedCredentials.hasCredentials}`)
             if (storedCredentials.hasCredentials)
             {
-                this.directLogin(storedCredentials.storedUserName, storedCredentials.storedPassword, storedCredentials.env);
+                 try {
+                this.props.dispatch(updateRouteData({isLoading: true}));
+                writeToLog("", constans.DEBUG, `Component Login(function componentWillMount) - go function to directLogin`)
+                this.props.dispatch(accessActions.login(storedCredentials.storedUserName, storedCredentials.storedPassword, storedCredentials.env));
+                //this.directLogin(storedCredentials.storedUserName, storedCredentials.storedPassword, storedCredentials.env);
+                 }
+                 catch(er)
+                 {
+                    writeToLog("", constans.DEBUG, `Component Login(function componentWillMount) - error ${er}`)
+                 }
             }
- 
-        });
+            else
+            {
+              this.props.dispatch(updateRouteData({isLoading: false}));
+              writeToLog("", constans.DEBUG, `Component Login(function componentWillMount) - render login screen`)
+            }
 
+            writeToLog("", constans.DEBUG, `Component Login(function componentWillMount) -after1`)
+        });
+        writeToLog("", constans.DEBUG, `Component Login(function componentWillMount) -after2 ${JSON.stringify(navReducer.routes)}`)
    }
 
 
     render(){
-        if (this.props.isFetching ){
+        const {navReducer} = this.props
+        var isLoading;
+       if (typeof (navReducer) == 'undefined' || navReducer == "" || navReducer.index != 0 || typeof (navReducer.routes[navReducer.index].data) == 'undefined') {
+            isLoading = false;
+        }
+        else
+        {
+            isLoading = navReducer.routes[0].data.isLoading;
+        }
+        
+        if (isLoading){
             return (
                 <View style = {styles.container}>
                       {this.renderLoading()}

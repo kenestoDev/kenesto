@@ -1,7 +1,7 @@
 import {config} from './app.config'
 import _ from 'lodash'
 import * as constans from '../constants/GlobalConstans'
-
+import { writeToLog } from './ObjectUtils'
 import stricturiEncode from 'strict-uri-encode'
 import {AsyncStorage, Platform} from 'react-native'
 
@@ -103,7 +103,7 @@ export function UpdateFcmTokenUrl(env: string, token : string){
      var apiBaseUrl = urls.ApiBaseUrl;
     if (urls == null)
         return null;
-
+    writeToLog("", constans.DEBUG, `function UpdateFcmTokenUrl - url: ${apiBaseUrl}/Access.svc/UpdateFcmToken?t=${token}`)
    return `${apiBaseUrl}/Access.svc/UpdateFcmToken?t=${token}`
 
 }
@@ -112,12 +112,14 @@ export function UpdateFcmTokenUrl(env: string, token : string){
 export async function clearCredentials() : bool
 {
      await AsyncStorage.multiRemove(["kenestoU","kenestoP", "env"]); 
+      writeToLog("", constans.DEBUG, `function clearCredentials`)
      return true;
 }
 
 export async function getCredentials() : Object{
     
     var res  = await AsyncStorage.multiGet(["kenestoU", "kenestoP", "env"]);
+    writeToLog("", constans.DEBUG, `function getCredentials - start`)
       var env = null; 
      
          res.map( (result, i, res) => {
@@ -130,7 +132,7 @@ export async function getCredentials() : Object{
                  else
                     env = val;
             });
-
+          writeToLog("", constans.DEBUG, `function getCredentials - storedPassword: ****, storedUserName :${storedUserName}`)
           if (storedPassword != null && storedUserName != null)
                {
                 
@@ -142,10 +144,13 @@ export async function getCredentials() : Object{
 
 
 export function setCredentials(username, password, env){
+       writeToLog("", constans.DEBUG, `function setCredentials set param- username: ${username}, password: *****`)
       AsyncStorage.setItem("kenestoU", username); 
       AsyncStorage.setItem("kenestoP", password); 
       AsyncStorage.setItem("env", env); 
 
+    //var res  = await AsyncStorage.multiGet(["kenestoU", "kenestoP", "env"]);
+   // writeToLog("", constans.DEBUG, `function setCredentials get param- res: ${JSON.stringify(res)}`)
 }
 
 

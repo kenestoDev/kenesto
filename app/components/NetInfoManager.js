@@ -1,6 +1,8 @@
 import React from "react"; 
 import {NetInfo} from "react-native";
 import { UpdateConnectionState } from '../actions/Access'
+import {writeToLog} from '../utils/ObjectUtils'
+import * as constans from '../constants/GlobalConstans'
 import { emitToast } from '../actions/navActions'
 
 class NetInfoManager extends React.Component {
@@ -19,6 +21,7 @@ class NetInfoManager extends React.Component {
         );
         NetInfo.isConnected.fetch().done(
             (isConnected) => { 
+                writeToLog("", constans.DEBUG, `Component NetInfoManager function componentDidMount - isConnected:${isConnected}`)
                 this.props.dispatch(UpdateConnectionState(isConnected));
              }
         );
@@ -35,6 +38,7 @@ class NetInfoManager extends React.Component {
      //   console.log('_handleConnectivityChange ' + isConnected)
        // const message = isConnected? "you are conntected!" : "No internet for you!"; 
        // this.props.dispatch(emitToast("info", message))
+       writeToLog("", constans.DEBUG, `Component NetInfoManager function _handleConnectivityChange - isConnected:${isConnected}`)
          this.props.dispatch(UpdateConnectionState(isConnected));
   };
 

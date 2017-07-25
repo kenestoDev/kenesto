@@ -13,7 +13,7 @@ function accessReducer(state =
     lastName: "",
     thumbnailPath: "",
     hasProfilePicture: false,
-    isConnected : false,
+    isConnected : true,
     licenseAgreement:"",
     statistics: {
       totalMyDocuments: 0,
