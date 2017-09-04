@@ -12,6 +12,7 @@ import fontelloConfig from '../assets/icons/config.json';
 import { createIconSetFromFontello } from  'react-native-vector-icons'
 import * as navActions from '../actions/navActions'
 import {getFileUploadUrl, getDocumentsContext} from '../utils/documentsUtils'
+import {bytesToSize} from '../utils/KenestoHelper'
 import {uploadToKenesto} from '../actions/documentsActions'
 //var ImagePicker = NativeModules.ImageCropPicker;
 var DocumentPicker = NativeModules.RNKenestoAssetPicker;
@@ -56,13 +57,6 @@ class PlusMenu extends React.Component{
             };
     }
 
-        bytesToSize(bytes) {
-        var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
-        if (bytes == 0) return '0 Byte';
-        var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
-        return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
-        };
-
     
   upload(file: object){
      // this.props.closeMenuModal("modalPlusMenu");
@@ -88,10 +82,10 @@ class PlusMenu extends React.Component{
 
         const fileName = "scanned_" + date.getTime() + '.' + fileExtension;
         //   this.setState({
-        //         file: { name: fileName, path: image.path, type: image.mime, size: this.bytesToSize(image.size), extension: fileExtension},
+        //         file: { name: fileName, path: image.path, type: image.mime, size: bytesToSize(image.size), extension: fileExtension},
         //     });
 
-       this.upload({ name: fileName, path: image.path, type: image.mime, size: this.bytesToSize(image.size), extension: fileExtension});
+       this.upload({ name: fileName, path: image.path, type: image.mime, size: bytesToSize(image.size), extension: fileExtension});
    
         }).catch(e => console.log(JSON.stringify(e)));
 
@@ -105,7 +99,7 @@ class PlusMenu extends React.Component{
 //                 var mediaPath = mediaInfo.mediaPath;
                 
 //                 this.setState({
-//                     file: { name: mediaInfo.mediaName, path: mediaPath, type: mediaInfo.mediaMimeType, size: this.bytesToSize(mediaInfo.mediaSize), extension: fileExtension},
+//                     file: { name: mediaInfo.mediaName, path: mediaPath, type: mediaInfo.mediaMimeType, size: bytesToSize(mediaInfo.mediaSize), extension: fileExtension},
 //                 });
 
 //                 this.upload();
@@ -121,12 +115,12 @@ selectDocument(cropping : boolean){
       const fileExtension =  mediaInfo.mediaName.substring(mediaInfo.mediaName.lastIndexOf("."));
                 var mediaPath = mediaInfo.mediaPath;
                 // this.setState({
-                //     file: { name: mediaInfo.mediaName, path: mediaPath, type: mediaInfo.mediaMimeType, size: this.bytesToSize(mediaInfo.mediaSize), extension: fileExtension},
+                //     file: { name: mediaInfo.mediaName, path: mediaPath, type: mediaInfo.mediaMimeType, size: bytesToSize(mediaInfo.mediaSize), extension: fileExtension},
                 // });
 
                // alert(JSON.stringify(mediaInfo))
 
-                this.upload({ name: mediaInfo.mediaName, path: mediaPath, type: mediaInfo.mediaMimeType, size: this.bytesToSize(mediaInfo.mediaSize), extension: fileExtension});
+                this.upload({ name: mediaInfo.mediaName, path: mediaPath, type: mediaInfo.mediaMimeType, size: bytesToSize(mediaInfo.mediaSize), extension: fileExtension});
     });
 }
 
@@ -144,10 +138,10 @@ selectFromLib(cropping : boolean){
              const fileExtension =  file.path.substring(file.path.lastIndexOf("."));
 
             // this.setState({
-            //     file: { name: fileName, path: file.path, type: file.mime, size: this.bytesToSize(file.size), extension: fileExtension},
+            //     file: { name: fileName, path: file.path, type: file.mime, size: bytesToSize(file.size), extension: fileExtension},
             // });
 
-             this.upload({ name: fileName, path: file.path, type: file.mime, size: this.bytesToSize(file.size), extension: fileExtension});
+             this.upload({ name: fileName, path: file.path, type: file.mime, size: bytesToSize(file.size), extension: fileExtension});
 
             }).catch(e => {
                 if (e != 'Error: User cancelled image selection')

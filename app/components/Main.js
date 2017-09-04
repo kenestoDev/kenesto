@@ -14,6 +14,7 @@ import {
   Platform,
 } from 'react-native'
 
+import { RNSKBucket } from 'react-native-swiss-knife'
 import NavigationRootContainer from '../containers/navRootContainer'
 import PlusMenu from './PlusMenu'
 import ItemMenu from './ItemMenu'
@@ -29,10 +30,10 @@ import KenestoToolbar from './KenestoToolbar'
 import * as documentsActions from '../actions/documentsActions'
 import * as uiActions from '../actions/uiActions'
 import * as accessActions from '../actions/Access'
-
+import _ from 'lodash'
 import {pop, updateRouteData, clearToast,updatedOrientation} from '../actions/navActions'
 import * as constans from '../constants/GlobalConstans'
-import {getDocumentsContext} from '../utils/documentsUtils'
+import {getDocumentsContext, getFileUploadUrl, getDocumentsTitle} from '../utils/documentsUtils'
 import Error from './Error'
 import Toast from './Toast'
 import Info from './Info'
@@ -44,6 +45,7 @@ import {config} from '../utils/app.config'
 import NetInfoManager from './NetInfoManager'
 import PushController from './PushController';
 import  stricturiEncode  from 'strict-uri-encode';
+import {bytesToSize} from '../utils/KenestoHelper'
    // var AssetsPicker = NativeModules.AssetsPicker; 
 //import PubNub from 'pubnub'
 //import PushController from './PushController';
@@ -52,7 +54,6 @@ import  stricturiEncode  from 'strict-uri-encode';
 import msBar from 'react-native-message-bar';
 var MessageBarAlert = msBar.MessageBar ; 
 import DropDownOptions from './DropDownOptions';
-
 var Orientation = NativeModules.Orientation;
 
 import Dimensions from 'Dimensions';
@@ -202,6 +203,7 @@ class Main extends React.Component {
         };
          this.onActionSelected = this.onActionSelected.bind(this);
          this.onPressPopupMenu = this.onPressPopupMenu.bind(this);
+        
          this.animatedValue = new Animated.Value(60);
         const {dispatch} = this.props
 
@@ -413,26 +415,66 @@ this.callToast2(nextprops.navReducer.GlobalToastMessage, nextprops.navReducer.Gl
   closeToast(){
     this.refs.toastModal.close();
   }
+  
+  handleAppStateChange(nextAppState) {
+     if (nextAppState === 'active') {
+       if(Platform.OS === 'ios')
+       {
+        RNSKBucket.get('file', constans.KENESTO_GROUP_ID).then( (mediaInfo) =>  {  
+          console.log("*********"+JSON.stringify(mediaInfo)+"***************")
+                if(!(_.isEmpty(mediaInfo)))
+                {
+                  var documentlist = getDocumentsContext(this.props.navReducer);
+                  if(_.isEmpty(documentlist))
+                  {
+                    return;
+                  }
+                  const fileExtension =  mediaInfo.mediaName.substring(mediaInfo.mediaName.lastIndexOf("."));
+                  var mediaPath = mediaInfo.mediaPath;
+                  const url = getFileUploadUrl(this.props.env, this.props.sessionToken, mediaInfo.mediaName, "", "",  "");
+                  const fileName = mediaInfo.mediaPath.substring(mediaInfo.mediaPath.lastIndexOf('/') + 1); 
+                 
+                  if(documentlist.catId != constans.MY_DOCUMENTS)
+                  {
+                    var routeData =
+                    {
+                        name: getDocumentsTitle(constans.MY_DOCUMENTS),
+                        catId: constans.MY_DOCUMENTS,
+                        fId: "",
+                        sortDirection: constans.ASCENDING,
+                        sortBy: constans.ASSET_NAME,
+                        keyboard:"",
+                        isSearch: false, 
+                        isVault: false
+                    }
+                     this.props.dispatch(updateRouteData(routeData));
+                  }
+                  this.props.dispatch(documentsActions.uploadToKenesto({name: mediaInfo.mediaName, uri : mediaInfo.mediaPath, type: mediaInfo.mediaMimeType, size: bytesToSize(mediaInfo.mediaSize), fileExtension: fileExtension}, url, false));
+                  RNSKBucket.set('file', {}, constans.KENESTO_GROUP_ID)
+                }
+              })
+        }
+    }
 
-    // handleAppStateChange(appState) {
-    //   if (appState === 'background') {
-    //     let date = new Date(Date.now() + (5000));
+      // if (nextAppState === 'background') {
+      //   let date = new Date(Date.now() + (5000));
 
-    //     if (Platform.OS === 'ios') {
-    //       date = date.toISOString();
-    //     }
+      //   if (Platform.OS === 'ios') {
+      //     date = date.toISOString();
+      //   }
 
-    //     PushNotification.localNotificationSchedule({
-    //       message: "My Notification Message",
-    //       date,
-    //     });
-    //   }
-    // }
+      //   PushNotification.localNotificationSchedule({
+      //     message: "My Notification Message",
+      //     date,
+      //   });
+      // }
+    }
 
 
   componentDidMount() {
   //  Orientation.addOrientationListener(this._orientationDidChange.bind(this));
     DeviceEventEmitter.addListener('orientationDidChange', () => { this._orientationDidChange})
+    AppState.addEventListener('change', (nextAppState) => {this.handleAppStateChange(nextAppState)});
     // OneSignal.configure({});
    // AppState.addEventListener('change', this.handleAppStateChange);
     // MessageBarManager.registerMessageBar(this.refs.alert);
@@ -445,7 +487,7 @@ this.callToast2(nextprops.navReducer.GlobalToastMessage, nextprops.navReducer.Gl
   //               // const fileExtension =  fPath.substring(fPath.lastIndexOf("."));
 
   //               // this.setState({
-  //               //     file: { name: fileName, path: fPath, type: file.mime, size: this.bytesToSize(file.size), extension: fileExtension},
+  //               //     file: { name: fileName, path: fPath, type: file.mime, size: bytesToSize(file.size), extension: fileExtension},
   //               // });
 
   //               // this.upload();
@@ -458,6 +500,7 @@ this.callToast2(nextprops.navReducer.GlobalToastMessage, nextprops.navReducer.Gl
 
   componentWillUnmount(){
       DeviceEventEmitter.removeListener('orientationDidChange');
+      AppState.removeEventListener('change', this.handleAppStateChange);
   }
 
 

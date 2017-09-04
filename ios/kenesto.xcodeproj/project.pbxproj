@@ -31,11 +31,29 @@
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		7C74553D7D5A47EF9BDED52C /* libRNDeviceInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3AE257F1D384B9CB15FE38A /* libRNDeviceInfo.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		860716491F3AE73B0049AA4C /* libRNSKBucket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 860716471F3AE7240049AA4C /* libRNSKBucket.a */; };
+		8607164A1F3AE7650049AA4C /* libRNSKBucket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 860716471F3AE7240049AA4C /* libRNSKBucket.a */; };
+		860716791F3B52670049AA4C /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
+		8633A5521F49F8DC00ED021E /* libReactNativeShareExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 868A890A1F388D2E00E43BD2 /* libReactNativeShareExtension.a */; };
 		864483F01E705C7700717E81 /* RNKenestoAssetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 864483EF1E705C7700717E81 /* RNKenestoAssetPicker.m */; };
+		868A88FA1F388BAE00E43BD2 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 868A88F81F388BAE00E43BD2 /* MainInterface.storyboard */; };
+		868A88FE1F388BAE00E43BD2 /* KenestoShareEx.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 868A88F31F388BAD00E43BD2 /* KenestoShareEx.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		868A89041F388C7000E43BD2 /* KenestoShareEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 868A89031F388C7000E43BD2 /* KenestoShareEx.m */; };
+		868A890C1F3894AD00E43BD2 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		868A890D1F3894C000E43BD2 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
+		868A890E1F3894CD00E43BD2 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
+		868A890F1F3894DD00E43BD2 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		868A89101F3894E800E43BD2 /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
+		868A89111F3894F700E43BD2 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
+		868A89121F38950200E43BD2 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
+		868A89131F38951000E43BD2 /* libRCTImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302C01ABCB91800DB3ED1 /* libRCTImage.a */; };
+		868A89141F38951D00E43BD2 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
+		868A89151F38952900E43BD2 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		8699F68C1E6E892B0014119B /* libRNDocumentPicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 868396A91E535CE8003906DD /* libRNDocumentPicker.a */; };
 		86A3F6F11E6DA8A700D46444 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86A3F6F01E6DA8A700D46444 /* GoogleService-Info.plist */; };
 		86C69B941E3E3CAF00DED795 /* customiconsfontello.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86C69B931E3E3CAF00DED795 /* customiconsfontello.ttf */; };
 		86C69BB01E3F97E000DED795 /* fontello.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86C69BAF1E3F97E000DED795 /* fontello.ttf */; };
+		86CECEB41F4AC16800B4D192 /* libReactNativeShareExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 868A890A1F388D2E00E43BD2 /* libReactNativeShareExtension.a */; };
 		898F2476F781483D8559F3EA /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8464CD16EE344B308BD0A133 /* Foundation.ttf */; };
 		8D52AC86A5BE42C9A35DC9BE /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72E06F6AD17A4F5CB39D1882 /* MaterialIcons.ttf */; };
 		9B2A103E79B14483866A19DB /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C68F2D572249C09E1F1BBE /* libRNVectorIcons.a */; };
@@ -229,6 +247,13 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
+		860716461F3AE7240049AA4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 860716221F3AE7230049AA4C /* RNSKBucket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 413522C81D18398B007ACD21;
+			remoteInfo = RNSKBucket;
+		};
 		861C5F371E3E1DB300725FDB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 861C5F291E3E1DB200725FDB /* RCTOrientation.xcodeproj */;
@@ -278,7 +303,35 @@
 			remoteGlobalIDString = E01DD9DB1D2311A600C39062;
 			remoteInfo = RNDocumentPicker;
 		};
+		868A88FC1F388BAE00E43BD2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 868A88F21F388BAD00E43BD2;
+			remoteInfo = KenestoShareEx;
+		};
+		868A89091F388D2E00E43BD2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 868A89051F388D2E00E43BD2 /* ReactNativeShareExtension.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 41B5DE301D0B505800949BD5;
+			remoteInfo = ReactNativeShareExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		868A89021F388BAE00E43BD2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				868A88FE1F388BAE00E43BD2 /* KenestoShareEx.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
@@ -321,10 +374,18 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		8464CD16EE344B308BD0A133 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		860715C91F39E8240049AA4C /* libPods-kenesto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-kenesto.a"; path = "../../../../../Library/Developer/Xcode/DerivedData/kenesto-cxzkfexnicoqonfadwkcbbttqatl/Build/Products/Debug-iphonesimulator/libPods-kenesto.a"; sourceTree = "<group>"; };
+		8607160C1F3AE5520049AA4C /* KenestoShareEx.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KenestoShareEx.entitlements; sourceTree = "<group>"; };
+		860716221F3AE7230049AA4C /* RNSKBucket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNSKBucket.xcodeproj; path = "../node_modules/react-native-swiss-knife/ios/RNSKBucket.xcodeproj"; sourceTree = "<group>"; };
 		861C5F291E3E1DB200725FDB /* RCTOrientation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTOrientation.xcodeproj; path = "../node_modules/react-native-orientation/iOS/RCTOrientation.xcodeproj"; sourceTree = "<group>"; };
 		864483EE1E705C7700717E81 /* RNKenestoAssetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNKenestoAssetPicker.h; path = kenesto/RNKenestoAssetPicker.h; sourceTree = "<group>"; };
 		864483EF1E705C7700717E81 /* RNKenestoAssetPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNKenestoAssetPicker.m; path = kenesto/RNKenestoAssetPicker.m; sourceTree = "<group>"; };
 		8683965B1E534C83003906DD /* kenesto.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = kenesto.entitlements; path = kenesto/kenesto.entitlements; sourceTree = "<group>"; };
+		868A88F31F388BAD00E43BD2 /* KenestoShareEx.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KenestoShareEx.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		868A88F91F388BAE00E43BD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		868A88FB1F388BAE00E43BD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		868A89031F388C7000E43BD2 /* KenestoShareEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KenestoShareEx.m; sourceTree = "<group>"; };
+		868A89051F388D2E00E43BD2 /* ReactNativeShareExtension.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeShareExtension.xcodeproj; path = "../node_modules/react-native-share-extension/ios/ReactNativeShareExtension.xcodeproj"; sourceTree = "<group>"; };
 		86A3F6F01E6DA8A700D46444 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "kenesto/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		86C69B931E3E3CAF00DED795 /* customiconsfontello.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = customiconsfontello.ttf; path = fonts/customiconsfontello.ttf; sourceTree = "<group>"; };
 		86C69BAF1E3F97E000DED795 /* fontello.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = fontello.ttf; path = fonts/fontello.ttf; sourceTree = "<group>"; };
@@ -349,6 +410,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86CECEB41F4AC16800B4D192 /* libReactNativeShareExtension.a in Frameworks */,
+				8607164A1F3AE7650049AA4C /* libRNSKBucket.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
@@ -366,6 +429,26 @@
 				7C74553D7D5A47EF9BDED52C /* libRNDeviceInfo.a in Frameworks */,
 				C2B4EBAA31A34557AF5EAF95 /* libRNFIRMessaging.a in Frameworks */,
 				9B2A103E79B14483866A19DB /* libRNVectorIcons.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		868A88F01F388BAD00E43BD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8633A5521F49F8DC00ED021E /* libReactNativeShareExtension.a in Frameworks */,
+				860716791F3B52670049AA4C /* libRCTAnimation.a in Frameworks */,
+				860716491F3AE73B0049AA4C /* libRNSKBucket.a in Frameworks */,
+				868A89151F38952900E43BD2 /* libRCTActionSheet.a in Frameworks */,
+				868A89141F38951D00E43BD2 /* libRCTGeolocation.a in Frameworks */,
+				868A89131F38951000E43BD2 /* libRCTImage.a in Frameworks */,
+				868A89121F38950200E43BD2 /* libRCTLinking.a in Frameworks */,
+				868A89111F3894F700E43BD2 /* libRCTNetwork.a in Frameworks */,
+				868A89101F3894E800E43BD2 /* libRCTSettings.a in Frameworks */,
+				868A890F1F3894DD00E43BD2 /* libRCTText.a in Frameworks */,
+				868A890E1F3894CD00E43BD2 /* libRCTVibration.a in Frameworks */,
+				868A890D1F3894C000E43BD2 /* libRCTWebSocket.a in Frameworks */,
+				868A890C1F3894AD00E43BD2 /* libReact.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +568,7 @@
 		1CE41BBC86757F4D614F9DE6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				860715C91F39E8240049AA4C /* libPods-kenesto.a */,
 				2E27576A408F9C56ADCF5D26 /* libPods-kenesto.a */,
 				234780F5F8041CD8D207BECA /* libPods-kenestoTests.a */,
 			);
@@ -529,6 +613,8 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				860716221F3AE7230049AA4C /* RNSKBucket.xcodeproj */,
+				868A89051F388D2E00E43BD2 /* ReactNativeShareExtension.xcodeproj */,
 				861C5F291E3E1DB200725FDB /* RCTOrientation.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
@@ -568,6 +654,7 @@
 				13B07FAE1A68108700A75B9A /* kenesto */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* kenestoTests */,
+				868A88F41F388BAE00E43BD2 /* KenestoShareEx */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				9A5F9CE38202A6B086300B19 /* Pods */,
 				1CE41BBC86757F4D614F9DE6 /* Frameworks */,
@@ -582,6 +669,15 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* Kenesto.app */,
 				00E356EE1AD99517003FC87E /* kenestoTests.xctest */,
+				868A88F31F388BAD00E43BD2 /* KenestoShareEx.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		860716231F3AE7230049AA4C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				860716471F3AE7240049AA4C /* libRNSKBucket.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -642,6 +738,25 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		868A88F41F388BAE00E43BD2 /* KenestoShareEx */ = {
+			isa = PBXGroup;
+			children = (
+				8607160C1F3AE5520049AA4C /* KenestoShareEx.entitlements */,
+				868A88F81F388BAE00E43BD2 /* MainInterface.storyboard */,
+				868A88FB1F388BAE00E43BD2 /* Info.plist */,
+				868A89031F388C7000E43BD2 /* KenestoShareEx.m */,
+			);
+			path = KenestoShareEx;
+			sourceTree = "<group>";
+		};
+		868A89061F388D2E00E43BD2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				868A890A1F388D2E00E43BD2 /* libReactNativeShareExtension.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		9A5F9CE38202A6B086300B19 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -683,15 +798,36 @@
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				0C4274801D6196360137C6BE /* [CP] Embed Pods Frameworks */,
 				582D2DC593E4D236153AA1F3 /* [CP] Copy Pods Resources */,
+				868A89021F388BAE00E43BD2 /* Embed App Extensions */,
+				860715A51F39AEC20049AA4C /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				868A88FD1F388BAE00E43BD2 /* PBXTargetDependency */,
 			);
 			name = kenesto;
 			productName = "Hello World";
 			productReference = 13B07F961A680F5B00A75B9A /* Kenesto.app */;
 			productType = "com.apple.product-type.application";
+		};
+		868A88F21F388BAD00E43BD2 /* KenestoShareEx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 868A88FF1F388BAE00E43BD2 /* Build configuration list for PBXNativeTarget "KenestoShareEx" */;
+			buildPhases = (
+				868A88EF1F388BAD00E43BD2 /* Sources */,
+				868A88F01F388BAD00E43BD2 /* Frameworks */,
+				868A88F11F388BAD00E43BD2 /* Resources */,
+				860715C71F39E45D0049AA4C /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KenestoShareEx;
+			productName = KenestoShareEx;
+			productReference = 868A88F31F388BAD00E43BD2 /* KenestoShareEx.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -710,16 +846,32 @@
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = WM39D4EQR6;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
 							com.apple.Keychain = {
 								enabled = 1;
 							};
+							com.apple.NetworkExtensions = {
+								enabled = 0;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
 							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+					868A88F21F388BAD00E43BD2 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = WM39D4EQR6;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
 						};
@@ -791,6 +943,10 @@
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
 				{
+					ProductGroup = 868A89061F388D2E00E43BD2 /* Products */;
+					ProjectRef = 868A89051F388D2E00E43BD2 /* ReactNativeShareExtension.xcodeproj */;
+				},
+				{
 					ProductGroup = 8653AD0C1E6D7B3F00F8A705 /* Products */;
 					ProjectRef = 45124F71BA384838A81FFF71 /* RNDeviceInfo.xcodeproj */;
 				},
@@ -807,6 +963,10 @@
 					ProjectRef = F0BEBD487E6A444F8513F35F /* RNFIRMessaging.xcodeproj */;
 				},
 				{
+					ProductGroup = 860716231F3AE7230049AA4C /* Products */;
+					ProjectRef = 860716221F3AE7230049AA4C /* RNSKBucket.xcodeproj */;
+				},
+				{
 					ProductGroup = 8653AD101E6D7B3F00F8A705 /* Products */;
 					ProjectRef = F9F380859EB649A197A9346B /* RNVectorIcons.xcodeproj */;
 				},
@@ -815,6 +975,7 @@
 			targets = (
 				13B07F861A680F5B00A75B9A /* kenesto */,
 				00E356ED1AD99517003FC87E /* kenestoTests */,
+				868A88F21F388BAD00E43BD2 /* KenestoShareEx */,
 			);
 		};
 /* End PBXProject section */
@@ -995,6 +1156,13 @@
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		860716471F3AE7240049AA4C /* libRNSKBucket.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNSKBucket.a;
+			remoteRef = 860716461F3AE7240049AA4C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		861C5F381E3E1DB300725FDB /* libRCTOrientation.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1044,6 +1212,13 @@
 			remoteRef = 868396A81E535CE8003906DD /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		868A890A1F388D2E00E43BD2 /* libReactNativeShareExtension.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReactNativeShareExtension.a;
+			remoteRef = 868A89091F388D2E00E43BD2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -1073,6 +1248,14 @@
 				C1D8AA7929BA4B5C9B080CF6 /* Zocial.ttf in Resources */,
 				B52F4C09D4AF4710BE5B4161 /* MaterialCommunityIcons.ttf in Resources */,
 				DF2AE0B53FA54CCCAE98BD12 /* SimpleLineIcons.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		868A88F11F388BAD00E43BD2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				868A88FA1F388BAE00E43BD2 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1138,6 +1321,32 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		860715A51F39AEC20049AA4C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/packager/react-native-xcode.sh";
+		};
+		860715C71F39E45D0049AA4C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/packager/react-native-xcode.sh";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1159,6 +1368,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		868A88EF1F388BAD00E43BD2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				868A89041F388C7000E43BD2 /* KenestoShareEx.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1166,6 +1383,11 @@
 			isa = PBXTargetDependency;
 			target = 13B07F861A680F5B00A75B9A /* kenesto */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
+		};
+		868A88FD1F388BAE00E43BD2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 868A88F21F388BAD00E43BD2 /* KenestoShareEx */;
+			targetProxy = 868A88FC1F388BAE00E43BD2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1177,6 +1399,14 @@
 			);
 			name = LaunchScreen.xib;
 			path = kenesto;
+			sourceTree = "<group>";
+		};
+		868A88F81F388BAE00E43BD2 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				868A88F91F388BAE00E43BD2 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1355,6 +1585,70 @@
 			};
 			name = Release;
 		};
+		868A89001F388BAE00E43BD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_ENTITLEMENTS = KenestoShareEx/KenestoShareEx.entitlements;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = WM39D4EQR6;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native-share-extension/ios/**",
+				);
+				INFOPLIST_FILE = KenestoShareEx/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Kenesto.KenestoShareEx;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		868A89011F388BAE00E43BD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_ENTITLEMENTS = KenestoShareEx/KenestoShareEx.entitlements;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = WM39D4EQR6;
+				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native-share-extension/ios/**",
+				);
+				INFOPLIST_FILE = KenestoShareEx/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Kenesto.KenestoShareEx;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1381,6 +1675,15 @@
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
 				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		868A88FF1F388BAE00E43BD2 /* Build configuration list for PBXNativeTarget "KenestoShareEx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				868A89001F388BAE00E43BD2 /* Debug */,
+				868A89011F388BAE00E43BD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

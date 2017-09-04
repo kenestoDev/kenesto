@@ -5,6 +5,7 @@ import * as peopleActions from '../actions/peopleActions'
 import { writeToLog } from '../utils/ObjectUtils'
 import * as constans from '../constants/GlobalConstans'
 import * as textResource from '../constants/TextResource'
+import ShareExtension from 'react-native-share-extension'
 import {
     constructRetrieveDocumentsUrl, constructRetrieveStatisticsUrl, getCreateFolderUrl,
     getDownloadFileUrl, getDocumentsContext, getUploadFileCompletedUrl,
@@ -17,6 +18,7 @@ import * as routes from '../constants/routes'
 import _ from "lodash";
 const Android_Download_Path = '/storage/emulated/0/download';
 import RNFetchBlob from 'react-native-fetch-blob'
+
 
 const android = RNFetchBlob.android
 import {
@@ -775,6 +777,14 @@ export function updateUploadDocument(datasource: object, uploadItems: object, ca
         lastUploadId: documentId
     }
 }
+export function deleteTempFiles()
+{
+    if(Platform.OS === 'ios')
+    {
+         ShareExtension.deleteTempFiles(constans.KENESTO_GROUP_ID);
+    }
+       
+}
 
 export function updateItems(datasource: object, items: object, catId: string) {
     return {
@@ -859,7 +869,7 @@ function uploadDocumentObject(fileObject: object, uploadId: string) {
                     dispatch(removeUploadDocument(userData.uploadId, userData.catId));
                     dispatch(navActions.emitToast(constans.ERROR, "Error. failed to upload file"))
                     writeToLog(email, constans.ERROR, `function uploadToKenesto(1) - Failed to upload file  3- uploadId:${userData.uploadId}`)
-
+                    deleteTempFiles();
                 }
                 else {
                     var AccessUrl = json.ResponseData.AccessUrl;
@@ -872,6 +882,7 @@ function uploadDocumentObject(fileObject: object, uploadId: string) {
                             if (data.xhr.status == 0)  // xhr.abort was triggered from out side => upload paused 
                             {
                                 dispatch(updateUploadItems(data.uploadId, data.catId, 0));
+                                deleteTempFiles();
                                 return;
                             }
                             const thisCompletedUrl = getUploadFileCompletedUrl(getState().accessReducer.env, getState().accessReducer.sessionToken, data.url, constrcutUploadUSerData(encodeURIComponent(data.uploadId), encodeURIComponent(data.catId)));
@@ -895,6 +906,7 @@ function uploadDocumentObject(fileObject: object, uploadId: string) {
                                         message = "File successfully uploaded"
 
                                         dispatch(navActions.emitToast(constans.SUCCESS, message));
+                                        deleteTempFiles();
 
                                     }
                                     else {
@@ -904,6 +916,7 @@ function uploadDocumentObject(fileObject: object, uploadId: string) {
                                         message = "Error uploading file"
                                         dispatch(navActions.emitToast(constans.ERROR, message));
                                         writeToLog(email, constans.ERROR, `function uploadToKenesto(1) - Error. failed to upload file 0, ${JSON.stringify(json)}`)
+                                        deleteTempFiles();
                                     }
 
 
@@ -914,6 +927,7 @@ function uploadDocumentObject(fileObject: object, uploadId: string) {
                                     dispatch(removeUploadDocument(uploadId, documentlist.catId));
                                     dispatch(navActions.emitToast(constans.ERROR, "Error. failed to upload file"))
                                     writeToLog(email, constans.ERROR, `function uploadToKenesto(2) - Error. failed to upload file 1 - uploadId: ${userData.uploadId}`, error)
+                                    deleteTempFiles();
                                 })
 
                         })
@@ -921,6 +935,7 @@ function uploadDocumentObject(fileObject: object, uploadId: string) {
                             dispatch(removeUploadDocument(uploadId, documentlist.catId));
                             dispatch(navActions.emitToast(constans.ERROR, "Error. failed to upload file"))
                             writeToLog(email, constans.ERROR, `function uploadToKenesto(3) - Failed to upload file  2- url: ${uploadObj.url}`, err)
+                            deleteTempFiles();
 
                         });
 
@@ -932,6 +947,7 @@ function uploadDocumentObject(fileObject: object, uploadId: string) {
                 dispatch(removeUploadDocument(uploadId, documentlist.catId));
                 dispatch(navActions.emitToast(constans.ERROR, "Error. failed to upload file"))
                 writeToLog(email, constans.ERROR, `function uploadToKenesto(4) - Failed to upload file  3- uploadId:${userData.uploadId}`, error)
+                deleteTempFiles();
             })
     }
 }
@@ -975,6 +991,8 @@ export function updateUploadProgress(uploadId: string, uploadProgress : number){
 export function uploadToKenesto(fileObject: object, url: string) {
     return (dispatch, getState) => {
         try {
+             const {email} = getState().accessReducer;
+            writeToLog(email, constans.DEBUG, `function uploadToKenesto - url: ${url}, fileObject - ${JSON.stringify(fileObject)}`)
             const uploadId = fileObject.name + "_" + Date.now();
             var documentlist = getDocumentsContext(getState().navReducer);
             if (url != '')

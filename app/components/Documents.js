@@ -16,6 +16,7 @@ import {
   RefreshControl,
   Keyboard
 } from 'react-native'
+import { RNSKBucket } from 'react-native-swiss-knife'
 import { emitToast, clearToast,updateIsProcessing } from '../actions/navActions'
 import * as uiActions from '../actions/uiActions'
 import ProggressBar from "../components/ProgressBar";
@@ -25,20 +26,19 @@ import fontelloConfig from '../assets/icons/config.json';
 import * as constans from '../constants/GlobalConstans'
 import Button from "react-native-button";
 import InteractionManager from 'InteractionManager'
-import { getDownloadFileUrl, getIconNameFromMimeType, getViewerUrl } from '../utils/documentsUtils'
+import { getDownloadFileUrl, getIconNameFromMimeType, getViewerUrl, getFileUploadUrl } from '../utils/documentsUtils'
 import { writeToLog } from '../utils/ObjectUtils'
 import { getEnvIp } from '../utils/accessUtils'
 
 import dismissKeyboard from 'dismissKeyboard';
 import DocumentCell from '../components/DocumentCell';
 import DocumentUploadCell from '../components/DocumentUploadCell';
-
 const splitChars = '|';
 
 import _ from "lodash";
-import { fetchTableIfNeeded, refreshTable,getDocumentPermissions, getCurrentFolderPermissions,resetCurrentFolder, downloadDocument } from '../actions/documentsActions'
+import { fetchTableIfNeeded, refreshTable,getDocumentPermissions, getCurrentFolderPermissions,resetCurrentFolder, downloadDocument, uploadToKenesto} from '../actions/documentsActions'
 import ViewContainer from '../components/ViewContainer';
-import KenestoHelper from '../utils/KenestoHelper';
+import {bytesToSize} from '../utils/KenestoHelper'
 import ActionButton from 'react-native-action-button';
 import * as routes from '../constants/routes'
 import firebaseClient from  "./FirebaseClient";
@@ -86,8 +86,22 @@ class Documents extends Component {
 
        
     dispatch(fetchTableIfNeeded())
+    if(Platform.OS === 'ios')
+    {
+      RNSKBucket.get('file', constans.KENESTO_GROUP_ID).then( (mediaInfo) =>  {  
+            console.log("*********"+JSON.stringify(mediaInfo)+"***************")
+                  if(!(_.isEmpty(mediaInfo)))
+                  {
+                    const fileExtension =  mediaInfo.mediaName.substring(mediaInfo.mediaName.lastIndexOf("."));
+                    var mediaPath = mediaInfo.mediaPath;
+                    const url = getFileUploadUrl(this.props.env, this.props.sessionToken, mediaInfo.mediaName, "", "",  "");
+                    const fileName = mediaInfo.mediaPath.substring(mediaInfo.mediaPath.lastIndexOf('/') + 1); 
+                    dispatch(uploadToKenesto({name: mediaInfo.mediaName, uri : mediaInfo.mediaPath, type: mediaInfo.mediaMimeType, size: bytesToSize(mediaInfo.mediaSize), fileExtension: fileExtension}, url, false));
+                    RNSKBucket.set('file', {}, constans.KENESTO_GROUP_ID)
+                  }
+                });
+    }
   }
-
   startDownloadDocument(document: object) {
         this.props.dispatch(downloadDocument(document));
     }
@@ -127,11 +141,8 @@ class Documents extends Component {
         }
 
     }
-   
 
     }
-
-
   }
 
   onEndReached() {

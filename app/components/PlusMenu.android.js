@@ -17,7 +17,7 @@ var DocumentPicker = NativeModules.RNDocumentPicker;
 import ImagePicker from 'react-native-image-crop-picker'
 const KenestoIcon = createIconSetFromFontello(fontelloConfig);
 import * as constans from '../constants/GlobalConstans'
-
+import {bytesToSize} from '../utils/KenestoHelper'
 
 let styles = StyleSheet.create({
     container: {
@@ -60,12 +60,7 @@ class PlusMenu extends React.Component{
             };
     }
 
-        bytesToSize(bytes) {
-        var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
-        if (bytes == 0) return '0 Byte';
-        var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
-        return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
-        };
+
 
     
   upload(){
@@ -95,7 +90,7 @@ class PlusMenu extends React.Component{
         
 
           this.setState({
-                file: { name: fileName, path: image.path, type: image.mime, size: this.bytesToSize(image.size), extension: fileExtension},
+                file: { name: fileName, path: image.path, type: image.mime, size: bytesToSize(image.size), extension: fileExtension},
             });
 
        this.upload();
@@ -122,7 +117,7 @@ class PlusMenu extends React.Component{
              const fileExtension =  file.path.substring(file.path.lastIndexOf("."));
 
             this.setState({
-                file: { name: fileName, path: file.path, type: file.mime, size: this.bytesToSize(file.size), extension: fileExtension},
+                file: { name: fileName, path: file.path, type: file.mime, size: bytesToSize(file.size), extension: fileExtension},
             });
 
              this.upload();
