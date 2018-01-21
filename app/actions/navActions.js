@@ -8,11 +8,16 @@ import {isRouteKeyExists} from '../utils/ObjectUtils'
 export function push (route) {
    return (dispatch, getState) => {
       const navReducer = getState().navReducer;
-      if(isRouteKeyExists(route.key, navReducer.routes))
+        if(isRouteKeyExists(route.key, navReducer.routes))
+       {
+        //  route.key =  route.key+"~"+ Math.random();
+         dispatch(navigateJumpToKey(route.key));
+       }
+       else
       {
-        route.key =  route.key+"~"+ Math.random();
+         dispatch(pushRouth(route));
       }
-      dispatch(pushRouth(route));
+       
    }
 }
 
@@ -112,12 +117,13 @@ export function clearError(){
   }
 }
 
-export function emitConfirm(confirmTitle: string, confirmDetails: string, okAction: Object = null){
+export function emitConfirm(confirmTitle: string, confirmDetails: string, okAction: Object = null, cancelAction: Object = null){
   return {
     type: actionTypes.SUBMIT_CONFIRM, 
     confirmTitle: confirmTitle, 
     confirmDetails: confirmDetails,
     confirmOkAction: okAction,
+    confirmCancelAction: cancelAction,
     isProcessing: false
   }
   
@@ -125,6 +131,23 @@ export function emitConfirm(confirmTitle: string, confirmDetails: string, okActi
 export function clearConfirm(){
   return {
     type: actionTypes.CLEAR_CONFIRM
+  }
+}
+
+export function emitStickyConfirm(confirmTitle: string, confirmDetails: string, okAction: Object = null, cancelAction: Object = null){
+  return {
+    type: actionTypes.SUBMIT_STICKY_CONFIRM, 
+    confirmTitle: confirmTitle, 
+    confirmDetails: confirmDetails,
+    confirmOkAction: okAction,
+    confirmCancelAction: cancelAction,
+    isProcessing: false
+  }
+  
+}
+export function clearStickyConfirm(){
+  return {
+    type: actionTypes.CLEAR_STICKY_CONFIRM
   }
 }
 

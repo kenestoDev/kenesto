@@ -12,11 +12,13 @@ import * as accessActions from '../actions/Access'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import {clearCredentials, setCredentials, getCredentials} from '../utils/accessUtils';
 import { updateRouteData} from '../actions/navActions'
+import { updateIsFetching} from '../actions/Access'
 const Item = Picker.Item;
 import logoImage from '../assets/kenesto_logo.png';
 import stricturiEncode from 'strict-uri-encode';
 import customConfig from '../assets/icons/customConfig.json';
 import { createIconSetFromFontello } from 'react-native-vector-icons';
+import {connect} from 'react-redux'
 const CustomIcon = createIconSetFromFontello(customConfig);
 import { writeToLog } from '../utils/ObjectUtils'
 var Form = Tcomb.form.Form;
@@ -134,8 +136,7 @@ const styles = StyleSheet.create({
     }
 });
 
-
- export default class Login  extends React.Component { 
+ class Login  extends React.Component { 
      constructor(props) {
          //var initialEnv = 'dev'; 
          var initialEnv = __DEV__ ? 'dev' : 'production'
@@ -210,10 +211,10 @@ const styles = StyleSheet.create({
         if (value == null) { // if validation fails, value will be null
             return false; // value here is an instance of Person
         }
-     //   this.updateIsLoading(true); 
+       
+       this.props.dispatch(updateIsFetching(true));
        Keyboard.dismiss();
        this.props.dispatch(accessActions.login(this.state.value.username,this.state.value.password, this.state.selectedEnv));
-     
    }
 
    goToPword(){
@@ -394,24 +395,25 @@ const styles = StyleSheet.create({
 
    componentWillMount(){
        const {navReducer} = this.props
+       this.props.dispatch(updateIsFetching(true));
         getCredentials().then((storedCredentials) => {
             writeToLog("", constans.DEBUG, `Component Login(function componentWillMount)- storedCredentials.hasCredentials: ${storedCredentials.hasCredentials}`)
             if (storedCredentials.hasCredentials)
             {
                  try {
-                this.props.dispatch(updateRouteData({isLoading: true}));
                 writeToLog("", constans.DEBUG, `Component Login(function componentWillMount) - go function to directLogin`)
                 this.props.dispatch(accessActions.login(storedCredentials.storedUserName, storedCredentials.storedPassword, storedCredentials.env));
                 //this.directLogin(storedCredentials.storedUserName, storedCredentials.storedPassword, storedCredentials.env);
                  }
                  catch(er)
                  {
+                     this.props.dispatch(updateIsFetching(false));
                     writeToLog("", constans.DEBUG, `Component Login(function componentWillMount) - error ${er}`)
                  }
             }
             else
             {
-              this.props.dispatch(updateRouteData({isLoading: false}));
+              this.props.dispatch(updateIsFetching(false));
               writeToLog("", constans.DEBUG, `Component Login(function componentWillMount) - render login screen`)
             }
 
@@ -423,16 +425,8 @@ const styles = StyleSheet.create({
 
     render(){
         const {navReducer} = this.props
-        var isLoading;
-       if (typeof (navReducer) == 'undefined' || navReducer == "" || navReducer.index != 0 || typeof (navReducer.routes[navReducer.index].data) == 'undefined') {
-            isLoading = false;
-        }
-        else
-        {
-            isLoading = navReducer.routes[0].data.isLoading;
-        }
-        
-        if (isLoading){
+    
+        if (this.props.isFetching){
             return (
                 <View style = {styles.container}>
                       {this.renderLoading()}
@@ -454,7 +448,16 @@ Login.contextTypes = {
     errorModal:  React.PropTypes.object
 };
 
+function mapStateToProps(state) {
+  const {isLoggedIn, hasError, errorMessage, isFetching, passwordSent} = state.accessReducer; 
+ 
+  return {
+    isLoggedIn, 
+    isFetching,
+  }
+}
 // export default Login;
 
 
 // // module.exports = Login;
+export default connect(mapStateToProps)(Login)

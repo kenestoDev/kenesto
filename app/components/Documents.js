@@ -17,7 +17,7 @@ import {
   Keyboard
 } from 'react-native'
 import { RNSKBucket } from 'react-native-swiss-knife'
-import { emitToast, clearToast,updateIsProcessing } from '../actions/navActions'
+import { emitToast, clearToast,updateIsProcessing, emitConfirm, updateRouteData,emitStickyConfirm, emitError, clearError } from '../actions/navActions'
 import * as uiActions from '../actions/uiActions'
 import ProggressBar from "../components/ProgressBar";
 import Icon from 'react-native-vector-icons/MaterialIcons'
@@ -36,15 +36,15 @@ import DocumentUploadCell from '../components/DocumentUploadCell';
 const splitChars = '|';
 
 import _ from "lodash";
-import { fetchTableIfNeeded, refreshTable,getDocumentPermissions, getCurrentFolderPermissions,resetCurrentFolder, downloadDocument, uploadToKenesto} from '../actions/documentsActions'
+import { fetchTableIfNeeded, refreshTable,getDocumentPermissions, getCurrentFolderPermissions,resetCurrentFolder, downloadDocument, uploadToKenesto, uploadToCurrentFolder} from '../actions/documentsActions'
 import ViewContainer from '../components/ViewContainer';
 import {bytesToSize} from '../utils/KenestoHelper'
 import ActionButton from 'react-native-action-button';
 import * as routes from '../constants/routes'
 import firebaseClient from  "./FirebaseClient";
-
 import { getDocumentsContext, getDocumentsTitle } from '../utils/documentsUtils'
-
+import ShareExtension from 'react-native-share-extension'
+const kenestoGroup = 'group.com.kenesto.KenestoWorkouts'
 class Documents extends Component {
   constructor(props) {
     super(props)
@@ -76,10 +76,11 @@ class Documents extends Component {
   }
 
 
-  componentWillMount() {
+ async componentWillMount() {
    
-    const {dispatch} = this.props
-    if(this.props.data.fId != '')
+    const {dispatch, documentsReducer,navReducer} = this.props
+   
+    if(this.props.data.fId != '' && typeof (this.props.data.fId) != 'undefined')
     { 
         dispatch(getCurrentFolderPermissions(this.props.data.fId))
     }
@@ -101,7 +102,46 @@ class Documents extends Component {
                   }
                 });
     }
+    else
+    {
+       
+        const {intentAction, isActionSend} = await ShareExtension.getIntentAction()
+        if(isActionSend)
+        {
+            const {mediaId ,mediaMimeType, mediaPath, mediaSize, mediaName} = await ShareExtension.data(kenestoGroup)
+            var mediaInfo = {
+            mediaId:mediaId,
+            mediaMimeType:mediaMimeType,
+            mediaPath:mediaPath,
+            mediaSize:mediaSize,
+            mediaName:mediaName
+           }
+          
+          if(typeof (mediaPath) == 'undefined' || mediaPath == "undefined" || mediaPath == "")
+          {
+            dispatch(emitError("Failed to import to Kenesto, please try again later"));
+            setTimeout(() => {
+                dispatch(clearError());
+                ShareExtension.close(kenestoGroup);
+            }, 4000);
+          }
+          else
+          {
+            const fileExtension =  mediaInfo.mediaName.substring(mediaInfo.mediaName.lastIndexOf("."));
+            const fileName = mediaInfo.mediaPath.substring(mediaInfo.mediaPath.lastIndexOf('/') + 1); 
+            var fileObject = {name: mediaInfo.mediaName, uri : mediaInfo.mediaPath, type: mediaInfo.mediaMimeType, size: bytesToSize(mediaInfo.mediaSize), fileExtension: fileExtension}
+            dispatch(emitStickyConfirm("Import to Kenesto", "Add "+mediaInfo.mediaName+" to...", () =>{ dispatch(uploadToCurrentFolder(fileObject)) 
+                                                                                                      setTimeout(() => {
+                                                                                                        ShareExtension.close(kenestoGroup);}, 4000) }, () =>{setTimeout(() => {
+                                                                                                        ShareExtension.close(kenestoGroup);}, 1000) }, true))
+          } 
+         
+
+
+      }
+    }
   }
+  
   startDownloadDocument(document: object) {
         this.props.dispatch(downloadDocument(document));
     }
@@ -114,9 +154,10 @@ class Documents extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     const {documentsReducer, navReducer} = this.props
+      
     var  allowUpload = true;
 
-    if (this.props.data.fId != '' && documentsReducer.currentFolder != null)
+    if (this.props.data.fId != '' && typeof (this.props.data.fId) != 'undefined' &&   documentsReducer.currentFolder != null)
         allowUpload = documentsReducer.currentFolder.permissions.AllowUpload;
   if (allowUpload != this.state.AllowUpload)
       this.setState({AllowUpload : allowUpload});
@@ -330,7 +371,6 @@ class Documents extends Component {
     let dataSource = documentlist.catId in documentsReducer ? documentsReducer[documentlist.catId].dataSource : ds.cloneWithRows([]);
    
     if (typeof dataSource.getSectionLengths == 'undefined' || dataSource.getSectionLengths(0) == '' || dataSource.getSectionLengths(0) == 0) {
-
       return (<NoDocuments
         filter={this.state.filter}
         isFetching={isFetching}
@@ -399,7 +439,6 @@ class Documents extends Component {
    
     try {
       const {dispatch, documentsReducer, navReducer } = this.props
-
       var documentlist = getDocumentsContext(navReducer);
       //const isFetching = documentlist.catId in documentsReducer ? documentsReducer[documentlist.catId].isFetching : false
       const isFetching = documentsReducer.isFetching;

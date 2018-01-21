@@ -17,7 +17,7 @@ export const loginRoute = {
     key: 'login',
     title: 'login',
     data:{
-      isLoading: true
+      isLoading: false
     }
   }
 }

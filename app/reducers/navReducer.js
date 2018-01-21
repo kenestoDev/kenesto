@@ -16,7 +16,7 @@ const initialState = {
       key: 'login',
       title: 'login',
       data:{
-        isLoading: true
+        isLoading: false
       }
     }
   ], 
@@ -96,11 +96,12 @@ function navigationState(state = initialState, action) {
 
     case  actionTypes.SUBMIT_CONFIRM:
       return {
-        ...state, 
+        ...state,
         HasConfirm: true, 
         GlobalConfirmTitle: action.confirmTitle, 
         GlobalConfirmDetails: action.confirmDetails,
         GlobalConfirmOkAction: action.confirmOkAction,
+        GlobalConfirmCancelAction: action.confirmCancelAction,
         isProcessing: action.isProcessing
       }
     case  actionTypes.CLEAR_CONFIRM:
@@ -108,6 +109,23 @@ function navigationState(state = initialState, action) {
         ...state,
         HasConfirm: false,
       }
+    
+    case  actionTypes.SUBMIT_STICKY_CONFIRM:
+      return {
+        ...state,
+        HasStickyConfirm: true, 
+        GlobalConfirmTitle: action.confirmTitle, 
+        GlobalConfirmDetails: action.confirmDetails,
+        GlobalConfirmOkAction: action.confirmOkAction,
+        GlobalConfirmCancelAction: action.confirmCancelAction,
+        isProcessing: action.isProcessing
+      }
+    case  actionTypes.CLEAR_STICKY_CONFIRM:
+      return {
+        ...state,
+        HasStickyConfirm: false,
+      }
+
     case  actionTypes.CLEAR_ERROR:
       return {
         ...state, 

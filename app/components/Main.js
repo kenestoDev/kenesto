@@ -11,7 +11,7 @@ import {
   Animated,
   DeviceEventEmitter,
   NativeModules,
-  Platform,
+  Platform
 } from 'react-native'
 
 import { RNSKBucket } from 'react-native-swiss-knife'
@@ -31,13 +31,14 @@ import * as documentsActions from '../actions/documentsActions'
 import * as uiActions from '../actions/uiActions'
 import * as accessActions from '../actions/Access'
 import _ from 'lodash'
-import {pop, updateRouteData, clearToast,updatedOrientation} from '../actions/navActions'
+import {pop, updateRouteData, clearToast,updatedOrientation, navigateReset, navigateJumpToKey, clearConfirm, clearError} from '../actions/navActions'
 import * as constans from '../constants/GlobalConstans'
 import {getDocumentsContext, getFileUploadUrl, getDocumentsTitle} from '../utils/documentsUtils'
 import Error from './Error'
 import Toast from './Toast'
 import Info from './Info'
 import Confirm from './Confirm'
+import StickyConfirm from './StickyConfirm'
 import CheckInDocument from './CheckInDocument'
 import { writeToLog } from '../utils/ObjectUtils'
 import * as Animatable from 'react-native-animatable';
@@ -46,7 +47,8 @@ import NetInfoManager from './NetInfoManager'
 import PushController from './PushController';
 import  stricturiEncode  from 'strict-uri-encode';
 import {bytesToSize} from '../utils/KenestoHelper'
-   // var AssetsPicker = NativeModules.AssetsPicker; 
+const kenestoGroup = 'group.com.kenesto.KenestoWorkouts'
+// var AssetsPicker = NativeModules.AssetsPicker; 
 //import PubNub from 'pubnub'
 //import PushController from './PushController';
 //import PushNotification from 'react-native-push-notification';
@@ -55,7 +57,6 @@ import msBar from 'react-native-message-bar';
 var MessageBarAlert = msBar.MessageBar ; 
 import DropDownOptions from './DropDownOptions';
 var Orientation = NativeModules.Orientation;
-
 import Dimensions from 'Dimensions';
 var { width, height } = Dimensions.get('window');
 
@@ -85,6 +86,12 @@ let styles = StyleSheet.create({
   },
   toast: {
     height: 50,
+  },
+  stickyConfirm: {
+    height: 140,
+    borderTopWidth: 1.5,
+    borderColor: "#FA8302",
+    
   },
   createFolder: {
     height: 280,
@@ -283,6 +290,7 @@ class Main extends React.Component {
       this.refs[ref].close();
   }
 
+
   openModal(ref: string) {
     this.refs[ref].open();
   }
@@ -365,6 +373,12 @@ class Main extends React.Component {
   // }
 
   componentWillReceiveProps(nextprops) {
+   
+    if(nextprops.isActionSend && this.props.isActionSend != nextprops.isActionSend)
+    {
+       nextprops.dispatch(accessActions.updateActionType(nextprops.isActionSend))
+    }
+
     if(nextprops.documentsReducer.selectedObject){
       var permissions = nextprops.documentsReducer.selectedObject.permissions;
       var itemMenuPermissions = ['AllowShare', 'IsOwnedByRequestor', 'AllowUpdateVersions', 'AllowCheckin', 'AllowCheckout', 'AllowDiscardCheckout'];
@@ -391,10 +405,28 @@ class Main extends React.Component {
     if (nextprops.navReducer.HasInfo) {
       this.openModal("infoModal");
     }
-    if (nextprops.navReducer.HasConfirm) {
-      this.openModal("confirmModal");
-    }
+    
+    if(nextprops.navReducer.HasConfirm != this.props.navReducer.HasConfirm)
+    {
+      if (nextprops.navReducer.HasConfirm ) {
+          this.openModal("confirmModal");    
+      }
+      else{
+          this.closeModal("confirmModal");
+        }
+        
+      }
 
+      if(nextprops.navReducer.HasStickyConfirm != this.props.navReducer.HasStickyConfirm)
+        {
+          if (nextprops.navReducer.HasStickyConfirm ) {
+            this.openModal("stickyConfirmModal");
+          }
+          else{
+            this.closeModal("stickyConfirmModal");
+          }
+        }
+  
     if (nextprops.navReducer.HasToast)
     {
       // this.setState({
@@ -454,6 +486,12 @@ this.callToast2(nextprops.navReducer.GlobalToastMessage, nextprops.navReducer.Gl
                 }
               })
         }
+        else
+        {
+          // this.props.dispatch(clearConfirm());
+          // this.props.dispatch(clearToast());
+          // this.props.dispatch(clearError());
+        }
     }
 
       // if (nextAppState === 'background') {
@@ -469,6 +507,9 @@ this.callToast2(nextprops.navReducer.GlobalToastMessage, nextprops.navReducer.Gl
       //   });
       // }
     }
+
+
+
 
 
   componentDidMount() {
@@ -502,7 +543,6 @@ this.callToast2(nextprops.navReducer.GlobalToastMessage, nextprops.navReducer.Gl
       DeviceEventEmitter.removeListener('orientationDidChange');
       AppState.removeEventListener('change', this.handleAppStateChange);
   }
-
 
   _orientationDidChange(orientation) {
     var o =  orientation == 'LANDSCAPE' ? 'LANDSCAPE' : 'PORTRAIT';
@@ -564,6 +604,7 @@ this.callToast2(nextprops.navReducer.GlobalToastMessage, nextprops.navReducer.Gl
   }
 
   render() {
+    
     const {navReducer} = this.props
     var BContent = <Text style={styles.text}>error message</Text>
     //var modalStyle = this.state.ifCreatingFolder ? styles.ifProcessing : [styles.modal, styles.createFolder]
@@ -634,16 +675,17 @@ this.callToast2(nextprops.navReducer.GlobalToastMessage, nextprops.navReducer.Gl
         <Modal style={[styles.modal, styles.error]} position={"center"}  ref={"confirmModal"} isDisabled={false} onClosed={()=> {this.setClosedModal()}} onOpened={()=> {this.setOpenedModal('confirmModal')}}>
           <Confirm closeModal = {() => this.closeModal("confirmModal") } openModal = {() => this.openModal("confirmModal") }/>
         </Modal>
+        <Modal style={[styles.modal, styles.stickyConfirm]} position={"bottom"} entry ={"bottom"} swipeToClose={false} ref={"stickyConfirmModal"} isDisabled={false} backdrop={false}>
+          <StickyConfirm closeModal = {() => this.closeModal("stickyConfirmModal") } openModal = {() => this.openModal("stickyConfirmModal") }/>
+        </Modal>
         <Modal style={[styles.modal, styles.toast]} position={"bottom"}  ref={"toastModal"} isDisabled={false} backdrop={false}>
           <Toast closeModal = {() => this.closeModal("toastModal") } openModal = {() => this.openModal("toastModal")} toastType={this.state.toastType} toastMessage={this.state.toastMessage} />
         </Modal>
-        
         <Animated.View  style={[styles.toast2, { transform: [{ translateY: this.animatedValue }], backgroundColor: this.state.toastColor}]}>
           <Text style={styles.toastMessage}>
             { this.state.toastMessage }
           </Text>
         </Animated.View>
-       
         {showPopupMenu ?
           <View style={styles.popupMenuContainer}>
             <TouchableWithoutFeedback onPress={this.hidePopupMenu.bind(this) } >
@@ -700,16 +742,16 @@ Main.contextTypes = {
 };
 
 function mapStateToProps(state) {
-
+  
   const { documentsReducer, navReducer} = state
-  const {env, sessionToken, email, isConnected } = state.accessReducer;
-  //alert(sessionToken);
+  const {env, sessionToken, email, isConnected, isLoggedIn} = state.accessReducer;
   return {
     documentsReducer,
     navReducer,
     env,
     sessionToken,
-    isConnected
+    isConnected,
+    isLoggedIn
   }
 }
 

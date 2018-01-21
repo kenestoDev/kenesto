@@ -2,6 +2,7 @@ import * as types from '../constants/ActionTypes'
 
 function accessReducer(state =
   {
+    isActionSend:false,
     isLoggedIn: false,
     token: "",
     fcmToken:"",
@@ -66,6 +67,14 @@ function accessReducer(state =
       return {
             ...state,
         accessToken: action.accessToken
+      }
+
+    }
+    case types.UPDATE_ACTION_TYPE: {
+    
+      return {
+            ...state,
+        isActionSend: action.isActionSend
       }
 
     }

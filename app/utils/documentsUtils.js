@@ -116,25 +116,50 @@ export function getEditDocumentUrl(env, sessionToken, documentId, documentName) 
 export function getDocumentsContext(navReducer: Object) {
 
   if (typeof (navReducer) == 'undefined' || navReducer == "" || navReducer.index == 0 || typeof (navReducer.routes[navReducer.index].data) == 'undefined') {
-
-    return ({})
+    return ( {
+                  name: getDocumentsTitle(constans.MY_DOCUMENTS),
+                  catId: constans.MY_DOCUMENTS,
+                  fId: "",
+                  sortDirection: constans.ASCENDING,
+                  sortBy: constans.ASSET_NAME,
+                  keyboard:"",
+                  isSearch: false, 
+                  isVault: false
+                })
   }
 
   var currRoute = navReducer.routes[navReducer.index];
-  return (
-    {
-      name: currRoute.data.name,
-      catId: currRoute.data.catId,
-      fId: currRoute.data.fId,
-      sortDirection: currRoute.data.sortDirection,
-      sortBy: currRoute.data.sortBy,
-      keyboard: currRoute.data.keyboard,
-      baseFileId: currRoute.data.baseFileId,
-      isSearch: currRoute.data.isSearch, 
-      isVault: currRoute.data.isVault
-    })
-}
 
+  if(typeof (currRoute.data.catId) == 'undefined')
+  {
+    console.log("getDocumentsContext"+JSON.stringify(currRoute)+", index:"+navReducer.index+"routes: "+JSON.stringify(navReducer.routes))
+    return ( {
+                      name: getDocumentsTitle(constans.MY_DOCUMENTS),
+                      catId: constans.MY_DOCUMENTS,
+                      fId: "",
+                      sortDirection: constans.ASCENDING,
+                      sortBy: constans.ASSET_NAME,
+                      keyboard:"",
+                      isSearch: false, 
+                      isVault: false
+                    })
+  }
+  else
+  {
+    return (
+      {
+        name: currRoute.data.name,
+        catId: currRoute.data.catId,
+        fId: currRoute.data.fId,
+        sortDirection: currRoute.data.sortDirection,
+        sortBy: currRoute.data.sortBy,
+        keyboard: currRoute.data.keyboard,
+        baseFileId: currRoute.data.baseFileId,
+        isSearch: currRoute.data.isSearch, 
+        isVault: currRoute.data.isVault
+      })
+  }
+}
 export function getDocumentsContextByCatId(navReducer: Object, catId: string) {
 
   if (typeof (navReducer) == 'undefined' || navReducer == "" || navReducer.index == 0 || typeof (navReducer.routes[navReducer.index].data) == 'undefined') {

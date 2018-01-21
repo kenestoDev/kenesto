@@ -19,5 +19,5 @@ packages with special handling:
             node_modules/react-native-image-crop-picker/ios/RSKImageCropper/RSKImageCropper
             and change mv module.modulemap RSKImageCropper.modulemap
 * react-native-share-extension and react-native-swiss-knife
-    problem : Not suport for import file to kenesto(IOS)
+    problem : Not suport for import file to kenesto(IOS and Android)
     soution : replace the two folders(react-native-share-extension and react-native-swiss-knife) under folder 'node_modules' with these under folder 'node_modules_fix'

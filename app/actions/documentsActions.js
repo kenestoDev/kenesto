@@ -12,7 +12,7 @@ import {
     getDeleteAssetUrl, getDeleteFolderUrl, getSelectedDocument, getShareDocumentUrl,getShareFolderUrl,
     getObjectInfoUrl, getCheckOutDocumentUrl, getCheckInDocumentUrl, getEditFolderUrl,
     getDocumentlistByCatId, getEditDocumentUrl, getDiscardCheckOutDocumentUrl, parseUploadUserData, constrcutUploadUSerData,
-    isDocumentsContextExists, getDocumentsContextByCatId, getDocumentIdFromUploadUrl, getViewerUrl
+    isDocumentsContextExists, getDocumentsContextByCatId, getDocumentIdFromUploadUrl, getViewerUrl, getFileUploadUrl
 } from '../utils/documentsUtils'
 import * as routes from '../constants/routes'
 import _ from "lodash";
@@ -986,12 +986,20 @@ export function updateUploadProgress(uploadId: string, uploadProgress : number){
     }
 }
 
-
+export function uploadToCurrentFolder(fileObject: object) {
+    return (dispatch, getState) => {
+           var documentlist = getDocumentsContext(getState().navReducer);
+            const {sessionToken, env} = getState().accessReducer;
+            const url = getFileUploadUrl(env, sessionToken, fileObject.name, "", "",  documentlist.fId);
+             dispatch(uploadToKenesto(fileObject, url));
+             dispatch(refreshTable(documentlist, false, true))
+      }
+}
 
 export function uploadToKenesto(fileObject: object, url: string) {
     return (dispatch, getState) => {
         try {
-             const {email} = getState().accessReducer;
+            const {email} = getState().accessReducer;
             writeToLog(email, constans.DEBUG, `function uploadToKenesto - url: ${url}, fileObject - ${JSON.stringify(fileObject)}`)
             const uploadId = fileObject.name + "_" + Date.now();
             var documentlist = getDocumentsContext(getState().navReducer);

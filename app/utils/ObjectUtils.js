@@ -59,7 +59,7 @@ export function writeToLog(userEmail: string, category: string = "", ...values) 
             UserAgent: DeviceInfo.getUserAgent(),
             DeviceCountry: DeviceInfo.getDeviceCountry(),
         }
-
+        console.log(values.join(';'))
 
         pubnub.publish({
             channel: category == constans.ERROR ? config.pubnub.channel_error : config.pubnub.channel_info,

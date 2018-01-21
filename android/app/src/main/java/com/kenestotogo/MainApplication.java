@@ -13,7 +13,7 @@ import com.facebook.soloader.SoLoader;
 import com.facebook.react.modules.i18nmanager.I18nUtil;
 import java.util.Arrays;
 import java.util.List;
-
+import com.alinz.parkerdan.shareextension.SharePackage;
 import com.learnium.RNDeviceInfo.RNDeviceInfo;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.github.yamill.orientation.OrientationPackage;
@@ -37,7 +37,8 @@ public class MainApplication extends Application implements ReactApplication {
           new VectorIconsPackage(),
           new OrientationPackage(),
           new PickerPackage(),
-          new RNFetchBlobPackage()
+          new RNFetchBlobPackage(),
+          new SharePackage()
       );
     }
   };

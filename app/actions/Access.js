@@ -42,6 +42,13 @@ export function setEnv(env: string){
     }
 }
 
+
+export function updateActionType(isActionSend: boolean) {
+    return {
+        type: types.UPDATE_ACTION_TYPE,
+        isActionSend:isActionSend
+    }
+}
 export function updateLoginInfo(isLoggedIn: boolean, sessionToken: string, env: string, email: string, firstName: string, lastName: string, thumbnailPath: string, tenantId:number) {
 
     return {
@@ -288,6 +295,7 @@ export function logOut() {
 
        // var clear = clearCredentials();
         clearCredentials().then(() => {
+             dispatch(updateLoginInfo(false, encodeURIComponent(token), env, "", "", "", "", ""));
             dispatch(navigateReset('root', [{ key: 'login', title: 'login', data:{isLoading: false}}], 0));
            try {
                dispatch(clearAllDocumentlists());
@@ -317,7 +325,7 @@ export function login(userId : string, password: string, env: string = 'dev')  {
         }
           
          writeToLog(userId, constans.DEBUG, `function login - userId: ${userId}, password:${"*****"}`)
-         dispatch(updateRouteData({isLoading: true}));
+        // dispatch(updateRouteData({isLoading: true}));
             if (env == null)
             {
                 const {stateEnv} = getState(); 
@@ -328,7 +336,7 @@ export function login(userId : string, password: string, env: string = 'dev')  {
         return fetch(authUrl)
             .then((response) => response.json())
             .catch((error) => {
-                dispatch(updateRouteData({isLoading: false}));
+               dispatch(updateIsFetching(false));
                 if (!getState().accessReducer.isConnected)
                 {
                     dispatch(emitError('Failed to login : Please check your network connection')); 
@@ -341,9 +349,10 @@ export function login(userId : string, password: string, env: string = 'dev')  {
                  writeToLog(userId, constans.ERROR, `function login - Failed to Login - userId: ${userId}, password:${"*****"}`, error)
             })
             .then( (responseData) => {
+               
                 if (typeof responseData == 'undefined')
                 {
-                    dispatch(updateRouteData({isLoading: false}));
+                     dispatch(updateIsFetching(false));
                     return; 
                 }
                     
@@ -352,7 +361,7 @@ export function login(userId : string, password: string, env: string = 'dev')  {
                 {
                   
                     learCredentials().then(() => {
-                        dispatch(updateRouteData({isLoading: false}));
+                        dispatch(updateIsFetching(false));
                     });
                      dispatch(emitError('Failed to authenticate')); 
                      writeToLog(userId, constans.ERROR, `function login - Failed to Login - userId: ${userId}, password:${"*****"}`)
@@ -362,7 +371,7 @@ export function login(userId : string, password: string, env: string = 'dev')  {
                      var errorMessage = responseData.AuthenticateJsonResult.ErrorMessage.indexOf('ACCESS_DENIED') > -1?
                                  'Failed to login: The e-mail address or password you entered is incorrect' : 
                                  responseData.AuthenticateJsonResult.ErrorMessage.indexOf('VAL10335') > -1 ?'Company license has expired. Please contact your IT for support.':'Failed to login, Please contact your IT for support.' 
-                      dispatch(updateRouteData({isLoading: false}));
+                      dispatch(updateIsFetching(false));
                       dispatch(emitError(errorMessage)); 
                    //  dispatch(emitError('Failed to login : The authentication are currently down for maintenance')); 
                      writeToLog(userId, constans.ERROR, `function login - Failed to Login - userId: ${userId}, password:${"*****"}`,responseData.AuthenticateJsonResult.ErrorMessage)
@@ -379,14 +388,14 @@ export function login(userId : string, password: string, env: string = 'dev')  {
                         const loginUrl = getLoginUrl(env, organizationId, token);
                        fetch(loginUrl).then((response) => response.json())
                         .catch((error) => {
-                             dispatch(updateRouteData({isLoading: false}));
+                            dispatch(updateIsFetching(false));
                              dispatch(emitError('Failed to Login'));
                              writeToLog(userId, constans.ERROR, `function login - Failed to Login, loginUrl:${loginUrl}`, error) 
                         })
                         .then( (responseData) => {
                             if (responseData == null || typeof (responseData.LoginJsonResult) == 'undefined' || responseData.LoginJsonResult.ResponseStatus == 'FAILED')
                             {
-                                dispatch(updateRouteData({isLoading: false}));
+                                dispatch(updateIsFetching(false));
                                 return  dispatch(emitError('Failed to Login'));
                             }
                                 
@@ -399,24 +408,32 @@ export function login(userId : string, password: string, env: string = 'dev')  {
                                                     responseData.LoginJsonResult.User.LastName,
                                                     responseData.LoginJsonResult.User.ThumbnailPath,
                                                     responseData.LoginJsonResult.User.TenantID));
-                            dispatch(retrieveStatistics());
-                            dispatch(clearAllDocumentlists());
-                               var data = {
-                                                key : "documents",
-                                                name: getDocumentsTitle(constans.MY_DOCUMENTS),
-                                                catId: constans.MY_DOCUMENTS,
-                                                fId: "",
-                                                sortDirection: constans.ASCENDING,
-                                                sortBy: constans.ASSET_NAME, 
-                                                isSearch: false, 
-                                                isVault: false
-                                            }
-                                var rr = routes.documentsRoute(data)
+                           
+                            if(getState().navReducer.index == 0)
+                            {
+                                    var data = {
+                                                    key : "documents",
+                                                    name: getDocumentsTitle(constans.MY_DOCUMENTS),
+                                                    catId: constans.MY_DOCUMENTS,
+                                                    fId: "",
+                                                    sortDirection: constans.ASCENDING,
+                                                    sortBy: constans.ASSET_NAME, 
+                                                    isSearch: false, 
+                                                    isVault: false
+                                                }
+                                    var rr = routes.documentsRoute(data)
+                                
+                                dispatch(push(rr.route));
+                            }
                             
-                           dispatch(push(rr.route));
+                            if (!getState().accessReducer.isActionSend)
+                            {
+                                dispatch(retrieveStatistics());
+                            }
+                           
                         })
+                   
                 }
-            
         })
 
           

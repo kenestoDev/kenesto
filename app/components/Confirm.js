@@ -87,17 +87,22 @@ class Confirm extends React.Component {
     }
 
   handleCancel(){
-        this.props.closeModal();
+         this.props.dispatch(navActions.clearConfirm());
+         if (this.props.cancelAction != null && typeof this.props.cancelAction != 'undefined')
+            this.props.cancelAction();
+        this.props.closeModal();   
     }
 
-    handleOk(){
-        this.props.closeModal();
+    async handleOk(){
+       
+        this.props.dispatch(navActions.clearConfirm());
         if (this.props.okAction != null && typeof this.props.okAction != 'undefined')
-            this.props.okAction();   
+            this.props.okAction();
+        this.props.closeModal();   
     }
 
     componentDidMount(){
-          this.props.dispatch(navActions.clearConfirm());
+          //this.props.dispatch(navActions.clearConfirm());
     }
      
 
@@ -126,7 +131,9 @@ function mapStateToProps(state) {
       hasConfirm : state.navReducer.HasConfirm, 
       confirmTitle : state.navReducer.GlobalConfirmTitle, 
       confirmDetails: state.navReducer.GlobalConfirmDetails, 
-      okAction: state.navReducer.GlobalConfirmOkAction
+      okAction: state.navReducer.GlobalConfirmOkAction,
+      cancelAction: state.navReducer.GlobalConfirmCancelAction
+      
   }
 }
 
