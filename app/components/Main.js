@@ -473,8 +473,8 @@ this.callToast2(nextprops.navReducer.GlobalToastMessage, nextprops.navReducer.Gl
                         name: getDocumentsTitle(constans.MY_DOCUMENTS),
                         catId: constans.MY_DOCUMENTS,
                         fId: "",
-                        sortDirection: constans.ASCENDING,
-                        sortBy: constans.ASSET_NAME,
+                        sortDirection: constans.DESCENDING,
+                        sortBy: constans.MODIFICATION_DATE,
                         keyboard:"",
                         isSearch: false, 
                         isVault: false

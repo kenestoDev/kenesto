@@ -91,8 +91,8 @@ android {
         applicationId "com.kenestotogo"
         minSdkVersion 16
         targetSdkVersion 22
-        versionCode 13
-        versionName "1.9.3"
+        versionCode 14
+        versionName "1.9.4"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }

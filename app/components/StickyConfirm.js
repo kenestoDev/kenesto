@@ -15,7 +15,7 @@ var styles = StyleSheet.create({
         backgroundColor:"white",
         //padding:5,
         //paddingBottom:5,
-        marginBottom:30,
+        marginBottom:25,
         //marginTop:10,
         marginLeft:35,
         marginRight:35

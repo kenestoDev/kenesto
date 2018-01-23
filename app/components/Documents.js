@@ -108,7 +108,7 @@ class Documents extends Component {
         const {intentAction, isActionSend} = await ShareExtension.getIntentAction()
         if(isActionSend)
         {
-            const {mediaId ,mediaMimeType, mediaPath, mediaSize, mediaName} = await ShareExtension.data(kenestoGroup)
+            const {mediaId ,mediaMimeType, mediaPath, mediaSize, mediaName,data} = await ShareExtension.data(kenestoGroup)
             var mediaInfo = {
             mediaId:mediaId,
             mediaMimeType:mediaMimeType,
@@ -116,14 +116,22 @@ class Documents extends Component {
             mediaSize:mediaSize,
             mediaName:mediaName
            }
-          
+         
           if(typeof (mediaPath) == 'undefined' || mediaPath == "undefined" || mediaPath == "")
           {
-            dispatch(emitError("Failed to import to Kenesto, please try again later"));
-            setTimeout(() => {
-                dispatch(clearError());
-                ShareExtension.close(kenestoGroup);
-            }, 4000);
+            if(data == 'url')
+            {
+                dispatch(emitError("Currently cannot share link to Kenesto"));
+            }
+            else
+            {
+                dispatch(emitError("Failed to import to Kenesto, please try again later"));
+            }
+            
+              setTimeout(() => {
+                  dispatch(clearError());
+                  ShareExtension.close(kenestoGroup);
+              }, 3000);
           }
           else
           {
@@ -214,8 +222,8 @@ class Documents extends Component {
         name: newName,
         catId: newId,
         fId: fId,
-        sortDirection: constans.ASCENDING,
-        sortBy: constans.ASSET_NAME,
+        sortDirection: constans.DESCENDING,
+        sortBy: constans.MODIFICATION_DATE,
         isVault: document.IsVault, 
         isSearch: false
       }

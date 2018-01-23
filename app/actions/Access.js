@@ -416,8 +416,8 @@ export function login(userId : string, password: string, env: string = 'dev')  {
                                                     name: getDocumentsTitle(constans.MY_DOCUMENTS),
                                                     catId: constans.MY_DOCUMENTS,
                                                     fId: "",
-                                                    sortDirection: constans.ASCENDING,
-                                                    sortBy: constans.ASSET_NAME, 
+                                                    sortDirection: constans.DESCENDING,
+                                                    sortBy: constans.MODIFICATION_DATE, 
                                                     isSearch: false, 
                                                     isVault: false
                                                 }
@@ -425,7 +425,7 @@ export function login(userId : string, password: string, env: string = 'dev')  {
                                 
                                 dispatch(push(rr.route));
                             }
-                            
+
                             if (!getState().accessReducer.isActionSend)
                             {
                                 dispatch(retrieveStatistics());

@@ -159,7 +159,9 @@ selectFromLib(cropping : boolean){
     addFolder(){
         this.props.closeMenuModal("modalPlusMenu");
        // this.props.createError();
-        this.props.openCreateFolder();
+         setTimeout(() => {
+            this.props.openCreateFolder();
+            }, 500);
     }
 
     render(){

@@ -203,17 +203,26 @@ class ItemMenu extends React.Component {
 
     editFolder() {
         this.props.closeItemMenuModal();
-        this.props.openEditFolderModal()
+        setTimeout(() => {
+             this.props.openEditFolderModal();
+            }, 500);
+       
     }
 
     editDocument() {
         this.props.closeItemMenuModal();
-        this.props.openEditDocumentModal()
+        setTimeout(() => {
+             this.props.openEditDocumentModal();
+            }, 500);
+        
     }
 
     checkinDocument() {
         this.props.closeItemMenuModal();
-        this.props.openCheckInModal()
+         setTimeout(() => {
+              this.props.openCheckInModal();
+            }, 500);
+       
     }
 
     checkoutDocument() {

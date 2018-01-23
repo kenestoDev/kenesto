@@ -120,8 +120,8 @@ export function getDocumentsContext(navReducer: Object) {
                   name: getDocumentsTitle(constans.MY_DOCUMENTS),
                   catId: constans.MY_DOCUMENTS,
                   fId: "",
-                  sortDirection: constans.ASCENDING,
-                  sortBy: constans.ASSET_NAME,
+                  sortDirection: constans.DESCENDING,
+                  sortBy: constans.MODIFICATION_DATE,
                   keyboard:"",
                   isSearch: false, 
                   isVault: false
@@ -137,8 +137,8 @@ export function getDocumentsContext(navReducer: Object) {
                       name: getDocumentsTitle(constans.MY_DOCUMENTS),
                       catId: constans.MY_DOCUMENTS,
                       fId: "",
-                      sortDirection: constans.ASCENDING,
-                      sortBy: constans.ASSET_NAME,
+                      sortDirection: constans.DESCENDING,
+                      sortBy: constans.MODIFICATION_DATE,
                       keyboard:"",
                       isSearch: false, 
                       isVault: false
