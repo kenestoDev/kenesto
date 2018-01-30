@@ -329,6 +329,25 @@ const styles = StyleSheet.create({
          )
      }
     
+    _renderSignUp()
+    {
+        if(Platform.OS === 'ios')
+        {
+            return(
+                <View/>
+            );
+        }
+        else
+        {
+            return(
+                <TouchableWithoutFeedback onPress={ this.NavigateToSignUp.bind(this)} >
+                    <View>
+                        <Text style={styles.forgotPwd}>Sign Up for KENESTO</Text>
+                    </View>
+                </TouchableWithoutFeedback>
+            )
+        }
+    }
     _renderLogin(){
        
        var options = {
@@ -373,14 +392,11 @@ const styles = StyleSheet.create({
                                    
                                     options={options}
                                 />
-                           
+                      
                             
                             <Button containerStyle={styles.loginBtnContainer} onPress={this._makeLogin.bind(this)} style={styles.loginBtn}>Login</Button>
-                            <TouchableWithoutFeedback onPress={ this.NavigateToSignUp.bind(this)} >
-                                <View>
-                                    <Text style={styles.forgotPwd}>Sign Up for KENESTO</Text>
-                                </View>
-                            </TouchableWithoutFeedback>
+                            
+                            {this._renderSignUp()}
 
                             <TouchableWithoutFeedback onPress={ this.NavigateToForgotPassword.bind(this)} >
                                 <View>

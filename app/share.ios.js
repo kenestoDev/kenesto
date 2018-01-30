@@ -160,7 +160,7 @@ export default class Share extends Component {
      var modalStyle = [styles.modal, styles.share];
      var confirmTitle = "Import to Kenesto";
     var canImport = typeof (this.state.file.mediaName) != 'undefined' && this.state.file.mediaName != "" && this.state.file.mediaName != undefined
-     var confirmDetails = canImport ? "Save file to Kenesto documents" : "Can't save file, please try again later.";
+     var confirmDetails = canImport ? "Open Kenesto App to select a folder" : "Can't save file, please try again later.";
     
      if (canImport) {
         return (
@@ -174,7 +174,7 @@ export default class Share extends Component {
                               <Text style={styles.messageText}>{confirmDetails}</Text>
                           </View>
                             <View style={styles.doubleButtonsContainer}>
-                              <Button onPress={this.onOpenMainApp.bind(this)} containerStyle={styles.doubleBtnContainer} style={styles.button}>Save</Button>
+                              <Button onPress={this.onOpenMainApp.bind(this)} containerStyle={styles.doubleBtnContainer} style={styles.button}>Open</Button>
                               <Button containerStyle={styles.doubleBtnContainer} style={styles.button} onPress={this.onClose.bind(this)}>Cancel</Button>
                           </View>
                       </View>  

@@ -36,7 +36,7 @@ import DocumentUploadCell from '../components/DocumentUploadCell';
 const splitChars = '|';
 
 import _ from "lodash";
-import { fetchTableIfNeeded, refreshTable,getDocumentPermissions, getCurrentFolderPermissions,resetCurrentFolder, downloadDocument, uploadToKenesto, uploadToCurrentFolder} from '../actions/documentsActions'
+import { fetchTableIfNeeded, refreshTable,getDocumentPermissions, getCurrentFolderPermissions,resetCurrentFolder, downloadDocument, uploadToKenesto, uploadToCurrentFolder, deleteTempFiles} from '../actions/documentsActions'
 import ViewContainer from '../components/ViewContainer';
 import {bytesToSize} from '../utils/KenestoHelper'
 import ActionButton from 'react-native-action-button';
@@ -93,11 +93,22 @@ class Documents extends Component {
             console.log("*********"+JSON.stringify(mediaInfo)+"***************")
                   if(!(_.isEmpty(mediaInfo)))
                   {
-                    const fileExtension =  mediaInfo.mediaName.substring(mediaInfo.mediaName.lastIndexOf("."));
-                    var mediaPath = mediaInfo.mediaPath;
-                    const url = getFileUploadUrl(this.props.env, this.props.sessionToken, mediaInfo.mediaName, "", "",  "");
-                    const fileName = mediaInfo.mediaPath.substring(mediaInfo.mediaPath.lastIndexOf('/') + 1); 
-                    dispatch(uploadToKenesto({name: mediaInfo.mediaName, uri : mediaInfo.mediaPath, type: mediaInfo.mediaMimeType, size: bytesToSize(mediaInfo.mediaSize), fileExtension: fileExtension}, url, false));
+                    //const fileExtension =  mediaInfo.mediaName.substring(mediaInfo.mediaName.lastIndexOf("."));
+                    //var mediaPath = mediaInfo.mediaPath;
+                    //const url = getFileUploadUrl(this.props.env, this.props.sessionToken, mediaInfo.mediaName, "", "",  "");
+                    //const fileName = mediaInfo.mediaPath.substring(mediaInfo.mediaPath.lastIndexOf('/') + 1); 
+                    //dispatch(uploadToKenesto({name: mediaInfo.mediaName, uri : mediaInfo.mediaPath, type: mediaInfo.mediaMimeType, size: bytesToSize(mediaInfo.mediaSize), fileExtension: fileExtension}, url, false));
+                    if(typeof (mediaInfo.mediaPath) == 'undefined' || mediaInfo.mediaPath == "undefined" || mediaInfo.mediaPath == "")
+                    {
+                      dispatch(emitError("Failed to import to Kenesto, please try again later"));
+                    }
+                    else
+                    {
+                      const fileExtension =  mediaInfo.mediaName.substring(mediaInfo.mediaName.lastIndexOf("."));
+                      const fileName = mediaInfo.mediaPath.substring(mediaInfo.mediaPath.lastIndexOf('/') + 1); 
+                      var fileObject = {name: mediaInfo.mediaName, uri : mediaInfo.mediaPath, type: mediaInfo.mediaMimeType, size: bytesToSize(mediaInfo.mediaSize), fileExtension: fileExtension}
+                      dispatch(emitStickyConfirm("Import to Kenesto", "Add "+mediaInfo.mediaName+" to...", () =>{ dispatch(uploadToCurrentFolder(fileObject))},() =>{ShareExtension.deleteTempFiles(constans.KENESTO_GROUP_ID);}, true))
+                    } 
                     RNSKBucket.set('file', {}, constans.KENESTO_GROUP_ID)
                   }
                 });

@@ -13,12 +13,20 @@ var styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         backgroundColor:"white",
-        //padding:5,
-        //paddingBottom:5,
-        marginBottom:25,
+         ...Platform.select({
+         ios:{
+            marginBottom:15,
         //marginTop:10,
-        marginLeft:35,
-        marginRight:35
+            marginLeft:10,
+            marginRight:10,  
+         },
+          android:{
+            marginBottom:25,
+            marginLeft:35,
+            marginRight:35,
+          }
+        })
+        //
         
     },
     titleContainer: {
@@ -46,27 +54,33 @@ var styles = StyleSheet.create({
         textAlign: "center"
     },
     buttonsContainer: {
-        flex: 2,
-        flexDirection: "row",
-        alignItems: "flex-end",
-        //paddingBottom:5,
-        //marginLeft:5,
-        //marginRight:5,
-        justifyContent: 'space-between',
-        //alignItems: "center",
-        alignSelf: "stretch",
-         //borderWidth:0.5,
-         //borderColor:"blue", 
+         ...Platform.select({
+            ios:{ 
+                flex: 1,
+                flexDirection: "row",
+                alignItems: "flex-end",
+              
+                justifyContent: "center",
+                alignSelf: "stretch",
+                padding: 10,
+            },
+            android:{
+                flex: 2,
+                flexDirection: "row",
+                alignItems: "flex-end",
+                justifyContent: 'space-between',
+                alignSelf: "stretch"
+            }})
+    
    },
    singleBtnContainer: {
         width: 135,
-        justifyContent: "space-around",
         height: 50,
         backgroundColor: "#F5F6F8",
         ...Platform.select({
             ios:{
                     borderRadius: 10,
-                    //padding: 10,
+                     justifyContent: "center",
                     shadowColor: '#000000',
                     shadowOffset: {
                     width: 0,
@@ -75,6 +89,7 @@ var styles = StyleSheet.create({
                         shadowOpacity: 0.25
                     },
                     android:{
+                         justifyContent: "space-around",
                         borderWidth: 0.5,
                         borderColor: "#BEBDBD",
                     }
@@ -118,18 +133,34 @@ class StickyConfirm extends React.Component {
      
 
     render(){
-
-        return (
+        if(Platform.OS === 'ios')
+        {
+            return (
+                        <View style={styles.container}>
+                            <View style={styles.messageContainer}>
+                                <Text style={styles.messageText} numberOfLines={1}>{this.state.confirmDetails}</Text>
+                            </View>
+                            <View style={styles.buttonsContainer}>
+                                <Button onPress={this.handleOk.bind(this)} containerStyle={styles.singleBtnContainer} style={styles.button}>Done</Button>
+                            </View>
+                        </View>
+            );
+        }
+        else
+        {
+            return (
                 <View style={styles.container}>
-                    <View style={styles.messageContainer}>
-                         <Text style={styles.messageText} numberOfLines={1}>{this.state.confirmDetails}</Text>
-                    </View>
-                      <View style={styles.buttonsContainer}>
-                        <Button onPress={this.handleOk.bind(this)} containerStyle={styles.singleBtnContainer} style={styles.button}>Add</Button>
-                        <Button containerStyle={styles.singleBtnContainer} style={styles.button} onPress={this.handleCancel.bind(this)}>Cancel</Button>
-                     </View>
-                </View>
-        );
+                        <View style={styles.messageContainer}>
+                             <Text style={styles.messageText} numberOfLines={1}>{this.state.confirmDetails}</Text>
+                        </View>
+                        <View style={styles.buttonsContainer}>
+                            <Button onPress={this.handleOk.bind(this)} containerStyle={styles.singleBtnContainer} style={styles.button}>Add</Button>
+                            <Button containerStyle={styles.singleBtnContainer} style={styles.button} onPress={this.handleCancel.bind(this)}>Cancel</Button>
+                        </View>
+                    </View> 
+             );
+        }
+
     }
 }
 

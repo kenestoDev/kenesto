@@ -31,7 +31,7 @@ import * as documentsActions from '../actions/documentsActions'
 import * as uiActions from '../actions/uiActions'
 import * as accessActions from '../actions/Access'
 import _ from 'lodash'
-import {pop, updateRouteData, clearToast,updatedOrientation, navigateReset, navigateJumpToKey, clearConfirm, clearError} from '../actions/navActions'
+import {pop, updateRouteData, clearToast,updatedOrientation, navigateReset, navigateJumpToKey, clearConfirm, clearError, emitStickyConfirm, emitError} from '../actions/navActions'
 import * as constans from '../constants/GlobalConstans'
 import {getDocumentsContext, getFileUploadUrl, getDocumentsTitle} from '../utils/documentsUtils'
 import Error from './Error'
@@ -47,7 +47,9 @@ import NetInfoManager from './NetInfoManager'
 import PushController from './PushController';
 import  stricturiEncode  from 'strict-uri-encode';
 import {bytesToSize} from '../utils/KenestoHelper'
+import ShareExtension from 'react-native-share-extension'
 const kenestoGroup = 'group.com.kenesto.KenestoWorkouts'
+
 // var AssetsPicker = NativeModules.AssetsPicker; 
 //import PubNub from 'pubnub'
 //import PushController from './PushController';
@@ -454,35 +456,38 @@ this.callToast2(nextprops.navReducer.GlobalToastMessage, nextprops.navReducer.Gl
        {
         RNSKBucket.get('file', constans.KENESTO_GROUP_ID).then( (mediaInfo) =>  {  
           console.log("*********"+JSON.stringify(mediaInfo)+"***************")
-                if(!(_.isEmpty(mediaInfo)))
+                if(!(_.isEmpty(mediaInfo)) && this.props.navReducer.index > 0)
                 {
                   var documentlist = getDocumentsContext(this.props.navReducer);
                   if(_.isEmpty(documentlist))
                   {
                     return;
                   }
-                  const fileExtension =  mediaInfo.mediaName.substring(mediaInfo.mediaName.lastIndexOf("."));
-                  var mediaPath = mediaInfo.mediaPath;
-                  const url = getFileUploadUrl(this.props.env, this.props.sessionToken, mediaInfo.mediaName, "", "",  "");
-                  const fileName = mediaInfo.mediaPath.substring(mediaInfo.mediaPath.lastIndexOf('/') + 1); 
+                  //const fileExtension =  mediaInfo.mediaName.substring(mediaInfo.mediaName.lastIndexOf("."));
+                  //var mediaPath = mediaInfo.mediaPath;
+                  //const url = getFileUploadUrl(this.props.env, this.props.sessionToken, mediaInfo.mediaName, "", "",  "");
+                  //const fileName = mediaInfo.mediaPath.substring(mediaInfo.mediaPath.lastIndexOf('/') + 1); 
                  
-                  if(documentlist.catId != constans.MY_DOCUMENTS)
-                  {
-                    var routeData =
+                //  this.props.dispatch(documentsActions.uploadToKenesto({name: mediaInfo.mediaName, uri : mediaInfo.mediaPath, type: mediaInfo.mediaMimeType, size: bytesToSize(mediaInfo.mediaSize), fileExtension: fileExtension}, url, false));
+                //  RNSKBucket.set('file', {}, constans.KENESTO_GROUP_ID)
+
+                    //const fileExtension =  mediaInfo.mediaName.substring(mediaInfo.mediaName.lastIndexOf("."));
+                    //var mediaPath = mediaInfo.mediaPath;
+                    //const url = getFileUploadUrl(this.props.env, this.props.sessionToken, mediaInfo.mediaName, "", "",  "");
+                    //const fileName = mediaInfo.mediaPath.substring(mediaInfo.mediaPath.lastIndexOf('/') + 1); 
+                    //dispatch(uploadToKenesto({name: mediaInfo.mediaName, uri : mediaInfo.mediaPath, type: mediaInfo.mediaMimeType, size: bytesToSize(mediaInfo.mediaSize), fileExtension: fileExtension}, url, false));
+                    if(typeof (mediaInfo.mediaPath) == 'undefined' || mediaInfo.mediaPath == "undefined" || mediaInfo.mediaPath == "")
                     {
-                        name: getDocumentsTitle(constans.MY_DOCUMENTS),
-                        catId: constans.MY_DOCUMENTS,
-                        fId: "",
-                        sortDirection: constans.DESCENDING,
-                        sortBy: constans.MODIFICATION_DATE,
-                        keyboard:"",
-                        isSearch: false, 
-                        isVault: false
+                      this.props.dispatch(emitError("Failed to import to Kenesto, please try again later"));
                     }
-                     this.props.dispatch(updateRouteData(routeData));
-                  }
-                  this.props.dispatch(documentsActions.uploadToKenesto({name: mediaInfo.mediaName, uri : mediaInfo.mediaPath, type: mediaInfo.mediaMimeType, size: bytesToSize(mediaInfo.mediaSize), fileExtension: fileExtension}, url, false));
-                  RNSKBucket.set('file', {}, constans.KENESTO_GROUP_ID)
+                    else
+                    {
+                      const fileExtension =  mediaInfo.mediaName.substring(mediaInfo.mediaName.lastIndexOf("."));
+                      const fileName = mediaInfo.mediaPath.substring(mediaInfo.mediaPath.lastIndexOf('/') + 1); 
+                      var fileObject = {name: mediaInfo.mediaName, uri : mediaInfo.mediaPath, type: mediaInfo.mediaMimeType, size: bytesToSize(mediaInfo.mediaSize), fileExtension: fileExtension}
+                      this.props.dispatch(emitStickyConfirm("Import to Kenesto", "Add "+mediaInfo.mediaName+" to...", () =>{ this.props.dispatch(documentsActions.uploadToCurrentFolder(fileObject))}, () =>{ShareExtension.deleteTempFiles(constans.KENESTO_GROUP_ID);}, true))
+                    } 
+                    RNSKBucket.set('file', {}, constans.KENESTO_GROUP_ID)
                 }
               })
         }
