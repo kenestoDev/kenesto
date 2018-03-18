@@ -232,8 +232,8 @@ class TabView extends React.Component {
                 name: getDocumentsTitle(constans.MY_DOCUMENTS),
                 catId: constans.MY_DOCUMENTS,
                 fId: "",
-                sortDirection: constans.DESCENDING,
-                sortBy: constans.MODIFICATION_DATE,
+                sortDirection: constans.ASCENDING,
+                sortBy: constans.ASSET_NAME, 
                 keyboard:"",
                 isSearch: false, 
                 isVault: false

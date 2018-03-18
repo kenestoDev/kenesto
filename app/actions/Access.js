@@ -416,8 +416,8 @@ export function login(userId : string, password: string, env: string = 'dev')  {
                                                     name: getDocumentsTitle(constans.MY_DOCUMENTS),
                                                     catId: constans.MY_DOCUMENTS,
                                                     fId: "",
-                                                    sortDirection: constans.DESCENDING,
-                                                    sortBy: constans.MODIFICATION_DATE, 
+                                                    sortDirection: constans.ASCENDING,
+                                                    sortBy: constans.ASSET_NAME, 
                                                     isSearch: false, 
                                                     isVault: false
                                                 }

@@ -80,7 +80,9 @@ var DocumentCell = React.createClass({
     }
 
     var documentName = (this.props.document.IsExternalLink && this.props.document.ExternalLinkType != 'DROPBOX') || this.props.document.FileExtension == '' || this.props.document.FileExtension == null ? this.props.document.Name : this.props.document.Name + this.props.document.FileExtension;
-
+    // bug https://forums.expo.io/t/text-cut-off-on-oneplus-device/4999
+    documentName = documentName + " ";
+    
     if (Platform.OS === 'android') {
       TouchableElement = TouchableNativeFeedback;
     }

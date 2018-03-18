@@ -70,6 +70,8 @@ class Documents extends Component {
         return "Name"
       case constans.MODIFICATION_DATE:
         return "Modification Date"
+      case constans.ASSET_TYPE:
+        return "Type"
       default:
         return "";
     }
@@ -233,8 +235,8 @@ class Documents extends Component {
         name: newName,
         catId: newId,
         fId: fId,
-        sortDirection: constans.DESCENDING,
-        sortBy: constans.MODIFICATION_DATE,
+        sortDirection: constans.ASCENDING,
+        sortBy: constans.ASSET_NAME, 
         isVault: document.IsVault, 
         isSearch: false
       }
