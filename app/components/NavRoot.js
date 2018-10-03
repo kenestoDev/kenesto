@@ -7,6 +7,7 @@ import AddPeopleContainer from '../containers/AddPeopleContainer'
 import Documents from './Documents'
 import Document from './Document'
 import TermsOfService from "./TermsOfService"
+import PrivacyPolicy from "./PrivacyPolicy"
 import LoginContainer from '../containers/LoginContainer'
 import DocumentsContainer from '../containers/DocumentsContainer'
 import LauncherContainer from '../containers/LauncherContainer'
@@ -54,6 +55,9 @@ class NavRoot extends Component {
     }
     if (route.key === 'termsOfService') {
       return <TermsOfService firstName={route.firstName} lastName={route.lastName} email={route.email} password={route.password} company={route.company} _goBack={this._handleBackAction.bind(this)} env={route.env} _handleNavigate={this._handleNavigate.bind(this) } />
+    }
+    if (route.key === 'privacyPolicy') {
+      return <PrivacyPolicy firstName={route.firstName} lastName={route.lastName} email={route.email} password={route.password} company={route.company} _goBack={this._handleBackAction.bind(this)} env={route.env} _handleNavigate={this._handleNavigate.bind(this) } />
     }
     if (route.key === 'forgotPassword') {
       return <ForgotPassword userName={route.userName} _goBack={this._handleBackAction.bind(this)} env={route.env}  />

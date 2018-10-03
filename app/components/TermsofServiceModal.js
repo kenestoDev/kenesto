@@ -24,7 +24,7 @@ var styles = StyleSheet.create({
         marginTop: 10,
     },
     title: {
-        fontSize: 20,
+        fontSize: 18,
         color: "#000",
         alignSelf: "center",
     },
@@ -32,7 +32,9 @@ var styles = StyleSheet.create({
         flex: 1,
         flexDirection:'row',
         alignItems: "center",
-        marginBottom:20
+        marginBottom:20,
+        paddingLeft:6,
+        
     },
     icon: {
         color: '#000',
@@ -41,6 +43,7 @@ var styles = StyleSheet.create({
         position: "absolute",
         top: 18
     },
+    
     textEdit: {
         flex: 1,
         color: "#000",
@@ -48,6 +51,10 @@ var styles = StyleSheet.create({
         fontSize: 17,
         paddingLeft: 5,
         // paddingBottom: 15,
+    },
+    linkTextStyle:{
+        color: '#0000EE',
+        textDecorationLine: 'underline'
     },
     buttonsContainer: {
         flex: 1,
@@ -58,7 +65,7 @@ var styles = StyleSheet.create({
         paddingRight:3,
         paddingTop:3,
         marginBottom:3,
-        alignSelf: "stretch",  
+        //alignSelf: "stretch",  
     },
     singleBtnContainer: {
         justifyContent: "center",
@@ -79,7 +86,7 @@ var styles = StyleSheet.create({
                     android:{
                         borderWidth: 0.5,
                         borderColor: "#BEBDBD",
-                        width: 140,
+                        width: 127,
                     }
             }),  
    },
@@ -87,7 +94,7 @@ var styles = StyleSheet.create({
       
         color: "#666666",
         fontWeight: "normal",
-        fontSize: 18, 
+        fontSize: 16, 
    },
 
 });
@@ -119,6 +126,24 @@ class TermsofServiceModal extends React.Component {
         this.props._handleNavigate(termsOfServiceRoute)
          this.props.closeModal();
    }
+   _navigateToPrivacyPolicy(){
+    var { firstName, lastName, email, password, company, env } = this.props.value;
+    const  privacyPolicyRoute = {
+              type: 'push',
+              route: {
+                  key: 'privacyPolicy',
+                  title: 'privacyPolicy',
+                  firstName: firstName,
+                  lastName: lastName, 
+                  email: email, 
+                  password: password,
+                  company: company,
+                  env: this.props.env
+              }
+      }
+      this.props._handleNavigate(privacyPolicyRoute)
+       this.props.closeModal();
+    }
     _makeSignUp() {
         var { firstName, lastName, email, password, company, env } = this.props.value;
         this.props.dispatch(accessActions.ActivateSignUp(firstName, lastName, company, email, password, this.props.env));
@@ -129,14 +154,13 @@ class TermsofServiceModal extends React.Component {
         return (
             <View style={styles.container}>
                 <View style={styles.titleContainer}>
-                    <Text style={styles.title}>Terms of Service</Text>
+                    <Text style={styles.title}>Terms of Service and Privacy Policy</Text>
                 </View>
                 <View style={styles.nameContainer}>
-                  <Text>Before you can complete your registration, you must accept the Kenesto Terms of Service.</Text>
+                  <Text>Before you can complete your registration, you must accept <Text style={styles.linkTextStyle} onPress={this._navigateToTermsOfService.bind(this)} >Kenesto Terms of Service</Text> and <Text style={styles.linkTextStyle} onPress={this._navigateToPrivacyPolicy.bind(this)} >Kenesto Privacy Policy</Text>.</Text>
                 </View>
                 <View style={styles.buttonsContainer}>
                     <Button onPress={this._makeSignUp.bind(this) } containerStyle={styles.singleBtnContainer} style={styles.button}>I Agree</Button>
-                    <Button onPress={this._navigateToTermsOfService.bind(this)} containerStyle={styles.singleBtnContainer} style={styles.button}>View Terms</Button>
                 </View>
             </View>
         );

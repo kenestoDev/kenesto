@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, ScrollView, Platform } from "react-native";
+import { View, Text, StyleSheet, ScrollView, Platform, WebView} from "react-native";
 
 import Button from "react-native-button";
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -21,8 +21,8 @@ import getImageSource from './GetImageSource';
 import { getTime } from '../utils/KenestoHelper';
 import { hideToast, emitToast, pop } from '../actions/navActions'
 import imageSource from '../assets/thumbnail_img.png';
-import HTMLView from 'react-native-htmlview';
-class TermsOfService extends React.Component {
+
+class PrivacyPolicy extends React.Component {
 
     constructor(props) {
 
@@ -33,28 +33,20 @@ class TermsOfService extends React.Component {
         }
     }
 
-  // _openTermsofService() {
-  //    const {firstName,lastName,company,email,password} = this.props
-  //     this.props.dispatch(pop())
-  //    this.props.dispatch(accessActions.ActivateSignUp(firstName, lastName, company, email, password, this.props.env));
-  // }
   render() {
     const {accessReducer} = this.props
-
     return (
       <View style={styles.container}>
         <View style={styles.textContainer}>
-
-          <ScrollView keyboardShouldPersistTaps="always" showsVerticalScrollIndicator={true}>
-            <View style={{ margin: 15 }}>
-              <HTMLView
-                value={accessReducer.licenseAgreement}
-                stylesheet={styles}
-              />
-            </View>
-          </ScrollView>
+          <WebView
+          source={{uri: 'https://www.kenesto.com/privacy-policy'}}
+          stylesheet={styles}
+      />
 
         </View>
+        {/* <View style={styles.buttonsContainer}>
+          <Button containerStyle={styles.singleBtnContainer} style={styles.button} onPress={this._openTermsofService.bind(this)}>I Agree</Button>
+        </View> */}
       </View>
 
     );
@@ -117,5 +109,5 @@ function mapStateToProps(state) {
     accessReducer
   }
 }
-export default connect(mapStateToProps)(TermsOfService)
+export default connect(mapStateToProps)(PrivacyPolicy)
 
