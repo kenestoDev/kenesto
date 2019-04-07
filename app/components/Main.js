@@ -714,6 +714,14 @@ this.callToast2(nextprops.navReducer.GlobalToastMessage, nextprops.navReducer.Gl
                       </View>
                     </TouchableWithoutFeedback>
                   </View>
+                  <View>
+                    <TouchableWithoutFeedback onPress={(value) => this.onSortBy(constans.ASSET_TYPE) } disabled={sortBy == constans.ASSET_TYPE}>
+                      <View style={styles.optionContainer}>
+                        <Icon name="sort" style={[styles.iconStyle, sortBy != constans.ASSET_TYPE ? {} : styles.disabledIcon]} />
+                        <Text style={sortBy != constans.ASSET_TYPE ? styles.activeOption : styles.inactiveOption}>Sort by Type</Text>
+                      </View>
+                    </TouchableWithoutFeedback>
+                  </View>
 
                 </View>
               </View>

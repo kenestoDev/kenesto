@@ -568,7 +568,7 @@ renderTermsofServiceTollbar(){
     //   TouchableElement = TouchableNativeFeedback;
     // }
 
-    var title = "Terms of Service";
+    var title = "Kenesto Terms of Service";
    
     return (
       <View style= {[styles.toolbar,styles.toolbarContainer, {marginTop: (Platform.OS === 'ios')? 23 : 0}]} >
@@ -582,6 +582,28 @@ renderTermsofServiceTollbar(){
         </View>
       </View>
     )
+}
+
+renderPrivacyPolicyTollbar(){
+  var TouchableElement = TouchableOpacity;
+  // if (Platform.OS === 'android') {
+  //   TouchableElement = TouchableNativeFeedback;
+  // }
+
+  var title = "";
+ 
+  return (
+    <View style= {[styles.toolbar,styles.toolbarContainer, {marginTop: (Platform.OS === 'ios')? 15 : 0}]} >
+       <TouchableElement onPress={(value) => this.onGoBack(4) } >
+          <View>
+            <Icon name="arrow-back" style={[styles.iconStyle]} />
+          </View>
+        </TouchableElement>
+      <View style={styles.titleContainer}>
+        <Text style={styles.title} numberOfLines={1}>{title}</Text>
+      </View>
+    </View>
+  )
 }
 
 renderSignUpTollbar(){
@@ -626,6 +648,7 @@ renderSignUpTollbar(){
     var isForgotPasswordTollbar = navReducer.routes[navReducer.index].key == 'forgotPassword';
      var isSignUpTollbar = navReducer.routes[navReducer.index].key == 'signUp';
     var isTermsofServiceTollbar = navReducer.routes[navReducer.index].key == 'termsOfService';
+    var isPrivacyPolicyTollbar = navReducer.routes[navReducer.index].key == 'privacyPolicy';
     var isAddPeoplePage = (navReducer.routes[navReducer.index].key.indexOf('addPeople') > -1) ? true : false;
     var isSearchToolbar = this.state.isSearchBoxOpen || (typeof navReducer.routes[navReducer.index].data != 'undefined'
       && typeof navReducer.routes[navReducer.index].data.isSearch != 'undefined'
@@ -663,6 +686,12 @@ renderSignUpTollbar(){
       return (
         <View>
           {this.renderTermsofServiceTollbar() }
+        </View>
+      )
+      else if (isPrivacyPolicyTollbar)
+      return (
+        <View>
+          {this.renderPrivacyPolicyTollbar() }
         </View>
       )
       else if (isSignUpTollbar)

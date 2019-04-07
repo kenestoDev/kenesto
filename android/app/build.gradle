@@ -90,9 +90,9 @@ android {
     defaultConfig {
         applicationId "com.kenestotogo"
         minSdkVersion 16
-        targetSdkVersion 22
-        versionCode 14
-        versionName "1.9.4"
+        targetSdkVersion 26
+        versionCode 16
+        versionName "1.9.6"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
