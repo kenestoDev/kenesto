@@ -60,7 +60,6 @@
 		9DA993CFC26F4AF8BDE19763 /* libimageCropPicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 878F6DBCA88F45B6A712F4A1 /* libimageCropPicker.a */; };
 		B52F4C09D4AF4710BE5B4161 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B47B5F4D1A20447CA69C3381 /* MaterialCommunityIcons.ttf */; };
 		C1D8AA7929BA4B5C9B080CF6 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C16EBA40AC7448CA66AFADD /* Zocial.ttf */; };
-		C2B4EBAA31A34557AF5EAF95 /* libRNFIRMessaging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 298DD77F7D3B46A3AF459D58 /* libRNFIRMessaging.a */; };
 		DF2AE0B53FA54CCCAE98BD12 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 082C095C46B840E59EFEABAE /* SimpleLineIcons.ttf */; };
 /* End PBXBuildFile section */
 
@@ -282,13 +281,6 @@
 			remoteGlobalIDString = A15C300E1CD25C330074CB35;
 			remoteInfo = RNFetchBlob;
 		};
-		8653AD351E6D7B3F00F8A705 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F0BEBD487E6A444F8513F35F /* RNFIRMessaging.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 134814201AA4EA6300B7C361;
-			remoteInfo = RNFIRMessaging;
-		};
 		8653AD381E6D7B3F00F8A705 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F9F380859EB649A197A9346B /* RNVectorIcons.xcodeproj */;
@@ -358,7 +350,6 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		153499587E8A4C0F8CED101D /* RNFetchBlob.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFetchBlob.xcodeproj; path = "../node_modules/react-native-fetch-blob/ios/RNFetchBlob.xcodeproj"; sourceTree = "<group>"; };
 		234780F5F8041CD8D207BECA /* libPods-kenestoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-kenestoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		298DD77F7D3B46A3AF459D58 /* libRNFIRMessaging.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFIRMessaging.a; sourceTree = "<group>"; };
 		2B1E51B48E395D3ADE305143 /* Pods-kenesto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kenesto.release.xcconfig"; path = "Pods/Target Support Files/Pods-kenesto/Pods-kenesto.release.xcconfig"; sourceTree = "<group>"; };
 		2C16EBA40AC7448CA66AFADD /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		2E27576A408F9C56ADCF5D26 /* libPods-kenesto.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-kenesto.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -393,7 +384,6 @@
 		AA8A3EE12BFB4203B7ACDC10 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		B47B5F4D1A20447CA69C3381 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		C3AE257F1D384B9CB15FE38A /* libRNDeviceInfo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNDeviceInfo.a; sourceTree = "<group>"; };
-		F0BEBD487E6A444F8513F35F /* RNFIRMessaging.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFIRMessaging.xcodeproj; path = "../node_modules/react-native-fcm/ios/RNFIRMessaging.xcodeproj"; sourceTree = "<group>"; };
 		F9F380859EB649A197A9346B /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -427,7 +417,6 @@
 				4D489B434E4B439E6510C96F /* libPods-kenesto.a in Frameworks */,
 				9DA993CFC26F4AF8BDE19763 /* libimageCropPicker.a in Frameworks */,
 				7C74553D7D5A47EF9BDED52C /* libRNDeviceInfo.a in Frameworks */,
-				C2B4EBAA31A34557AF5EAF95 /* libRNFIRMessaging.a in Frameworks */,
 				9B2A103E79B14483866A19DB /* libRNVectorIcons.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -630,7 +619,6 @@
 				045576F03D664868B1EED6A6 /* ImageCropPicker.xcodeproj */,
 				5EDCE82336ED4C7EB70C3BAF /* RNDocumentPicker.xcodeproj */,
 				45124F71BA384838A81FFF71 /* RNDeviceInfo.xcodeproj */,
-				F0BEBD487E6A444F8513F35F /* RNFIRMessaging.xcodeproj */,
 				153499587E8A4C0F8CED101D /* RNFetchBlob.xcodeproj */,
 				F9F380859EB649A197A9346B /* RNVectorIcons.xcodeproj */,
 			);
@@ -659,6 +647,7 @@
 				9A5F9CE38202A6B086300B19 /* Pods */,
 				1CE41BBC86757F4D614F9DE6 /* Frameworks */,
 				50BD9A2B48F148AA9C646391 /* Resources */,
+				867F13412021D0D600857E79 /* Recovered References */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -714,20 +703,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8653AD0E1E6D7B3F00F8A705 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8653AD361E6D7B3F00F8A705 /* libRNFIRMessaging.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		8653AD101E6D7B3F00F8A705 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				8653AD391E6D7B3F00F8A705 /* libRNVectorIcons.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		867F13412021D0D600857E79 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				878F6DBCA88F45B6A712F4A1 /* libimageCropPicker.a */,
+				C3AE257F1D384B9CB15FE38A /* libRNDeviceInfo.a */,
+				11C68F2D572249C09E1F1BBE /* libRNVectorIcons.a */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		8683968A1E535CE7003906DD /* Products */ = {
@@ -883,6 +874,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -957,10 +949,6 @@
 				{
 					ProductGroup = 8653AD0A1E6D7B3F00F8A705 /* Products */;
 					ProjectRef = 153499587E8A4C0F8CED101D /* RNFetchBlob.xcodeproj */;
-				},
-				{
-					ProductGroup = 8653AD0E1E6D7B3F00F8A705 /* Products */;
-					ProjectRef = F0BEBD487E6A444F8513F35F /* RNFIRMessaging.xcodeproj */;
 				},
 				{
 					ProductGroup = 860716231F3AE7230049AA4C /* Products */;
@@ -1191,13 +1179,6 @@
 			remoteRef = 8653AD321E6D7B3F00F8A705 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8653AD361E6D7B3F00F8A705 /* libRNFIRMessaging.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNFIRMessaging.a;
-			remoteRef = 8653AD351E6D7B3F00F8A705 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		8653AD391E6D7B3F00F8A705 /* libRNVectorIcons.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1424,15 +1405,7 @@
 				INFOPLIST_FILE = kenestoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kenesto.app/kenesto";
 			};
@@ -1447,15 +1420,7 @@
 				INFOPLIST_FILE = kenestoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kenesto.app/kenesto";
 			};
@@ -1471,6 +1436,7 @@
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = WM39D4EQR6;
 				INFOPLIST_FILE = kenesto/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1493,6 +1459,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WM39D4EQR6;
 				INFOPLIST_FILE = kenesto/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1605,7 +1572,7 @@
 					"$(SRCROOT)/../node_modules/react-native-share-extension/ios/**",
 				);
 				INFOPLIST_FILE = KenestoShareEx/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1637,7 +1604,7 @@
 					"$(SRCROOT)/../node_modules/react-native-share-extension/ios/**",
 				);
 				INFOPLIST_FILE = KenestoShareEx/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",

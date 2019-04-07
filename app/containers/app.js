@@ -9,6 +9,7 @@ import {navigateReset,navigateJumpToKey} from '../actions/navActions'
 import ShareExtension from 'react-native-share-extension'
 import _ from 'lodash'
 
+
 const kenestoGroup = 'group.com.kenesto.KenestoWorkouts'
 class App extends React.Component {
 

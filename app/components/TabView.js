@@ -1,6 +1,6 @@
 
 import React from "react";
-import {View, ScrollView, Text, StyleSheet, AsyncStorage, ListView, Image } from "react-native";
+import {View, ScrollView, Text, StyleSheet, AsyncStorage, ListView, Image, Platform } from "react-native";
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import Button from "react-native-button";
 import LeftMenuItem from './LeftMenuItem';
@@ -27,7 +27,14 @@ const styles = StyleSheet.create({
         backgroundColor: "#F5F6F8",
         borderBottomWidth: 2,
         borderBottomColor: '#EbEbEb',
-        marginBottom: 10
+        ...Platform.select({
+                ios:{
+                    paddingTop:25
+                    },
+                android:{
+                        marginBottom: 10
+                    }
+            }),  
     },
     avatarContainer: {
         margin: 15

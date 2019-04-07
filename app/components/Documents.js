@@ -14,7 +14,8 @@ import {
   Platform,
   ActivityIndicator,
   RefreshControl,
-  Keyboard
+  Keyboard,
+  Linking
 } from 'react-native'
 import { RNSKBucket } from 'react-native-swiss-knife'
 import { emitToast, clearToast,updateIsProcessing, emitConfirm, updateRouteData,emitStickyConfirm, emitError, clearError } from '../actions/navActions'
@@ -266,7 +267,8 @@ class Documents extends Component {
           env: this.props.env,
           dispatch: this.props.dispatch
         }
-        this.props._handleNavigate(routes.documentRoute(data));
+        //this.props._handleNavigate(routes.documentRoute(data));
+         Linking.openURL(getViewerUrl(this.props.env, document, this.props.navReducer.orientation)).catch(err => console.error('An error occurred', err));
       }
 
     }

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { Platform } from "react-native"
 
-import FCM, { FCMEvent, RemoteNotificationResult, WillPresentNotificationResult, NotificationType } from "react-native-fcm";
+//import FCM, { FCMEvent, RemoteNotificationResult, WillPresentNotificationResult, NotificationType } from "react-native-fcm";
 
 import firebaseClient from "./FirebaseClient";
 
@@ -14,6 +14,7 @@ export default class PushController extends Component {
   componentDidMount() {
 
     //FCM.subscribeToTopic('/topics/scottkenestodemo.com')
+    /*
     FCM.requestPermissions();
 
     FCM.getFCMToken().then(token => {
@@ -75,6 +76,7 @@ export default class PushController extends Component {
       show_in_foreground: true,
       local: true
     });
+    */
   }
 
   componentWillUnmount() {

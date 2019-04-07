@@ -329,7 +329,7 @@ _search(text) {
     //   TouchableElement = TouchableNativeFeedback;
     // }
     return (
-      <View style={[styles.searchBoxContainer, {marginTop: (Platform.OS === 'ios')? 15 : 0}]}>
+      <View style={[styles.searchBoxContainer, {marginTop: (Platform.OS === 'ios')? 23 : 0}]}>
 
         <View>
           <Animatable.View ref="fakeHamburgerMenu" style={{ opacity: 0 }}><Icon name="menu" style={[styles.iconStyle, { color: "orange" }]} /></Animatable.View>
@@ -398,7 +398,7 @@ _search(text) {
     
     return (
        Platform.OS === 'ios' ? 
-        <View style= {[styles.toolbar,{marginTop: 15}]}>
+        <View style= {[styles.toolbar,{marginTop: 24}]}>
           <Text></Text>
           <Animatable.View style={styles.fakeTextInput} ref="fakeTextInput">
             <View><Icon name="arrow-back" style={[styles.iconStyle, { opacity: 0 }]} /></View>
@@ -413,8 +413,8 @@ _search(text) {
             <Text style={{ fontSize: 20 }} numberOfLines={1}>{title}</Text>
           </Animatable.View>
 
-          <View><Animatable.View ref="searchIcon"><Icon name="search" style={[styles.iconStyle]}  onPress={this.onPressSearchBox.bind(this) }/>
-          </Animatable.View></View>
+         {/* <View><Animatable.View ref="searchIcon"><Icon name="search" style={[styles.iconStyle]}  onPress={this.onPressSearchBox.bind(this) }/>
+          </Animatable.View></View> */}
 
           <Animatable.View ref="sorting" style={[this.props.isPopupMenuOpen ? styles.buttonsActive : styles.buttonsInactive]}>
             <View style={[styles.popupInactive, this.props.isPopupMenuOpen ? styles.popupActive : {}]}>
@@ -452,8 +452,8 @@ _search(text) {
             <Text style={{ fontSize: 20 }} numberOfLines={1}>{title}</Text>
           </Animatable.View>
 
-          <View><Animatable.View ref="searchIcon"><Icon name="search" style={[styles.iconStyle]}  onPress={this.onPressSearchBox.bind(this) }/>
-          </Animatable.View></View>
+          {/* <View><Animatable.View ref="searchIcon"><Icon name="search" style={[styles.iconStyle]}  onPress={this.onPressSearchBox.bind(this) }/>
+          </Animatable.View></View> */}
 
           <Animatable.View ref="sorting" style={[this.props.isPopupMenuOpen ? styles.buttonsActive : styles.buttonsInactive]}>
             <View style={[styles.popupInactive, this.props.isPopupMenuOpen ? styles.popupActive : {}]}>
@@ -498,7 +498,7 @@ _search(text) {
        title = navReducer.routes[navReducer.index].title
        
     return (
-      <View style= {[styles.toolbar, {marginTop: (Platform.OS === 'ios')? 15 : 0}]} >
+      <View style= {[styles.toolbar, {marginTop: (Platform.OS === 'ios')? 23: 0}]} >
          <TouchableElement onPress={(value) => this.onGoBack(1) } >
             <View>
               <Icon name="arrow-back" style={[styles.iconStyle]} />
@@ -525,7 +525,7 @@ _search(text) {
         //   TouchableElement = TouchableNativeFeedback;
         // }
     return (
-      <View style= {[styles.toolbar, {marginTop: (Platform.OS === 'ios')? 15 : 0}]} >
+      <View style= {[styles.toolbar, {marginTop: (Platform.OS === 'ios')? 23 : 0}]} >
          <TouchableElement onPress={(value) => this.onGoBack(1) } >
             <View>
               <Icon name="arrow-back" style={[styles.iconStyle]} />
@@ -550,7 +550,7 @@ renderForgotPasswordTollbar(){
     var title = "Forgot Password";
    
     return (
-      <View style= {[styles.toolbar,styles.toolbarContainer, {marginTop: (Platform.OS === 'ios')? 15 : 0}]} >
+      <View style= {[styles.toolbar,styles.toolbarContainer, {marginTop: (Platform.OS === 'ios')? 23 : 0}]} >
          <TouchableElement onPress={(value) => this.onGoBack(4) } >
             <View>
               <Icon name="arrow-back" style={[styles.iconStyle]} />
@@ -571,7 +571,7 @@ renderTermsofServiceTollbar(){
     var title = "Terms of Service";
    
     return (
-      <View style= {[styles.toolbar,styles.toolbarContainer, {marginTop: (Platform.OS === 'ios')? 15 : 0}]} >
+      <View style= {[styles.toolbar,styles.toolbarContainer, {marginTop: (Platform.OS === 'ios')? 23 : 0}]} >
          <TouchableElement onPress={(value) => this.onGoBack(4) } >
             <View>
               <Icon name="arrow-back" style={[styles.iconStyle]} />
@@ -591,7 +591,7 @@ renderSignUpTollbar(){
     // }
     var title = "Sign Up for KENESTO";
     return (
-      <View style= {[styles.toolbar, styles.toolbarContainer, {marginTop: (Platform.OS === 'ios')? 15 : 0}]} >
+      <View style= {[styles.toolbar, styles.toolbarContainer, {marginTop: (Platform.OS === 'ios')? 23 : 0}]} >
          <TouchableElement onPress={(value) => this.onGoBack(4) } >
             <View>
               <Icon name="arrow-back" style={[styles.iconStyle]} />

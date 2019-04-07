@@ -706,30 +706,30 @@
 		0363E0937FA735760CC645BC3FBCA80A /* ARTGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ARTGroup.h; sourceTree = "<group>"; };
 		03B2C7D18AFFAB9E18CA63E3F6C9F635 /* FPLocalController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FPLocalController.m; path = FPPicker/Platforms/iOS/FPLocalController.m; sourceTree = "<group>"; };
 		03D024C4456FC9535D5AC3F04BAF76E6 /* RCTParserUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTParserUtils.m; sourceTree = "<group>"; };
-		03F98103EC13BF4CFA77E958181593AE /* Instagram@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "Instagram@2x.png"; path = "Resources-Shared/Instagram@2x.png"; sourceTree = "<group>"; };
-		0452DFEAB22C4842EB453FCDAE906D35 /* FontAwesome.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = FontAwesome.ttf; sourceTree = "<group>"; };
-		048F89E85A7A96038E48D8C632B02CCF /* Instagram.png */ = {isa = PBXFileReference; includeInIndex = 1; name = Instagram.png; path = "Resources-Shared/Instagram.png"; sourceTree = "<group>"; };
+		03F98103EC13BF4CFA77E958181593AE /* Instagram@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Instagram@2x.png"; path = "Resources-Shared/Instagram@2x.png"; sourceTree = "<group>"; };
+		0452DFEAB22C4842EB453FCDAE906D35 /* FontAwesome.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		048F89E85A7A96038E48D8C632B02CCF /* Instagram.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Instagram.png; path = "Resources-Shared/Instagram.png"; sourceTree = "<group>"; };
 		04EAD2BE4573B4A7D60218A58EA19C56 /* NSData+FPHexString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+FPHexString.h"; path = "FPPicker/Shared/NSData+FPHexString.h"; sourceTree = "<group>"; };
 		04F40AB0120CEF37384EF852AA7FBA09 /* RNVectorIconsManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RNVectorIconsManager.h; sourceTree = "<group>"; };
 		053DC5BF322AD1B088D18CF96E50DAE0 /* ARTRenderableManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ARTRenderableManager.h; sourceTree = "<group>"; };
 		05D8EE245ECBC4D33737595026BAE972 /* ARTText.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ARTText.m; sourceTree = "<group>"; };
 		06261949AF112433A85AACB91C6E6A88 /* RCTModalHostViewManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTModalHostViewManager.m; sourceTree = "<group>"; };
 		063A72D9242DB6EAB17643447E8277E4 /* RCTProfile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTProfile.h; sourceTree = "<group>"; };
-		0697A42B3B2BC6EF2E0820A80C4F79CF /* SelectOverlayiOS7@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "SelectOverlayiOS7@2x.png"; path = "Resources-Shared/SelectOverlayiOS7@2x.png"; sourceTree = "<group>"; };
+		0697A42B3B2BC6EF2E0820A80C4F79CF /* SelectOverlayiOS7@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "SelectOverlayiOS7@2x.png"; path = "Resources-Shared/SelectOverlayiOS7@2x.png"; sourceTree = "<group>"; };
 		07844BBDBF56FC98AF51D65CDE15C68C /* DeviceUID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DeviceUID.h; sourceTree = "<group>"; };
 		0790E60FD22234677CDE79E6B76037EE /* RCTAutoInsetsProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTAutoInsetsProtocol.h; sourceTree = "<group>"; };
 		07A64D8F72B54D8F26BDCA7E5EE62DE4 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		07C0D702388F6932A269E1E66A91929A /* YGNodeList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YGNodeList.h; sourceTree = "<group>"; };
 		07C505D7373E67F1479F0A12FC5E97D2 /* FPAuthController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FPAuthController.m; path = FPPicker/Platforms/iOS/FPAuthController.m; sourceTree = "<group>"; };
-		0863BC3A4A44CAD95F53987BCECE3865 /* RCTModuleData.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = RCTModuleData.mm; sourceTree = "<group>"; };
-		09CD769CBF8F515D7142C25AA57ACA93 /* Foundation.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = Foundation.ttf; sourceTree = "<group>"; };
+		0863BC3A4A44CAD95F53987BCECE3865 /* RCTModuleData.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; path = RCTModuleData.mm; sourceTree = "<group>"; };
+		09CD769CBF8F515D7142C25AA57ACA93 /* Foundation.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = Foundation.ttf; sourceTree = "<group>"; };
 		09E0EA6505482E3A27A247AFE4B8DE19 /* FPSession+ConvenienceMethods.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "FPSession+ConvenienceMethods.m"; path = "FPPicker/Shared/FPSession+ConvenienceMethods.m"; sourceTree = "<group>"; };
 		0A02BA14D55C7DC433E3A3E3E6848072 /* RCTDisplayLink.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTDisplayLink.m; sourceTree = "<group>"; };
 		0A8D50884D0CF3D83CD07E8F62D849F4 /* RSKInternalUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RSKInternalUtility.h; path = RSKImageCropper/RSKInternalUtility.h; sourceTree = "<group>"; };
 		0AE57C77F11A8F41A473F7F7B7346B91 /* RCTTiming.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTTiming.m; sourceTree = "<group>"; };
-		0B04E3973C44BC0A315921885DB76DEC /* glyphicons_008_film@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "glyphicons_008_film@2x.png"; path = "Resources-Shared/glyphicons_008_film@2x.png"; sourceTree = "<group>"; };
-		0B772DD6C572DFF73A9A55262CF54013 /* RCTProfileTrampoline-arm64.S */ = {isa = PBXFileReference; includeInIndex = 1; path = "RCTProfileTrampoline-arm64.S"; sourceTree = "<group>"; };
-		0B8C6532A4A4393ACEA5C1DE72D68190 /* FPPicker.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = FPPicker.bundle; path = FPPicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B04E3973C44BC0A315921885DB76DEC /* glyphicons_008_film@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "glyphicons_008_film@2x.png"; path = "Resources-Shared/glyphicons_008_film@2x.png"; sourceTree = "<group>"; };
+		0B772DD6C572DFF73A9A55262CF54013 /* RCTProfileTrampoline-arm64.S */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.asm; path = "RCTProfileTrampoline-arm64.S"; sourceTree = "<group>"; };
+		0B8C6532A4A4393ACEA5C1DE72D68190 /* FPPicker.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FPPicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BC6C76374F88C1EA85057A1F07542FA /* RCTMultipartDataTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTMultipartDataTask.h; sourceTree = "<group>"; };
 		0C42E7781CF9F1BE67D3F47C8C150845 /* RCTActivityIndicatorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTActivityIndicatorView.m; sourceTree = "<group>"; };
 		0C44001DA87DE3B7FBF882854F1EE6A3 /* YGNodeList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YGNodeList.h; sourceTree = "<group>"; };
@@ -743,10 +743,10 @@
 		0E1E878B1A11A04A2B7030C240931BA6 /* RCTSlider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTSlider.h; sourceTree = "<group>"; };
 		0E2CB28798275E922EC4D8FC6A446300 /* RNDeviceInfo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RNDeviceInfo.xcconfig; sourceTree = "<group>"; };
 		0E7CE5070E984638EA36E5D870C9FC24 /* YGEnums.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YGEnums.h; sourceTree = "<group>"; };
-		0E8A7A8E17B5F41A5F4A3F428675D5C9 /* glyphicons_371_evernote.png */ = {isa = PBXFileReference; includeInIndex = 1; name = glyphicons_371_evernote.png; path = "Resources-Shared/glyphicons_371_evernote.png"; sourceTree = "<group>"; };
+		0E8A7A8E17B5F41A5F4A3F428675D5C9 /* glyphicons_371_evernote.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = glyphicons_371_evernote.png; path = "Resources-Shared/glyphicons_371_evernote.png"; sourceTree = "<group>"; };
 		0E8C23BBA01ADE66EFC5F0FBB88FCABB /* RCTScrollableProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTScrollableProtocol.h; sourceTree = "<group>"; };
 		0ECFE4954B7DC4B54286D56D9BC100AA /* FPMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPMacros.h; path = FPPicker/Shared/FPMacros.h; sourceTree = "<group>"; };
-		0ED6E470BC6AEC3FF4D31B680993F58E /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = en.lproj; path = "Resources-Shared/en.lproj"; sourceTree = "<group>"; };
+		0ED6E470BC6AEC3FF4D31B680993F58E /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = en.lproj; path = "Resources-Shared/en.lproj"; sourceTree = "<group>"; };
 		0F172D784828E23FCAC264A386E22223 /* ARTRenderable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ARTRenderable.h; sourceTree = "<group>"; };
 		0FE5393BD1C867709949D978B5F7ACF2 /* RCTAsyncLocalStorage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTAsyncLocalStorage.m; sourceTree = "<group>"; };
 		108820F25000006CD3533D2DD2FB63DC /* FPPicker_Resources-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "FPPicker_Resources-Info.plist"; path = "Resources-Shared/FPPicker_Resources-Info.plist"; sourceTree = "<group>"; };
@@ -754,7 +754,7 @@
 		112D0144013B43F7FB8F960B94DA2985 /* RCTDatePicker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTDatePicker.m; sourceTree = "<group>"; };
 		1163F6D372EA7AD2D1D6F32F24AB8586 /* RCTPerformanceLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTPerformanceLogger.m; sourceTree = "<group>"; };
 		11AFEDA4368D496E681A40365F069162 /* UIAlertView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+AFNetworking.m"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.m"; sourceTree = "<group>"; };
-		12028E29A0046EDD58E11EA34FA6C280 /* glyphicons_027_search.png */ = {isa = PBXFileReference; includeInIndex = 1; name = glyphicons_027_search.png; path = "Resources-Shared/glyphicons_027_search.png"; sourceTree = "<group>"; };
+		12028E29A0046EDD58E11EA34FA6C280 /* glyphicons_027_search.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = glyphicons_027_search.png; path = "Resources-Shared/glyphicons_027_search.png"; sourceTree = "<group>"; };
 		129D5D3ED35F53629F9EA46F005A517D /* RSKImageCropViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RSKImageCropViewController.m; path = RSKImageCropper/RSKImageCropViewController.m; sourceTree = "<group>"; };
 		12D1358BEC0D36D7395C853D72920187 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
 		133B1E359417A56048E7C27A3707A345 /* RCTUIManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTUIManager.h; sourceTree = "<group>"; };
@@ -763,10 +763,10 @@
 		15342C25AFCEEE488093534E859207CC /* UIAlertView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+AFNetworking.h"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.h"; sourceTree = "<group>"; };
 		154E360AEF525FEDA86B3A385B335AAB /* RCTActivityIndicatorViewManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTActivityIndicatorViewManager.m; sourceTree = "<group>"; };
 		15A206D2273CAEF1E6285A82A8EE984B /* GoogleToolboxForMac-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-prefix.pch"; sourceTree = "<group>"; };
-		16047C175C4EC0E7EC95941B4FD62BED /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
+		16047C175C4EC0E7EC95941B4FD62BED /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
 		165D8A84F12FE33A275FEDBACCA1727E /* RCTTouchHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTTouchHandler.m; sourceTree = "<group>"; };
-		16DAC1753AF9721310C9CCA23D47F929 /* glyphicons_sb3_skydrive@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "glyphicons_sb3_skydrive@2x.png"; path = "Resources-Shared/glyphicons_sb3_skydrive@2x.png"; sourceTree = "<group>"; };
-		188B5EBEBD58305596239BBDC8BAA474 /* glyphicons_395_flickr@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "glyphicons_395_flickr@2x.png"; path = "Resources-Shared/glyphicons_395_flickr@2x.png"; sourceTree = "<group>"; };
+		16DAC1753AF9721310C9CCA23D47F929 /* glyphicons_sb3_skydrive@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "glyphicons_sb3_skydrive@2x.png"; path = "Resources-Shared/glyphicons_sb3_skydrive@2x.png"; sourceTree = "<group>"; };
+		188B5EBEBD58305596239BBDC8BAA474 /* glyphicons_395_flickr@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "glyphicons_395_flickr@2x.png"; path = "Resources-Shared/glyphicons_395_flickr@2x.png"; sourceTree = "<group>"; };
 		189497B395D639AE2E640865C0622190 /* RCTRefreshControlManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTRefreshControlManager.m; sourceTree = "<group>"; };
 		19AD969BE1AF1396FE1B92EDF5666524 /* RCTConvert+CoreLocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RCTConvert+CoreLocation.m"; sourceTree = "<group>"; };
 		1A2E449F6C8561B46040CDF3D51B27CB /* RCTNavigator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTNavigator.h; sourceTree = "<group>"; };
@@ -782,9 +782,9 @@
 		1C47E79CE84845D214B15A70F475AEBC /* FPInfoViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPInfoViewController.h; path = FPPicker/Platforms/iOS/FPInfoViewController.h; sourceTree = "<group>"; };
 		1C93FF19323CD98FAC9AA1BC4D8A1492 /* FPMediaInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FPMediaInfo.m; path = FPPicker/Shared/FPMediaInfo.m; sourceTree = "<group>"; };
 		1D47FFA815BC7DD0A5489A67707AD53C /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
-		1D4F9A30518062BEFFB996869DA9335E /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libRNVectorIcons.a; path = libRNVectorIcons.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D4F9A30518062BEFFB996869DA9335E /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNVectorIcons.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D89069326C3879C70FD8330ABDBD6B6 /* FPUploader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FPUploader.m; path = FPPicker/Shared/FPUploader.m; sourceTree = "<group>"; };
-		1D9269E4FF7D987CFC50A6385D0BF047 /* MaterialIcons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = MaterialIcons.ttf; sourceTree = "<group>"; };
+		1D9269E4FF7D987CFC50A6385D0BF047 /* MaterialIcons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
 		1E05E8C8303A7EF7505D535DDEAFC415 /* RCTEventEmitter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTEventEmitter.m; sourceTree = "<group>"; };
 		1E14CEE6E12310DA63D9B78DA1C80A02 /* QBVideoIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QBVideoIndicatorView.h; path = QBImagePicker/QBVideoIndicatorView.h; sourceTree = "<group>"; };
 		1E8CBCC3DC7059E8F5C1905152F5FF09 /* RCTInvalidating.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTInvalidating.h; sourceTree = "<group>"; };
@@ -795,7 +795,7 @@
 		20672C5DE58F11E77F83F8C290A859AA /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
 		20BCD33F3A8317DD28C2CB6C96B4AAF5 /* FPSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FPSource.m; path = FPPicker/Shared/FPSource.m; sourceTree = "<group>"; };
 		20F4A2C63FFAC58BC5C3B08BA4DB74E6 /* GTMDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
-		21211F8EECFD6A59524745E5AEE72775 /* RCTProfileTrampoline-x86_64.S */ = {isa = PBXFileReference; includeInIndex = 1; path = "RCTProfileTrampoline-x86_64.S"; sourceTree = "<group>"; };
+		21211F8EECFD6A59524745E5AEE72775 /* RCTProfileTrampoline-x86_64.S */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.asm; path = "RCTProfileTrampoline-x86_64.S"; sourceTree = "<group>"; };
 		21C96D8BB85D3091304A18F4D089C1ED /* FPThumbCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPThumbCell.h; path = FPPicker/Platforms/iOS/FPThumbCell.h; sourceTree = "<group>"; };
 		21DC54779A798859B1978C9C60A4BBD4 /* MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
 		22386B72BECF0BEC6598B4197EC3CC36 /* RCTParserUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTParserUtils.h; sourceTree = "<group>"; };
@@ -805,34 +805,34 @@
 		22D2F743784E6676698CE90D15EB0F64 /* RSKTouchView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RSKTouchView.m; path = RSKImageCropper/RSKTouchView.m; sourceTree = "<group>"; };
 		22EDEF52DB43921A251D9FD724B4AFC8 /* Pods-kenesto-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-kenesto-dummy.m"; sourceTree = "<group>"; };
 		2332725067FC8499E52B191550B7A0E7 /* QBAssetsViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QBAssetsViewController.h; path = QBImagePicker/QBAssetsViewController.h; sourceTree = "<group>"; };
-		24A913AB8F59E4A072DFBBCC940011F5 /* glyphicons_sb2_box.png */ = {isa = PBXFileReference; includeInIndex = 1; name = glyphicons_sb2_box.png; path = "Resources-Shared/glyphicons_sb2_box.png"; sourceTree = "<group>"; };
+		24A913AB8F59E4A072DFBBCC940011F5 /* glyphicons_sb2_box.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = glyphicons_sb2_box.png; path = "Resources-Shared/glyphicons_sb2_box.png"; sourceTree = "<group>"; };
 		25C1E80D5DE8B67815E0CD8DAB535741 /* FPUtils+iOS.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "FPUtils+iOS.m"; path = "FPPicker/Platforms/iOS/FPUtils+iOS.m"; sourceTree = "<group>"; };
 		27C3D8F8C254D1A3B30E2E8D11D7D761 /* RCTMapOverlay.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTMapOverlay.h; sourceTree = "<group>"; };
 		281EBBA21F48BD19520DDD27162C6A2C /* RCTURLRequestHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTURLRequestHandler.h; sourceTree = "<group>"; };
 		283DA3B53B2CDDDCD2D07D98E05C70C7 /* FPMediaInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPMediaInfo.h; path = FPPicker/Shared/FPMediaInfo.h; sourceTree = "<group>"; };
 		288F1FEA454A2B1A6AC707E4AFF65599 /* RSKTouchView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RSKTouchView.h; path = RSKImageCropper/RSKTouchView.h; sourceTree = "<group>"; };
-		2892F223A599DCFB4EBE0C8EEBADF1EA /* logo_small@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "logo_small@2x.png"; path = "Resources-Shared/logo_small@2x.png"; sourceTree = "<group>"; };
+		2892F223A599DCFB4EBE0C8EEBADF1EA /* logo_small@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "logo_small@2x.png"; path = "Resources-Shared/logo_small@2x.png"; sourceTree = "<group>"; };
 		2897260471E3A3E3B2D5B0927E1E9E61 /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		294E6451932D6CEC77A42AB12DE38580 /* RCTTabBarManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTTabBarManager.m; sourceTree = "<group>"; };
-		2955663D37A1CF6044E15857A1966E4E /* libreact-native-fetch-blob.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libreact-native-fetch-blob.a"; path = "libreact-native-fetch-blob.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2955663D37A1CF6044E15857A1966E4E /* libreact-native-fetch-blob.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libreact-native-fetch-blob.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29D20FE404545374AC05C454451A30B2 /* RCTNavItemManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTNavItemManager.h; sourceTree = "<group>"; };
 		2A0568D39811AF29D7A1B3790081854B /* RCTRootShadowView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTRootShadowView.m; sourceTree = "<group>"; };
 		2AD801CFCCDFB29B6EEBE86AF0F4845F /* GTMNSData+zlib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSData+zlib.h"; path = "Foundation/GTMNSData+zlib.h"; sourceTree = "<group>"; };
 		2C243662ABFB856C7FB6F220C49C63B9 /* JSCSamplingProfiler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JSCSamplingProfiler.h; sourceTree = "<group>"; };
-		2C9978E4664CA0252BE47B5653742D08 /* Octicons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = Octicons.ttf; sourceTree = "<group>"; };
+		2C9978E4664CA0252BE47B5653742D08 /* Octicons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
 		2CA6EEB2D65B83E693156D52CB05774B /* RCTBridge.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTBridge.m; sourceTree = "<group>"; };
 		2CBBFC48CC160F80713365DB8849F9E2 /* UIImage+RSKImageCropper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+RSKImageCropper.h"; path = "RSKImageCropper/UIImage+RSKImageCropper.h"; sourceTree = "<group>"; };
 		2CD01C43310B6ED1BDA79ACE694B2823 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
-		2CECD8671D21D07531F299AE24FFF9C9 /* JSCWrapper.cpp */ = {isa = PBXFileReference; includeInIndex = 1; path = JSCWrapper.cpp; sourceTree = "<group>"; };
+		2CECD8671D21D07531F299AE24FFF9C9 /* JSCWrapper.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; path = JSCWrapper.cpp; sourceTree = "<group>"; };
 		2DBD7320F473EAB711631AA9E7DFF101 /* RCTFont.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTFont.h; sourceTree = "<group>"; };
 		2DD96148EAD175A3FD7E75FCD7D0AEC9 /* FPPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FPPicker-dummy.m"; sourceTree = "<group>"; };
 		2DF131407DDBF96B07F3A1691D6751ED /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperationManager.h; path = AFNetworking/AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
 		2E9A748759F0859C708C2F0307533B08 /* RCTAlertManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTAlertManager.h; sourceTree = "<group>"; };
 		2EB15B33FB543463D60F557825A3CDE7 /* RCTMapAnnotation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTMapAnnotation.m; sourceTree = "<group>"; };
-		2EE4CEE2DD21D1602D4395C4FAF7D9CB /* Yoga.c */ = {isa = PBXFileReference; includeInIndex = 1; path = Yoga.c; sourceTree = "<group>"; };
-		2F87DF6B19C4C37C641C33B3AB507B20 /* Zocial.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = Zocial.ttf; sourceTree = "<group>"; };
+		2EE4CEE2DD21D1602D4395C4FAF7D9CB /* Yoga.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = Yoga.c; sourceTree = "<group>"; };
+		2F87DF6B19C4C37C641C33B3AB507B20 /* Zocial.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = Zocial.ttf; sourceTree = "<group>"; };
 		2FA61FE12E55D256EDBF637240512361 /* ARTTextFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ARTTextFrame.h; sourceTree = "<group>"; };
-		306E3D5583F49CE09938D1D78E7D504D /* RCTJavaScriptLoader.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = RCTJavaScriptLoader.mm; sourceTree = "<group>"; };
+		306E3D5583F49CE09938D1D78E7D504D /* RCTJavaScriptLoader.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; path = RCTJavaScriptLoader.mm; sourceTree = "<group>"; };
 		30C9B65040F7B51DC0EF88B53512FC41 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		3239164D8D396DD2A50140A16BE5B5FB /* RCTScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTScrollView.h; sourceTree = "<group>"; };
 		33B78B12BB6B42D798D53B2D2C414C12 /* RCTDisplayLink.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTDisplayLink.h; sourceTree = "<group>"; };
@@ -846,13 +846,13 @@
 		374A59B79ED165BB9ED5AA13E3F8E700 /* RNFetchBlob.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RNFetchBlob.h; sourceTree = "<group>"; };
 		37B38E55B87784CF81B27579F13A5516 /* RCTViewManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTViewManager.h; sourceTree = "<group>"; };
 		37E90BCB6400A4BD4769DF3B61E057E2 /* RCTRootView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTRootView.h; sourceTree = "<group>"; };
-		38844ADD4B17A1C71E1E1103659D084B /* zh-Hans.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "zh-Hans.lproj"; path = "QBImagePicker/zh-Hans.lproj"; sourceTree = "<group>"; };
+		38844ADD4B17A1C71E1E1103659D084B /* zh-Hans.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = "zh-Hans.lproj"; path = "QBImagePicker/zh-Hans.lproj"; sourceTree = "<group>"; };
 		3893522113E229265B275193A13212BB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		39596A883EF53F9B1AA9115352D80F51 /* Pods-kenesto-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-kenesto-frameworks.sh"; sourceTree = "<group>"; };
 		3964673800549249D87CEC7C49D1FCE4 /* RCTURLRequestDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTURLRequestDelegate.h; sourceTree = "<group>"; };
-		3999032091C6A2290E4D203080E816E6 /* glyphicons_180_facetime_video@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "glyphicons_180_facetime_video@2x.png"; path = "Resources-Shared/glyphicons_180_facetime_video@2x.png"; sourceTree = "<group>"; };
+		3999032091C6A2290E4D203080E816E6 /* glyphicons_180_facetime_video@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "glyphicons_180_facetime_video@2x.png"; path = "Resources-Shared/glyphicons_180_facetime_video@2x.png"; sourceTree = "<group>"; };
 		39B64959E3D5A8BB4C0F742AC27ECE58 /* Orientation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Orientation.h; sourceTree = "<group>"; };
-		3A189E4D5EDB145157CF35D1FF8FF319 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
+		3A189E4D5EDB145157CF35D1FF8FF319 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		3A594704B6ACAD207E3AE01EEC6D31B2 /* CGGeometry+RSKImageCropper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CGGeometry+RSKImageCropper.m"; path = "RSKImageCropper/CGGeometry+RSKImageCropper.m"; sourceTree = "<group>"; };
 		3B128A9478B1ECF8A18FA7F9AD43BB55 /* UIView+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+Private.h"; sourceTree = "<group>"; };
 		3B46F5FA71216A985A38CB41DEB01116 /* FPSaveController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FPSaveController.m; path = FPPicker/Platforms/iOS/FPSaveController.m; sourceTree = "<group>"; };
@@ -866,7 +866,7 @@
 		406CB2B46C9E860A493061D321D03CEC /* RCTBridge+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RCTBridge+Private.h"; sourceTree = "<group>"; };
 		4151A64D7F79EFBECB727876FB15CD29 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Sources/FIRInstanceID.h; sourceTree = "<group>"; };
 		42282670D7C050D2003D91D4A1A80B1B /* RNFetchBlobReqBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RNFetchBlobReqBuilder.h; sourceTree = "<group>"; };
-		4260F23C56AAA8D548216F4273D2D751 /* Entypo.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = Entypo.ttf; sourceTree = "<group>"; };
+		4260F23C56AAA8D548216F4273D2D751 /* Entypo.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
 		42F96A5475FE87D7627970EEBA2A4531 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		43C2A1A235FA332CBDD55C35A054B234 /* RCTActivityIndicatorViewManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTActivityIndicatorViewManager.h; sourceTree = "<group>"; };
 		44CE68E29E07F24DAF853CEDAE9DD82D /* JSCWrapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JSCWrapper.h; sourceTree = "<group>"; };
@@ -874,18 +874,18 @@
 		458DA630CEDEAA3CD3867DF901B4E22E /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLConnectionOperation.m; path = AFNetworking/AFURLConnectionOperation.m; sourceTree = "<group>"; };
 		45A4FA60ED03C9E203C5B7C27212AE86 /* RNDeviceInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RNDeviceInfo.m; sourceTree = "<group>"; };
 		45B51F7D2960EE463F1FE4AD3B8DDE76 /* RCTModalHostViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTModalHostViewController.m; sourceTree = "<group>"; };
-		45E57B0AD14038FD32AE623D62ACDCF2 /* RCTProfileTrampoline-arm.S */ = {isa = PBXFileReference; includeInIndex = 1; path = "RCTProfileTrampoline-arm.S"; sourceTree = "<group>"; };
-		468AC5AF51B0E1DB67AF8DDA53C4FE23 /* glyphicons_154_show_big_thumbnails.png */ = {isa = PBXFileReference; includeInIndex = 1; name = glyphicons_154_show_big_thumbnails.png; path = "Resources-Shared/glyphicons_154_show_big_thumbnails.png"; sourceTree = "<group>"; };
+		45E57B0AD14038FD32AE623D62ACDCF2 /* RCTProfileTrampoline-arm.S */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.asm; path = "RCTProfileTrampoline-arm.S"; sourceTree = "<group>"; };
+		468AC5AF51B0E1DB67AF8DDA53C4FE23 /* glyphicons_154_show_big_thumbnails.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = glyphicons_154_show_big_thumbnails.png; path = "Resources-Shared/glyphicons_154_show_big_thumbnails.png"; sourceTree = "<group>"; };
 		46F0F23CF5B77502B79934250F7A9F43 /* RNFetchBlobConst.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RNFetchBlobConst.m; sourceTree = "<group>"; };
 		4798B560480585FEA42DFBF814D89880 /* RCTFrameUpdate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTFrameUpdate.h; sourceTree = "<group>"; };
-		48418D9152C057274CDDBED369A4845D /* logo_small.png */ = {isa = PBXFileReference; includeInIndex = 1; name = logo_small.png; path = "Resources-Shared/logo_small.png"; sourceTree = "<group>"; };
-		48F091868365BBAE5FD7FDD8650F545A /* glyphicons_036_file@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "glyphicons_036_file@2x.png"; path = "Resources-Shared/glyphicons_036_file@2x.png"; sourceTree = "<group>"; };
-		48F2A58501AF2F8F6FD63DA4D36FB0AF /* RCTFont.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = RCTFont.mm; sourceTree = "<group>"; };
+		48418D9152C057274CDDBED369A4845D /* logo_small.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = logo_small.png; path = "Resources-Shared/logo_small.png"; sourceTree = "<group>"; };
+		48F091868365BBAE5FD7FDD8650F545A /* glyphicons_036_file@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "glyphicons_036_file@2x.png"; path = "Resources-Shared/glyphicons_036_file@2x.png"; sourceTree = "<group>"; };
+		48F2A58501AF2F8F6FD63DA4D36FB0AF /* RCTFont.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; path = RCTFont.mm; sourceTree = "<group>"; };
 		499F601722FDDCD4162E8FEB560FCD3D /* RCTRedBox.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTRedBox.h; sourceTree = "<group>"; };
 		4A81F04BA4085B365AD6F45542D5D933 /* RNFetchBlobConst.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RNFetchBlobConst.h; sourceTree = "<group>"; };
 		4AD25CE726BF3409DAB807DE48A0C1B3 /* RCTPicker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTPicker.m; sourceTree = "<group>"; };
-		4B2D39092FEF6BCDB8EEA2AB804A2D62 /* glyphicons_381_github.png */ = {isa = PBXFileReference; includeInIndex = 1; name = glyphicons_381_github.png; path = "Resources-Shared/glyphicons_381_github.png"; sourceTree = "<group>"; };
-		4B3C029AD3F5ABD83176F32ED3A499F9 /* RCTJSCExecutor.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = RCTJSCExecutor.mm; sourceTree = "<group>"; };
+		4B2D39092FEF6BCDB8EEA2AB804A2D62 /* glyphicons_381_github.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = glyphicons_381_github.png; path = "Resources-Shared/glyphicons_381_github.png"; sourceTree = "<group>"; };
+		4B3C029AD3F5ABD83176F32ED3A499F9 /* RCTJSCExecutor.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; path = RCTJSCExecutor.mm; sourceTree = "<group>"; };
 		4B540993B006F0480953D155CEEDA95F /* RCTModuleMethod.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTModuleMethod.m; sourceTree = "<group>"; };
 		4B7F053DBAD8BF56D23C4714CBAFBB0D /* FPTableWithUploadButtonViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPTableWithUploadButtonViewController.h; path = FPPicker/Platforms/iOS/FPTableWithUploadButtonViewController.h; sourceTree = "<group>"; };
 		4BC03F535B5C411E3C8CC3FFD4599D86 /* RCTI18nUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTI18nUtil.m; sourceTree = "<group>"; };
@@ -897,9 +897,9 @@
 		4F71D7B73FC53C9EECAD77743965FC4E /* RCTFPSGraph.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTFPSGraph.m; sourceTree = "<group>"; };
 		50B8A185B1B42FE32897C4E6B7DA3814 /* RCTDevLoadingView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTDevLoadingView.h; sourceTree = "<group>"; };
 		50C35ECC1A27B42758B904A8DEE3420B /* RSKImageCropperStrings.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = RSKImageCropperStrings.bundle; path = RSKImageCropper/RSKImageCropperStrings.bundle; sourceTree = "<group>"; };
-		51BB988A0E4F74C09D258790D5DBF808 /* glyphicons_366_picasa@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "glyphicons_366_picasa@2x.png"; path = "Resources-Shared/glyphicons_366_picasa@2x.png"; sourceTree = "<group>"; };
+		51BB988A0E4F74C09D258790D5DBF808 /* glyphicons_366_picasa@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "glyphicons_366_picasa@2x.png"; path = "Resources-Shared/glyphicons_366_picasa@2x.png"; sourceTree = "<group>"; };
 		51DA8B542FA98126F4D6B2015540F803 /* ARTNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ARTNode.m; sourceTree = "<group>"; };
-		530D262713B76CE1F83CD28D32648A3E /* RCTLog.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = RCTLog.mm; sourceTree = "<group>"; };
+		530D262713B76CE1F83CD28D32648A3E /* RCTLog.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; path = RCTLog.mm; sourceTree = "<group>"; };
 		534BD282F4BA375E090BEAF3C915AD93 /* RCTImageSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTImageSource.m; sourceTree = "<group>"; };
 		544B4F7EA985DB588ADCD90C881D4CD1 /* FPUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FPUtils.m; path = FPPicker/Shared/FPUtils.m; sourceTree = "<group>"; };
 		54A24E8918760BA2D3D4B35D45D22458 /* ARTShapeManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ARTShapeManager.h; sourceTree = "<group>"; };
@@ -911,22 +911,22 @@
 		58CDAED46293CD1A60A1F6F2B6681345 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperation.m; path = AFNetworking/AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		59249B407665B749A9A2D40D30D6B8F2 /* ARTTextManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ARTTextManager.m; sourceTree = "<group>"; };
 		5A15E409DE5CD8194733FB0624C2ABB7 /* Yoga.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Yoga.h; sourceTree = "<group>"; };
-		5A55A510EDA6ECDAB66785245044E503 /* libQBImagePickerController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libQBImagePickerController.a; path = libQBImagePickerController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A55A510EDA6ECDAB66785245044E503 /* libQBImagePickerController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libQBImagePickerController.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A5A6537BC53C68072969855003C8239 /* CGGeometry+RSKImageCropper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CGGeometry+RSKImageCropper.h"; path = "RSKImageCropper/CGGeometry+RSKImageCropper.h"; sourceTree = "<group>"; };
 		5A78D8A9BC0DE395336F4C0139B91693 /* RCTAlertManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTAlertManager.m; sourceTree = "<group>"; };
-		5A953C65440EF4E1776A6C72F058E637 /* glyphicons_011_camera.png */ = {isa = PBXFileReference; includeInIndex = 1; name = glyphicons_011_camera.png; path = "Resources-Shared/glyphicons_011_camera.png"; sourceTree = "<group>"; };
-		5B583417D889F317DE0381ABDE612D75 /* glyphicons_399_e-mail@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "glyphicons_399_e-mail@2x.png"; path = "Resources-Shared/glyphicons_399_e-mail@2x.png"; sourceTree = "<group>"; };
+		5A953C65440EF4E1776A6C72F058E637 /* glyphicons_011_camera.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = glyphicons_011_camera.png; path = "Resources-Shared/glyphicons_011_camera.png"; sourceTree = "<group>"; };
+		5B583417D889F317DE0381ABDE612D75 /* glyphicons_399_e-mail@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "glyphicons_399_e-mail@2x.png"; path = "Resources-Shared/glyphicons_399_e-mail@2x.png"; sourceTree = "<group>"; };
 		5BE3F7FA7F427DC115DA8BBD44384809 /* RCTScrollViewManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTScrollViewManager.h; sourceTree = "<group>"; };
 		5C873FDDD0A7769D8841B50BF68C3EF3 /* JSCSamplingProfiler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JSCSamplingProfiler.m; sourceTree = "<group>"; };
 		5CB55DFC717EE90F0ED5D2DE400FE434 /* RCTErrorCustomizer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTErrorCustomizer.h; sourceTree = "<group>"; };
 		5CF30374BC92CACB6A588F51D74D52BD /* FPExternalHeaders.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPExternalHeaders.h; path = FPPicker/Shared/FPExternalHeaders.h; sourceTree = "<group>"; };
 		5DA7B4C1FD08C28FAAB7030EAA521CED /* RCTAssert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTAssert.h; sourceTree = "<group>"; };
-		5E4E6200DF5275F4E1AB889A3AD444B4 /* libMBProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMBProgressHUD.a; path = libMBProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E4E6200DF5275F4E1AB889A3AD444B4 /* libMBProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMBProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E5C38E1A0767F7B1A4DA5AE4716E439 /* RCTConvert+ART.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RCTConvert+ART.m"; sourceTree = "<group>"; };
-		5E9DDB05C85BA938E17668BF0D06FF9A /* Ionicons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = Ionicons.ttf; sourceTree = "<group>"; };
+		5E9DDB05C85BA938E17668BF0D06FF9A /* Ionicons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
 		5EDB252C72EC9E414214752E8E766570 /* ARTRadialGradient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ARTRadialGradient.h; sourceTree = "<group>"; };
 		5EE150EB3A6D53A7369294F1030B9862 /* FPPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FPPicker-prefix.pch"; sourceTree = "<group>"; };
-		5F82A339F42E25C784AAB20E83B4691F /* glyphicons_144_folder_open@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "glyphicons_144_folder_open@2x.png"; path = "Resources-Shared/glyphicons_144_folder_open@2x.png"; sourceTree = "<group>"; };
+		5F82A339F42E25C784AAB20E83B4691F /* glyphicons_144_folder_open@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "glyphicons_144_folder_open@2x.png"; path = "Resources-Shared/glyphicons_144_folder_open@2x.png"; sourceTree = "<group>"; };
 		604BCB88D446A431F0EAB4EB6AF19FB0 /* FPSourceController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FPSourceController.m; path = FPPicker/Platforms/iOS/FPSourceController.m; sourceTree = "<group>"; };
 		61D07AC55233AA54CE94305E33A8E479 /* RCTRootViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTRootViewDelegate.h; sourceTree = "<group>"; };
 		62CBBE482C2E699FB86ADA45F3C062AF /* RSKImageCropper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RSKImageCropper-dummy.m"; sourceTree = "<group>"; };
@@ -947,7 +947,7 @@
 		6A04C23F43BB988012F5A09DE5140B66 /* React-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "React-prefix.pch"; sourceTree = "<group>"; };
 		6B07397097B47CB21E8DDA8DDD6AF59E /* ARTCGFloatArray.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ARTCGFloatArray.h; sourceTree = "<group>"; };
 		6BCC03C5E10B154F3CFB89CD8612F2C9 /* RNDeviceInfo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RNDeviceInfo-dummy.m"; sourceTree = "<group>"; };
-		6C4057AB4D7615C1423F9D983C334F2B /* CloudDrive.png */ = {isa = PBXFileReference; includeInIndex = 1; name = CloudDrive.png; path = "Resources-Shared/CloudDrive.png"; sourceTree = "<group>"; };
+		6C4057AB4D7615C1423F9D983C334F2B /* CloudDrive.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = CloudDrive.png; path = "Resources-Shared/CloudDrive.png"; sourceTree = "<group>"; };
 		6CFA4C4D5BCB14551D9EF3995258E5F9 /* RCTTabBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTTabBar.m; sourceTree = "<group>"; };
 		6D47D181EA6E926C07A0FD88B647AFF8 /* RCTDatePicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTDatePicker.h; sourceTree = "<group>"; };
 		6D560D2D87EF93BCE56800923F51382A /* FPLibrary.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FPLibrary.m; path = FPPicker/Shared/FPLibrary.m; sourceTree = "<group>"; };
@@ -955,8 +955,8 @@
 		6D8B26C88114159780078AE17987CF67 /* RSKImageCropper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RSKImageCropper-prefix.pch"; sourceTree = "<group>"; };
 		6F31C45D45510CCF7AF5027E9DB6CE70 /* RCTReloadCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTReloadCommand.h; sourceTree = "<group>"; };
 		6FADB90352732B5A951C7833EB1DE15A /* RCTBorderDrawing.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTBorderDrawing.m; sourceTree = "<group>"; };
-		7093BEE07B5D0992D18678DFAED40F8B /* placeholder.png */ = {isa = PBXFileReference; includeInIndex = 1; name = placeholder.png; path = "Resources-Shared/placeholder.png"; sourceTree = "<group>"; };
-		70AD7F0F4C14FA17D5973D7323F60C31 /* libRNDeviceInfo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libRNDeviceInfo.a; path = libRNDeviceInfo.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7093BEE07B5D0992D18678DFAED40F8B /* placeholder.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = placeholder.png; path = "Resources-Shared/placeholder.png"; sourceTree = "<group>"; };
+		70AD7F0F4C14FA17D5973D7323F60C31 /* libRNDeviceInfo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNDeviceInfo.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		70EFECC4AF42A3A6C01FC76A8ADD3F96 /* RCTComponentData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTComponentData.h; sourceTree = "<group>"; };
 		7149464B506CF4013DC6A90FECD9AE9D /* FPConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FPConstants.m; path = FPPicker/Shared/FPConstants.m; sourceTree = "<group>"; };
 		719268F925CAF0394EFFAB7920D3A6D2 /* ARTNodeManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ARTNodeManager.m; sourceTree = "<group>"; };
@@ -965,7 +965,7 @@
 		725B123DB947183139883E7611496ACB /* ARTGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ARTGroup.m; sourceTree = "<group>"; };
 		72B5673645FC46B3813FCBB21ECBB0EA /* RCTSwitchManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTSwitchManager.m; sourceTree = "<group>"; };
 		7322E2500645F92272E400921172D2A7 /* RCTPicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTPicker.h; sourceTree = "<group>"; };
-		7328381F7074B5F599E6A79B3365C696 /* RCTProfileTrampoline-i386.S */ = {isa = PBXFileReference; includeInIndex = 1; path = "RCTProfileTrampoline-i386.S"; sourceTree = "<group>"; };
+		7328381F7074B5F599E6A79B3365C696 /* RCTProfileTrampoline-i386.S */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.asm; path = "RCTProfileTrampoline-i386.S"; sourceTree = "<group>"; };
 		73421E95B0771D504CF210830AFE8F1A /* react-native-orientation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "react-native-orientation-dummy.m"; sourceTree = "<group>"; };
 		73D74B97FD9BE74F1B9F9149396FCA45 /* FPAPIClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FPAPIClient.m; path = FPPicker/Shared/FPAPIClient.m; sourceTree = "<group>"; };
 		742D5C9D13F11F76C69889A1F083C437 /* RCTMap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTMap.h; sourceTree = "<group>"; };
@@ -973,7 +973,7 @@
 		753E18D40838F9949EF818B5720CA72D /* FPPrivateConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPPrivateConfig.h; path = FPPicker/Shared/FPPrivateConfig.h; sourceTree = "<group>"; };
 		75A0B09C0D9808BA3C74803478D06209 /* RCTKeyCommands.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTKeyCommands.m; sourceTree = "<group>"; };
 		75AB389BCC1BED6ABF11134FC3FEA3F2 /* QBImagePickerController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QBImagePickerController-prefix.pch"; sourceTree = "<group>"; };
-		75C0CEDC29D689118CBCFDB8395110AB /* SelectOverlayiOS7.png */ = {isa = PBXFileReference; includeInIndex = 1; name = SelectOverlayiOS7.png; path = "Resources-Shared/SelectOverlayiOS7.png"; sourceTree = "<group>"; };
+		75C0CEDC29D689118CBCFDB8395110AB /* SelectOverlayiOS7.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = SelectOverlayiOS7.png; path = "Resources-Shared/SelectOverlayiOS7.png"; sourceTree = "<group>"; };
 		760F397564F4CDFDBA06A72307FCEF17 /* FPSourceController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPSourceController.h; path = FPPicker/Platforms/iOS/FPSourceController.h; sourceTree = "<group>"; };
 		7621B19202170FEDD92FB2D79DCCD16C /* FPSharedInternalHeaders.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPSharedInternalHeaders.h; path = FPPicker/Shared/FPSharedInternalHeaders.h; sourceTree = "<group>"; };
 		763AE87423FD2C8A6F8073DC62692395 /* RCTConvert+MapKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RCTConvert+MapKit.h"; sourceTree = "<group>"; };
@@ -987,15 +987,15 @@
 		77B7C7C9FE2829A72A7E8B7946332ABD /* ARTSurfaceView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ARTSurfaceView.h; sourceTree = "<group>"; };
 		788D69153D8304262545273681A4B898 /* oss-compat-util.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "oss-compat-util.h"; sourceTree = "<group>"; };
 		7911B34D0729C99A370F71D13B854359 /* ARTPattern.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ARTPattern.m; sourceTree = "<group>"; };
-		795BCDAD243FA6A349FC47DF1CFE2C76 /* EvilIcons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = EvilIcons.ttf; sourceTree = "<group>"; };
+		795BCDAD243FA6A349FC47DF1CFE2C76 /* EvilIcons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
 		7980993F01BEF890D6885631778ACF51 /* FPInfoViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FPInfoViewController.m; path = FPPicker/Platforms/iOS/FPInfoViewController.m; sourceTree = "<group>"; };
 		799676DB8DA0204A3EF4869BDCA4F290 /* RCTMultipartStreamReader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTMultipartStreamReader.m; sourceTree = "<group>"; };
 		7A117AB509AFF247F0121F4056135788 /* QBAlbumsViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QBAlbumsViewController.m; path = QBImagePicker/QBAlbumsViewController.m; sourceTree = "<group>"; };
 		7A8C52F1E55986E52D65693846AA579E /* ResourceBundle-QBImagePicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-QBImagePicker-Info.plist"; sourceTree = "<group>"; };
-		7AB8CD0D8A3B6CD5E133AB0567198904 /* YGNodeList.c */ = {isa = PBXFileReference; includeInIndex = 1; path = YGNodeList.c; sourceTree = "<group>"; };
+		7AB8CD0D8A3B6CD5E133AB0567198904 /* YGNodeList.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = YGNodeList.c; sourceTree = "<group>"; };
 		7ADC54771BA32E2A68F03620B0992055 /* RCTWebSocketObserverProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTWebSocketObserverProtocol.h; sourceTree = "<group>"; };
 		7BB11639AD42BECD2D98C4C21FFC1339 /* RCTSliderManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTSliderManager.h; sourceTree = "<group>"; };
-		7CF4277BA4B8DD900AE24E21FAE31F5A /* select@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "select@2x.png"; path = "Resources-Shared/select@2x.png"; sourceTree = "<group>"; };
+		7CF4277BA4B8DD900AE24E21FAE31F5A /* select@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "select@2x.png"; path = "Resources-Shared/select@2x.png"; sourceTree = "<group>"; };
 		7CF6483B47C7A0891A2E55D7D08795B5 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
 		7D58FE214B20C1FCD0B332914500FA61 /* RCTAssert.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTAssert.m; sourceTree = "<group>"; };
 		7E093990C7153A9791469A05D1176D3C /* UIApplication+RSKImageCropper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIApplication+RSKImageCropper.h"; path = "RSKImageCropper/UIApplication+RSKImageCropper.h"; sourceTree = "<group>"; };
@@ -1004,24 +1004,24 @@
 		7FE9D6F820F246AB4636A78E7A7F3E12 /* RNFetchBlobProgress.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RNFetchBlobProgress.h; sourceTree = "<group>"; };
 		803BFA068AAAC6759A75C73020034AD7 /* FPSource+SupportedSources.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "FPSource+SupportedSources.m"; path = "FPPicker/Shared/FPSource+SupportedSources.m"; sourceTree = "<group>"; };
 		803F301E15CB7A88E6BF9C0F0E95305E /* GTMLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTMLogger.m; path = Foundation/GTMLogger.m; sourceTree = "<group>"; };
-		818A2C8D9D99FEF7F6A06B38BFB82AE2 /* GoogleDrive@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "GoogleDrive@2x.png"; path = "Resources-Shared/GoogleDrive@2x.png"; sourceTree = "<group>"; };
+		818A2C8D9D99FEF7F6A06B38BFB82AE2 /* GoogleDrive@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "GoogleDrive@2x.png"; path = "Resources-Shared/GoogleDrive@2x.png"; sourceTree = "<group>"; };
 		81F9928AEBD47C054E5FC9C155D5B40B /* FPLocalAlbumController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPLocalAlbumController.h; path = FPPicker/Platforms/iOS/FPLocalAlbumController.h; sourceTree = "<group>"; };
 		824D9340DEBDC5C67BA33B3E5133A8F3 /* RCTDatePickerManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTDatePickerManager.m; sourceTree = "<group>"; };
 		82C66173C879370851D3D71FFA6E784D /* RCTSlider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTSlider.m; sourceTree = "<group>"; };
 		8357DAD7E40ECBC222CBBAEF707C2B96 /* react-native-fetch-blob-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "react-native-fetch-blob-dummy.m"; sourceTree = "<group>"; };
-		8370DE36950624AE3592B9DD20903806 /* glyphicons_300_microphone@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "glyphicons_300_microphone@2x.png"; path = "Resources-Shared/glyphicons_300_microphone@2x.png"; sourceTree = "<group>"; };
+		8370DE36950624AE3592B9DD20903806 /* glyphicons_300_microphone@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "glyphicons_300_microphone@2x.png"; path = "Resources-Shared/glyphicons_300_microphone@2x.png"; sourceTree = "<group>"; };
 		83DC3329CE58647570EA816328DB6511 /* RCTSegmentedControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTSegmentedControl.h; sourceTree = "<group>"; };
-		84CB341D66E5DEC154D3E6F26F7ADEC8 /* YGNodeList.c */ = {isa = PBXFileReference; includeInIndex = 1; path = YGNodeList.c; sourceTree = "<group>"; };
+		84CB341D66E5DEC154D3E6F26F7ADEC8 /* YGNodeList.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = YGNodeList.c; sourceTree = "<group>"; };
 		85AB30357340D8D3D7A7C03389AAD024 /* RCTModuleMethod.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTModuleMethod.h; sourceTree = "<group>"; };
 		85BDC65F3BE6D225F655D232AD64B0E6 /* RCTViewControllerProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTViewControllerProtocol.h; sourceTree = "<group>"; };
 		86024BEF07C951FA329FB33E7D337854 /* FirebaseMessaging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseMessaging.framework; path = Frameworks/frameworks/FirebaseMessaging.framework; sourceTree = "<group>"; };
-		862F450E52306585258C12CDAAEBEB56 /* xui-2.3.2.min.js */ = {isa = PBXFileReference; includeInIndex = 1; name = "xui-2.3.2.min.js"; path = "Resources-Shared/xui-2.3.2.min.js"; sourceTree = "<group>"; };
+		862F450E52306585258C12CDAAEBEB56 /* xui-2.3.2.min.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = "xui-2.3.2.min.js"; path = "Resources-Shared/xui-2.3.2.min.js"; sourceTree = "<group>"; };
 		86D1E6E6850529D4DB05B353B544E543 /* FPLocalController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPLocalController.h; path = FPPicker/Platforms/iOS/FPLocalController.h; sourceTree = "<group>"; };
 		873503A44CD567BA6850348BA840CB81 /* React.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = React.xcconfig; sourceTree = "<group>"; };
 		879DA8AC7010F4F4A4CD1C00C87E208A /* RCTDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTDefines.h; sourceTree = "<group>"; };
 		87A2CFEB0D06F8F47680420E78C71B4F /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h"; sourceTree = "<group>"; };
 		87A7ABC9F3C61718D4539E270209570F /* RCTProgressViewManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTProgressViewManager.h; sourceTree = "<group>"; };
-		87CB826B88A2C2C9AC13909DFDAA8F96 /* glyphicons_sb2_box@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "glyphicons_sb2_box@2x.png"; path = "Resources-Shared/glyphicons_sb2_box@2x.png"; sourceTree = "<group>"; };
+		87CB826B88A2C2C9AC13909DFDAA8F96 /* glyphicons_sb2_box@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "glyphicons_sb2_box@2x.png"; path = "Resources-Shared/glyphicons_sb2_box@2x.png"; sourceTree = "<group>"; };
 		8830169C2DFF4E43A5C6BB9219D9DFD3 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		889C2D1F236192F1B4A58240640267CA /* FPThemeApplier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FPThemeApplier.m; path = FPPicker/Platforms/iOS/FPThemeApplier.m; sourceTree = "<group>"; };
 		88B488A6C95D3578785B21E879C37926 /* FPAPIClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPAPIClient.h; path = FPPicker/Shared/FPAPIClient.h; sourceTree = "<group>"; };
@@ -1044,26 +1044,26 @@
 		8FE24F90668712E0D8C4F526DE34046F /* UILabel+Appearance.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UILabel+Appearance.m"; path = "FPPicker/Platforms/iOS/UILabel+Appearance.m"; sourceTree = "<group>"; };
 		9041471B261FCE66140B4E5655F1FB77 /* RCTNavItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTNavItem.h; sourceTree = "<group>"; };
 		9074DE5D9723B914E0C54A64D46F607C /* RCTNavigator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTNavigator.m; sourceTree = "<group>"; };
-		90847674CD97C0511EFD302CF51EA779 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libAFNetworking.a; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		90847674CD97C0511EFD302CF51EA779 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		911A9F6A4B5A57B25F528B35EE519A81 /* RCTBridgeModule.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTBridgeModule.h; sourceTree = "<group>"; };
 		912EBC192A103E0E2A47274250381C90 /* RCTPickerManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTPickerManager.h; sourceTree = "<group>"; };
-		9144223F1F982403F4E010EB3F15A170 /* libGoogleToolboxForMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libGoogleToolboxForMac.a; path = libGoogleToolboxForMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9144223F1F982403F4E010EB3F15A170 /* libGoogleToolboxForMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGoogleToolboxForMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		925AA756197AB7B576D0BEFC3405719D /* RCTPerformanceLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTPerformanceLogger.h; sourceTree = "<group>"; };
-		92B65D5A97D8B698A0726E84BDDC2D63 /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libReact.a; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		92B65D5A97D8B698A0726E84BDDC2D63 /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9317E2E1AE5EE592EABCE2BDE8358DBE /* FPMultipartUploader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FPMultipartUploader.m; path = FPPicker/Shared/FPMultipartUploader.m; sourceTree = "<group>"; };
 		932C6D25F518203592256EDF5EA9894A /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/AssetsLibrary.framework; sourceTree = DEVELOPER_DIR; };
 		93769E284B987F7001793020A3A9DE12 /* RCTSegmentedControlManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTSegmentedControlManager.h; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93ABE049B18B188D7A3930D3815CB693 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
 		93F16D9A0D3FCFD13F166F9C80736DAB /* RCTI18nManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTI18nManager.m; sourceTree = "<group>"; };
 		944464693252446B8FC2DD0D2424D51F /* RCTEventDispatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTEventDispatcher.m; sourceTree = "<group>"; };
-		944C42DEC81DAFBBBBA80550C3371404 /* libreact-native-orientation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libreact-native-orientation.a"; path = "libreact-native-orientation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		944C42DEC81DAFBBBBA80550C3371404 /* libreact-native-orientation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libreact-native-orientation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94D0E1A2E8D4529911859032A39E482A /* RCTErrorInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTErrorInfo.h; sourceTree = "<group>"; };
 		955884A8417143D381BDFEBBB5D5CC32 /* RCTJSStackFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTJSStackFrame.h; sourceTree = "<group>"; };
 		9608AF27582E537190D3F761FE606B79 /* RCTComponentData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTComponentData.m; sourceTree = "<group>"; };
 		967FE7DA5715DF1B0846C76E5545FA49 /* RNFetchBlobFS.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RNFetchBlobFS.m; sourceTree = "<group>"; };
-		96A1E2C14FBE13C8BDE33FC3473FCAF1 /* glyphicons_144_folder_open.png */ = {isa = PBXFileReference; includeInIndex = 1; name = glyphicons_144_folder_open.png; path = "Resources-Shared/glyphicons_144_folder_open.png"; sourceTree = "<group>"; };
-		96C38E66A53A61EB0F09BC6766BA4E97 /* de.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = de.lproj; path = QBImagePicker/de.lproj; sourceTree = "<group>"; };
+		96A1E2C14FBE13C8BDE33FC3473FCAF1 /* glyphicons_144_folder_open.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = glyphicons_144_folder_open.png; path = "Resources-Shared/glyphicons_144_folder_open.png"; sourceTree = "<group>"; };
+		96C38E66A53A61EB0F09BC6766BA4E97 /* de.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = de.lproj; path = QBImagePicker/de.lproj; sourceTree = "<group>"; };
 		96FC910F6686A40282A989FE5CDD8A50 /* FPSaveController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPSaveController.h; path = FPPicker/Platforms/iOS/FPSaveController.h; sourceTree = "<group>"; };
 		97A5EFEA3567753AFA30A5750680FCFC /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
 		982DBCD0CD6BF8FE0B77346DF64A92C3 /* RNFetchBlobNetwork.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RNFetchBlobNetwork.m; sourceTree = "<group>"; };
@@ -1088,7 +1088,7 @@
 		A20FC3F4323302B3B4EB60EB4E0834EA /* ARTSurfaceView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ARTSurfaceView.m; sourceTree = "<group>"; };
 		A2B65267C805410A0F1F0ABAB2937B19 /* ARTNodeManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ARTNodeManager.h; sourceTree = "<group>"; };
 		A2CF3195AF277031D711913C85D51A9E /* RCTSegmentedControl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTSegmentedControl.m; sourceTree = "<group>"; };
-		A4692C12AB104FB19DFA01F2E837E558 /* CloudDrive@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "CloudDrive@2x.png"; path = "Resources-Shared/CloudDrive@2x.png"; sourceTree = "<group>"; };
+		A4692C12AB104FB19DFA01F2E837E558 /* CloudDrive@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "CloudDrive@2x.png"; path = "Resources-Shared/CloudDrive@2x.png"; sourceTree = "<group>"; };
 		A4D7794B45482A4AF8E43B5AA3D929A9 /* RCTConvert.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTConvert.m; sourceTree = "<group>"; };
 		A50A95212449FF2C56431B8EC8A08DFF /* RCTModalHostViewManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTModalHostViewManager.h; sourceTree = "<group>"; };
 		A52BB3B299D0151FACEDCDDBD849863D /* RCTI18nUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTI18nUtil.h; sourceTree = "<group>"; };
@@ -1111,31 +1111,31 @@
 		ABA04EE489EB7CBBF47B7C8EDA4A83B1 /* ARTContainer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ARTContainer.h; sourceTree = "<group>"; };
 		ABF2BF2DFEAFB69987726C5EFCCBC6C1 /* QBImagePickerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QBImagePickerController.h; path = QBImagePicker/QBImagePickerController.h; sourceTree = "<group>"; };
 		AC754EE26A6054C92BB522B5FE2FB261 /* FPTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPTableViewCell.h; path = FPPicker/Platforms/iOS/FPTableViewCell.h; sourceTree = "<group>"; };
-		AC8899946F358857C673164215C53197 /* libPods-kenesto.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-kenesto.a"; path = "libPods-kenesto.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC8899946F358857C673164215C53197 /* libPods-kenesto.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-kenesto.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACED09CA364209B0A110F658C83B304C /* RNFetchBlobFS.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RNFetchBlobFS.h; sourceTree = "<group>"; };
 		AD2B28BE02FFCA70ADD8A4D37275FEB5 /* RCTJSStackFrame.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTJSStackFrame.m; sourceTree = "<group>"; };
 		AD987F475F277E23BC807157E61F6B50 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
 		AEF4EA9C6B7EAB0F1A0FE7F338433A30 /* RCTI18nManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTI18nManager.h; sourceTree = "<group>"; };
 		AF4660287AB365E99CF253A9F210F75E /* FPInternalHeaders.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPInternalHeaders.h; path = FPPicker/Platforms/iOS/FPInternalHeaders.h; sourceTree = "<group>"; };
-		AF4D002C4FE728F3226BC3063D8DF67E /* glyphicons_008_film.png */ = {isa = PBXFileReference; includeInIndex = 1; name = glyphicons_008_film.png; path = "Resources-Shared/glyphicons_008_film.png"; sourceTree = "<group>"; };
+		AF4D002C4FE728F3226BC3063D8DF67E /* glyphicons_008_film.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = glyphicons_008_film.png; path = "Resources-Shared/glyphicons_008_film.png"; sourceTree = "<group>"; };
 		AF6C05B6C9835C7D4EB1DD0187EDEF7E /* RCTKeyboardObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTKeyboardObserver.h; sourceTree = "<group>"; };
 		AF80818004CBABD9CC4D817586F72573 /* Pods-kenesto-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-kenesto-acknowledgements.plist"; sourceTree = "<group>"; };
 		AFAC7D6748B7637B39F4FD2F9980F15B /* FPSinglepartUploader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPSinglepartUploader.h; path = FPPicker/Shared/FPSinglepartUploader.h; sourceTree = "<group>"; };
 		B059A033D50B5101E92D48609F97B552 /* ARTSurfaceViewManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ARTSurfaceViewManager.h; sourceTree = "<group>"; };
 		B05DD87D2DD12B730B57B911C2C0E15C /* QBSlomoIconView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QBSlomoIconView.h; path = QBImagePicker/QBSlomoIconView.h; sourceTree = "<group>"; };
 		B0687377F39BA75313D530C478C351FF /* RCTDevLoadingView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTDevLoadingView.m; sourceTree = "<group>"; };
-		B088A6053F853F2B17E93113BDF803AA /* glyphicons_390_facebook@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "glyphicons_390_facebook@2x.png"; path = "Resources-Shared/glyphicons_390_facebook@2x.png"; sourceTree = "<group>"; };
+		B088A6053F853F2B17E93113BDF803AA /* glyphicons_390_facebook@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "glyphicons_390_facebook@2x.png"; path = "Resources-Shared/glyphicons_390_facebook@2x.png"; sourceTree = "<group>"; };
 		B0AC582CCBEF3D507C480941C38CACE4 /* RCTConvert+MapKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RCTConvert+MapKit.m"; sourceTree = "<group>"; };
 		B0C6EFAE648E6B4EABD558407EB5BF56 /* RCTUIManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTUIManager.m; sourceTree = "<group>"; };
 		B16FA3E7853EDAEABD0F1650DA4D83DB /* FPBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPBarButtonItem.h; path = FPPicker/Platforms/iOS/FPBarButtonItem.h; sourceTree = "<group>"; };
 		B17DE16AE6DC8786886844051F6FD4CA /* RSKImageScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RSKImageScrollView.m; path = RSKImageCropper/RSKImageScrollView.m; sourceTree = "<group>"; };
-		B1D72EEF867BF826A02140F8DCD790CF /* glyphicons_366_picasa.png */ = {isa = PBXFileReference; includeInIndex = 1; name = glyphicons_366_picasa.png; path = "Resources-Shared/glyphicons_366_picasa.png"; sourceTree = "<group>"; };
+		B1D72EEF867BF826A02140F8DCD790CF /* glyphicons_366_picasa.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = glyphicons_366_picasa.png; path = "Resources-Shared/glyphicons_366_picasa.png"; sourceTree = "<group>"; };
 		B3B8DFCA819B34D480782B5EBFA54FDA /* react-native-fetch-blob.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "react-native-fetch-blob.xcconfig"; sourceTree = "<group>"; };
 		B5778CA58798DED49AC8D3D86B93618B /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
 		B5C60F6572CA4855CD7E3B63E0CF8EF6 /* RNDeviceInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RNDeviceInfo.h; sourceTree = "<group>"; };
 		B6327EE739D4C87900DA808C89A16EC5 /* FPMultipartUploader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPMultipartUploader.h; path = FPPicker/Shared/FPMultipartUploader.h; sourceTree = "<group>"; };
 		B65D5DB9A1B5F058ABF4066EB07F965B /* RNVectorIconsManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RNVectorIconsManager.m; sourceTree = "<group>"; };
-		B6E5898A90B87873225497C8E4403D80 /* glyphicons_020_home@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "glyphicons_020_home@2x.png"; path = "Resources-Shared/glyphicons_020_home@2x.png"; sourceTree = "<group>"; };
+		B6E5898A90B87873225497C8E4403D80 /* glyphicons_020_home@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "glyphicons_020_home@2x.png"; path = "Resources-Shared/glyphicons_020_home@2x.png"; sourceTree = "<group>"; };
 		B79B718C891222A624F4C415B766CCFC /* disallowedUrlPrefix.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = disallowedUrlPrefix.plist; path = "Resources-Shared/disallowedUrlPrefix.plist"; sourceTree = "<group>"; };
 		B85E0D6F9D08502F6DE5945EF8AB23B2 /* FPSession.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FPSession.m; path = FPPicker/Shared/FPSession.m; sourceTree = "<group>"; };
 		B8644724E917CA3F3DC9852B93C6196B /* GoogleToolboxForMac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleToolboxForMac.xcconfig; sourceTree = "<group>"; };
@@ -1144,7 +1144,7 @@
 		BAB064EC214812A8305F3C371190C4C0 /* RCTClipboard.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTClipboard.m; sourceTree = "<group>"; };
 		BB8930A9CFA67A16002A1DB8D3D05008 /* QBImagePickerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QBImagePickerController.m; path = QBImagePicker/QBImagePickerController.m; sourceTree = "<group>"; };
 		BBC6ACC152AE6291A9CCF799797718A8 /* RSKImageCropper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RSKImageCropper.xcconfig; sourceTree = "<group>"; };
-		BC4C5136D60422D216184DA2F3C6770E /* glyphicons_381_github@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "glyphicons_381_github@2x.png"; path = "Resources-Shared/glyphicons_381_github@2x.png"; sourceTree = "<group>"; };
+		BC4C5136D60422D216184DA2F3C6770E /* glyphicons_381_github@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "glyphicons_381_github@2x.png"; path = "Resources-Shared/glyphicons_381_github@2x.png"; sourceTree = "<group>"; };
 		BCDD1930222BEDC85A9DA0DE3D6898FB /* RCTViewManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTViewManager.m; sourceTree = "<group>"; };
 		BD12C5F5B9DA41811F9C8626487CA8C2 /* Pods-kenesto-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-kenesto-resources.sh"; sourceTree = "<group>"; };
 		BD5BCE60484FDE4FF25657A8F1BCE774 /* QBAssetCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QBAssetCell.h; path = QBImagePicker/QBAssetCell.h; sourceTree = "<group>"; };
@@ -1154,27 +1154,27 @@
 		C03B2025DB5B2ADDA0ACD1FFBCC7B16A /* RCTLog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTLog.h; sourceTree = "<group>"; };
 		C0CC71B6CE8F0467E59706500D5F0BF0 /* FPSession+ConvenienceMethods.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FPSession+ConvenienceMethods.h"; path = "FPPicker/Shared/FPSession+ConvenienceMethods.h"; sourceTree = "<group>"; };
 		C0FCDCB2F727BFE89336DEB133581D06 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
-		C15C1A345F0E82AA9B7543960EB53795 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = en.lproj; path = QBImagePicker/en.lproj; sourceTree = "<group>"; };
+		C15C1A345F0E82AA9B7543960EB53795 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = en.lproj; path = QBImagePicker/en.lproj; sourceTree = "<group>"; };
 		C19C8EEE9D2DBFD5AD4B99EC392D5587 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
 		C1EE908767F528A52494903B8CCFCC6E /* RCTAccessibilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTAccessibilityManager.m; sourceTree = "<group>"; };
 		C2AFEC2C49328D3BFB13C24D9F9C4D4F /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
-		C2BC898122A74951A8E8280C4C218129 /* ja.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ja.lproj; path = QBImagePicker/ja.lproj; sourceTree = "<group>"; };
+		C2BC898122A74951A8E8280C4C218129 /* ja.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = ja.lproj; path = QBImagePicker/ja.lproj; sourceTree = "<group>"; };
 		C2FB5FCA7DF057922B61096C691B0662 /* RCTNavigatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTNavigatorManager.m; sourceTree = "<group>"; };
 		C33D0FBCA514763BBF6967188C882A12 /* RCTSwitchManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTSwitchManager.h; sourceTree = "<group>"; };
 		C34CF5F62F06ABA8D5C32E99BCD66BB7 /* FPThemeApplier.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPThemeApplier.h; path = FPPicker/Platforms/iOS/FPThemeApplier.h; sourceTree = "<group>"; };
 		C45EBC0775AC907F0EEA9B1BC8D99128 /* QBAlbumCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QBAlbumCell.h; path = QBImagePicker/QBAlbumCell.h; sourceTree = "<group>"; };
-		C58338671C131E4BC8DAB1CE6D3792AC /* QBImagePicker.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = QBImagePicker.bundle; path = QBImagePicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		C58338671C131E4BC8DAB1CE6D3792AC /* QBImagePicker.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QBImagePicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5A3DC8A9040DDF662D32539287932B2 /* FPLibrary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPLibrary.h; path = FPPicker/Shared/FPLibrary.h; sourceTree = "<group>"; };
 		C5CC07A9C838E81FA8AF30583C30D83A /* FPUtils+iOS.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FPUtils+iOS.h"; path = "FPPicker/Platforms/iOS/FPUtils+iOS.h"; sourceTree = "<group>"; };
-		C6F645E5DC3D112FB872577A421BE624 /* glyphicons_361_dropbox.png */ = {isa = PBXFileReference; includeInIndex = 1; name = glyphicons_361_dropbox.png; path = "Resources-Shared/glyphicons_361_dropbox.png"; sourceTree = "<group>"; };
+		C6F645E5DC3D112FB872577A421BE624 /* glyphicons_361_dropbox.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = glyphicons_361_dropbox.png; path = "Resources-Shared/glyphicons_361_dropbox.png"; sourceTree = "<group>"; };
 		C78A5919ED93F6D17011E644CF56E946 /* RCTJSCExecutor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTJSCExecutor.h; sourceTree = "<group>"; };
 		C79443C121EFEE37CE2C75EBA9B8FDE8 /* ARTBrush.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ARTBrush.h; sourceTree = "<group>"; };
 		C7AFE86AC6D36E411949E3CED4AE84C7 /* QBImagePickerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "QBImagePickerController-dummy.m"; sourceTree = "<group>"; };
 		C87877A23EB5D72F28AD8F85C0F58019 /* RCTTouchHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTTouchHandler.h; sourceTree = "<group>"; };
 		C8A4047A9170F252767E9C84075FD5ED /* UIImage+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+AFNetworking.h"; path = "UIKit+AFNetworking/UIImage+AFNetworking.h"; sourceTree = "<group>"; };
 		C93B0879D69F18EB8F07911E35826157 /* RCTNavItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTNavItem.m; sourceTree = "<group>"; };
-		CB9B0101675F03B5F77AD482692E11AD /* GoogleDrive.png */ = {isa = PBXFileReference; includeInIndex = 1; name = GoogleDrive.png; path = "Resources-Shared/GoogleDrive.png"; sourceTree = "<group>"; };
-		CBCE4E49087A9307C035A02157169ECC /* select.png */ = {isa = PBXFileReference; includeInIndex = 1; name = select.png; path = "Resources-Shared/select.png"; sourceTree = "<group>"; };
+		CB9B0101675F03B5F77AD482692E11AD /* GoogleDrive.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = GoogleDrive.png; path = "Resources-Shared/GoogleDrive.png"; sourceTree = "<group>"; };
+		CBCE4E49087A9307C035A02157169ECC /* select.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = select.png; path = "Resources-Shared/select.png"; sourceTree = "<group>"; };
 		CBD82EB3FC0869C8D9CC0713092BB6FD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		CC17352F4CED8B1C650ED8A9C2A278D4 /* QBAlbumCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QBAlbumCell.m; path = QBImagePicker/QBAlbumCell.m; sourceTree = "<group>"; };
 		CC5F057319BF28C56FC122167054F74A /* FPSaveSourceController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPSaveSourceController.h; path = FPPicker/Platforms/iOS/FPSaveSourceController.h; sourceTree = "<group>"; };
@@ -1183,19 +1183,19 @@
 		CCED6D1F76991534E0C42FB0E2A46803 /* FPLibrary+iOS.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "FPLibrary+iOS.m"; path = "FPPicker/Platforms/iOS/FPLibrary+iOS.m"; sourceTree = "<group>"; };
 		CD1F780124E80CE3C7F37AC9B7CE7F4A /* RCTConvert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTConvert.h; sourceTree = "<group>"; };
 		CD3A2F185A91C3788E28AC5C05BC5DCF /* RCTNullability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTNullability.h; sourceTree = "<group>"; };
-		CD3F1BBA570627353A469AF1B2BA754B /* glyphicons_011_camera@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "glyphicons_011_camera@2x.png"; path = "Resources-Shared/glyphicons_011_camera@2x.png"; sourceTree = "<group>"; };
+		CD3F1BBA570627353A469AF1B2BA754B /* glyphicons_011_camera@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "glyphicons_011_camera@2x.png"; path = "Resources-Shared/glyphicons_011_camera@2x.png"; sourceTree = "<group>"; };
 		CD51793BB293B082ADF498C7AD2E80E7 /* FPSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPSession.h; path = FPPicker/Shared/FPSession.h; sourceTree = "<group>"; };
 		CD6808F7F5DAB7382CE799691E9C0113 /* FPPickerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FPPickerController.m; path = FPPicker/Platforms/iOS/FPPickerController.m; sourceTree = "<group>"; };
 		CE620FB2B49C682EE7152246C0E15167 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperationManager.m; path = AFNetworking/AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
 		CEC4D38A5C4E821332D686AB30F59001 /* RCTFrameUpdate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTFrameUpdate.m; sourceTree = "<group>"; };
 		CF78BB9D38E71A0D87A1E86A441062C9 /* RCTRootShadowView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTRootShadowView.h; sourceTree = "<group>"; };
 		CFCC01D3F3FBAE72A560C40506B9737B /* RCTAsyncLocalStorage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTAsyncLocalStorage.h; sourceTree = "<group>"; };
-		CFF75E994B66E93690F33A4F125AAAB7 /* glyphicons_027_search@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "glyphicons_027_search@2x.png"; path = "Resources-Shared/glyphicons_027_search@2x.png"; sourceTree = "<group>"; };
+		CFF75E994B66E93690F33A4F125AAAB7 /* glyphicons_027_search@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "glyphicons_027_search@2x.png"; path = "Resources-Shared/glyphicons_027_search@2x.png"; sourceTree = "<group>"; };
 		D0492F678D95FF2D6ABF85D0EFE169D2 /* ARTPattern.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ARTPattern.h; sourceTree = "<group>"; };
 		D08314A8FC97ADCEBDBBD9CB5051B593 /* RCTWebView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTWebView.m; sourceTree = "<group>"; };
 		D15553163EA0193C2C37E5987DD8D69E /* RCTJSCProfiler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTJSCProfiler.h; sourceTree = "<group>"; };
 		D2E427D727ADA5CF3298C4261AD239E6 /* QBAlbumsViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QBAlbumsViewController.h; path = QBImagePicker/QBAlbumsViewController.h; sourceTree = "<group>"; };
-		D30EEF5A7BD795CC33EBA99054186D42 /* JSBundleType.cpp */ = {isa = PBXFileReference; includeInIndex = 1; path = JSBundleType.cpp; sourceTree = "<group>"; };
+		D30EEF5A7BD795CC33EBA99054186D42 /* JSBundleType.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; path = JSBundleType.cpp; sourceTree = "<group>"; };
 		D3689C2A15131350EEB930051FF62982 /* RCTTouchEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTTouchEvent.m; sourceTree = "<group>"; };
 		D411551F74B728AE63246273C14E5C56 /* RCTBorderStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTBorderStyle.h; sourceTree = "<group>"; };
 		D4855FB19E705D5561604D8600D0462E /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
@@ -1206,7 +1206,7 @@
 		D5E21FD3C4B4B06523D179198CDBFEE3 /* FPProgressTracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPProgressTracker.h; path = FPPicker/Shared/FPProgressTracker.h; sourceTree = "<group>"; };
 		D5F9D90ED2F8F81201FE418B347FEC4A /* RCTRedBox.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTRedBox.m; sourceTree = "<group>"; };
 		D61A0253C32B2D38815713912B27532E /* Pods-kenesto-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-kenesto-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D78D1A6AC214B110071B707DEBAF10DB /* es.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = es.lproj; path = QBImagePicker/es.lproj; sourceTree = "<group>"; };
+		D78D1A6AC214B110071B707DEBAF10DB /* es.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = es.lproj; path = QBImagePicker/es.lproj; sourceTree = "<group>"; };
 		D7A515B7AD4B3DB14C2DDA30083B1A40 /* RCTMapManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTMapManager.m; sourceTree = "<group>"; };
 		D80D8F5972DDBFE755481236E5B0185E /* RNFetchBlob.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RNFetchBlob.m; sourceTree = "<group>"; };
 		D95608E048C6E4476D5B5175DA0922BA /* RCTUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTUtils.m; sourceTree = "<group>"; };
@@ -1214,7 +1214,7 @@
 		D97533D6B5E17F108BB3EF22A65744B7 /* ARTLinearGradient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ARTLinearGradient.h; sourceTree = "<group>"; };
 		D9DC96074F4D353E8559EB88CE157DBD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		DAB3B12892C05543797F23007F0B2171 /* QBSlomoIconView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QBSlomoIconView.m; path = QBImagePicker/QBSlomoIconView.m; sourceTree = "<group>"; };
-		DBD45D4688E02CFAA50B2BBC7F876A90 /* QBImagePicker.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; name = QBImagePicker.storyboard; path = QBImagePicker/QBImagePicker.storyboard; sourceTree = "<group>"; };
+		DBD45D4688E02CFAA50B2BBC7F876A90 /* QBImagePicker.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = QBImagePicker.storyboard; path = QBImagePicker/QBImagePicker.storyboard; sourceTree = "<group>"; };
 		DC030EE13C40867F8774146800F27B16 /* ARTShapeManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ARTShapeManager.m; sourceTree = "<group>"; };
 		DC187665484312AF674DA54CBD952DBC /* react-native-orientation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "react-native-orientation-prefix.pch"; sourceTree = "<group>"; };
 		DC9F07F98FA27EBA65924C5BFC9A9A65 /* RCTJSCProfiler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTJSCProfiler.m; sourceTree = "<group>"; };
@@ -1222,32 +1222,32 @@
 		DD456EE6581DEFAC8D56459F3A444BFD /* GTMNSData+zlib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSData+zlib.m"; path = "Foundation/GTMNSData+zlib.m"; sourceTree = "<group>"; };
 		DD5B82C34554F85E544C25AC89DD5957 /* QBCheckmarkView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QBCheckmarkView.m; path = QBImagePicker/QBCheckmarkView.m; sourceTree = "<group>"; };
 		DDEFACEC3E993B14E74D5DA7B362E83B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		DE1651EED0AF98A2C09FBDB213CA13C8 /* glyphicons_300_microphone.png */ = {isa = PBXFileReference; includeInIndex = 1; name = glyphicons_300_microphone.png; path = "Resources-Shared/glyphicons_300_microphone.png"; sourceTree = "<group>"; };
+		DE1651EED0AF98A2C09FBDB213CA13C8 /* glyphicons_300_microphone.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = glyphicons_300_microphone.png; path = "Resources-Shared/glyphicons_300_microphone.png"; sourceTree = "<group>"; };
 		DEC09BD4D34C62AC5E7BCD0F27E5FF78 /* FPTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FPTableViewCell.m; path = FPPicker/Platforms/iOS/FPTableViewCell.m; sourceTree = "<group>"; };
 		DF1A4C5AC074182BF3A5E979759B6D09 /* RSKInternalUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RSKInternalUtility.m; path = RSKImageCropper/RSKInternalUtility.m; sourceTree = "<group>"; };
 		DF3F5C1F6CE6D545940BB705B0761BE2 /* RCTKeyCommands.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTKeyCommands.h; sourceTree = "<group>"; };
-		DF711C3B56BF7EBD40AAD97A7AA7E6CB /* glyphicons_180_facetime_video.png */ = {isa = PBXFileReference; includeInIndex = 1; name = glyphicons_180_facetime_video.png; path = "Resources-Shared/glyphicons_180_facetime_video.png"; sourceTree = "<group>"; };
+		DF711C3B56BF7EBD40AAD97A7AA7E6CB /* glyphicons_180_facetime_video.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = glyphicons_180_facetime_video.png; path = "Resources-Shared/glyphicons_180_facetime_video.png"; sourceTree = "<group>"; };
 		DF950F2DEBD3CDEF1F0C93F0128D06E6 /* JSBundleType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JSBundleType.h; sourceTree = "<group>"; };
-		E0A3B07EE8AB2DD5EA3FB438AA4FBFEE /* glyphicons_399_e-mail.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "glyphicons_399_e-mail.png"; path = "Resources-Shared/glyphicons_399_e-mail.png"; sourceTree = "<group>"; };
+		E0A3B07EE8AB2DD5EA3FB438AA4FBFEE /* glyphicons_399_e-mail.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "glyphicons_399_e-mail.png"; path = "Resources-Shared/glyphicons_399_e-mail.png"; sourceTree = "<group>"; };
 		E195F089A72EA680FAD513A10C74C9F5 /* ARTRadialGradient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ARTRadialGradient.m; sourceTree = "<group>"; };
 		E1EF2537B577CD07577AD49EE5065B65 /* RCTReloadCommand.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTReloadCommand.m; sourceTree = "<group>"; };
 		E20B7F4A949BE093814F685835E6470B /* UIImage+RSKImageCropper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+RSKImageCropper.m"; path = "RSKImageCropper/UIImage+RSKImageCropper.m"; sourceTree = "<group>"; };
 		E2B0BA7252072F548BF7349AE333CAA0 /* RCTPlatform.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTPlatform.m; sourceTree = "<group>"; };
 		E312C5A874AFC2620552F1FDED1E7BA3 /* RCTMultipartStreamReader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTMultipartStreamReader.h; sourceTree = "<group>"; };
 		E392DE3D745C65198448CA3BF55981AB /* RCTStatusBarManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTStatusBarManager.m; sourceTree = "<group>"; };
-		E3B43B6D6505D85EF0CB241C0D233F09 /* glyphicons_395_flickr.png */ = {isa = PBXFileReference; includeInIndex = 1; name = glyphicons_395_flickr.png; path = "Resources-Shared/glyphicons_395_flickr.png"; sourceTree = "<group>"; };
+		E3B43B6D6505D85EF0CB241C0D233F09 /* glyphicons_395_flickr.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = glyphicons_395_flickr.png; path = "Resources-Shared/glyphicons_395_flickr.png"; sourceTree = "<group>"; };
 		E3D3D3D07B04BF59466EF705A3834095 /* RCTSegmentedControlManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTSegmentedControlManager.m; sourceTree = "<group>"; };
 		E484FEBEC853CB711512AF1B4D831EFE /* RCTExceptionsManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTExceptionsManager.h; sourceTree = "<group>"; };
 		E4AC6ACF321809B2B8C982C551BFFC71 /* FPConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FPConfig.m; path = FPPicker/Shared/FPConfig.m; sourceTree = "<group>"; };
 		E53642CE578B6E587B408A555D4073FF /* QBAssetsViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QBAssetsViewController.m; path = QBImagePicker/QBAssetsViewController.m; sourceTree = "<group>"; };
-		E593BE871432EFE3A34ED3C8B21C8FB3 /* Yoga.c */ = {isa = PBXFileReference; includeInIndex = 1; path = Yoga.c; sourceTree = "<group>"; };
+		E593BE871432EFE3A34ED3C8B21C8FB3 /* Yoga.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = Yoga.c; sourceTree = "<group>"; };
 		E66D903F80DDC555D31FAB857DB87219 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
 		E7E14B3042E4DC96DD95E7E1B6563895 /* RCTShadowView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTShadowView.h; sourceTree = "<group>"; };
 		E868A85E82FF89DA26E7664AD6034E37 /* RCTConvert+CoreLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RCTConvert+CoreLocation.h"; sourceTree = "<group>"; };
 		E8C6A72754CF0679323476DDDDB19E76 /* RCTDatePickerManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTDatePickerManager.h; sourceTree = "<group>"; };
-		E8C7C2BAD73849BA6D387BF4E4D9E56E /* glyphicons_020_home.png */ = {isa = PBXFileReference; includeInIndex = 1; name = glyphicons_020_home.png; path = "Resources-Shared/glyphicons_020_home.png"; sourceTree = "<group>"; };
+		E8C7C2BAD73849BA6D387BF4E4D9E56E /* glyphicons_020_home.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = glyphicons_020_home.png; path = "Resources-Shared/glyphicons_020_home.png"; sourceTree = "<group>"; };
 		E8CF5E309A1D6F2FBC30956EFDD28724 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
-		E92B686FDB47F4B46B258AC8C65DF6A0 /* glyphicons_sb1_gmail@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "glyphicons_sb1_gmail@2x.png"; path = "Resources-Shared/glyphicons_sb1_gmail@2x.png"; sourceTree = "<group>"; };
+		E92B686FDB47F4B46B258AC8C65DF6A0 /* glyphicons_sb1_gmail@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "glyphicons_sb1_gmail@2x.png"; path = "Resources-Shared/glyphicons_sb1_gmail@2x.png"; sourceTree = "<group>"; };
 		E961B5A3AA4A97BD6B7A67D37308F9DA /* RCTTextDecorationLineType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTTextDecorationLineType.h; sourceTree = "<group>"; };
 		EA0DF5E764D853618D28E1EEAB774AAA /* FPSearchController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FPSearchController.m; path = FPPicker/Platforms/iOS/FPSearchController.m; sourceTree = "<group>"; };
 		EA25A783CF4CA5BAD008E963BAFF5EEE /* RCTAccessibilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTAccessibilityManager.h; sourceTree = "<group>"; };
@@ -1255,19 +1255,19 @@
 		EA5240E9B2103FB0718E8D705633BD06 /* RCTDevMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTDevMenu.m; sourceTree = "<group>"; };
 		EB091986BF263383A142B7C745B8F2BC /* RCTErrorInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTErrorInfo.m; sourceTree = "<group>"; };
 		EB5A373711F02E6D487B946024AEAB23 /* RCTModalHostView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTModalHostView.h; sourceTree = "<group>"; };
-		ED1F8F5A72FB9D86D2D13756530B5C9A /* glyphicons_sb3_skydrive.png */ = {isa = PBXFileReference; includeInIndex = 1; name = glyphicons_sb3_skydrive.png; path = "Resources-Shared/glyphicons_sb3_skydrive.png"; sourceTree = "<group>"; };
-		EDB6506B4FDD57C709523D97B8A8B618 /* glyphicons_154_show_big_thumbnails@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "glyphicons_154_show_big_thumbnails@2x.png"; path = "Resources-Shared/glyphicons_154_show_big_thumbnails@2x.png"; sourceTree = "<group>"; };
+		ED1F8F5A72FB9D86D2D13756530B5C9A /* glyphicons_sb3_skydrive.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = glyphicons_sb3_skydrive.png; path = "Resources-Shared/glyphicons_sb3_skydrive.png"; sourceTree = "<group>"; };
+		EDB6506B4FDD57C709523D97B8A8B618 /* glyphicons_154_show_big_thumbnails@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "glyphicons_154_show_big_thumbnails@2x.png"; path = "Resources-Shared/glyphicons_154_show_big_thumbnails@2x.png"; sourceTree = "<group>"; };
 		EE57AE9C39CA9FA849C516303ED4AADB /* QBAssetCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QBAssetCell.m; path = QBImagePicker/QBAssetCell.m; sourceTree = "<group>"; };
-		EEA54DDAB23FCDC27DDEB44AC1CE28F9 /* glyphicons_361_dropbox@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "glyphicons_361_dropbox@2x.png"; path = "Resources-Shared/glyphicons_361_dropbox@2x.png"; sourceTree = "<group>"; };
+		EEA54DDAB23FCDC27DDEB44AC1CE28F9 /* glyphicons_361_dropbox@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "glyphicons_361_dropbox@2x.png"; path = "Resources-Shared/glyphicons_361_dropbox@2x.png"; sourceTree = "<group>"; };
 		EF5B81BE01E06C5764D02BB4B658E931 /* RCTAppState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTAppState.h; sourceTree = "<group>"; };
 		EF8A16D18E3F6F883E481C5511E16312 /* YGMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YGMacros.h; sourceTree = "<group>"; };
 		F0ACF5AD57648B4916C9CFE2ABDB4CDC /* NSData+FPHexString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+FPHexString.m"; path = "FPPicker/Shared/NSData+FPHexString.m"; sourceTree = "<group>"; };
-		F0BBB4A32A5C8785305A58DE329BEBF1 /* RCTJSCErrorHandling.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = RCTJSCErrorHandling.mm; sourceTree = "<group>"; };
+		F0BBB4A32A5C8785305A58DE329BEBF1 /* RCTJSCErrorHandling.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; path = RCTJSCErrorHandling.mm; sourceTree = "<group>"; };
 		F0D83BFAC78CAF1BC8D1E1A22225A8C0 /* RCTImageSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTImageSource.h; sourceTree = "<group>"; };
-		F1C5DAC0D4C7D1441FE34C116A747415 /* glyphicons_371_evernote@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "glyphicons_371_evernote@2x.png"; path = "Resources-Shared/glyphicons_371_evernote@2x.png"; sourceTree = "<group>"; };
+		F1C5DAC0D4C7D1441FE34C116A747415 /* glyphicons_371_evernote@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "glyphicons_371_evernote@2x.png"; path = "Resources-Shared/glyphicons_371_evernote@2x.png"; sourceTree = "<group>"; };
 		F2035DFE5776092BF0FD9A72FF73641F /* DeviceUID.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DeviceUID.m; sourceTree = "<group>"; };
 		F21FB6F72708B02A607F2E15B98A98B0 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
-		F3EAE8E35EAB7B11C5952D8195862422 /* glyphicons_sb1_gmail.png */ = {isa = PBXFileReference; includeInIndex = 1; name = glyphicons_sb1_gmail.png; path = "Resources-Shared/glyphicons_sb1_gmail.png"; sourceTree = "<group>"; };
+		F3EAE8E35EAB7B11C5952D8195862422 /* glyphicons_sb1_gmail.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = glyphicons_sb1_gmail.png; path = "Resources-Shared/glyphicons_sb1_gmail.png"; sourceTree = "<group>"; };
 		F3FB945B9EBDD7F3246C42527F6EC17B /* RCTMapAnnotation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTMapAnnotation.h; sourceTree = "<group>"; };
 		F46763B389F523D3515A8A98F3B80EC3 /* react-native-orientation.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "react-native-orientation.xcconfig"; sourceTree = "<group>"; };
 		F4D37A33D41166085D5D9E02A217A5F6 /* RCTExceptionsManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTExceptionsManager.m; sourceTree = "<group>"; };
@@ -1283,20 +1283,20 @@
 		F89FC1C71B6B944D8D539217A996A9AD /* MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
 		F8C346CB6DFDB47E92912B50D19B3731 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
 		F8E5B2D16A5FEC55DCACFFE25EAE61F8 /* FPLocalAlbumController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FPLocalAlbumController.m; path = FPPicker/Platforms/iOS/FPLocalAlbumController.m; sourceTree = "<group>"; };
-		F993FF8310C6985A476A8CEE71DC8D98 /* glyphicons_390_facebook.png */ = {isa = PBXFileReference; includeInIndex = 1; name = glyphicons_390_facebook.png; path = "Resources-Shared/glyphicons_390_facebook.png"; sourceTree = "<group>"; };
+		F993FF8310C6985A476A8CEE71DC8D98 /* glyphicons_390_facebook.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = glyphicons_390_facebook.png; path = "Resources-Shared/glyphicons_390_facebook.png"; sourceTree = "<group>"; };
 		F9B471FF73A05D2F3376FBABB5BCA8E4 /* ARTText.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ARTText.h; sourceTree = "<group>"; };
 		FA663A0B84F02E80515767529723EDD8 /* FPSourceListController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FPSourceListController.m; path = FPPicker/Platforms/iOS/FPSourceListController.m; sourceTree = "<group>"; };
 		FA67C1804A186B983332E202F8289E45 /* RCTWebViewManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTWebViewManager.h; sourceTree = "<group>"; };
 		FA9F6BBB697ECC2DD5134488848362B4 /* RCTSourceCode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTSourceCode.h; sourceTree = "<group>"; };
 		FAA1546548A42C2DAE7D32BF895BB778 /* RCTBundleURLProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTBundleURLProvider.m; sourceTree = "<group>"; };
-		FABD6799121E689556D166474B33828D /* libFPPicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libFPPicker.a; path = libFPPicker.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FABD6799121E689556D166474B33828D /* libFPPicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFPPicker.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB5F53676A47B8BEF2B2791714222DE1 /* RCTModalHostView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTModalHostView.m; sourceTree = "<group>"; };
 		FB93FB3B3277D0E08760DE0C8E394CA9 /* FPPickerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPPickerController.h; path = FPPicker/Platforms/iOS/FPPickerController.h; sourceTree = "<group>"; };
 		FCFF470E3EF528A090A4253E0C2DE2B9 /* RCTUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTUtils.h; sourceTree = "<group>"; };
-		FD010BC8CC06CC14D1454D784A5EACF3 /* glyphicons_036_file.png */ = {isa = PBXFileReference; includeInIndex = 1; name = glyphicons_036_file.png; path = "Resources-Shared/glyphicons_036_file.png"; sourceTree = "<group>"; };
+		FD010BC8CC06CC14D1454D784A5EACF3 /* glyphicons_036_file.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = glyphicons_036_file.png; path = "Resources-Shared/glyphicons_036_file.png"; sourceTree = "<group>"; };
 		FD3447B3E4B4A2E9B287AB33111E9120 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
 		FD8F5261FD733CE96D3159F81B54B973 /* RCTEventDispatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTEventDispatcher.h; sourceTree = "<group>"; };
-		FDBE0F5651FEB8A4877012B408B08515 /* libRSKImageCropper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libRSKImageCropper.a; path = libRSKImageCropper.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDBE0F5651FEB8A4877012B408B08515 /* libRSKImageCropper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRSKImageCropper.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FED63C5EDBE3E223016A56A9A6DFFEA3 /* RCTWebView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTWebView.h; sourceTree = "<group>"; };
 		FF0035B237F3165AADEE40021F50DA39 /* ARTShape.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ARTShape.m; sourceTree = "<group>"; };
 		FFBFFEBAAFF3140F4C3EDE39BD373705 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLConnectionOperation.h; path = AFNetworking/AFURLConnectionOperation.h; sourceTree = "<group>"; };
@@ -1573,7 +1573,6 @@
 				39B64959E3D5A8BB4C0F742AC27ECE58 /* Orientation.h */,
 				03442485BE55B5C3456297F5A7C5523E /* Orientation.m */,
 			);
-			name = RCTOrientation;
 			path = RCTOrientation;
 			sourceTree = "<group>";
 		};
@@ -1612,7 +1611,6 @@
 			children = (
 				7B4B16CB7C359D95574402F13885E59C /* Frameworks */,
 			);
-			name = FirebaseCore;
 			path = FirebaseCore;
 			sourceTree = "<group>";
 		};
@@ -1626,7 +1624,6 @@
 				422BF4534C02F5BDF05E12947D8707A5 /* Profiler */,
 				B189B7A5E553B09714B52122F0637899 /* Views */,
 			);
-			name = React;
 			path = React;
 			sourceTree = "<group>";
 		};
@@ -1636,7 +1633,6 @@
 				04F40AB0120CEF37384EF852AA7FBA09 /* RNVectorIconsManager.h */,
 				B65D5DB9A1B5F058ABF4066EB07F965B /* RNVectorIconsManager.m */,
 			);
-			name = RNVectorIconsManager;
 			path = RNVectorIconsManager;
 			sourceTree = "<group>";
 		};
@@ -1645,7 +1641,6 @@
 			children = (
 				1D48CF3CB2C5A4384A2728E0EAD1F057 /* RCTOrientation */,
 			);
-			name = iOS;
 			path = iOS;
 			sourceTree = "<group>";
 		};
@@ -1701,7 +1696,6 @@
 				133B1E359417A56048E7C27A3707A345 /* RCTUIManager.h */,
 				B0C6EFAE648E6B4EABD558407EB5BF56 /* RCTUIManager.m */,
 			);
-			name = Modules;
 			path = Modules;
 			sourceTree = "<group>";
 		};
@@ -1712,7 +1706,6 @@
 				DF950F2DEBD3CDEF1F0C93F0128D06E6 /* JSBundleType.h */,
 				788D69153D8304262545273681A4B898 /* oss-compat-util.h */,
 			);
-			name = cxxreact;
 			path = cxxreact;
 			sourceTree = "<group>";
 		};
@@ -1744,7 +1737,6 @@
 				7328381F7074B5F599E6A79B3365C696 /* RCTProfileTrampoline-i386.S */,
 				21211F8EECFD6A59524745E5AEE72775 /* RCTProfileTrampoline-x86_64.S */,
 			);
-			name = Profiler;
 			path = Profiler;
 			sourceTree = "<group>";
 		};
@@ -1761,7 +1753,6 @@
 			children = (
 				4E6FF9E354FD774544499D11F2877B8F /* yoga */,
 			);
-			name = yoga;
 			path = yoga;
 			sourceTree = "<group>";
 		};
@@ -1770,7 +1761,6 @@
 			children = (
 				76D700D81C44459171AE9D33266CF8CF /* Frameworks */,
 			);
-			name = GoogleSymbolUtilities;
 			path = GoogleSymbolUtilities;
 			sourceTree = "<group>";
 		};
@@ -1843,7 +1833,6 @@
 				D95608E048C6E4476D5B5175DA0922BA /* RCTUtils.m */,
 				7ADC54771BA32E2A68F03620B0992055 /* RCTWebSocketObserverProtocol.h */,
 			);
-			name = Base;
 			path = Base;
 			sourceTree = "<group>";
 		};
@@ -1867,7 +1856,6 @@
 				2EE4CEE2DD21D1602D4395C4FAF7D9CB /* Yoga.c */,
 				5A15E409DE5CD8194733FB0624C2ABB7 /* Yoga.h */,
 			);
-			name = yoga;
 			path = yoga;
 			sourceTree = "<group>";
 		};
@@ -1885,7 +1873,6 @@
 				3A189E4D5EDB145157CF35D1FF8FF319 /* SimpleLineIcons.ttf */,
 				2F87DF6B19C4C37C641C33B3AB507B20 /* Zocial.ttf */,
 			);
-			name = Fonts;
 			path = Fonts;
 			sourceTree = "<group>";
 		};
@@ -1923,7 +1910,6 @@
 				5A5B84B13EC1DC1328CFEC1D78705084 /* Brushes */,
 				DE85EF2D21E02E8E526637ACB0E4C0A2 /* ViewManagers */,
 			);
-			name = ART;
 			path = ART;
 			sourceTree = "<group>";
 		};
@@ -1986,7 +1972,6 @@
 				7A6094CA9C177E26B6B07E1C6E662C93 /* Resources */,
 				BD825835FE5EEC96259E5D4FD8460C49 /* Support Files */,
 			);
-			name = RSKImageCropper;
 			path = RSKImageCropper;
 			sourceTree = "<group>";
 		};
@@ -2004,7 +1989,6 @@
 				9A0DE0640D708529D97BA7DBA6BD8084 /* ARTSolidColor.h */,
 				1B254BCE2637C8AF0C360E14FDC4945F /* ARTSolidColor.m */,
 			);
-			name = Brushes;
 			path = Brushes;
 			sourceTree = "<group>";
 		};
@@ -2030,7 +2014,6 @@
 			children = (
 				46CC063212F2ED4DFBB6292A5C3DEE4E /* yoga */,
 			);
-			name = ReactCommon;
 			path = ReactCommon;
 			sourceTree = "<group>";
 		};
@@ -2090,7 +2073,6 @@
 			children = (
 				403879423C8D8C576D184F983DA170E3 /* cxxreact */,
 			);
-			name = ReactCommon;
 			path = ReactCommon;
 			sourceTree = "<group>";
 		};
@@ -2140,7 +2122,6 @@
 			children = (
 				C5A69B091906DC9000C99785DF1A0964 /* Core */,
 			);
-			name = Firebase;
 			path = Firebase;
 			sourceTree = "<group>";
 		};
@@ -2218,7 +2199,6 @@
 				374A59B79ED165BB9ED5AA13E3F8E700 /* RNFetchBlob.h */,
 				D80D8F5972DDBFE755481236E5B0185E /* RNFetchBlob.m */,
 			);
-			name = RNFetchBlob;
 			path = RNFetchBlob;
 			sourceTree = "<group>";
 		};
@@ -2236,7 +2216,6 @@
 			children = (
 				519919C3D25BFDF80301A2E25A5F4A96 /* ART */,
 			);
-			name = Libraries;
 			path = Libraries;
 			sourceTree = "<group>";
 		};
@@ -2268,7 +2247,6 @@
 			children = (
 				70C0C51F0050CC9DB77D0B2C518B1F6A /* Frameworks */,
 			);
-			name = FirebaseAnalytics;
 			path = FirebaseAnalytics;
 			sourceTree = "<group>";
 		};
@@ -2360,7 +2338,6 @@
 				11CF42C12F5B33CBFA2720F2D7554BFC /* Resources */,
 				4157B9E46F22C0A5EC91D4EF9B9E27A8 /* Support Files */,
 			);
-			name = FPPicker;
 			path = FPPicker;
 			sourceTree = "<group>";
 		};
@@ -2467,7 +2444,6 @@
 				763E1E196811C38A5C2B26E079C3E36E /* UIView+React.h */,
 				A75D12045DEEC887527B45D3A1807B56 /* UIView+React.m */,
 			);
-			name = Views;
 			path = Views;
 			sourceTree = "<group>";
 		};
@@ -2530,7 +2506,6 @@
 				4151A64D7F79EFBECB727876FB15CD29 /* FIRInstanceID.h */,
 				16783339A6FA0A10E243039A27D6F7DE /* Frameworks */,
 			);
-			name = FirebaseInstanceID;
 			path = FirebaseInstanceID;
 			sourceTree = "<group>";
 		};
@@ -2546,7 +2521,6 @@
 				6082E91D0052BDA0DE398BC792ED055B /* Support Files */,
 				F2FF52F77FA6993E4B2B1116956E29D4 /* UIKit */,
 			);
-			name = AFNetworking;
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
@@ -2564,7 +2538,6 @@
 				68DB9EA96BD535DF805B4ED0EA1E594F /* FIRMessaging.h */,
 				D7CF7B5751162351814B038460F29207 /* Frameworks */,
 			);
-			name = FirebaseMessaging;
 			path = FirebaseMessaging;
 			sourceTree = "<group>";
 		};
@@ -2578,7 +2551,6 @@
 				E593BE871432EFE3A34ED3C8B21C8FB3 /* Yoga.c */,
 				67D1B8F01B89B3810CE6E672F58D741D /* Yoga.h */,
 			);
-			name = CSSLayout;
 			path = CSSLayout;
 			sourceTree = "<group>";
 		};
@@ -2590,7 +2562,6 @@
 				5E4AE3E1E19386A647DC305B456288D8 /* NSData+zlib */,
 				108B0E7D7CDFCBAFEE478AAAFB1F5E27 /* Support Files */,
 			);
-			name = GoogleToolboxForMac;
 			path = GoogleToolboxForMac;
 			sourceTree = "<group>";
 		};
@@ -2599,7 +2570,6 @@
 			children = (
 				F16B068C565F0F06A5F7A0EA39C8F9C3 /* jschelpers */,
 			);
-			name = ReactCommon;
 			path = ReactCommon;
 			sourceTree = "<group>";
 		};
@@ -2611,7 +2581,6 @@
 				C78A5919ED93F6D17011E644CF56E946 /* RCTJSCExecutor.h */,
 				4B3C029AD3F5ABD83176F32ED3A499F9 /* RCTJSCExecutor.mm */,
 			);
-			name = Executors;
 			path = Executors;
 			sourceTree = "<group>";
 		};
@@ -2623,7 +2592,6 @@
 				B5C60F6572CA4855CD7E3B63E0CF8EF6 /* RNDeviceInfo.h */,
 				45A4FA60ED03C9E203C5B7C27212AE86 /* RNDeviceInfo.m */,
 			);
-			name = RNDeviceInfo;
 			path = RNDeviceInfo;
 			sourceTree = "<group>";
 		};
@@ -2634,7 +2602,6 @@
 				D4F3E7F7A3E8B72D9154AE58FF2F24CA /* MBProgressHUD.m */,
 				515E1DF0B816B501CF532AD7C5D06E7C /* Support Files */,
 			);
-			name = MBProgressHUD;
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -2670,7 +2637,6 @@
 				8C2B69E16F391D169CE503F3582FD77E /* ARTTextManager.h */,
 				59249B407665B749A9A2D40D30D6B8F2 /* ARTTextManager.m */,
 			);
-			name = ViewManagers;
 			path = ViewManagers;
 			sourceTree = "<group>";
 		};
@@ -2698,7 +2664,6 @@
 				B615CBB9273518F4E2B1C2887C8D504F /* Resources */,
 				3201CCDBE027AB8A2892CC3FEC3DED45 /* Support Files */,
 			);
-			name = QBImagePickerController;
 			path = QBImagePickerController;
 			sourceTree = "<group>";
 		};
@@ -2718,7 +2683,6 @@
 				64F1926A7A678D64D2E26254E64D0F4D /* RNFetchBlobReqBuilder.m */,
 				9EF16A613441E4D2A554E034F1FA19AA /* RNFetchBlob */,
 			);
-			name = ios;
 			path = ios;
 			sourceTree = "<group>";
 		};
@@ -2727,7 +2691,6 @@
 			children = (
 				7846B6B1B58CDB999B7F8D0EC547022C /* Frameworks */,
 			);
-			name = GoogleInterchangeUtilities;
 			path = GoogleInterchangeUtilities;
 			sourceTree = "<group>";
 		};
@@ -2757,7 +2720,6 @@
 				2CECD8671D21D07531F299AE24FFF9C9 /* JSCWrapper.cpp */,
 				44CE68E29E07F24DAF853CEDAE9DD82D /* JSCWrapper.h */,
 			);
-			name = jschelpers;
 			path = jschelpers;
 			sourceTree = "<group>";
 		};
