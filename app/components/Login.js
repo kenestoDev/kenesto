@@ -253,7 +253,7 @@ const styles = StyleSheet.create({
                     mode="dropdown"
                     >
 
-                     <Item label="Kosta dev" value="devKonstya" />
+                     <Item label="PISX" value="pisx" />
                     <Item label="Dev" value="dev" />
                     <Item label="QA" value="qa" />
                     <Item label="Staging" value="staging" />

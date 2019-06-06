@@ -33,12 +33,12 @@ export const config = {
          
     },
    {
-        env : 'devKonstya',
+        env : 'pisx',
          Ip: '10.0.0.114',
-         ApiBaseUrl : 'http://10.0.0.114/Kenesto.Web.API/', 
-         AuthUrlTemplate: 'http://10.0.0.114/Kenesto.Web.API/Access.svc/Authenticate/json/{2}?u={0}&p={1}',
-         LoginUrlTemplate: 'http://10.0.0.114/Kenesto.Web.API/Access.svc/Login/json/{0}?t={1}',
-         ForgotPasswordUrl: 'http://10.0.0.114/Kenesto.Web.API/Access.svc/ForgotPassword/json?u={0}',
+         ApiBaseUrl : 'http://app.pisx.com/Kenesto.Web.API/', 
+         AuthUrlTemplate: 'http://app.pisx.com/Kenesto.Web.API/Access.svc/Authenticate/json/{2}?u={0}&p={1}',
+         LoginUrlTemplate: 'http://app.pisx.com/Kenesto.Web.API/Access.svc/Login/json/{0}?t={1}',
+         ForgotPasswordUrl: 'https://app.pisx.com/Kenesto.Web.API/Access.svc/ForgotPassword/json?u={0}',
          
     },
    {

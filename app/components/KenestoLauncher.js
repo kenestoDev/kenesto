@@ -99,7 +99,7 @@ writeToLog("", constans.DEBUG, `function KenestoLauncher - storedCredentials.has
             { key: index++, section: true, label: 'Environments' },
             { key: "devDudu", label: 'Dudu Dev' },
             { key: "devAdam", label: 'Adam Dev' },
-            { key: "devKonstya", label: 'Konstya Dev' },
+            { key: "pisx", label: 'PISXv' },
             { key: "qa", label: 'QA' },
             { key: "staging", label: 'Staging' },
             { key: "production", label: 'Production' },

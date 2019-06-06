@@ -22,6 +22,7 @@ export function getAuthUrl(env: string,username: string, password: string, acces
         return null;
 
     var authUrl = urls.AuthUrlTemplate.replace('{0}', username.trim()).replace('{1}', password.trim()).replace('{2}', accessKey);
+    
     return authUrl;
 
 }
