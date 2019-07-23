@@ -143,10 +143,18 @@ dependencies {
     compile project(':react-native-vector-icons')
     compile project(':react-native-orientation')
     compile project(':react-native-fetch-blob')
-    compile project(':react-native-device-info')
+    compile (project(':react-native-device-info')){
+        exclude group: "com.google.android.gms" 
+    }
     compile project(':react-native-image-crop-picker')
     compile project(':react-native-share-extension')
     compile project(':react-native-swiss-knife')
+    compile ("com.google.android.gms:play-services-base:10.0.1") {
+        force = true;
+    }
+    compile ("com.google.android.gms:play-services-gcm:10.0.1") {
+        force = true;
+    }
     //compile 'com.google.firebase:firebase-core:10.0.2' //this decides your firebase SDK version
 }
 
