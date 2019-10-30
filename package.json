@@ -7,7 +7,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "lodash": "^4.14.0",
+    "lodash": "^4.17.13",
     "moment": "^2.14.1",
     "pubnub": "4.2.5",
     "react": "15.4.2",
